@@ -99,6 +99,10 @@ include_once('include/sidebar.html');
                                                 <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="hipertrofia">
                                                 <label class="form-check-label" for="gridRadios1">Hipertrofia</label>
                                             </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="manutencao">
+                                                <label class="form-check-label" for="gridRadios1">Manutenção</label>
+                                            </div>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -427,6 +431,12 @@ include_once('include/sidebar.html');
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                                 <label class="form-check-label" for="defaultCheck1">
+                                                    Hipotireoidismo
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1">
                                                     Tontura
                                                 </label>
                                             </div>
@@ -451,7 +461,7 @@ include_once('include/sidebar.html');
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
                                                 <label class="form-check-label" for="defaultCheck2">
-                                                    aquicardia
+                                                    Taquicardia
                                                 </label>
                                             </div>
                                             <div class="form-check">

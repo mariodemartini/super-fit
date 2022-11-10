@@ -69,6 +69,12 @@ include_once('include/sidebar.html');
                                         <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm">
                                     </div>
                                 </div>
+				<div class="form-group col-md-3">
+                                    <label for="inputPA" class="col-sm-5 col-form-label">PA Inicial</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg">
+                                    </div>
+                                </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-5 col-form-label">PA Final</label>
                                     <div class="col-sm-5">

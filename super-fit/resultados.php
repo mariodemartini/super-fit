@@ -83,6 +83,36 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
+                            <!-- Linha Abdomen -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">Abdomen</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Linha RCQ -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">RCQ</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
                             <!-- Linha compativo % gordura -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">

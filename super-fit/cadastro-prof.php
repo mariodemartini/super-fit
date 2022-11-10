@@ -55,13 +55,6 @@ include_once('include/sidebar.html');
                                         <label for="inputSexo">Sexo</label>
                                     </div>
                                 </div>
-                                <!-- Campo função -->
-                                <div class="col-md-4">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFuncao" type="text" placeholder="Função"/>
-                                        <label for="inputFuncao">Função</label>
-                                    </div>
-                                </div>
                             </div>
                             <div class="row mb-3">
                                 <!-- Campo CPF -->
@@ -168,67 +161,40 @@ include_once('include/sidebar.html');
                                 </div>
                             </div>
                             <br>
-                            <!-- Permissões -->
-                            <div class="row mb-3">
-                                <h4>PERMISSÕES</h4>
-                                <div class="col-md-4">
-                                    <fieldset class="form-check">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Alunos:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="cadastrar">
-                                                <label class="form-check-label" for="gridRadios1">Cadastrar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="editar">
-                                                <label class="form-check-label" for="gridRadios1">Editar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="ver">
-                                                <label class="form-check-label" for="gridRadios1">Ver</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-4">
-                                    <fieldset class="form-check">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Avaliação:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="cadastrar">
-                                                <label class="form-check-label" for="gridRadios1">Cadastrar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="editar">
-                                                <label class="form-check-label" for="gridRadios1">Editar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="ver">
-                                                <label class="form-check-label" for="gridRadios1">Ver</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-4">
-                                    <fieldset class="form-check">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Treinos</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="cadastrar">
-                                                <label class="form-check-label" for="gridRadios1">Cadastrar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="editar">
-                                                <label class="form-check-label" for="gridRadios1">Editar</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="ver">
-                                                <label class="form-check-label" for="gridRadios1">Ver</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
+                            <div class="card mb-4">
+				<!-- Inicio tabela -->
+				<table class="table table-bordered">
+					<!-- Cabeçalho tabela -->
+					<thead>
+					    <tr>
+						<th>Nome</th>
+						<th>Situação</th>
+						<th>Endereço</th>
+						<th>Celular</th>
+						<th>Email</th>
+						<th>Ações</th>
+					    </tr>
+					</thead>
+					<!-- Dados tabela de alunos -->
+					<tbody>
+					    <tr>
+						<td>#programar nome</td>
+						<td>#programar situação</td>
+						<td>#programar endereço</td>
+						<td>#programar celular</td>
+						<td>#programar email</td>
+						<td class="text-center">
+						    <button class="btn  btn-warning btn-sm" data-toggle="modal" data-target="#editar">
+						        Editar
+						    </button>
+						    <a href="">
+						    <button class="btn  btn-danger btn-sm" type="button">Excluir</button>
+						    </a>
+						</td>
+					   </tr>
+					</tbody>
+			    	</table>
+			    </div>
 
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
