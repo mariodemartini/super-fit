@@ -331,7 +331,7 @@ include_once('include/sidebar.html');
                                     </div>
                                 </div>
                             </div>
-                            <!-- TESTE COXA -->
+                            <!-- TESTE OMBRO -->
                             <div class="row mb-3">
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
@@ -339,6 +339,62 @@ include_once('include/sidebar.html');
                                     <select class="form-control" id="exercicioOmbro">
                                         <option>Escolha</option>
                                         <option>Desenvolvimento Maquina</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Linha aquecimento, meta e resultado -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
+                                    <div class="col-sm-5 text-center">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linha tentativas -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TESTE GLUTEO -->
+                            <div class="row mb-3">
+                                <!-- Seleção exercicio -->
+                                <div class="form-group col-md-3">
+                                    <h4>Gluteo</h4>
+                                    <select class="form-control" id="exercicioGluteo">
+                                        <option>Escolha</option>
+                                        <option>#</option>
                                     </select>
                                 </div>
                             </div>

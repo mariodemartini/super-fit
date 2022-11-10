@@ -52,16 +52,12 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="iniciante">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="sedentario">
                                                 <label class="form-check-label" for="gridRadios2">Iniciante</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="intermediarioI">
-                                                <label class="form-check-label" for="gridRadios2">Intermediário I</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="intermediarioII">
-                                                <label class="form-check-label" for="gridRadios2">Intermediário II</label>
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="moderado">
+                                                <label class="form-check-label" for="gridRadios2">Intermediário</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="ativo">
@@ -100,28 +96,24 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="adaptacao">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="sedentario">
                                                 <label class="form-check-label" for="gridRadios2">Adaptação</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="forca">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="moderado">
                                                 <label class="form-check-label" for="gridRadios2">Força</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="forcaHipertrofica">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
                                                 <label class="form-check-label" for="gridRadios2">Força Hipertrófica</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="rml">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
                                                 <label class="form-check-label" for="gridRadios2">RML</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="transicaoForca">
-                                                <label class="form-check-label" for="gridRadios2">Transição p/ Força</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="transicaoRML">
-                                                <label class="form-check-label" for="gridRadios2">Transição p/ RML</label>
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
+                                                <label class="form-check-label" for="gridRadios2">Transição</label>
                                             </div>
                                         </div>
                                     </fieldset>
