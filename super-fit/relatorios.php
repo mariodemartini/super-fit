@@ -19,9 +19,7 @@ include_once('include/sidebar.html');
                         </div>
                         <div class="row mb-3">
                             <a class="btn btn-info btn-block" href="relatorio-grafico"><button type="button" class="btn btn-info btn-lg">GRÁFICO DE EVOLUÇÃO</button></a>
-                        </div>
-                        <!-- Botão voltar -->
-                        <div><br><button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button></br></div>  
+                        </div> 
                     </div>
                     <div class="card-footer text-center py-3"></div>
                 </div>

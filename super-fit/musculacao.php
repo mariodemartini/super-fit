@@ -212,6 +212,20 @@ include_once('include/sidebar.html');
                                             <input type="text" class="form-control" id="inputSerie">
                                             <input type="text" class="form-control" id="inputSerie">
                                         </div>
+                                        <!-- Coluna % carga -->
+                                        <div class="form-group col-md-1 text-center">
+                                            <label for="inputPerct">%CG</label>
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                        </div>
                                         <!-- Coluna de carga -->
                                         <div class="form-group col-md-1 text-center">
                                             <label for="inputCG">C.G.</label>
@@ -219,7 +233,7 @@ include_once('include/sidebar.html');
                                             <input type="text" class="form-control" id="inputCG">
                                             <input type="text" class="form-control" id="inputCG">
                                             <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputGM">
+                                            <input type="text" class="form-control" id="inputGG">
                                             <input type="text" class="form-control" id="inputCG">
                                             <input type="text" class="form-control" id="inputCG">
                                             <input type="text" class="form-control" id="inputCG">

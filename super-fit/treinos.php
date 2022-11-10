@@ -21,8 +21,6 @@ include_once('include/sidebar.html');
                             <a class="btn btn-info btn-block" href="aerobio.php"><button type="button" class="btn btn-info btn-lg">AERÓBIO</button></a>
                         </div>
 
-                        <!-- Botão voltar -->
-                        <div><br><button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button></br></div>  
                     </div>
                     <div class="card-footer text-center py-3"></div>
                 </div>

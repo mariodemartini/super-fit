@@ -11,16 +11,17 @@ include_once('include/sidebar.html');
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">TESTE DE FORÇA POR REPETIÇÃO</h3></div>
-                    <!-- Botões sub-menu testes -->
+                    <!-- Div menu -->
                     <div class="card-header text-center">
+                        <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg">ANAMNESE</button></a>
                         
-                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA REPETIÇÃO</button></a>
+                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
+
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
                         
-                        <a class="btn btn-info btn-block" href="forca-max.php"><button type="button" class="btn btn-info btn-lg">FORÇA MAXIMA</button></a>
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         
-                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO² ESTEIRA</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="vo-bike.php"><button type="button" class="btn btn-info btn-lg">VO² BICICLETA</button></a> 
+                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
                     </div>
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
@@ -56,13 +57,10 @@ include_once('include/sidebar.html');
                                     <select class="form-control" id="exercicioPeito">
                                         <option>Escolha</option>
                                         <option>Supino Reto</option>
-                                        <option>Fly Reto</option>
-                                        <option>Crucifixo Reto</option>
-                                        <option>Voador Peito</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- Linha aquecimento e meta -->
+                            <!-- Linha aquecimento, meta e resultado -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
@@ -78,8 +76,15 @@ include_once('include/sidebar.html');
                                         <input type="number" class="form-control" id="inputRep" placeholder="rep">  
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                    </div>
+                                </div>
                             </div>
-                            <!-- Linha tentativas e resultado -->
+                            <!-- Linha tentativas -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
@@ -97,13 +102,6 @@ include_once('include/sidebar.html');
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
                                     </div>
                                 </div>
                             </div>
@@ -113,16 +111,13 @@ include_once('include/sidebar.html');
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Costas</h4>
-                                    <select class="form-control" id="exercicioPeito">
+                                    <select class="form-control" id="exercicioCostas">
                                         <option>Escolha</option>
                                         <option>Remada Maquina</option>
-                                        <option>Remada Baixa</option>
-                                        <option>Puxador Frente Aberto</option>
-                                        <option>Puxador Frente Fechado</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- Linha aquecimento e meta -->
+                            <!-- Linha aquecimento, meta e resultado -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
@@ -138,8 +133,15 @@ include_once('include/sidebar.html');
                                         <input type="number" class="form-control" id="inputRep" placeholder="rep">  
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputResultado" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
+                                    </div>
+                                </div>
                             </div>
-                            <!-- Linha tentativas e resultado -->
+                            <!-- Linha tentativas -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
@@ -159,12 +161,6 @@ include_once('include/sidebar.html');
                                         <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
                                     </div>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
-                                    </div>
-                                </div>
                             </div>
                             <br>
                             <!-- TESTE COXA -->
@@ -172,16 +168,13 @@ include_once('include/sidebar.html');
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Coxa</h4>
-                                    <select class="form-control" id="exercicioPeito">
+                                    <select class="form-control" id="exercicioCoxa">
                                         <option>Escolha</option>
                                         <option>Agachamento Maquina</option>
-                                        <option>Agachamento Livre</option>
-                                        <option>Leg Pres 45°</option>
-                                        <option>Levantamento Terra</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- Linha aquecimento, meta, resultado -->
+                            <!-- Linha aquecimento, meta e resultado -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
@@ -198,9 +191,178 @@ include_once('include/sidebar.html');
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linha tentativas -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TESTE BICEPS -->
+                            <div class="row mb-3">
+                                <!-- Seleção exercicio -->
+                                <div class="form-group col-md-3">
+                                    <h4>Bíceps</h4>
+                                    <select class="form-control" id="exercicioBiceps">
+                                        <option>Escolha</option>
+                                        <option>Rosca Direta</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Linha aquecimento, meta e resultado -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
+                                    <div class="col-sm-5 text-center">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linha tentativas -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TESTE TRICEPS -->
+                            <div class="row mb-3">
+                                <!-- Seleção exercicio -->
+                                <div class="form-group col-md-3">
+                                    <h4>Tríceps</h4>
+                                    <select class="form-control" id="exercicioTriceps">
+                                        <option>Escolha</option>
+                                        <option>Pulley W</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Linha aquecimento, meta e resultado -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
+                                    <div class="col-sm-5 text-center">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Linha tentativas -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TESTE COXA -->
+                            <div class="row mb-3">
+                                <!-- Seleção exercicio -->
+                                <div class="form-group col-md-3">
+                                    <h4>Ombro</h4>
+                                    <select class="form-control" id="exercicioOmbro">
+                                        <option>Escolha</option>
+                                        <option>Desenvolvimento Maquina</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Linha aquecimento, meta e resultado -->
+                            <div class="row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
+                                    <div class="col-sm-5 text-center">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +391,6 @@ include_once('include/sidebar.html');
                             <div class="mt-4 mb-0">
                                 <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
                                 <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
-                                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>
                     </div>

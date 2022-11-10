@@ -130,21 +130,6 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
-                            <!-- Linha compativo % massa magra -->
-                            <div class="row d-flex justify-content-center">
-                                <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">% Massa Magra</li>
-                                </ul>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="text" placeholder="">
-                                </div>
-                            </div>
                             <!-- Linha compativo peso massa gorda -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
@@ -160,10 +145,25 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
-                            <!-- Linha compativo peso massa muscular -->
+                            <!-- Linha compativo % massa magra -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">M. Muscular (kg)</li>
+                                    <li class="list-group-item">% Massa Magra</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Linha compativo peso massa magra -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">M. Magra (kg)</li>
                                 </ul>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
