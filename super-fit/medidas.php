@@ -17,7 +17,9 @@ include_once('include/sidebar.html');
                         
                         <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
                         
-                        <a class="btn btn-info btn-block" href="testes.php"><button type="button" class="btn btn-info btn-lg">TESTES</button></a>
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
+                        
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         
                         <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
                     </div>

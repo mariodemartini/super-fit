@@ -68,7 +68,7 @@ include_once('include/sidebar.html');
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputRep" placeholder="Rep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
@@ -102,7 +102,8 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +181,7 @@ include_once('include/sidebar.html');
                                     </select>
                                 </div>
                             </div>
-                            <!-- Linha aquecimento e meta -->
+                            <!-- Linha aquecimento, meta, resultado -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
@@ -196,8 +197,14 @@ include_once('include/sidebar.html');
                                         <input type="number" class="form-control" id="inputRep" placeholder="rep">  
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
+                                    <div class="col-sm-5">
+                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
+                                    </div>
+                                </div>
                             </div>
-                            <!-- Linha tentativas e resultado -->
+                            <!-- Linha tentativas -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
@@ -215,12 +222,6 @@ include_once('include/sidebar.html');
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputResultado" class="col-sm-9 col-form-label">Resultado</label>
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
                                     </div>
                                 </div>
                             </div>

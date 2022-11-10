@@ -23,7 +23,11 @@ include_once('include/sidebar.html');
                         </div>
                         
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="testes.php"><button type="button" class="btn btn-info btn-lg">TESTES</button></a>
+                            <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
+                        </div>
+
+                        <div class="row mb-3">
+                            <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         </div>
 
                         <div class="row mb-3">
