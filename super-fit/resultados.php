@@ -175,6 +175,21 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
+                            <!-- Linha compativo FC maxima -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">F.C Máxima</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="bpm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="bpm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
                             <!-- Linha compativo VO2 maximo -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">

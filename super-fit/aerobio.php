@@ -242,7 +242,7 @@ include_once('include/sidebar.html');
                                         </div>
                                         <!-- Coluna de carga VO2 -->
                                         <div class="form-group col-md-1 text-center">
-                                            <label for="inputVO2">F.C</label>
+                                            <label for="inputVO2">VO2</label>
                                             <input type="text" class="form-control" id="inputVO2">
                                             <input type="text" class="form-control" id="inputVO2">
                                             <input type="text" class="form-control" id="inputVO2">

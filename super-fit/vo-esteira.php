@@ -161,7 +161,7 @@ include_once('include/sidebar.html');
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="inputData">FC Max:</label>
-                                    <input type="number" class="form-control" id="inputFCmax" placeholder="mL/kg·min">
+                                    <input type="number" class="form-control" id="inputFCmax" placeholder="bpm">
                                 </div>
                             </div>
                             <!-- Botões de salvar -->
