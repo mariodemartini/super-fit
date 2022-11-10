@@ -154,9 +154,14 @@ include_once('include/sidebar.html');
                             </div>
                             <!-- Resultado -->
                             <div class="row mb-3">
+                                <h5>Resultado:</h5>
                                 <div class="form-group col-md-2">
-                                    <label for="inputData">Resultado</label>
-                                    <input type="number" class="form-control" id="inputData" placeholder="mL/kg·min">
+                                    <label for="inputData">VO² Max:</label>
+                                    <input type="number" class="form-control" id="inputVOmax" placeholder="mL/kg·min">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputData">FC Max:</label>
+                                    <input type="number" class="form-control" id="inputFCmax" placeholder="mL/kg·min">
                                 </div>
                             </div>
                             <!-- Botões de salvar -->

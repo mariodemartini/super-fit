@@ -113,7 +113,7 @@ include_once('include/sidebar.html');
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
-                                                <label class="form-check-label" for="gridRadios2">Transição</label>
+                                                <label class="form-check-label" for="gridRadios2">Recuperativo</label>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -172,20 +172,20 @@ include_once('include/sidebar.html');
                                     <form>
                                         <!-- Coluna grupo muscular -->
                                         <div class="form-group col-md-1 text-center">
-                                            <label for="inputGM">G.M.</label>
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
+                                            <label for="inputERG">ERG</label>
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
                                         </div>
                                         <!-- Coluna exercicios -->
-                                        <div class="form-group col-md-4 text-center">
+                                        <div class="form-group col-md-3 text-center">
                                             <label for="inputExercicio">EXERCÍCIOS</label>
                                             <input type="text" class="form-control" id="inputExercicio">
                                             <input type="text" class="form-control" id="inputExercicio">
@@ -226,19 +226,33 @@ include_once('include/sidebar.html');
                                             <input type="text" class="form-control" id="input%CG">
                                             <input type="text" class="form-control" id="input%CG">
                                         </div>
-                                        <!-- Coluna de carga -->
+                                        <!-- Coluna de carga FC-->
                                         <div class="form-group col-md-1 text-center">
-                                            <label for="inputCG">C.G.</label>
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputGG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
+                                            <label for="inputFC">F.C</label>
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                        </div>
+                                        <!-- Coluna de carga VO2 -->
+                                        <div class="form-group col-md-1 text-center">
+                                            <label for="inputVO2">F.C</label>
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
                                         </div>
                                         <!-- Coluna de feedback -->
                                         <div class="form-group col-md-1 text-center">

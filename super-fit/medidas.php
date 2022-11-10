@@ -205,6 +205,12 @@ include_once('include/sidebar.html');
                                                 <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
+                                                <div class="col-sm-4">
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm">
+                                                </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
