@@ -55,6 +55,13 @@ include_once('include/sidebar.html');
                                         <label for="inputSexo">Sexo</label>
                                     </div>
                                 </div>
+                                <!-- Campo Função -->
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputFuncao" type="text" placeholder="Função" />
+                                        <label for="inputSexo">Função</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row mb-3">
                                 <!-- Campo CPF -->
