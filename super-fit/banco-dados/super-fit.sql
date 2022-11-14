@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema superfit
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema superfit
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `superfit` DEFAULT CHARACTER SET utf8 ;
+USE `superfit` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuario`
+-- Table `superfit`.`Usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(200) NOT NULL,
   `Data_Nascimento` DATE NULL,
@@ -43,9 +43,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Circunferencias`
+-- Table `superfit`.`Circunferencias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Circunferencias` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Circunferencias` (
   `idCircunferencias` INT NOT NULL AUTO_INCREMENT,
   `Torax` FLOAT NULL,
   `Cintura` FLOAT NULL,
@@ -65,9 +65,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Exercicios`
+-- Table `superfit`.`Exercicios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Exercicios` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Exercicios` (
   `idExercicios` INT NOT NULL,
   `Descricao` VARCHAR(45) NULL,
   `Grupo_Muscular` VARCHAR(45) NULL,
@@ -76,9 +76,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Dados_Iniciais`
+-- Table `superfit`.`Dados_Iniciais`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Dados_Iniciais` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Dados_Iniciais` (
   `idDados_Iniciais` INT NOT NULL AUTO_INCREMENT,
   `Peso` FLOAT NULL,
   `Altura` FLOAT NULL,
@@ -90,9 +90,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Dobras_Cutaneas`
+-- Table `superfit`.`Dobras_Cutaneas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Dobras_Cutaneas` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Dobras_Cutaneas` (
   `idDobras_Cutaneas` INT NOT NULL AUTO_INCREMENT,
   `Peitoral` FLOAT NULL,
   `AxilarMedia` FLOAT NULL,
@@ -107,9 +107,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Teste_VO2`
+-- Table `superfit`.`Teste_VO2`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Teste_VO2` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Teste_VO2` (
   `idTeste_VO2` INT NOT NULL AUTO_INCREMENT,
   `Data_Teste` DATE NULL,
   `Velocidade_Inicial` INT NULL,
@@ -126,9 +126,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Teste_Forca`
+-- Table `superfit`.`Teste_Forca`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Teste_Forca` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Teste_Forca` (
   `idTeste_Forca` INT NOT NULL AUTO_INCREMENT,
   `Data_Teste` DATE NULL,
   `Exercicio` VARCHAR(45) NULL,
@@ -146,16 +146,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Teste_Forca` (
   INDEX `fk_Teste_Forca_Exercicios1_idx` (`idExercicios` ASC) VISIBLE,
   CONSTRAINT `fk_Teste_Forca_Exercicios1`
     FOREIGN KEY (`idExercicios`)
-    REFERENCES `mydb`.`Exercicios` (`idExercicios`)
+    REFERENCES `superfit`.`Exercicios` (`idExercicios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Resultado`
+-- Table `superfit`.`Resultado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Resultado` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Resultado` (
   `idResultado` INT NOT NULL,
   `IMC` FLOAT NULL,
   `Percent_Gord` FLOAT NULL,
@@ -167,9 +167,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Anamnese`
+-- Table `superfit`.`Anamnese`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Anamnese` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Anamnese` (
   `idAnamnese` INT NOT NULL,
   `Atividade` VARCHAR(45) NULL,
   `Tempo_Pratica` VARCHAR(45) NULL,
@@ -195,9 +195,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Avaliacao_Fisica`
+-- Table `superfit`.`Avaliacao_Fisica`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Avaliacao_Fisica` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Avaliacao_Fisica` (
   `idAvaliacao_Fisica` INT NOT NULL AUTO_INCREMENT,
   `idUsuario` INT NOT NULL,
   `idAnamnese` INT NOT NULL,
@@ -218,51 +218,51 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Avaliacao_Fisica` (
   INDEX `fk_Avaliacao_Fisica_Anamnese1_idx` (`idAnamnese` ASC) VISIBLE,
   CONSTRAINT `fk_Avaliacao_Fisica_Usuario1`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `superfit`.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Dados_Iniciais1`
     FOREIGN KEY (`idDados_Iniciais`)
-    REFERENCES `mydb`.`Dados_Iniciais` (`idDados_Iniciais`)
+    REFERENCES `superfit`.`Dados_Iniciais` (`idDados_Iniciais`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Circunferencias1`
     FOREIGN KEY (`idCircunferencias`)
-    REFERENCES `mydb`.`Circunferencias` (`idCircunferencias`)
+    REFERENCES `superfit`.`Circunferencias` (`idCircunferencias`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Dobras_Cutaneas1`
     FOREIGN KEY (`idDobras_Cutaneas`)
-    REFERENCES `mydb`.`Dobras_Cutaneas` (`idDobras_Cutaneas`)
+    REFERENCES `superfit`.`Dobras_Cutaneas` (`idDobras_Cutaneas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Teste_VO21`
     FOREIGN KEY (`idTeste_VO2`)
-    REFERENCES `mydb`.`Teste_VO2` (`idTeste_VO2`)
+    REFERENCES `superfit`.`Teste_VO2` (`idTeste_VO2`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Teste_Forca1`
     FOREIGN KEY (`idTeste_Forca`)
-    REFERENCES `mydb`.`Teste_Forca` (`idTeste_Forca`)
+    REFERENCES `superfit`.`Teste_Forca` (`idTeste_Forca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Resultado1`
     FOREIGN KEY (`idResultado`)
-    REFERENCES `mydb`.`Resultado` (`idResultado`)
+    REFERENCES `superfit`.`Resultado` (`idResultado`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Avaliacao_Fisica_Anamnese1`
     FOREIGN KEY (`idAnamnese`)
-    REFERENCES `mydb`.`Anamnese` (`idAnamnese`)
+    REFERENCES `superfit`.`Anamnese` (`idAnamnese`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Treino`
+-- Table `superfit`.`Treino`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Treino` (
   `idTreino` INT NOT NULL,
   `Data_Cadastro` DATE NULL,
   `Tipo` VARCHAR(45) NULL,
@@ -281,21 +281,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
   INDEX `fk_Treino_Avaliacao_Fisica1_idx` (`idAvaliacao_Fisica` ASC) VISIBLE,
   CONSTRAINT `fk_Treino_Usuario1`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `superfit`.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Treino_Avaliacao_Fisica1`
     FOREIGN KEY (`idAvaliacao_Fisica`)
-    REFERENCES `mydb`.`Avaliacao_Fisica` (`idAvaliacao_Fisica`)
+    REFERENCES `superfit`.`Avaliacao_Fisica` (`idAvaliacao_Fisica`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Exercicios_Treino`
+-- Table `superfit`.`Exercicios_Treino`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Exercicios_Treino` (
+CREATE TABLE IF NOT EXISTS `superfit`.`Exercicios_Treino` (
   `idTreino` INT NOT NULL,
   `idExercicios` INT NOT NULL,
   PRIMARY KEY (`idTreino`, `idExercicios`),
@@ -303,12 +303,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exercicios_Treino` (
   INDEX `fk_Treino_has_Exercicios_Treino1_idx` (`idTreino` ASC) VISIBLE,
   CONSTRAINT `fk_Treino_has_Exercicios_Treino1`
     FOREIGN KEY (`idTreino`)
-    REFERENCES `mydb`.`Treino` (`idTreino`)
+    REFERENCES `superfit`.`Treino` (`idTreino`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Treino_has_Exercicios_Exercicios1`
     FOREIGN KEY (`idExercicios`)
-    REFERENCES `mydb`.`Exercicios` (`idExercicios`)
+    REFERENCES `superfit`.`Exercicios` (`idExercicios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

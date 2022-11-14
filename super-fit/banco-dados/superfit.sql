@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 14/11/2022 às 16:06
+-- Tempo de geração: 14/11/2022 às 16:39
 -- Versão do servidor: 8.0.31-0ubuntu0.22.04.1
 -- Versão do PHP: 8.1.2-1ubuntu2.8
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `mydb`
+-- Banco de dados: `superfit`
 --
 
 -- --------------------------------------------------------
