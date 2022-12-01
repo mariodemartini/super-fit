@@ -10,49 +10,50 @@
 
     if(isset($_POST['salvar'])){
 
-        $usuario->setNome(($d['nome']));
-        $usuario->setData_Nascimento(($d['data_nascimento']));
-        $usuario->setSexo(($d['sexo']));
-        $usuario->setCpf(($d['cpf']));
-        $usuario->setCref(($d['cref']));
-        $usuario->setCelular(($d['celular']));
-        $usuario->setCep(($d['cep']));
-        $usuario->setEstado(($d['estado']));
-        $usuario->setCidade(($d['cidade']));
-        $usuario->setEndereco(($d['endereco']));
-        $usuario->setEmail(($d['email']));
-        $usuario->setSenha(($d['senha']));
+        $professor->setNome(($d['nome']));
+        $professor->setData_Nascimento(($d['data_nascimento']));
+        $professor->setSexo(($d['sexo']));
+        $professor->setCpf(($d['cpf']));
+        $professor->setCref(($d['cref']));
+        $professor->setCelular(($d['celular']));
+        $professor->setCep(($d['cep']));
+        $professor->setEstado(($d['estado']));
+        $professor->setCidade(($d['cidade']));
+        $professor->setEndereco(($d['endereco']));
+        $professor->setEmail(($d['email']));
+        $professor->setSenha(($d['senha']));
         
-        $usuariodao->create($usuario);
+        $professordao->create($professor);
 
         header("Location: ../cadastro-prof.php");
     }
 
-    if (isset($_POST['editar'])) {
+    else if (isset($_POST['editar'])) {
 
-        $usuario->setNome(($d['nome']));
-        $usuario->setData_Nascimento(($d['data_nascimento']));
-        $usuario->setSexo(($d['sexo']));
-        $usuario->setCpf(($d['cpf']));
-        $usuario->setCref(($d['cref']));
-        $usuario->setCelular(($d['celular']));
-        $usuario->setCep(($d['cep']));
-        $usuario->setEstado(($d['estado']));
-        $usuario->setCidade(($d['cidade']));
-        $usuario->setEndereco(($d['endereco']));
-        $usuario->setEmail(($d['email']));
-        $usuario->setSenha(($d['senha']));
+        $professor->setIdProfessor(($d['idProfessor']));
+        $professor->setNome(($d['nome']));
+        $professor->setData_Nascimento(($d['data_nascimento']));
+        $professor->setSexo(($d['sexo']));
+        $professor->setCpf(($d['cpf']));
+        $professor->setCref(($d['cref']));
+        $professor->setCelular(($d['celular']));
+        $professor->setCep(($d['cep']));
+        $professor->setEstado(($d['estado']));
+        $professor->setCidade(($d['cidade']));
+        $professor->setEndereco(($d['endereco']));
+        $professor->setEmail(($d['email']));
+        $professor->setSenha(($d['senha']));
     
-        $usuariodao->update($usuario);
+        $professordao->update($professor);
     
-        header("Location: ../cadastro-prof.php");
+        header("Location: ../editar-prof.php");
     }
 
-    if (isset($_GET['del'])){
+    else if (isset($_GET['del'])){
 
-        $usuario->setIdUsuario($_GET['del']);
+        $professor->setIdProfessor($_GET['del']);
 
-        $usuariodao->delete($usuario);
+        $professordao->delete($professor);
 
         header("Location: ../cadastro-prof.php");
     } else {

@@ -51,12 +51,12 @@
             $professor->setNome($row['Nome']);
             $professor->setData_Nascimento($row['Data_Nascimento']);
             $professor->setSexo($row['Sexo']);
-            $professor->setCpf($row['cpf']);
-            $professor->setCref($row['cref']);
-            $professor->setCelular($row['celular']);
-            $professor->setCep($row['cep']);
-            $professor->setEstado($row['estado']);
-            $professor->setCidade($row['cidade']);
+            $professor->setCpf($row['CPF']);
+            $professor->setCref($row['CREF']);
+            $professor->setCelular($row['Celular']);
+            $professor->setCep($row['CEP']);
+            $professor->setEstado($row['Estado']);
+            $professor->setCidade($row['Cidade']);
             $professor->setEndereco($row['Endereco']);
             $professor->setEmail($row['Email']);
 
@@ -79,22 +79,23 @@
             try {
                 $sql = "UPDATE Professor set
                     
-                      nome=:nome,
-                      data_nascimento=:data_nascimento,
-                      sexo=:sexo,
-                      cpf=:cpf,
-                      rg=:rg,
-                      telefone=:telefone,
-                      celular=:celular,
-                      cep=:cep,
-                      estado=:estado,
-                      cidade=:cidade,
-                      endereco=:endereco,
-                      email=:email,
-                      senha=:senha,
-                      data_cadastro=:data_cadastro
-                                    
-                      WHERE idProfessor = :idProfessor";
+                    idProfessor=:idProfessor,
+                    nome=:nome,
+                    data_nascimento=:data_nascimento,
+                    sexo=:sexo,
+                    cpf=:cpf,
+                    rg=:rg,
+                    telefone=:telefone,
+                    celular=:celular,
+                    cep=:cep,
+                    estado=:estado,
+                    cidade=:cidade,
+                    endereco=:endereco,
+                    email=:email,
+                    senha=:senha,
+                    data_cadastro=:data_cadastro
+                                
+                    WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $professor->getNome());
                 $p_sql->bindValue(":data_nascimento", $professor->getData_Nascimento());
