@@ -41,9 +41,6 @@ include_once('include/sidebar.html');
                                     <label for="inputData">IDADE</label>
                                     <input type="number" class="form-control" id="inputData">
                                 </div>
-                                <div class="form-group col-sm-2">
-                                    <button type="button" class="btn btn-danger"><a class="btn btn-danger btn-block" href="#">GERAR TREINO</a></button>
-                                </div>
                             </div>
                             <div class="row mb-3">
                                 <h4>TREINO MUSCULAÇÃO</h4>
@@ -185,10 +182,6 @@ include_once('include/sidebar.html');
                                                 <label class="form-check-label" for="gridRadios2">Adaptação</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="hipertrofia">
-                                                <label class="form-check-label" for="gridRadios2">Velocidade</label>
-                                            </div>
-                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="rml">
                                                 <label class="form-check-label" for="gridRadios2">Resistência</label>
                                             </div>
@@ -255,6 +248,7 @@ include_once('include/sidebar.html');
                                 <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
                                 <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
                                 <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
+                                <button type="button" class="btn btn-danger"><a class="btn btn-danger btn-block" href="ficha.php">GERAR TREINO</a></button>
                             </div>
                         </form>
                     </div>

@@ -3,7 +3,35 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/Usuario.php');
+include_once('./dao/UsuarioDAO.php');
+
+$usuario = new Usuario();
+$usuariodao = new UsuarioDAO();
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>SuperFit</title>
+    <style>
+        .menu,
+        thead {
+            background-color: #bbb !important;
+        }
+
+        .row {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
 <main>
     <div class="container-fluid px-4 text-center">
         <!-- Titulo principal e barra de pesquisa -->
@@ -22,35 +50,50 @@ include_once('include/sidebar.html');
                 <!-- Cabeçalho tabela -->
                 <thead>
                     <tr>
+                    	<th>Id</th>
                         <th>Nome</th>
+                        <th>Data Nasc.</th>
                         <th>Sexo</th>
-                        <th>Idade</th>
+                        <th>CPF</th>
+                        <th>RG</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>CEP</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
                         <th>Endereço</th>
-                        <th>Contato</th>
                         <th>Email</th>
-                        <th>Situação</th>
+                        <th>Senha</th>
+                        <th>Data Cadastro</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <!-- Dados tabela de alunos -->
                 <tbody>
+                <?php foreach ($usuariodao->read() as $usuario) : ?>
                     <tr>
-                        <td>#programar nome</td>
-                        <td>#programar sexo</td>
-                        <td>#programar idade</td>
-                        <td>#programar endereço</td>
-                        <td>#programar contato</td>
-                        <td>#programar email</td>
-                        <td>#programar situação</td>
+                        <td><?= $usuario->getIdUsuario() ?></td>
+                        <td><?= $usuario->getNome() ?></td>
+                        <td><?= $usuario->getData_Nascimento() ?></td>
+                        <td><?= $usuario->getSexo() ?></td>
+                        <td><?= $usuario->getCpf() ?></td>
+                        <td><?= $usuario->getRg() ?></td>
+                        <td><?= $usuario->getTelefone() ?></td>
+                        <td><?= $usuario->getCelular() ?></td>
+                        <td><?= $usuario->getCep() ?></td>
+                        <td><?= $usuario->getEstado() ?></td>
+                        <td><?= $usuario->getCidade() ?></td>
+                        <td><?= $usuario->getEndereco() ?></td>
+                        <td><?= $usuario->getEmail() ?></td>
+                        <td><?= $usuario->getSenha() ?></td>
+                        <td><?= $usuario->getData_Cadastro() ?></td>
                         <td class="text-center">
-                            <button class="btn  btn-warning btn-sm" data-toggle="modal" data-target="#editar">
-                                Editar
-                            </button>
-                            <a href="">
-                            <button class="btn  btn-danger btn-sm" type="button">Excluir</button>
-                            </a>
+                            <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a>
+                            <a href="controller/UsuarioController.php?del=<?= $usuario->getIdUsuario() ?>"> 
+                            <button class="btn  btn-danger btn-sm" type="button">Excluir</button></a>
                         </td>
                     </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
@@ -59,6 +102,7 @@ include_once('include/sidebar.html');
         </div>
     </div>
 </main>
+</body>
 <!-- Inclue php rodapé -->
 <?php
 include_once('include/footer.html');
