@@ -41,8 +41,112 @@ include_once('include/sidebar.html');
                                     <label for="inputData">IDADE</label>
                                     <input type="number" class="form-control" id="inputData">
                                 </div>
+                                <div class="form-group col-sm-2">
+                                    <button type="button" class="btn btn-danger"><a class="btn btn-danger btn-block" href="#">GERAR TREINO</a></button>
+                                </div>
                             </div>
                             <div class="row mb-3">
+                                <!-- Coluna de experiencia de treino -->
+                                <div class="form-group col-md-3">
+                                    <fieldset class="form-group">
+                                        <div class="col-sm-10">
+                                            <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="sedentario">
+                                                <label class="form-check-label" for="gridRadios2">Iniciante</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="moderado">
+                                                <label class="form-check-label" for="gridRadios2">Intermediário I</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="moderado">
+                                                <label class="form-check-label" for="gridRadios2">Intermediário II</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="ativo">
+                                                <label class="form-check-label" for="gridRadios2">Avançado</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- Coluna de frequencia semanal -->
+                                <div class="form-group col-md-3">
+                                    <fieldset class="form-group">
+                                        <div class="col-sm-10">
+                                            <legend class="col-form-label col-sm-5 pt-0">Frequência:</legend>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="frequencia" id="gridRadios" value="sedentario">
+                                                <label class="form-check-label" for="gridRadios2">2x</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="frequencia" id="gridRadios" value="moderado">
+                                                <label class="form-check-label" for="gridRadios2">3x</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="frequencia" id="gridRadios" value="ativo">
+                                                <label class="form-check-label" for="gridRadios2">4x</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="frequencia" id="gridRadios" value="ativo">
+                                                <label class="form-check-label" for="gridRadios2">5x</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- Coluna de fase de treino -->
+                                <div class="form-group col-md-3">
+                                    <fieldset class="form-group">
+                                        <div class="col-sm-10">
+                                            <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="adaptacao">
+                                                <label class="form-check-label" for="gridRadios2">Adaptação</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="forca">
+                                                <label class="form-check-label" for="gridRadios2">Força</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="hipertrofia">
+                                                <label class="form-check-label" for="gridRadios2">Hipertrofia</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="rml">
+                                                <label class="form-check-label" for="gridRadios2">RML</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="transFroca">
+                                                <label class="form-check-label" for="gridRadios2">Transição p/ Força</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="transRML">
+                                                <label class="form-check-label" for="gridRadios2">Transição p/ RML</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- Coluna duração do treino -->
+                                <div class="form-group col-md-3">
+                                    <fieldset class="form-group">
+                                        <div class="col-sm-10">
+                                            <legend class="col-form-label col-sm-5 pt-0">Duração:</legend>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="4">
+                                                <label class="form-check-label" for="gridRadios2">4 semanas</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="8">
+                                                <label class="form-check-label" for="gridRadios2">8 semanas</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="12">
+                                                <label class="form-check-label" for="gridRadios2">12 semanas</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
                             <br>
                             <!-- Campo treino pronto -->
                             <div class="row mb-3">

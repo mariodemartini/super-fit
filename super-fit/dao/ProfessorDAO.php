@@ -97,7 +97,6 @@
                                 
                     WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idProfessor", $professor->getIdProfessor());
                 $p_sql->bindValue(":nome", $professor->getNome());
                 $p_sql->bindValue(":data_nascimento", $professor->getData_Nascimento());
                 $p_sql->bindValue(":sexo", $professor->getSexo());

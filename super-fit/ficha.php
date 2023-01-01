@@ -37,116 +37,149 @@ include_once('include/sidebar.html');
                                 </div>
                             </div>
                             <br>
-
-                            <!-- Linha de divisão dos semanas -->
-                            <div class="row justify-content-center mb-1">
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-01</button></div> 
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-02</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-03</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-04</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-05</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-06</button></div> 
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-07</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-08</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-09</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-10</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-11</button></div>
-                                <div class="col-1 col-sm-1"><button type="button" class="btn btn-secondary border-dark">S-12</button></div>
-                            </div>
-                            <br>
-
-                            <!-- Linha de divisão dos treinos -->
-                            <div class="row justify-content-center mb-3">
-                                <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO A</button></div>
-                                <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO B</button></div>
-                                <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO C</button></div>
-                                <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO D</button></div>
-                                <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO E</button></div>
-                            </div>
-                            <br>
-
-                            <!-- Formulário do treino Musculação-->
-                            <div class="row mb-3">
-                                <h4>Musculação</h4>
-                                <form>
-                                    <!-- Coluna grupo muscular -->
-                                    <div class="form-group col-md-1 text-center">
-                                        <label for="inputGM">GM</label>
-                                        <input type="text" class="form-control" id="inputGM">
-                                    </div>
-                                    <!-- Coluna exercicios -->
-                                    <div class="form-group col-md-3 text-center">
-                                        <label for="inputExercicio">EXERCÍCIOS</label>
-                                        <input type="text" class="form-control" id="inputExercicio">
-                                    </div>
-                                    <!-- Coluna de séries -->
-                                    <div class="form-group col-md-3 text-center">
-                                        <label for="inputSerie">SÉRIES</label>
-                                        <input type="text" class="form-control" id="inputSerie">
-                                    </div>
-                                    <!-- Coluna de % carga -->
-                                    <div class="form-group col-md-1 text-center">
-                                        <label for="inputCG">%CG</label>
-                                        <input type="text" class="form-control" id="input%CG">
-                                    </div>
-                                    <!-- Coluna de % carga -->
-                                    <div class="form-group col-md-1 text-center">
-                                        <label for="inputCG">CG</label>
-                                        <input type="text" class="form-control" id="input%CG">
-                                    </div>
-                                    <!-- Coluna de feedback -->
-                                    <div class="form-group col-md-1 text-center">
-                                        <label for="inputFB">Feedback</label>
-                                        <input type="text" class="form-control" id="inputFB">
-                                    </div>
-                                    <!-- Coluna de views -->
-                                    <div class="form-group col-md-1 text-center">
-                                        <label for="inputVW">Ver</label>
-                                        <input type="text" class="form-control" id="inputVW">
-                                    </div>
-                                </form>
-                            </div> 
-                            <br>  
-
-                             <!-- Formulário treino Aerobio -->
-                            <div class="row mb-3">
-                                <h4>Aeróbio</h4>
-                                <div class="form-group col-md-1 text-center">
-                                    <label for="inputGM">ERG</label>
-                                    <input type="text" class="form-control" id="inputGM">
+                            <!-- Navs semanas 1 a 6 -->
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link" id="nav-s1-tab" data-toggle="tab" href="#nav-s1" role="tab" aria-controls="nav-s1" aria-selected="false">Semana 01</a>
+                                    <a class="nav-item nav-link" id="nav-s2-tab" data-toggle="tab" href="#nav-s2" role="tab" aria-controls="nav-s2" aria-selected="false">Semana 02</a>
+                                    <a class="nav-item nav-link" id="nav-s3-tab" data-toggle="tab" href="#nav-s3" role="tab" aria-controls="nav-s3" aria-selected="false">Semana 03</a>
+                                    <a class="nav-item nav-link" id="nav-s4-tab" data-toggle="tab" href="#nav-s4" role="tab" aria-controls="nav-s4" aria-selected="false">Semana 04</a>
+                                    <a class="nav-item nav-link" id="nav-s5-tab" data-toggle="tab" href="#nav-s5" role="tab" aria-controls="nav-s5" aria-selected="false">Semana 05</a>
+                                    <a class="nav-item nav-link" id="nav-s6-tab" data-toggle="tab" href="#nav-s6" role="tab" aria-controls="nav-s6" aria-selected="false">Semana 06</a>
                                 </div>
-                                <div class="form-group col-md-3 text-center">
-                                    <label for="inputGM">EXERCÍCIOS</label>
-                                    <input type="text" class="form-control" id="inputExer">
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <!-- dias da semana 1 -->
+                                <div class="tab-pane fade" id="nav-s1" role="tabpanel" aria-labelledby="nav-s1-tab">
+                                    <div class="row mb-3 mt-3 justify-content-center">
+                                        <form action="">
+                                            <div class="row mb-3">
+                                                <div class="form-group mt-3 col-4">
+                                                    <label for="formGroupExampleInput">Serie</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                </div>
+                                                <div class="form-group mt-3 col-1">
+                                                    <label for="formGroupExampleInput">%CG</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Navs dias -->
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" id="nav-segunda-tab" data-toggle="tab" href="#nav-segunda" role="tab" aria-controls="nav-segunda" aria-selected="false">Segunda</a>
+                                            <a class="nav-item nav-link" id="nav-terca-tab" data-toggle="tab" href="#nav-terca" role="tab" aria-controls="nav-terca" aria-selected="false">Terça</a>
+                                            <a class="nav-item nav-link" id="nav-quarta-tab" data-toggle="tab" href="#nav-quarta" role="tab" aria-controls="nav-quarta" aria-selected="false">Quarta</a>
+                                            <a class="nav-item nav-link" id="nav-quinta-tab" data-toggle="tab" href="#nav-quinta" role="tab" aria-controls="nav-quinta" aria-selected="false">Quinta</a>
+                                            <a class="nav-item nav-link" id="nav-sexta-tab" data-toggle="tab" href="#nav-sexta" role="tab" aria-controls="nav-sexta" aria-selected="false">Sexta</a>
+                                        </div>
+                                    </nav>
+                                    
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <!-- Div segunda -->
+                                        <div class="tab-pane fade" id="nav-segunda" role="tabpanel" aria-labelledby="nav-segunda-tab">
+                                            <form action="">
+                                                <div class="row mb-3 mt-3">
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">GM</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-4">
+                                                        <label for="formGroupExampleInput">Exercicio</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">Carga</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Div terça -->
+                                        <div class="tab-pane fade" id="nav-terca" role="tabpanel" aria-labelledby="nav-terca-tab">
+                                            <form action="">
+                                                <div class="row mb-3 mt-3">
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">GM</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-4">
+                                                        <label for="formGroupExampleInput">Exercicio</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">Carga</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Div Quarta -->
+                                        <div class="tab-pane fade" id="nav-quarta" role="tabpanel" aria-labelledby="nav-quarta-tab">
+                                            <form action="">
+                                                <div class="row mb-3 mt-3">
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">GM</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-4">
+                                                        <label for="formGroupExampleInput">Exercicio</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">Carga</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Div quinta -->
+                                        <div class="tab-pane fade" id="nav-quinta" role="tabpanel" aria-labelledby="nav-quinta-tab">
+                                            <form action="">
+                                                <div class="row mb-3 mt-3">
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">GM</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-4">
+                                                        <label for="formGroupExampleInput">Exercicio</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">Carga</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Div sexta -->
+                                        <div class="tab-pane fade" id="nav-sexta" role="tabpanel" aria-labelledby="nav-sexta-tab">
+                                            <form action="">
+                                                <div class="row mb-3 mt-3">
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">GM</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-4">
+                                                        <label for="formGroupExampleInput">Exercicio</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">Carga</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-3 text-center">
-                                    <label for="inputGM">SERIES</label>
-                                    <input type="text" class="form-control" id="inputSerie">
-                                </div>
-                                <div class="form-group col-md-1 text-center">
-                                    <label for="inputGM">%CG</label>
-                                    <input type="text" class="form-control" id="inputCG">
-                                </div>
-                                <div class="form-group col-md-1 text-center">
-                                    <label for="inputGM">CG</label>
-                                    <input type="text" class="form-control" id="inputCG">
-                                </div>
-                                <div class="form-group col-md-1 text-center">
-                                    <label for="inputGM">Feedback</label>
-                                    <input type="text" class="form-control" id="inputFB">
-                                </div>
-
-                            </div>
-
-                            <!-- Campo de observações -->
-                            <div class="row mb-3">
-                                <div class="form-group col-md-11">
-                                    <label for="inputData">Observações:</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                                </div>
+                                <!-- dias semana 2 -->
+                                <div class="tab-pane fade" id="nav-s2" role="tabpanel" aria-labelledby="nav-s2-tab">...</div>
+                                <div class="tab-pane fade" id="nav-s3" role="tabpanel" aria-labelledby="nav-s3-tab">...</div>
                             </div>
                             
-
+                            <br>    
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
