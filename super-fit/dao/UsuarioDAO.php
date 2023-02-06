@@ -52,17 +52,11 @@
             $usuario->setIdUsuario($row['idUsuario']);
             $usuario->setNome($row['Nome']);
             $usuario->setData_Nascimento($row['Data_Nascimento']);
-            $usuario->setSexo($row['Sexo']);
             $usuario->setCpf($row['CPF']);
-            $usuario->setRg($row['RG']);
-            $usuario->setTelefone($row['Telefone']);
             $usuario->setCelular($row['Celular']);
-            $usuario->setCep($row['CEP']);
-            $usuario->setEstado($row['Estado']);
             $usuario->setCidade($row['Cidade']);
             $usuario->setEndereco($row['Endereco']);
             $usuario->setEmail($row['Email']);
-            $usuario->setData_Cadastro($row['Data_Cadastro']);
 
             return $usuario;
         }

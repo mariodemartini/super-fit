@@ -59,10 +59,6 @@ include_once('include/sidebar.html');
                                                         <label for="formGroupExampleInput">Serie</label>
                                                         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
                                                     </div>
-                                                    <div class="form-group mt-3 col-1">
-                                                        <label for="formGroupExampleInput">%CG</label>
-                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                                                    </div>
                                                 </div>
                                             </form>
                                         </div>

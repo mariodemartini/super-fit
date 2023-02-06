@@ -140,16 +140,12 @@ $professordao = new ProfessorDAO();
                                         <th>Id</th>
                                         <th>Nome</th>
                                         <th>Data Nasc.</th>
-                                        <th>Sexo</th>
                                         <th>CPF</th>
                                         <th>CREF</th>
                                         <th>Celular</th>
-                                        <th>CEP</th>
-                                        <th>Estado</th>
                                         <th>Cidade</th>
                                         <th>Endereço</th>
                                         <th>Email</th>
-                                        <th>Senha</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -160,16 +156,12 @@ $professordao = new ProfessorDAO();
                                         <td><?= $professor->getIdProfessor() ?></td>
                                         <td><?= $professor->getNome() ?></td>
                                         <td><?= $professor->getData_Nascimento() ?></td>
-                                        <td><?= $professor->getSexo() ?></td>
                                         <td><?= $professor->getCpf() ?></td>
                                         <td><?= $professor->getCref() ?></td>
                                         <td><?= $professor->getCelular() ?></td>
-                                        <td><?= $professor->getCep() ?></td>
-                                        <td><?= $professor->getEstado() ?></td>
                                         <td><?= $professor->getCidade() ?></td>
                                         <td><?= $professor->getEndereco() ?></td>
                                         <td><?= $professor->getEmail() ?></td>
-                                        <td><?= $professor->getSenha() ?></td>
                                         <td class="text-center">
                                             <a href="editar-prof.php"><button type="button" class="btn btn-warning">editar</button></a>
                                             <a href="controller/ProfessorController.php?del=<?= $professor->getIdProfessor() ?>">
