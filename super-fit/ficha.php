@@ -59,6 +59,10 @@ include_once('include/sidebar.html');
                                                         <label for="formGroupExampleInput">Serie</label>
                                                         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
                                                     </div>
+                                                    <div class="form-group mt-3 col-1">
+                                                        <label for="formGroupExampleInput">%CG</label>
+                                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -339,11 +343,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda2-tab" data-toggle="tab" href="#nav-segunda2" role="tab" aria-controls="nav-segunda2" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca2-tab" data-toggle="tab" href="#nav-terca2" role="tab" aria-controls="nav-terca2" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta2-tab" data-toggle="tab" href="#nav-quarta2" role="tab" aria-controls="nav-quarta2" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta2-tab" data-toggle="tab" href="#nav-quinta2" role="tab" aria-controls="nav-quinta2" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta2-tab" data-toggle="tab" href="#nav-sexta2" role="tab" aria-controls="nav-sexta2" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda2-tab" data-toggle="tab" href="#nav-segunda2" role="tab" aria-controls="nav-segunda2" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca2-tab" data-toggle="tab" href="#nav-terca2" role="tab" aria-controls="nav-terca2" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta2-tab" data-toggle="tab" href="#nav-quarta2" role="tab" aria-controls="nav-quarta2" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta2-tab" data-toggle="tab" href="#nav-quinta2" role="tab" aria-controls="nav-quinta2" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta2-tab" data-toggle="tab" href="#nav-sexta2" role="tab" aria-controls="nav-sexta2" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -612,11 +616,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda3-tab" data-toggle="tab" href="#nav-segunda3" role="tab" aria-controls="nav-segunda3" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca3-tab" data-toggle="tab" href="#nav-terca3" role="tab" aria-controls="nav-terca3" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta3-tab" data-toggle="tab" href="#nav-quarta3" role="tab" aria-controls="nav-quarta3" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta3-tab" data-toggle="tab" href="#nav-quinta3" role="tab" aria-controls="nav-quinta3" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta3-tab" data-toggle="tab" href="#nav-sexta3" role="tab" aria-controls="nav-sexta3" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda3-tab" data-toggle="tab" href="#nav-segunda3" role="tab" aria-controls="nav-segunda3" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca3-tab" data-toggle="tab" href="#nav-terca3" role="tab" aria-controls="nav-terca3" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta3-tab" data-toggle="tab" href="#nav-quarta3" role="tab" aria-controls="nav-quarta3" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta3-tab" data-toggle="tab" href="#nav-quinta3" role="tab" aria-controls="nav-quinta3" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta3-tab" data-toggle="tab" href="#nav-sexta3" role="tab" aria-controls="nav-sexta3" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -885,11 +889,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda4-tab" data-toggle="tab" href="#nav-segunda4" role="tab" aria-controls="nav-segunda4" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca4-tab" data-toggle="tab" href="#nav-terca4" role="tab" aria-controls="nav-terca4" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta4-tab" data-toggle="tab" href="#nav-quarta4" role="tab" aria-controls="nav-quarta4" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta4-tab" data-toggle="tab" href="#nav-quinta4" role="tab" aria-controls="nav-quinta4" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta4-tab" data-toggle="tab" href="#nav-sexta4" role="tab" aria-controls="nav-sexta4" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda4-tab" data-toggle="tab" href="#nav-segunda4" role="tab" aria-controls="nav-segunda4" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca4-tab" data-toggle="tab" href="#nav-terca4" role="tab" aria-controls="nav-terca4" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta4-tab" data-toggle="tab" href="#nav-quarta4" role="tab" aria-controls="nav-quarta4" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta4-tab" data-toggle="tab" href="#nav-quinta4" role="tab" aria-controls="nav-quinta4" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta4-tab" data-toggle="tab" href="#nav-sexta4" role="tab" aria-controls="nav-sexta4" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -1158,11 +1162,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda5-tab" data-toggle="tab" href="#nav-segunda5" role="tab" aria-controls="nav-segunda5" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca5-tab" data-toggle="tab" href="#nav-terca5" role="tab" aria-controls="nav-terca5" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta5-tab" data-toggle="tab" href="#nav-quarta5" role="tab" aria-controls="nav-quarta5" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta5-tab" data-toggle="tab" href="#nav-quinta5" role="tab" aria-controls="nav-quinta5" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta5-tab" data-toggle="tab" href="#nav-sexta5" role="tab" aria-controls="nav-sexta5" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda5-tab" data-toggle="tab" href="#nav-segunda5" role="tab" aria-controls="nav-segunda5" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca5-tab" data-toggle="tab" href="#nav-terca5" role="tab" aria-controls="nav-terca5" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta5-tab" data-toggle="tab" href="#nav-quarta5" role="tab" aria-controls="nav-quarta5" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta5-tab" data-toggle="tab" href="#nav-quinta5" role="tab" aria-controls="nav-quinta5" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta5-tab" data-toggle="tab" href="#nav-sexta5" role="tab" aria-controls="nav-sexta5" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -1432,10 +1436,10 @@ include_once('include/sidebar.html');
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                 <a class="nav-item nav-link" id="nav-segunda6-tab" data-toggle="tab" href="#nav-segunda6" role="tab" aria-controls="nav-segunda6" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca6-tab" data-toggle="tab" href="#nav-terca6" role="tab" aria-controls="nav-terca6" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta6-tab" data-toggle="tab" href="#nav-quarta6" role="tab" aria-controls="nav-quarta6" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta6-tab" data-toggle="tab" href="#nav-quinta6" role="tab" aria-controls="nav-quinta6" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta6-tab" data-toggle="tab" href="#nav-sexta6" role="tab" aria-controls="nav-sexta6" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca6-tab" data-toggle="tab" href="#nav-terca6" role="tab" aria-controls="nav-terca6" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta6-tab" data-toggle="tab" href="#nav-quarta6" role="tab" aria-controls="nav-quarta6" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta6-tab" data-toggle="tab" href="#nav-quinta6" role="tab" aria-controls="nav-quinta6" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta6-tab" data-toggle="tab" href="#nav-sexta6" role="tab" aria-controls="nav-sexta6" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -1721,11 +1725,11 @@ include_once('include/sidebar.html');
                                         <!-- Navs dias -->
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda7-tab" data-toggle="tab" href="#nav-segunda7" role="tab" aria-controls="nav-segunda7" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca7-tab" data-toggle="tab" href="#nav-terca7" role="tab" aria-controls="nav-terca7" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta7-tab" data-toggle="tab" href="#nav-quarta7" role="tab" aria-controls="nav-quarta7" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta7-tab" data-toggle="tab" href="#nav-quinta7" role="tab" aria-controls="nav-quinta7" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta7-tab" data-toggle="tab" href="#nav-sexta7" role="tab" aria-controls="nav-sexta7" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda7-tab" data-toggle="tab" href="#nav-segunda7" role="tab" aria-controls="nav-segunda7" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca7-tab" data-toggle="tab" href="#nav-terca7" role="tab" aria-controls="nav-terca7" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta7-tab" data-toggle="tab" href="#nav-quarta7" role="tab" aria-controls="nav-quarta7" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta7-tab" data-toggle="tab" href="#nav-quinta7" role="tab" aria-controls="nav-quinta7" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta7-tab" data-toggle="tab" href="#nav-sexta7" role="tab" aria-controls="nav-sexta7" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                 
@@ -1995,11 +1999,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda8-tab" data-toggle="tab" href="#nav-segund8" role="tab" aria-controls="nav-segunda8" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca8-tab" data-toggle="tab" href="#nav-terca8" role="tab" aria-controls="nav-terca8" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta8-tab" data-toggle="tab" href="#nav-quarta8" role="tab" aria-controls="nav-quarta8" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta8-tab" data-toggle="tab" href="#nav-quinta8" role="tab" aria-controls="nav-quinta8" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta9-tab" data-toggle="tab" href="#nav-sexta9" role="tab" aria-controls="nav-sexta9" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda8-tab" data-toggle="tab" href="#nav-segund8" role="tab" aria-controls="nav-segunda8" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca8-tab" data-toggle="tab" href="#nav-terca8" role="tab" aria-controls="nav-terca8" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta8-tab" data-toggle="tab" href="#nav-quarta8" role="tab" aria-controls="nav-quarta8" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta8-tab" data-toggle="tab" href="#nav-quinta8" role="tab" aria-controls="nav-quinta8" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta9-tab" data-toggle="tab" href="#nav-sexta9" role="tab" aria-controls="nav-sexta9" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -2268,11 +2272,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda9-tab" data-toggle="tab" href="#nav-segunda9" role="tab" aria-controls="nav-segunda9" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca9-tab" data-toggle="tab" href="#nav-terca9" role="tab" aria-controls="nav-terca9" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta9-tab" data-toggle="tab" href="#nav-quarta9" role="tab" aria-controls="nav-quarta9" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta9-tab" data-toggle="tab" href="#nav-quinta9" role="tab" aria-controls="nav-quinta9" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta9-tab" data-toggle="tab" href="#nav-sexta9" role="tab" aria-controls="nav-sexta9" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda9-tab" data-toggle="tab" href="#nav-segunda9" role="tab" aria-controls="nav-segunda9" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca9-tab" data-toggle="tab" href="#nav-terca9" role="tab" aria-controls="nav-terca9" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta9-tab" data-toggle="tab" href="#nav-quarta9" role="tab" aria-controls="nav-quarta9" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta9-tab" data-toggle="tab" href="#nav-quinta9" role="tab" aria-controls="nav-quinta9" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta9-tab" data-toggle="tab" href="#nav-sexta9" role="tab" aria-controls="nav-sexta9" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -2541,11 +2545,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda10-tab" data-toggle="tab" href="#nav-segunda10" role="tab" aria-controls="nav-segunda10" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca10-tab" data-toggle="tab" href="#nav-terca10" role="tab" aria-controls="nav-terca10" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta10-tab" data-toggle="tab" href="#nav-quarta10" role="tab" aria-controls="nav-quarta10" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta10-tab" data-toggle="tab" href="#nav-quinta10" role="tab" aria-controls="nav-quinta10" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta10-tab" data-toggle="tab" href="#nav-sexta10" role="tab" aria-controls="nav-sexta10" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda10-tab" data-toggle="tab" href="#nav-segunda10" role="tab" aria-controls="nav-segunda10" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca10-tab" data-toggle="tab" href="#nav-terca10" role="tab" aria-controls="nav-terca10" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta10-tab" data-toggle="tab" href="#nav-quarta10" role="tab" aria-controls="nav-quarta10" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta10-tab" data-toggle="tab" href="#nav-quinta10" role="tab" aria-controls="nav-quinta10" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta10-tab" data-toggle="tab" href="#nav-sexta10" role="tab" aria-controls="nav-sexta10" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -2814,11 +2818,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda11-tab" data-toggle="tab" href="#nav-segunda11" role="tab" aria-controls="nav-segunda11" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca11-tab" data-toggle="tab" href="#nav-terca11" role="tab" aria-controls="nav-terca11" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta11-tab" data-toggle="tab" href="#nav-quarta11" role="tab" aria-controls="nav-quarta11" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta11-tab" data-toggle="tab" href="#nav-quinta11" role="tab" aria-controls="nav-quinta11" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta11-tab" data-toggle="tab" href="#nav-sexta11" role="tab" aria-controls="nav-sexta11" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda11-tab" data-toggle="tab" href="#nav-segunda11" role="tab" aria-controls="nav-segunda11" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca11-tab" data-toggle="tab" href="#nav-terca11" role="tab" aria-controls="nav-terca11" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta11-tab" data-toggle="tab" href="#nav-quarta11" role="tab" aria-controls="nav-quarta11" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta11-tab" data-toggle="tab" href="#nav-quinta11" role="tab" aria-controls="nav-quinta11" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta11-tab" data-toggle="tab" href="#nav-sexta11" role="tab" aria-controls="nav-sexta11" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -3087,11 +3091,11 @@ include_once('include/sidebar.html');
                                         </div>
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link" id="nav-segunda12-tab" data-toggle="tab" href="#nav-segunda12" role="tab" aria-controls="nav-segunda12" aria-selected="false">Segunda</a>
-                                                <a class="nav-item nav-link" id="nav-terca12-tab" data-toggle="tab" href="#nav-terca12" role="tab" aria-controls="nav-terca12" aria-selected="false">Terça</a>
-                                                <a class="nav-item nav-link" id="nav-quarta12-tab" data-toggle="tab" href="#nav-quarta12" role="tab" aria-controls="nav-quarta12" aria-selected="false">Quarta</a>
-                                                <a class="nav-item nav-link" id="nav-quinta12-tab" data-toggle="tab" href="#nav-quinta12" role="tab" aria-controls="nav-quinta12" aria-selected="false">Quinta</a>
-                                                <a class="nav-item nav-link" id="nav-sexta12-tab" data-toggle="tab" href="#nav-sexta12" role="tab" aria-controls="nav-sexta12" aria-selected="false">Sexta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-segunda12-tab" data-toggle="tab" href="#nav-segunda12" role="tab" aria-controls="nav-segunda12" aria-selected="false">Segunda</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-terca12-tab" data-toggle="tab" href="#nav-terca12" role="tab" aria-controls="nav-terca12" aria-selected="false">Terça</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quarta12-tab" data-toggle="tab" href="#nav-quarta12" role="tab" aria-controls="nav-quarta12" aria-selected="false">Quarta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-quinta12-tab" data-toggle="tab" href="#nav-quinta12" role="tab" aria-controls="nav-quinta12" aria-selected="false">Quinta</a>
+                                                <a class="nav-item nav-link bg-info text-white" id="nav-sexta12-tab" data-toggle="tab" href="#nav-sexta12" role="tab" aria-controls="nav-sexta12" aria-selected="false">Sexta</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
