@@ -17,7 +17,9 @@ include_once('include/sidebar.html');
                         
                         <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
                         
-                        <a class="btn btn-info btn-block" href="testes.php"><button type="button" class="btn btn-info btn-lg">TESTES</button></a>
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
+                        
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         
                         <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
                     </div>
@@ -201,6 +203,12 @@ include_once('include/sidebar.html');
                                                 <label for="inputCoxa" class="col-sm-4 col-form-label">Coxa</label>
                                                 <div class="col-sm-4">
                                                 <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
+                                                <div class="col-sm-4">
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm">
                                                 </div>
                                             </div>
                                         </form>

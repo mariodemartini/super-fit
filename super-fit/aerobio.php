@@ -52,15 +52,19 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="sedentario">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="iniciante">
                                                 <label class="form-check-label" for="gridRadios2">Iniciante</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="moderado">
-                                                <label class="form-check-label" for="gridRadios2">Intermediário</label>
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="interI">
+                                                <label class="form-check-label" for="gridRadios2">Intermediário I</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="ativo">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="interII">
+                                                <label class="form-check-label" for="gridRadios2">Intermediário II</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experiencia" id="gridRadios" value="avancado">
                                                 <label class="form-check-label" for="gridRadios2">Avançado</label>
                                             </div>
                                         </div>
@@ -96,24 +100,24 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="sedentario">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="adaptacao">
                                                 <label class="form-check-label" for="gridRadios2">Adaptação</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="moderado">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="velocidade">
                                                 <label class="form-check-label" for="gridRadios2">Velocidade</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="resistencia">
                                                 <label class="form-check-label" for="gridRadios2">Resistência</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="hiit">
                                                 <label class="form-check-label" for="gridRadios2">HIIT</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="ativo">
-                                                <label class="form-check-label" for="gridRadios2">Transição</label>
+                                                <input class="form-check-input" type="checkbox" name="fase" id="gridRadios" value="recuperativo">
+                                                <label class="form-check-label" for="gridRadios2">Recuperativo</label>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -124,15 +128,15 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Duração:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="sedentario">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="4">
                                                 <label class="form-check-label" for="gridRadios2">4 semanas</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="moderado">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="8">
                                                 <label class="form-check-label" for="gridRadios2">8 semanas</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="ativo">
+                                                <input class="form-check-input" type="checkbox" name="duracao" id="gridRadios" value="12">
                                                 <label class="form-check-label" for="gridRadios2">12 semanas</label>
                                             </div>
                                         </div>
@@ -143,28 +147,32 @@ include_once('include/sidebar.html');
                             <div class="row mb-3">
                                 <div class="row justify-content-center mb-3">
                                     <div class="btn-group btn-group-lg col-md-12 text-center">
-                                        <button type="button" class="btn btn-primary border-dark">S-01</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-02</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-03</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-04</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-05</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-06</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-07</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-08</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-09</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-10</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-11</button>
-                                        <button type="button" class="btn btn-primary border-dark">S-12</button>
+                                        <div class="row">
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-01</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-02</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-03</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-04</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-05</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-06</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-07</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-08</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-09</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-10</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-11</button></div>
+                                            <div class="col-2 col-sm-1"><button type="button" class="btn btn-primary border-dark">S-12</button></div>
+                                        </div>
                                     </div>
                                 </div> 
                                 <!-- Linha de divisão dos treinos -->
-                                <div class="row justify-content-center mb-3">
+                                <div class="row justify-content-around mb-3">
                                     <div class="btn-group btn-group-lg col-md-12 text-center">
-                                        <button type="button" class="btn btn-secondary border-dark">TREINO A</button>
-                                        <button type="button" class="btn btn-secondary border-dark">TREINO B</button>
-                                        <button type="button" class="btn btn-secondary border-dark">TREINO C</button>
-                                        <button type="button" class="btn btn-secondary border-dark">TREINO D</button>
-                                        <button type="button" class="btn btn-secondary border-dark">TREINO E</button>
+                                        <div class="row">
+                                            <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO A</button></div>
+                                            <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO B</button></div>
+                                            <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO C</button></div>
+                                            <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO D</button></div>
+                                            <div class="col-2 col-sm-2"><button type="button" class="btn btn-secondary border-dark">TREINO E</button></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Formulário do treino -->
@@ -172,20 +180,20 @@ include_once('include/sidebar.html');
                                     <form>
                                         <!-- Coluna grupo muscular -->
                                         <div class="form-group col-md-1 text-center">
-                                            <label for="inputGM">G.M.</label>
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
-                                            <input type="text" class="form-control" id="inputGM">
+                                            <label for="inputERG">ERG</label>
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
+                                            <input type="text" class="form-control" id="inputERG">
                                         </div>
                                         <!-- Coluna exercicios -->
-                                        <div class="form-group col-md-4 text-center">
+                                        <div class="form-group col-md-3 text-center">
                                             <label for="inputExercicio">EXERCÍCIOS</label>
                                             <input type="text" class="form-control" id="inputExercicio">
                                             <input type="text" class="form-control" id="inputExercicio">
@@ -212,19 +220,47 @@ include_once('include/sidebar.html');
                                             <input type="text" class="form-control" id="inputSerie">
                                             <input type="text" class="form-control" id="inputSerie">
                                         </div>
-                                        <!-- Coluna de carga -->
+                                        <!-- Coluna de % carga -->
                                         <div class="form-group col-md-1 text-center">
-                                            <label for="inputCG">C.G.</label>
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputGG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
-                                            <input type="text" class="form-control" id="inputCG">
+                                            <label for="inputCG">%CG</label>
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                            <input type="text" class="form-control" id="input%CG">
+                                        </div>
+                                        <!-- Coluna de carga FC-->
+                                        <div class="form-group col-md-1 text-center">
+                                            <label for="inputFC">F.C</label>
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                            <input type="text" class="form-control" id="inputFC">
+                                        </div>
+                                        <!-- Coluna de carga VO2 -->
+                                        <div class="form-group col-md-1 text-center">
+                                            <label for="inputVO2">VO2</label>
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
+                                            <input type="text" class="form-control" id="inputVO2">
                                         </div>
                                         <!-- Coluna de feedback -->
                                         <div class="form-group col-md-1 text-center">

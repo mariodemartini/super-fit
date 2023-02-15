@@ -11,8 +11,14 @@
         <title>SUPER FIT</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url(imagem/bg-1.jpg);
+            background-size: cover;
+        }
+    </style>
     </head>
-    <body class="bg-white">
+    <body class="bg-white"> 
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -20,7 +26,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">LOGIN SUPER FIT</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4 ">LOGIN SUPER FIT</h3></div>
                                     <div class="card-body">
                                         <form>
                                             <div class="form-floating mb-3">
@@ -66,4 +72,3 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
-

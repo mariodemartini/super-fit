@@ -17,7 +17,9 @@ include_once('include/sidebar.html');
                         
                         <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
                         
-                        <a class="btn btn-info btn-block" href="testes.php"><button type="button" class="btn btn-info btn-lg">TESTES</button></a>
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
+                        
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         
                         <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
                     </div>
@@ -83,25 +85,40 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
-                            <!-- Linha compativo % gordura -->
+                            <!-- Linha Abdomen -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">% Gordura</li>
+                                    <li class="list-group-item">Abdomen</li>
                                 </ul>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
                                 </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
-                            <!-- Linha compativo % massa magra -->
+                            <!-- Linha RCQ -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">% Massa Magra</li>
+                                    <li class="list-group-item">RCQ</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="cm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Linha compativo % gordura -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">% Gordura</li>
                                 </ul>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="%">
@@ -128,16 +145,46 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
-                            <!-- Linha compativo peso massa muscular -->
+                            <!-- Linha compativo % massa magra -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">M. Muscular (kg)</li>
+                                    <li class="list-group-item">% Massa Magra</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Linha compativo peso massa magra -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">M. Magra (kg)</li>
                                 </ul>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
                                 </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Linha compativo FC maxima -->
+                            <div class="row d-flex justify-content-center">
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">F.C Máxima</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="bpm">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="number" placeholder="bpm">
                                 </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
