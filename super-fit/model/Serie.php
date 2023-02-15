@@ -1,6 +1,7 @@
 <?php
     
-    Class Serie{
+    Class Serie
+    {
         private $idSerie;
         private $nivel;
         private $fase;
@@ -8,57 +9,55 @@
         private $percent_carga;
 
         function getIdSerie()
-    { 
-        return $this->idSerie; 
-    }
+        { 
+            return $this->idSerie; 
+        }
 
-    function setIdSerie($idSerie)
-    { 
-        $this->idSerie = $idSerie; 
-    }
+        function setIdSerie($idSerie)
+        { 
+            $this->idSerie = $idSerie; 
+        }
 
-    function getNivel()
-    { 
-        return $this->nivel; 
-    }
+        function getNivel()
+        { 
+            return $this->nivel; 
+        }
 
-    function setNivel($nivel)
-    { 
-        $this->nivel = $nivel; 
-    }
+        function setNivel($nivel)
+        { 
+            $this->nivel = $nivel; 
+        }
 
-    function getFase()
-    { 
-        return $this->fase; 
-    }
+        function getFase()
+        { 
+            return $this->fase; 
+        }
 
-    function setFase($fase)
-    { 
-        $this->fase = $fase; 
-    }
+        function setFase($fase)
+        { 
+            $this->fase = $fase; 
+        }
 
-    function getSerie()
-    { 
-        return $this->serie; 
-    }
+        function getSerie()
+        { 
+            return $this->serie; 
+        }
 
-    function setSerie($serie)
-    { 
-        $this->serie = $serie; 
-    }
+        function setSerie($serie)
+        { 
+            $this->serie = $serie; 
+        }
 
-    function getPercent_Carga()
-    { 
-        return $this->percent_carga; 
-    }
+        function getPercent_Carga()
+        { 
+            return $this->percent_carga; 
+        }
 
-    function setPercent_Carga($percent_carga)
-    { 
-        $this->percent_carga = $percent_carga; 
-    }
+        function setPercent_Carga($percent_carga)
+        { 
+            $this->percent_carga = $percent_carga; 
+        }
 
     }
-
-    
 
 ?>
