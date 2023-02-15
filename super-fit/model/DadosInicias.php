@@ -38,27 +38,27 @@
             $this->altura = $altura;
         }
 
-        function getFreq_Card()
+        function getFreq_card()
         {
             return $this->freq_card;           
         }
 
-        function setFreq_Card($freq_card)
+        function setFreq_card($freq_card)
         {
             $this->freq_card = $freq_card;
         }
 
-        function getPressao_Arterial()
+        function getPressao_arterial()
         {
             return $this->pressao_arterial;           
         }
 
-        function setPressao_Arterial($pressao_arterial)
+        function setPressao_arterial($pressao_arterial)
         {
             $this->pressao_arterial = $pressao_arterial;
         }
         
-        function setData_Cadastro($data_cadastro)
+        function setData_cadastro($data_cadastro)
         {
             $this->data_cadastro = $data_cadastro;
         }
