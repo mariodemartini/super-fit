@@ -55,7 +55,7 @@ $usuariodao = new UsuarioDAO();
                         <td class="text-center">
                             <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a>
                             <a href="controller/UsuarioController.php?del=<?= $usuario->getIdUsuario() ?>"> 
-                            <button class="btn  btn-danger btn-sm" type="button">Excluir</button></a>
+                            <button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
                         </td>
                     </tr>
                     <?php endforeach ?>
