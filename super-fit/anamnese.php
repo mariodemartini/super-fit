@@ -16,8 +16,10 @@ include_once('include/sidebar.html');
                         <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg">ANAMNESE</button></a>
                         
                         <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
+
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
                         
-                        <a class="btn btn-info btn-block" href="testes.php"><button type="button" class="btn btn-info btn-lg">TESTES</button></a>
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
                         
                         <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
                     </div>
@@ -98,6 +100,10 @@ include_once('include/sidebar.html');
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="hipertrofia">
                                                 <label class="form-check-label" for="gridRadios1">Hipertrofia</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="manutencao">
+                                                <label class="form-check-label" for="gridRadios1">Manutenção</label>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -427,6 +433,12 @@ include_once('include/sidebar.html');
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                                 <label class="form-check-label" for="defaultCheck1">
+                                                    Hipotireoidismo
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1">
                                                     Tontura
                                                 </label>
                                             </div>
@@ -451,7 +463,7 @@ include_once('include/sidebar.html');
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
                                                 <label class="form-check-label" for="defaultCheck2">
-                                                    aquicardia
+                                                    Taquicardia
                                                 </label>
                                             </div>
                                             <div class="form-check">
