@@ -38,8 +38,8 @@
         private function listaExercicio($row) {
             $exercicio = new Exercicio();
             $exercicio->setIdExercicio($row['idExercicio']);
-            $exercicio->setGrupo_Muscular($row['Grupo_Muscular']);
-            $exercicio->setDescricao($row['Descricao']);
+            $exercicio->setGrupoMuscular($row['grupo_muscular']);
+            $exercicio->setDescricao($row['descricao']);
 
             return $exercicio;
         }
@@ -66,7 +66,7 @@
                                 
                     WHERE idExercicio = :idExercicio";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupo_Muscular());
+                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupoMuscular());
                 $p_sql->bindValue(":descricao", $exercicio->getDescricao());
                 
                 return $p_sql->execute();

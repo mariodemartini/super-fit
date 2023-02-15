@@ -1,41 +1,40 @@
 <?php
     
-    Class Exercicio{
+    Class Exercicio
+    {
         private $idExercicio;
-        private $Grupo_Muscular;
-        private $Descricao;
-
-
+        private $grupoMuscular;
+        private $descricao;
 
         function getIdExercicio()
-    { 
-        return $this->idExercicio; 
-    }
+        { 
+            return $this->idExercicio; 
+        }
 
-    function setIdExercicio($idExercicio)
-    { 
-        $this->idExercicio = $idExercicio; 
-    }
+        function setIdExercicio($idExercicio)
+        { 
+            $this->idExercicio = $idExercicio; 
+        }
 
-    function getGrupo_Muscular()
-    { 
-        return $this->Grupo_Muscular; 
-    }
+        function getGrupoMuscular()
+        { 
+            return $this->grupoMuscular; 
+        }
 
-    function setGrupo_Muscular($Grupo_Muscular)
-    { 
-        $this->Grupo_Muscular = $Grupo_Muscular; 
-    }
+        function setGrupoMuscular($grupoMuscular)
+        { 
+            $this->mrupo_Muscular = $grupoMuscular; 
+        }
 
-    function getDescricao()
-    { 
-        return $this->Descricao; 
-    }
+        function getDescricao()
+        { 
+            return $this->descricao; 
+        }
 
-    function setDescricao($Descricao)
-    { 
-        $this->Descricao = $Descricao; 
-    }
+        function setDescricao($descricao)
+        { 
+            $this->descricao = $descricao; 
+        }
 
     }
 
