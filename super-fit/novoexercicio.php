@@ -6,9 +6,14 @@ include_once('include/sidebar.html');
 include_once('./conexao/Conexao.php');
 include_once('./model/Exercicio.php');
 include_once('./dao/ExercicioDAO.php');
+include_once('./model/Serie.php');
+include_once('./dao/SerieDAO.php');
 
-$exercicios = new Exercicio();
-$exerciciosDAO = new ExercicioDAO();
+$exercicio = new Exercicio();
+$exercicioDAO = new ExercicioDAO();
+
+$serie = new Serie();
+$serieDAO = new SerieDAO();
 ?>
 <main>
     <div class="container">
@@ -19,58 +24,73 @@ $exerciciosDAO = new ExercicioDAO();
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE EXERCÍCIOS</h3></div>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
-                        <form action="" method="POST">
+                        
+                        <!-- Formulário do treino Musculação-->
+                        <div class="row mb-3">
+                            <form action="controller/ExercicioController.php" method="POST">
 
-                            <!-- Formulário do treino Musculação-->
-                            <div class="row mb-3">
-                                <h4>Novo Execícios</h4>
-                                <form>
-                                    <!-- Coluna grupo muscular -->
-                                    <div class="col-3 .col-md-3">
+                                <h4>Novo Execício</h4>
+                                <!-- Coluna grupo muscular -->
+                                <div class="row mb-3">
+                                    <div class="col-sm-1">
                                         <label for="inputGM">GM</label>
                                         <input type="text" class="form-control" id="inputGM" name="grupo_muscular">
                                     </div>
                                     <!-- Coluna exercicios -->
-                                    <div class="col-3 .col-md-3">
-                                        <label for="inputExercicio">EXERCÍCIOS</label>
+                                    <div class="col-sm-5">
+                                        <label for="inputExercicio">EXERCÍCIO</label>
                                         <input type="text" class="form-control" id="inputExercicio" name="descricao">
                                     </div>
+                                </div>
 
-                                </form>
-                            </div> 
-                            <br>  
+                                <!-- Botões de salvar -->
+                                <div class="mt-4 mb-0">
+                                    <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
+                                    <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="pesquisa-exercicio.php">Pesquisar</a></button>
+                                </div>
 
-                             <!-- Formulário treino Aerobio -->
-                            <div class="row mb-3">
+                            </form>
+                        </div> 
+                        <br>  
+
+                            <!-- Formulário treino Aerobio -->
+                        <div class="row mb-3">
+                            <form action="controller/SerieController.php" method="POST">
+
                                 <h4>Nova Série</h4>
 
-                                <div class="col-3 .col-md-3">
-                                    <label for="inputGM">SERIES</label>
-                                    <input type="text" class="form-control" id="inputSerie">
-                                </div>
-                                <div class="col-3 .col-md-3">
-                                    <label for="inputGM">%CG</label>
-                                    <input type="text" class="form-control" id="inputCG">
-                                </div>
-                                <div class="col-3 .col-md-3">
-                                    <label for="inputGM">NIVEL</label>
-                                    <input type="text" class="form-control" id="inputCG">
-                                </div>
-                                <div class="col-3 .col-md-3">
-                                    <label for="inputGM">FASE</label>
-                                    <input type="text" class="form-control" id="inputCG">
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <label for="inputGM">SERIE</label>
+                                        <input type="text" class="form-control" id="inputSerie">
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="inputGM">%CG</label>
+                                        <input type="text" class="form-control" id="inputCG">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="inputGM">NIVEL</label>
+                                        <input type="text" class="form-control" id="inputCG">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="inputGM">FASE</label>
+                                        <input type="text" class="form-control" id="inputCG">
+                                    </div>
                                 </div>
 
-                            </div>
-                            
+                                <!-- Botões de salvar -->
+                                <div class="mt-4 mb-0">
+                                    <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
+                                    <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="pesquisa-serie.php">Pesquisar</a></button>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
 
-                            <!-- Botões de salvar -->
-                            <div class="mt-4 mb-0">
-                                <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
-                                <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
-                                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
-                            </div>
-                        </form>
+                        <!-- Botões de salvar -->
+                        <div class="mt-4 mb-0">
+                            <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
+                        </div>
                     </div>
                     <div class="card-footer text-center py-3"></div>
                 </div>
