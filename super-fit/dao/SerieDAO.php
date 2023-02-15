@@ -4,7 +4,7 @@
     {
         public function create(Serie $serie){
             try {
-                $sql = "INSERT INTO Serie (
+                $sql = "INSERT INTO Series (
                     nivel, fase, serie, percent_carga)
                     VALUES (
                     :nivel, :fase, :serie, :percent_carga)";
@@ -18,13 +18,13 @@
                 return $p_sql->execute();
                 
             } catch (Exception $e) {
-                print "Erro ao Inserir exercicio <br>" . $e . '<br>';
+                print "Erro ao Inserir serie <br>" . $e . '<br>';
             }      
         }
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Serie ORDER BY Nivel ASC";
+                $sql = "SELECT * FROM Series ORDER BY Nivel ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -50,12 +50,12 @@
 
         public function delete(Serie $serie){
             try {
-                $sql = "DELETE FROM Serie WHERE  idSerie = :idSerie";
+                $sql = "DELETE FROM Series WHERE  idSerie = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idSerie", $serie->getIdSerie());
                 return $p_sql->execute();
             } catch (Exception $e) {
-                echo "Erro ao Excluir professor <br> $e <br>";
+                echo "Erro ao Excluir serie <br> $e <br>";
             }
         }
 

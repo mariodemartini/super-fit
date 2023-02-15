@@ -4,7 +4,7 @@
     {
         public function create(Exercicio $exercicio){
             try {
-                $sql = "INSERT INTO Exercicio (
+                $sql = "INSERT INTO Exercicios (
                     grupo_muscular, descricao)
                     VALUES (
                     :grupo_muscular, :descricao)";
@@ -22,12 +22,12 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Exercicio ORDER BY Descricao ASC";
+                $sql = "SELECT * FROM Exercicios ORDER BY Grupo_Muscular ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
                 foreach ($lista as $l) {
-                    $f_lista[] = $this->listaexercicio($l);
+                    $f_lista[] = $this->listaExercicio($l);
                 } 
                 return $f_lista;
             } catch (Exception $e) {
@@ -35,7 +35,7 @@
             }
         }
 
-        private function listaexercicio($row) {
+        private function listaExercicio($row) {
             $exercicio = new Exercicio();
             $exercicio->setIdExercicio($row['idExercicio']);
             $exercicio->setGrupo_Muscular($row['Grupo_Muscular']);
@@ -46,25 +46,25 @@
 
         public function delete(Exercicio $exercicio){
             try {
-                $sql = "DELETE FROM exercicio WHERE  idexercicio = :idexercicio";
+                $sql = "DELETE FROM Exercicios WHERE  idExercicio = :idExercicio";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idexercicio", $exercicio->getIdExercicio());
+                $p_sql->bindValue(":idExercicio", $exercicio->getIdExercicio());
                 return $p_sql->execute();
             } catch (Exception $e) {
-                echo "Erro ao Excluir professor <br> $e <br>";
+                echo "Erro ao Excluir exercicio <br> $e <br>";
             }
         }
 
         public function update(Exercicio $exercicio)
         {
             try {
-                $sql = "UPDATE exercicio set
+                $sql = "UPDATE Exercicios set
                     
-                    idexercicio=:idexercicio,
+                    idExercicio=:idExercicio,
                     grupo_muscular=:grupo_muscular,
                     descricao=:descricao,
                                 
-                    WHERE idexercicio = :idexercicio";
+                    WHERE idExercicio = :idExercicio";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupo_Muscular());
                 $p_sql->bindValue(":descricao", $exercicio->getDescricao());
