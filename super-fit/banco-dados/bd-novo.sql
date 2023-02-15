@@ -66,7 +66,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Exercicios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Exercicios` (
-  `idExercicios` INT NOT NULL,
+  `idExercicios` INT NOT NULL AUTO_INCREMENT,
   `Grupo_Muscular` CHAR(3) NULL,
   `Descricao` VARCHAR(45) NULL,
   PRIMARY KEY (`idExercicios`))
@@ -77,7 +77,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Series`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Series` (
-  `idSeries` INT NOT NULL,
+  `idSeries` INT NOT NULL AUTO_INCREMENT,
   `Nivel` VARCHAR(45) NULL,
   `Fase` VARCHAR(45) NULL,
   `Serie` VARCHAR(45) NULL,
@@ -111,7 +111,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Treino`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
-  `idTreino` INT NOT NULL,
+  `idTreino` INT NOT NULL AUTO_INCREMENT,
   `idSeries` INT NOT NULL,
   `idExercicios` INT NOT NULL,
   `Carga` INT NULL,
@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Dobras_Cutaneas` (
   `idDobras_Cutaneas` INT NOT NULL AUTO_INCREMENT,
-  `idDobras_Cutaneas` FLOAT NULL,
+  `Peitoral` FLOAT NULL,
   `AxilarMedia` FLOAT NULL,
   `Abdominal` FLOAT NULL,
   `SupraIliaca` FLOAT NULL,
