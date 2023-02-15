@@ -1,45 +1,86 @@
 <?php
 
-   Class DobrasCutaneas{
-      private $idDobras_Cutaneas;
-      private $AxilarMedia;
-      private $Abdominal;
-      private $SupraIliaca;
-      private $Sub_Escapular;
-      private $Tricipital;
-      private $Coxa;
+   Class DobrasCutaneas
+   {
+      private $idDobrasCutaneas;
+      private $peitoral;
+      private $axilarMedia;
+      private $abdominal;
+      private $supraIliaca;
+      private $subEscapular;
+      private $tricipital;
+      private $coxa;
 
       function getidDobrasCutaneas()
       {
-         return $this->idDobras_Cutaneas;
+         return $this->idDobrasCutaneas;
       }
-
-      function setIdDobrasCutaneas($idDobras_Cutaneas) {
-        $this->idDobras_Cutaneas = $idDobras_Cutaneas;
-      }
-
-      function getAxilarMedia(){
-         return $this->AxilarMedia;
-      }
-      function setAxilarMedia($AxilarMedia){
-         $this->AxilarMedia = $AxilarMedia;
-      }
-
-      function getAbdominal(){
-         return $this->Abdominal;
-      }
-
-      function setAbdominal($Abdominal)
+      function setIdDobrasCutaneas($idDobrasCutaneas)
       {
-         $this->Abdominal = $Abdominal;
+        $this->idDobrasCutaneas = $idDobrasCutaneas;
       }
 
-      function getSupraIliaca(){
-         return $this->SupraIliaca;
+      function getPeitoral()
+      {
+         return $this->peitoral;
       }
-      function setSupraIliaca($SupraIliaca){
-         $this->SupraIliaca = $SupraIliaca;
-         
+      function setPeitoral($peitoral)
+      {
+         $this->peitoral = $peitoral;
+      }
+
+      function getAxilarMedia()
+      {
+         return $this->axilarMedia;
+      }
+      function setAxilarMedia($axilarMedia)
+      {
+         $this->axilarMedia = $axilarMedia;
+      }
+
+      function getAbdominal()
+      {
+         return $this->abdominal;
+      }
+      function setAbdominal($abdominal)
+      {
+         $this->abdominal = $abdominal;
+      }
+
+      function getSupraIliaca()
+      {
+         return $this->supraIliaca;
+      }
+      function setSupraIliaca($supraIliaca)
+      {
+         $this->supraIliaca = $supraIliaca;  
+      }
+
+      function getSubEscapular()
+      {
+         return $this->subEscapular;
+      }
+      function setSubEscapular($subEscapular)
+      {
+         $this->subEscapular = $subEscapular;  
+      }
+
+      function getTricipital()
+      {
+         return $this->tricipital;
+      }
+      function setTricipital($tricipital)
+      {
+         $this->tricipital = $tricipital;  
+      }
+
+      function getCoxa()
+      {
+         return $this->coxa;
+      }
+      function setCoxa($coxa)
+      {
+         $this->coxa = $coxa;  
       }
 
    }
