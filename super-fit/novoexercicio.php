@@ -3,6 +3,12 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/Exercicio.php');
+include_once('./dao/ExercicioDAO.php');
+
+$exercicios = new Exercicio();
+$exerciciosDAO = new ExercicioDAO();
 ?>
 <main>
     <div class="container">
@@ -13,7 +19,7 @@ include_once('include/sidebar.html');
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE EXERCÍCIOS</h3></div>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
-                        <form>
+                        <form action="" method="POST">
 
                             <!-- Formulário do treino Musculação-->
                             <div class="row mb-3">
@@ -22,12 +28,12 @@ include_once('include/sidebar.html');
                                     <!-- Coluna grupo muscular -->
                                     <div class="col-3 .col-md-3">
                                         <label for="inputGM">GM</label>
-                                        <input type="text" class="form-control" id="inputGM">
+                                        <input type="text" class="form-control" id="inputGM" name="grupo_muscular">
                                     </div>
                                     <!-- Coluna exercicios -->
                                     <div class="col-3 .col-md-3">
                                         <label for="inputExercicio">EXERCÍCIOS</label>
-                                        <input type="text" class="form-control" id="inputExercicio">
+                                        <input type="text" class="form-control" id="inputExercicio" name="descricao">
                                     </div>
 
                                 </form>
@@ -44,6 +50,14 @@ include_once('include/sidebar.html');
                                 </div>
                                 <div class="col-3 .col-md-3">
                                     <label for="inputGM">%CG</label>
+                                    <input type="text" class="form-control" id="inputCG">
+                                </div>
+                                <div class="col-3 .col-md-3">
+                                    <label for="inputGM">NIVEL</label>
+                                    <input type="text" class="form-control" id="inputCG">
+                                </div>
+                                <div class="col-3 .col-md-3">
+                                    <label for="inputGM">FASE</label>
                                     <input type="text" class="form-control" id="inputCG">
                                 </div>
 
