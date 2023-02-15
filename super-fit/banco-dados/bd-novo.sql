@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Dobras_Cutaneas` (
   `idDobras_Cutaneas` INT NOT NULL AUTO_INCREMENT,
-  `Peitoral` FLOAT NULL,
+  `idDobras_Cutaneas` FLOAT NULL,
   `AxilarMedia` FLOAT NULL,
   `Abdominal` FLOAT NULL,
   `SupraIliaca` FLOAT NULL,
