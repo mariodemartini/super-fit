@@ -62,19 +62,19 @@ $serieDAO = new SerieDAO();
                                 <div class="row mb-3">
                                     <div class="col-sm-4">
                                         <label for="inputGM">SERIE</label>
-                                        <input type="text" class="form-control" id="inputSerie">
+                                        <input type="text" class="form-control" id="inputSerie" name="serie">
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="inputGM">%CG</label>
-                                        <input type="text" class="form-control" id="inputCG">
+                                        <input type="text" class="form-control" id="inputCG" name="percent_carga">
                                     </div>
                                     <div class="col-sm-2">
                                         <label for="inputGM">NIVEL</label>
-                                        <input type="text" class="form-control" id="inputCG">
+                                        <input type="text" class="form-control" id="inputCG" name="nivel">
                                     </div>
                                     <div class="col-sm-2">
                                         <label for="inputGM">FASE</label>
-                                        <input type="text" class="form-control" id="inputCG">
+                                        <input type="text" class="form-control" id="inputCG" name="serie">
                                     </div>
                                 </div>
 
