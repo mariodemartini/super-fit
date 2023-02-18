@@ -3,6 +3,19 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./model/DadosIniciais.php');
+include_once('./dao/DadosIniciaisDAO.php');
+include_once('./model/Circunferencias.php');
+include_once('./dao/CircunferenciasDAO.php');
+include_once('./model/DobrasCutaneas.php');
+include_once('./dao/DobrasCutaneasDAO.php');
+
+$dadosiniciais = new DadosIniciais();
+$dadosiniciaisdao = new DadosIniciaisDAO();
+$circunferencias = new Circunferencias();
+$circunferenciasdao = new CircunferenciasDAO();
+$dobras_cutaneas = new DobrasCutaneas();
+$dobras_cutaneasdao = new DobrasCutaneasDAO();
 ?>
 <main>
     <div class="container">
@@ -162,53 +175,53 @@ include_once('include/sidebar.html');
                                     <!-- Coluna Dobras cutaneas -->
                                     <div class="col-sm">
                                         <h4>Dobras Cutâneas</h4>
-                                        <form>
+                                        <form action="controller/DobrasCutaneasController.php" method="POST">
                                             <div class="form-group row">
                                                 <label for="inputPeitoral" class="col-sm-4 col-form-label">Peitoral</label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" step="0.1" class="form-control" id="inputPeitoral" placeholder="mm">
+                                                    <input type="number" step="0.1" class="form-control" id="inputPeitoral" placeholder="mm" name="peitoral">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAxM" class="col-sm-4 col-form-label">Axilar Media</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAxM" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputAxM" placeholder="mm" name="axilarMedia">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAbd" class="col-sm-4 col-form-label">Abdominal</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="mm" name="abdominal">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputSupra" class="col-sm-4 col-form-label">Supra Iliaca</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSupra" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputSupra" placeholder="mm" name="supraIliaca">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputSub" class="col-sm-4 col-form-label">Sub Escap.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSub" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputSub" placeholder="mm" name="subEscapular">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputTricipital" class="col-sm-4 col-form-label">Tricipital</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputTricipital" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputTricipital" placeholder="mm" name="tricipital">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputCoxa" class="col-sm-4 col-form-label">Coxa</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm" name="coxa">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm">
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="">
                                                 </div>
                                             </div>
                                         </form>
