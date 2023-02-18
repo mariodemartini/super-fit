@@ -43,7 +43,7 @@
             $serie->setNivel($row['nivel']);
             $serie->setFase($row['fase']);
             $serie->setserie($row['serie']);
-            $serie->setPercent_Carga($row['serie']);
+            $serie->setPercent_Carga($row['percent_carga']);
 
             return $serie;
         }
@@ -62,13 +62,15 @@
         public function update(Serie $serie)
         {
             try {
-                $sql = "UPDATE Serie set
+                $sql = "UPDATE Series set
                     
-                    idExercicios=:idExercicios,
-                    grupo_muscular=:grupo_muscular,
-                    descricao=:descricao,
+                    idSerie=:idSerie,
+                    nivel=:nivel,
+                    fase=:fase,
+                    serie=:serie,
+                    percent_carga=:percent_carga
                                 
-                    WHERE idExercicios = :idExercicios";
+                    WHERE idSerie = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nivel", $serie->getNivel());
                 $p_sql->bindValue(":fase", $serie->getFase());
