@@ -10,6 +10,7 @@
       private $subEscapular;
       private $tricipital;
       private $coxa;
+      private $data_cadastro;
 
       function getidDobrasCutaneas()
       {
@@ -81,6 +82,15 @@
       function setCoxa($coxa)
       {
          $this->coxa = $coxa;  
+      }
+
+      function getData_Cadastro()
+      {
+         return $this->data_cadastro;
+      }
+      function setData_Cadastro($data_cadastro)
+      {
+         $this->data_cadastro = $data_cadastro;  
       }
 
    }
