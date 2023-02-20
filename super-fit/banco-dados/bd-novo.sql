@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Anamnese` (
   `Fumante` VARCHAR(45) NULL,
   `Alcool` VARCHAR(45) NULL,
   `Historico_Fam` VARCHAR(100) NULL,
-  `Hipertensão` VARCHAR(45) NULL,
+  `Hipertensao` VARCHAR(45) NULL,
   `Colesterol` VARCHAR(45) NULL,
   `Diabetes` VARCHAR(45) NULL,
   `Cardiaco` VARCHAR(100) NULL,
@@ -262,6 +262,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Anamnese` (
   `Medicamento` VARCHAR(100) NULL,
   `Outros` VARCHAR(100) NULL,
   `Alimentacao` VARCHAR(200) NULL,
+  `Data_Cadastro` DATE NULL,
   PRIMARY KEY (`idAnamnese`))
 ENGINE = InnoDB;
 
