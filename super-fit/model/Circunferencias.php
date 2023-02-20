@@ -67,18 +67,81 @@
         {
             return $this->braco_direito;           
         }
+        function setBraco_direito($braco_direito)
+        {
+            $this->braco_direito = $braco_direito;
+        }
+
+        function getBraco_esquerdo()
+        {
+            return $this->braco_esquerdo;           
+        }
         function setBraco_esquerdo($braco_esquerdo)
         {
             $this->braco_esquerdo = $braco_esquerdo;
         }
 
-        function getPeso()
+        function getAntebraco_direito()
         {
-            return $this->peso;           
+            return $this->antebraco_direito;           
         }
-        function setPeso($peso)
+        function setAntebraco_direito($antebraco_direito)
         {
-            $this->peso = $peso;
+            $this->antebraco_direito = $antebraco_direito;
+        }
+
+        function getAntebraco_esquerdo()
+        {
+            return $this->antebraco_esquerdo;           
+        }
+        function setAntebraco_esquerdo($antebraco_esquerdo)
+        {
+            $this->antebraco_esquerdo = $antebraco_esquerdo;
+        }
+
+        function getCoxa_direita()
+        {
+            return $this->coxa_direita;           
+        }
+        function setCoxa_direita($coxa_direita)
+        {
+            $this->coxa_direita = $coxa_direita;
+        }
+
+        function getCoxa_esquerda()
+        {
+            return $this->coxa_esquerda;           
+        }
+        function setCoxa_esquerda($coxa_esquerda)
+        {
+            $this->coxa_esquerda = $coxa_esquerda;
+        }
+
+        function getPanturrilha_direita()
+        {
+            return $this->panturrilha_direita;           
+        }
+        function setPanturrilha_direita($panturrilha_direita)
+        {
+            $this->panturrilha_direita = $panturrilha_direita;
+        }
+
+        function getPanturrilha_esquerda()
+        {
+            return $this->antebraco_esquerdo;           
+        }
+        function setPanturrilha_esquerda($panturrilha_esquerda)
+        {
+            $this->panturrilha_esquerda = $panturrilha_esquerda;
+        }
+        
+        function getData_Cadastro()
+        {
+            return $this->data_cadastro;           
+        }       
+        function setData_cadastro($data_cadastro)
+        {
+            $this->data_cadastro = $data_cadastro;
         }
 
     }
