@@ -5,9 +5,9 @@
         public function create(DobrasCutaneas $dobras_cutaneas){
             try {
                 $sql = "INSERT INTO Dobras_Cutaneas (
-                    peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, data_cadastro)
+                    peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, somatorio, data_cadastro)
                     VALUES (
-                    :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :data_cadastro)";
+                    :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :somatorio, :data_cadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peitoral", $dobras_cutaneas->getPeitoral());
@@ -17,7 +17,8 @@
                 $p_sql->bindValue(":subEscapular", $dobras_cutaneas->getSubEscapular());
                 $p_sql->bindValue(":tricipital", $dobras_cutaneas->getTricipital());
                 $p_sql->bindValue(":coxa", $dobras_cutaneas->getCoxa());
-                $p_sql->bindValue(":data_cadastro", $dobras_cutaneas->getData());
+                $p_sql->bindValue(":somatorio", $dobras_cutaneas->getSomatorio());
+                $p_sql->bindValue(":data_cadastro", $dobras_cutaneas->getData_Cadastro());
 
                 return $p_sql->execute();
                 
@@ -51,6 +52,7 @@
             $dobras_cutaneas->setSubEscapular($row['subEscapular']);
             $dobras_cutaneas->setTricipital($row['tricipital']);
             $dobras_cutaneas->setCoxa($row['coxa']);
+            $dobras_cutaneas->setSomatorio($row['soma']);
             $dobras_cutaneas->setData_Cadastro($row['data_cadastro']);
 
             return $dobras_cutaneas;
