@@ -3,6 +3,12 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/Anamnese.php');
+include_once('./dao/AnamneseDAO.php');
+
+$anamnese = new Anamnese();
+$anamnesedao = new AnamneseDAO();
 ?>
 <main>
     <div class="container">
@@ -32,7 +38,7 @@ include_once('include/sidebar.html');
                     </form>
                     <!-- Div do conteudo principal -->
                     <div class="card-body">
-                        <form>
+                        <form action="controller/AnamneseController.php" method="POST">
                             <!-- Div data -->
                             <div class="row mb-3 align-items-center">
                                 <div class="form-group col-md-2">
@@ -70,15 +76,15 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Tempo de Prática:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo" id="gridcheckboxs1" value="meses">
+                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridcheckboxs1" value="meses">
                                                 <label class="form-check-label" for="gridRadios1">até 6 meses</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo" id="gridRadios1" value="ano">
+                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridRadios1" value="ano">
                                                 <label class="form-check-label" for="gridRadios1">Até 1 ano</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo" id="gridRadios1" value="maisAno">
+                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridRadios1" value="maisAno">
                                                 <label class="form-check-label" for="gridRadios1">Mais de 1 ano</label>
                                             </div>
                                         </div>
@@ -157,25 +163,25 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Histórico Familiar:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <input class="form-check-input" type="checkbox" value="hipertensao" id="defaultCheck1" name="historico_fam">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     Hipertensão
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="diabetes" id="defaultCheck2" name="historico_fam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Diabetes
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="colesterol" id="defaultCheck2" name="historico_fam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Colesterol
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="cardicao" id="defaultCheck2" name="historico_fam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Cardíaco
                                                 </label>
@@ -253,7 +259,7 @@ include_once('include/sidebar.html');
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="cardiaco">
                                                 </div>
                                             </div>
                                         </div>
@@ -275,7 +281,7 @@ include_once('include/sidebar.html');
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="cirurgia">
                                                 </div>
                                             </div>
                                         </div>
@@ -290,17 +296,17 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Fratura ou Luxação?</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="circurgia" id="gridRadios1" value="fraturaSim">
+                                                <input class="form-check-input" type="checkbox" name="fratura" id="gridRadios1" value="fraturaSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="circurgia" id="gridRadios2" value="fraturaNao">
+                                                <input class="form-check-input" type="checkbox" name="fratura" id="gridRadios2" value="fraturaNao">
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="fratura">
                                                 </div>
                                             </div>
                                         </div>
@@ -322,7 +328,7 @@ include_once('include/sidebar.html');
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="lesao">
                                                 </div>
                                             </div>
                                         </div>
@@ -347,7 +353,7 @@ include_once('include/sidebar.html');
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="dor">
                                                 </div>
                                             </div>
                                         </div>
@@ -359,17 +365,17 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Movimentos limitados?</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="limitacao" id="gridRadios1" value="limitacaoSim">
+                                                <input class="form-check-input" type="checkbox" name="movimentos" id="gridRadios1" value="limitacaoSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="limitacao" id="gridRadios2" value="limitacaoNao">
+                                                <input class="form-check-input" type="checkbox" name="movimentos" id="gridRadios2" value="limitacaoNao">
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="movimentos">
                                                 </div>
                                             </div>
                                         </div>
@@ -384,17 +390,17 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Artrite ou Tendinite?</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tendinite" id="gridRadios1" value="artriteSim">
+                                                <input class="form-check-input" type="checkbox" name="artrite" id="gridRadios1" value="artriteSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tendinite" id="gridRadios2" value="artriteNao">
+                                                <input class="form-check-input" type="checkbox" name="artite" id="gridRadios2" value="artriteNao">
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="artrite">
                                                 </div>
                                             </div>
                                         </div>
@@ -406,17 +412,17 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Medicamentos?</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="medicamento" id="gridRadios1" value="medicamentoSim">
+                                                <input class="form-check-input" type="checkbox" name="medicamentos" id="gridRadios1" value="medicamentoSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="medicamento" id="gridRadios2" value="medicamentoNao">
+                                                <input class="form-check-input" type="checkbox" name="medicamentos" id="gridRadios2" value="medicamentoNao">
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="">
+                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="medicamentos">
                                                 </div>
                                             </div>
                                         </div>
@@ -431,55 +437,55 @@ include_once('include/sidebar.html');
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Outros Sintomas:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <input class="form-check-input" type="checkbox" value="Hipotireoidismo" id="defaultCheck1" name="outros">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     Hipotireoidismo
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
+                                                <input class="form-check-input" type="checkbox" value="Tontura" id="defaultCheck1" name="outros">
+                                                <label class="form-check-label" for="defaultCheck1" name="outros">
                                                     Tontura
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="Desmaios" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Desmaios
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="dor-peito" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
-                                                    Dor no peito
+                                                Dor no peito
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                                                <label class="form-check-label" for="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="falta-ar" id="defaultCheck2">
+                                                <label class="form-check-label" for="defaultCheck2" name="outros">
                                                     Falta de ar
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="Taquicardia" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Taquicardia
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="Ansiedade" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Ansiedade
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="Gastrite" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Gastrite
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                <input class="form-check-input" type="checkbox" value="Insônia" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Insônia
                                                 </label>
@@ -494,7 +500,7 @@ include_once('include/sidebar.html');
                                             <legend class="col-form-label col-sm-5 pt-0">Habitos Alimentares:</legend>
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1"></label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="alimentacao"></textarea>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -503,8 +509,8 @@ include_once('include/sidebar.html');
                             <br>
                             <!-- Div dos botões de salvar -->
                             <div class="mt-4 mb-0">
-                                <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
-                                <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
+                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="submit" name="editar" class="btn btn-success btn-lg">Salvar</button>
                             </div>
                         </form>
                     </div>
