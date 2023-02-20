@@ -10,8 +10,8 @@ include_once('./dao/CircunferenciasDAO.php');
 include_once('./model/DobrasCutaneas.php');
 include_once('./dao/DobrasCutaneasDAO.php');
 
-$dadosiniciais = new DadosIniciais();
-$dadosiniciaisdao = new DadosIniciaisDAO();
+$dados_iniciais = new DadosIniciais();
+$dados_iniciaisdao = new DadosIniciaisDAO();
 $circunferencias = new Circunferencias();
 $circunferenciasdao = new CircunferenciasDAO();
 $dobras_cutaneas = new DobrasCutaneas();
@@ -51,7 +51,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData">
+                                    <input type="date" class="form-control" id="inputData" name="data_cadastro">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="inputData">NOME</label>
@@ -71,25 +71,25 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                             <div class="form-group row">
                                                 <label for="inputPeso" class="col-sm-3 col-form-label">Peso</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control" id="inputPeso" placeholder="kg">
+                                                <input type="number" step="0.01" class="form-control" id="inputPeso" placeholder="kg" nome="peso">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAltura" class="col-sm-3 col-form-label">Altura</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control" id="inputAltura" placeholder="metros">
+                                                <input type="number" step="0.01" class="form-control" id="inputAltura" placeholder="metros" name="altura">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputFC" class="col-sm-3 col-form-label">F.C.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm">
+                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="freq_card">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPA" class="col-sm-3 col-form-label">Pressão Arterial</label>
                                                 <div class="col-sm-4">
-                                                <input type="text" class="form-control mt-3" id="inputPA" placeholder="mmHg">
+                                                <input type="text" class="form-control mt-3" id="inputPA" placeholder="mmHg" name="pressao_arterial">
                                                 </div>
                                             </div>
                                         </form>
@@ -101,73 +101,73 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                             <div class="form-group row">
                                                 <label for="inputTorax" class="col-sm-4 col-form-label">Torax N.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputTorax" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputTorax" placeholder="cm" name="torax">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputCintura" class="col-sm-4 col-form-label">Cintura</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCintura" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputCintura" placeholder="cm" name="cintura">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAbd" class="col-sm-4 col-form-label">Abdomen</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="cm" name="abdomen">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputQuadril" class="col-sm-4 col-form-label">Quadril</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputQuadril" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputQuadril" placeholder="cm" name="quadril">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputBracoD" class="col-sm-4 col-form-label">Braço D.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm" name="braco_direito">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputBracoE" class="col-sm-4 col-form-label">Braço E.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm" name="braco_esquerdo">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAntebD" class="col-sm-4 col-form-label">Anteb. D.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm" name="antebraco_direito">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputAntebE" class="col-sm-4 col-form-label">Anteb. E.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm" name="antebraco_esquerdo">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputCoxaD" class="col-sm-4 col-form-label">Coxa D.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm" name="coxa_direita">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputCoxaE" class="col-sm-4 col-form-label">Coxa E.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm" name="coxa_esquerda">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPantD" class="col-sm-4 col-form-label">Pantur. D.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm" name="panturrilha_direita">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputPantE" class="col-sm-4 col-form-label">Pantur. E.</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm">
+                                                <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm" name="panturrilha_esquerda">
                                                 </div>
                                             </div>
                                         </form>
@@ -221,7 +221,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                             <div class="form-group row">
                                                 <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="">
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->getSomatorio() ?>" require>
                                                 </div>
                                             </div>
                                         </form>
@@ -231,8 +231,8 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                             <br>
                             <!-- Linha de Botões salvar -->
                             <div class="mt-4 mb-0">
-                                <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
-                                <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
+                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
                             </div>
                         </form>
                     </div>
