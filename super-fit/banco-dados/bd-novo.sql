@@ -158,6 +158,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Dobras_Cutaneas` (
   `Sub_Escapular` FLOAT NULL,
   `Tricipital` FLOAT NULL,
   `Coxa` FLOAT NULL,
+  `Somatorio` FLOAT NULL,
   `Data_Cadastro` DATE NULL,
   PRIMARY KEY (`idDobras_Cutaneas`))
 ENGINE = InnoDB;
