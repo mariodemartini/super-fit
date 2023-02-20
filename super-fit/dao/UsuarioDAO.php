@@ -117,6 +117,13 @@
             }
         }
 
+        function validaSenha($senha, $email){
+            if($senha == $usuario->getSenha() && $email == $usuario->getEmail()) {
+                
+            }
+
+        }
+
   
     }
 
