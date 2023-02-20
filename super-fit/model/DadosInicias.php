@@ -57,7 +57,11 @@
         {
             $this->pressao_arterial = $pressao_arterial;
         }
-        
+
+        function getData_Cadastro()
+        {
+            return $this->data_cadastro;           
+        }       
         function setData_cadastro($data_cadastro)
         {
             $this->data_cadastro = $data_cadastro;
