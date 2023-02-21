@@ -37,7 +37,7 @@
 
     else if (isset($_GET['del'])){
 
-        $dados_iniciais->setIdProfessor($_GET['del']);
+        $dados_iniciais->setIdDadosIniciais($_GET['del']);
 
         $dados_iniciaisdao->delete($dados_iniciais);
 
