@@ -3,6 +3,12 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/TesteVO2.php');
+include_once('./dao/TesteVO2DAO.php');
+
+$teste_vo2 = new TesteVO2();
+$teste_vo2dao = new TesteVO2DAO();
 ?>
 <main>
     <div class="container">
@@ -32,20 +38,20 @@ include_once('include/sidebar.html');
                     </form>
                     <!-- Fomulário principal -->
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="controller/TesteVO2Controller.php" method="POST">
                             <!-- Linha data e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData">
+                                    <input type="date" class="form-control" id="inputData" name="data_teste">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="inputData">NOME</label>
-                                    <input type="text" class="form-control" id="inputData">
+                                    <input type="text" class="form-control" id="inputData" name="nome">
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
-                                    <input type="number" class="form-control" id="inputData">
+                                    <input type="number" class="form-control" id="inputData" name="idade">
                                 </div>
                             </div>
                             <br>
@@ -61,25 +67,25 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Vel. Inicio</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h" name="velocidade_inicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputFCRepouso" class="col-sm-5 col-form-label">FC Repouso</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm">
+                                        <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm" name="fc_repouso">
                                     </div>
                                 </div>
 				<div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-5 col-form-label">PA Inicial</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg">
+                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_inicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-5 col-form-label">PA Final</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg">
+                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_final">
                                     </div>
                                 </div>
                             </div>
@@ -91,64 +97,64 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-3">
                                     <label for="inputTempo" class="col-sm-5 col-form-label">Tempo</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
                                     </div>
                                 </div>
                                 <!-- Coluna velocidade -->
                                 <div class="form-group col-md-3">
                                     <label for="inputVel" class="col-sm-5 col-form-label">Velocidade</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
                                     </div>
                                 </div>
                                 <!-- Coluna frequencia cardiaca -->
                                 <div class="form-group col-md-3">
                                     <label for="inputFC" class="col-sm-8 col-form-label">F.C.</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
                                     </div>
                                 </div>
                                 <!-- Coluna esforço -->
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Esforço</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
                                     </div>
                                 </div> 
                             </div>
@@ -157,17 +163,17 @@ include_once('include/sidebar.html');
                                 <h5>Resultado:</h5>
                                 <div class="form-group col-md-2">
                                     <label for="inputData">VO² Max:</label>
-                                    <input type="number" class="form-control" id="inputVOmax" placeholder="mL/kg·min">
+                                    <input type="number" class="form-control" id="inputVOmax" placeholder="mL/kg·min" name="resultado_vo2">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="inputData">FC Max:</label>
-                                    <input type="number" class="form-control" id="inputFCmax" placeholder="bpm">
+                                    <input type="number" class="form-control" id="inputFCmax" placeholder="bpm" name="fc_teste">
                                 </div>
                             </div>
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
-                                <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
-                                <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
+                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
                             </div>
                         </form>
                     </div>
