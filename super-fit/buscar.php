@@ -46,7 +46,7 @@ $usuariodao = new UsuarioDAO();
                     <tr>
                         <td><?= $usuario->getIdUsuario() ?></td>
                         <td><?= $usuario->getNome() ?></td>
-                        <td><?= $usuario->getData_Nascimento() ?></td>
+                        <td><?= $usuario->validacaoCalcularIdade($usuario->getData_Nascimento()) ?></td>
                         <td><?= $usuario->getCpf() ?></td>
                         <td><?= $usuario->getCelular() ?></td>
                         <td><?= $usuario->getCidade() ?></td>
