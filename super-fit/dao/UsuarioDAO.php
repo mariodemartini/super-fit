@@ -117,6 +117,29 @@
             }
         }
 
+
+        function validacaoCalcularIdade($data_nascimento){
+            $dataAtual = new Date();
+            $anoAtual = $dataAtual.getFullYear();
+            $anoNascParts = $usuario->getData_Nascimento().split('/');
+            $diaNasc = $anoNascParts[0];
+            $mesNasc = $anoNascParts[1];
+            $anoNasc = $anoNascParts[2];
+            $idade = $anoAtual -$anoNasc;
+            $mesAtual = $dataAtual.getMonth() + 1;
+
+            if($mesAtual < $mesNasc){
+                $idade--;
+            } else {
+                if($mesAtual == $mesNasc){ 
+                    if($dataAtual.getDate() < $diaNasc ){    
+                        $idade--; } 
+                }
+            }
+                return $idade;
+        }
+
+
         function validaSenha($senha, $email){
             if($senha == $usuario->getSenha() && $email == $usuario->getEmail()) {
                 
