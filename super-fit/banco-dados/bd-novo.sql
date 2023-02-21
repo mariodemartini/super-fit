@@ -116,13 +116,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
   `idExercicios` INT NOT NULL,
   `Carga` INT NULL,
   `Feedback` INT NULL,
-  `idUsuario` INT NOT NULL,
-  `idProfessor` INT NOT NULL,
+  `idUsuario` INT NOT NULL,,
   PRIMARY KEY (`idTreino`),
   INDEX `fk_Treino_Series1_idx` (`idSeries` ASC),
   INDEX `fk_Treino_Exercicios1_idx` (`idExercicios` ASC),
-  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),
-  INDEX `fk_Treino_Professor1_idx` (`idProfessor` ASC),
+  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),,
   CONSTRAINT `fk_Treino_Series1`
     FOREIGN KEY (`idSeries`)
     REFERENCES `mydb`.`Series` (`idSeries`)
@@ -136,11 +134,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
   CONSTRAINT `fk_Treino_Usuario1`
     FOREIGN KEY (`idUsuario`)
     REFERENCES `mydb`.`Usuario` (`idUsuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Treino_Professor1`
-    FOREIGN KEY (`idProfessor`)
-    REFERENCES `mydb`.`Professor` (`idProfessor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -229,11 +222,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Resultado` (
   `idResultado` INT NOT NULL,
+  `Peso` FLOAT NULL,
   `IMC` FLOAT NULL,
+  `Abdomen` FLOAT NULL,
+  `RCQ` FLOAT NULL,
   `Percent_Gord` FLOAT NULL,
   `Massa_Gorda` FLOAT NULL,
   `Percent_Magra` FLOAT NULL,
   `Massa_Magra` FLOAT NULL,
+  `FC` FLOAT NULL,
+  `VO` FLOAT NULL,
   PRIMARY KEY (`idResultado`))
 ENGINE = InnoDB;
 
