@@ -178,7 +178,7 @@ include_once('include/sidebar.html');
                             <!-- Linha compativo FC maxima -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">F.C Máxima</li>
+                                    <li class="list-group-item">F.C.</li>
                                 </ul>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" placeholder="bpm">
@@ -193,7 +193,7 @@ include_once('include/sidebar.html');
                             <!-- Linha compativo VO2 maximo -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
-                                    <li class="list-group-item">VO² Máximo</li>
+                                    <li class="list-group-item">VO²</li>
                                 </ul>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="mL/kg·min">
