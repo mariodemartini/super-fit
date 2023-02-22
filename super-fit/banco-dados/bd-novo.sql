@@ -163,7 +163,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Teste_Forca` (
   `idTeste_Forca` INT NOT NULL AUTO_INCREMENT,
   `Data_Teste` DATE NULL,
-  `Exercicio` VARCHAR(45) NULL,
   `Carga_Inicial` INT NULL,
   `Rep_Inicial` INT NULL,
   `Meta_Carga` INT NULL,
