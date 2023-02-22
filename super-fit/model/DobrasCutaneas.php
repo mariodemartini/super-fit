@@ -91,7 +91,9 @@
       }
       function setSomatorio($peitoral, $abdominal, $axilarMedia, $supraIliaca, $subEscapular, $tricipital, $coxa)
       {
-         $this->somatorio = (getPeitoral() + getAbdominal() + getAxilarMedia() + getSupraIliaca() + getSubEscapular() + getTricipital() + getCoxa());  
+         $somatorio = (getPeitoral() + getAbdominal() + getAxilarMedia() + getSupraIliaca() + getSubEscapular() + getTricipital() + getCoxa());
+
+         $this->somatorio = $somatorio;
       }
 
       function getData_Cadastro()
