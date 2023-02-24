@@ -84,7 +84,7 @@
                     coxa=:coxa,
                     data_cadastro=:data_cadastro
                                 
-                    WHERE idDobras_Cutaneas = :idDobras_Cutaneas";
+                    WHERE idDobras_Cutaneas = :idDobrasCutaneas";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peitoral", $dobras_cutaneas->getPeitoral());
                 $p_sql->bindValue(":axilarMedia", $dobras_cutaneas->getAxilarMedia());
@@ -100,6 +100,17 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
+
+        public function somaDobras($peito, $axilar, $abd, $supra, $sub, $tric, $coxa){
+            
+            $dobras_cutaneas = new DobrasCutaneas;
+
+            $soma = $dobras_cutaneas->getPeitoral() + $dobras_cutaneas->getAxilarMedia() + $dobras_cutaneas->getAbdominal() + $dobras_cutaneas->getSupraIliaca() + $dobras_cutaneas->getSubEscapular() + $dobras_cutaneas->getTricipital() + $dobras_cutaneas->getCoxa();
+
+            $dobras_cutaneas->setSomatorio($soma);
+        }
+
+
 
         
     }
