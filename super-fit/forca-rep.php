@@ -3,6 +3,11 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./model/TesteForca.php');
+include_once('./dao/TesteForcaDAO.php');
+
+$testeforca = new TesteForca();
+$testeforcadao = new TesteForcaDAO();
 ?>
 <main>
     <div class="container">
