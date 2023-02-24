@@ -21,7 +21,7 @@
                 $p_sql->bindValue(":terceira_tentativa", $teste_forca->getTerceira_tentativa());
                 $p_sql->bindValue(":resultado_rep", $teste_forca->getResultado_rep());
                 $p_sql->bindValue(":resultado_kg", $teste_forca->getResultado_kg());
-                $p_sql->bindValue(":idExercicios", $teste_forca->selecionaExercicio());
+                $p_sql->bindValue(":idExercicios", $teste_forca->getExercicio());
 
                 return $p_sql->execute();
                 
