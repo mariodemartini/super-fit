@@ -55,7 +55,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="inputData">NOME</label>
-                                    <input type="text" class="form-control" id="inputData">
+                                    <input type="text" class="form-control" id="inputData" >
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
@@ -221,7 +221,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                             <div class="form-group row">
                                                 <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->getSomatorio() ?>" require>
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->somaDobras("peitoral", "axilarMedia", "abdominal", "supraIliaca", "subEscapular", "tricipital", "coxa") ?>" require>
                                                 </div>
                                             </div>
                                         </form>
