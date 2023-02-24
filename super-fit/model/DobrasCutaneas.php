@@ -89,10 +89,8 @@
       {
          return $this->somatorio;
       }
-      function setSomatorio($peitoral, $abdominal, $axilarMedia, $supraIliaca, $subEscapular, $tricipital, $coxa)
+      function setSomatorio($somatorio)
       {
-         $somatorio = (getPeitoral() + getAbdominal() + getAxilarMedia() + getSupraIliaca() + getSubEscapular() + getTricipital() + getCoxa());
-
          $this->somatorio = $somatorio;
       }
 
