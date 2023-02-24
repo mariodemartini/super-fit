@@ -1,7 +1,6 @@
 <?php
 
-    class TesteForca
-    {
+    Class TesteForca{
         private $idTesteForca;
         private $data_teste;
         private $carga_inicial;

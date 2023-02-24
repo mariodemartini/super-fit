@@ -1,7 +1,6 @@
 <?php
 
-   Class DobrasCutaneas
-   {
+   Class DobrasCutaneas{
       private $idDobrasCutaneas;
       private $peitoral;
       private $axilarMedia;

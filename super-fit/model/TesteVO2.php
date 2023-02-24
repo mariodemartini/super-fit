@@ -1,7 +1,6 @@
 <?php
     
-    class TesteVO2
-    {
+    Class TesteVO2{
         private $idTesteVO2;
         private $data_teste;
         private $velocidade_inicial;

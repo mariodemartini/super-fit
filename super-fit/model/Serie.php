@@ -1,7 +1,6 @@
 <?php
     
-    Class Serie
-    {
+    Class Serie{
         private $idSerie;
         private $nivel;
         private $fase;

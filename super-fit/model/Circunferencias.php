@@ -1,7 +1,6 @@
 <?php
     
-    class Circunferencias
-    {
+    Class Circunferencias{
         private $idCircunferencias;
         private $torax;
         private $cintura;

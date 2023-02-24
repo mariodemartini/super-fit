@@ -1,7 +1,6 @@
 <?php
     
-    Class Exercicio
-    {
+    Class Exercicio{
         private $idExercicio;
         private $grupoMuscular;
         private $descricao;

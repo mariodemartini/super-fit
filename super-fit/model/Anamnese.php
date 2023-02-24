@@ -1,7 +1,6 @@
 <?php
     
-    class Anamnese
-    {
+    Class Anamnese{
         private $idAnamnese;
         private $atividade;
         private $tempo_pratica;
