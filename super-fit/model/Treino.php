@@ -3,7 +3,7 @@
     Class Treino{
         private $idTreino;
         private Serie $serie;
-        private Exercicios $exercicios;
+        private Exercicio $exercicios;
         private $carga;
         private $feedback;
         private Usuario $usuario;

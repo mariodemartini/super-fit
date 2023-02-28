@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(200) NOT NULL,
   `Data_Nascimento` DATE NULL,
+  `Idade` INT NULL,
   `Sexo` VARCHAR(10) NULL,
   `CPF` VARCHAR(15) NOT NULL,
   `RG` VARCHAR(15) NULL,

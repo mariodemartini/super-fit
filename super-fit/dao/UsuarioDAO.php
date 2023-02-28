@@ -5,13 +5,14 @@
         public function create(Usuario $usuario){
             try {
                 $sql = "INSERT INTO Usuario (
-                    nome, data_nascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, data_cadastro)
+                    nome, data_nascimento, idade, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, data_cadastro)
                     VALUES (
-                    :nome, :data_nascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
+                    :nome, :data_nascimento, :idade, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $usuario->getNome());
                 $p_sql->bindValue(":data_nascimento", $usuario->getData_Nascimento());
+                $p_sql->bindValue(":idade", $usuario->getIdade());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());

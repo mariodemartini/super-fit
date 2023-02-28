@@ -4,6 +4,7 @@
         private $idUsuario;
         private $nome;
         private $data_nascimento;
+        private $idade;
         private $sexo;
         private $cpf;
         private $rg;
@@ -45,6 +46,16 @@
         function setData_Nascimento($data_nascimento)
         { 
             $this->data_nascimento = $data_nascimento; 
+        }
+
+        function getIdade()
+        { 
+            return $this->idade; 
+        }
+
+        function setIdade($idade)
+        { 
+            $this->idade = $idade; 
         }
 
         function getSexo()

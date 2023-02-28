@@ -12,6 +12,7 @@
 
         $usuario->setNome(($d['nome']));
         $usuario->setData_Nascimento(($d['data_nascimento']));
+        $usuario->setSexo(validacaoCalcularIdade(($d['data_nascimento'])));
         $usuario->setSexo(($d['sexo']));
         $usuario->setCpf(($d['cpf']));
         $usuario->setRg(($d['rg']));

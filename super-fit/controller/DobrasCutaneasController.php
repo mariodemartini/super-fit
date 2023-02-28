@@ -17,7 +17,7 @@
         $dobras_cutaneas->setSubEscapular(($d['subEscapular']));
         $dobras_cutaneas->setTricipital(($d['tricipital']));
         $dobras_cutaneas->setCoxa(($d['coxa']));
-        $dobras_cutaneas->setCoxa(($d['soma']));
+        $dobras_cutaneas->somaDobras(($d['peitoral']['axilarMedia']['abominal']['supraIliaca']['subEscapular']['tricipital']['coxa']));
         $dobras_cutaneas->setData_Cadastro(($d['data_cadastro']));
         
         $dobras_cutaneasdao->create($dobras_cutaneas);

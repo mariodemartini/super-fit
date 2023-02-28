@@ -221,7 +221,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                             <div class="form-group row">
                                                 <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->somaDobras("peitoral", "axilarMedia", "abdominal", "supraIliaca", "subEscapular", "tricipital", "coxa") ?>" require>
+                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->getSomatorio() ?>" require>
                                                 </div>
                                             </div>
                                         </form>
