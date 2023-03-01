@@ -498,7 +498,7 @@ $anamnesedao = new AnamneseDAO();
                             <!-- Div dos botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
+                                <button type="submit" name="editar" class="btn btn-warning btn-lg">Editar</button>
                                 <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>
