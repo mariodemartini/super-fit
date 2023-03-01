@@ -15,10 +15,10 @@ include_once('include/sidebar.html');
                     <div class="card-body">
                         <!-- Sub-menu -->
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="relatorio-avaliacao.php"><button type="button" class="btn btn-info btn-lg">COMPARATIVO</button></a>
+                        <a class="btn btn-info btn-block" href="relatorio-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">COMPARATIVOS</button></a>
                         </div>
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="relatorio-grafico"><button type="button" class="btn btn-info btn-lg">GRÁFICO DE EVOLUÇÃO</button></a>
+                        <a class="btn btn-info btn-block" href="relatorio-grafico.php"><button type="button" class="btn btn-info btn-lg btn-block">EVOLUÇÂO</button></a>
                         </div> 
                     </div>
                     <div class="card-footer text-center py-3"></div>

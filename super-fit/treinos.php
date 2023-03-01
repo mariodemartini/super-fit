@@ -18,11 +18,11 @@ include_once('include/sidebar.html');
                         </div>
                         
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg">FICHA DE TREINO</button></a>
+                        <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg btn-block">FICHA DE TREINO</button></a>
                         </div>
 
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="novoexercicio.php"><button type="button" class="btn btn-info btn-lg">INCLUIR EXERCICIO/SÉRIES</button></a>
+                        <a class="btn btn-info btn-block" href="novoexercicio.php"><button type="button" class="btn btn-info btn-lg btn-block">INCLUIR EXERCICIO/SERIE</button></a>
                         </div>
 
                     </div>

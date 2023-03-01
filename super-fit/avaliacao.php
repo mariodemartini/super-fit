@@ -19,19 +19,19 @@ include_once('include/sidebar.html');
                         </div>
                         
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
+                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg btn-block">MEDIDAS</button></a>
                         </div>
                         
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">TESTE DE FORÇA</button></a>
+                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg btn-block">TESTE FORÇA</button></a>
                         </div>
 
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">TESTE DE VO2</button></a>
+                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg btn-block">TESTE VO2</button></a>
                         </div>
 
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
+                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg btn-block">RESULTADOS</button></a>
                         </div> 
                     </div>
                     <div class="card-footer text-center py-3">
