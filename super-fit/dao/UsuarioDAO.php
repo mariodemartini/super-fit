@@ -5,14 +5,13 @@
         public function create(Usuario $usuario){
             try {
                 $sql = "INSERT INTO Usuario (
-                    nome, data_nascimento, idade, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, data_cadastro)
+                    nome, data_nascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, data_cadastro)
                     VALUES (
-                    :nome, :data_nascimento, :idade, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
+                    :nome, :data_nascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $usuario->getNome());
                 $p_sql->bindValue(":data_nascimento", $usuario->getData_Nascimento());
-                $p_sql->bindValue(":idade", $usuario->getIdade());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());
@@ -119,36 +118,6 @@
         }
 
 
-        function validacaoCalcularIdade($data_nascimento){
-            $dataAtual = new Date();
-            $anoAtual = $dataAtual.getFullYear();
-            $anoNascParts = $usuario->getData_Nascimento().split('/');
-            $diaNasc = $anoNascParts[0];
-            $mesNasc = $anoNascParts[1];
-            $anoNasc = $anoNascParts[2];
-            $idade = $anoAtual -$anoNasc;
-            $mesAtual = $dataAtual.getMonth() + 1;
-
-            if($mesAtual < $mesNasc){
-                $idade--;
-            } else {
-                if($mesAtual == $mesNasc){ 
-                    if($dataAtual.getDate() < $diaNasc ){    
-                        $idade--; } 
-                }
-            }
-                return $idade;
-        }
-
-
-        function validaSenha($senha, $email){
-            if($senha == $usuario->getSenha() && $email == $usuario->getEmail()) {
-                
-            }
-
-        }
-
-  
     }
 
 ?>

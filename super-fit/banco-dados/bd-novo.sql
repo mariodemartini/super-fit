@@ -117,11 +117,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
   `idExercicios` INT NOT NULL,
   `Carga` INT NULL,
   `Feedback` INT NULL,
-  `idUsuario` INT NOT NULL,,
+  `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idTreino`),
   INDEX `fk_Treino_Series1_idx` (`idSeries` ASC),
   INDEX `fk_Treino_Exercicios1_idx` (`idExercicios` ASC),
-  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),,
+  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Treino_Series1`
     FOREIGN KEY (`idSeries`)
     REFERENCES `mydb`.`Series` (`idSeries`)
@@ -152,7 +152,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Dobras_Cutaneas` (
   `Sub_Escapular` FLOAT NULL,
   `Tricipital` FLOAT NULL,
   `Coxa` FLOAT NULL,
-  `Somatorio` FLOAT NULL,
   `Data_Cadastro` DATE NULL,
   PRIMARY KEY (`idDobras_Cutaneas`))
 ENGINE = InnoDB;

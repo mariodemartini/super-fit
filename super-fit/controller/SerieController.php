@@ -22,11 +22,11 @@
 
     else if (isset($_POST['editar'])) {
 
-        $serie->setIdSerie(($d['idSerie']));
-        $serie->setNivel(($d['nivel']));
-        $serie->setFase(($d['fase']));
-        $serie->setSerie(($d['serie']));
-        $serie->setPercent_Carga(($d['percent_carga']));
+        $serie->setIdSerie(($d['idSeries']));
+        $serie->setNivel(($d['Nivel']));
+        $serie->setFase(($d['Fase']));
+        $serie->setSerie(($d['Serie']));
+        $serie->setPercent_Carga(($d['Percent_Carga']));
     
         $seriedao->update($serie);
     

@@ -17,7 +17,6 @@
                 $p_sql->bindValue(":subEscapular", $dobras_cutaneas->getSubEscapular());
                 $p_sql->bindValue(":tricipital", $dobras_cutaneas->getTricipital());
                 $p_sql->bindValue(":coxa", $dobras_cutaneas->getCoxa());
-                $p_sql->bindValue(":somatorio", $dobras_cutaneas->getSomatorio());
                 $p_sql->bindValue(":data_cadastro", $dobras_cutaneas->getData_Cadastro());
 
                 return $p_sql->execute();
@@ -52,7 +51,6 @@
             $dobras_cutaneas->setSubEscapular($row['subEscapular']);
             $dobras_cutaneas->setTricipital($row['tricipital']);
             $dobras_cutaneas->setCoxa($row['coxa']);
-            $dobras_cutaneas->setSomatorio($row['soma']);
             $dobras_cutaneas->setData_Cadastro($row['data_cadastro']);
 
             return $dobras_cutaneas;
@@ -107,7 +105,7 @@
 
             $soma = $dobras_cutaneas->getPeitoral() + $dobras_cutaneas->getAxilarMedia() + $dobras_cutaneas->getAbdominal() + $dobras_cutaneas->getSupraIliaca() + $dobras_cutaneas->getSubEscapular() + $dobras_cutaneas->getTricipital() + $dobras_cutaneas->getCoxa();
 
-            $dobras_cutaneas->setSomatorio($soma);
+            return $soma;
         }
 
 

@@ -58,7 +58,7 @@
             $teste_forca->setResultado_rep($row['esforco_teste']);
             $teste_forca->setResultado_kg($row['resultado_vo2']);
 
-            return $teste_vo2;
+            return $teste_forca;
         }
 
         public function delete(TesteForca $teste_forca){
@@ -99,8 +99,8 @@
                 $p_sql->bindValue(":primeira_tentativa", $teste_forca->getPrimeira_tentativa());
                 $p_sql->bindValue(":segunda_tentativa", $teste_forca->getSegunda_tentativa());
                 $p_sql->bindValue(":terceira_tentativa", $teste_forca->getTerceira_tentativa());
-                $p_sql->bindValue(":resultado_rep", $teste_forca->getEsforco_teste());
-                $p_sql->bindValue(":resultado_kg", $teste_forca->getResultado_vo2());
+                $p_sql->bindValue(":resultado_rep", $teste_forca->getResultado_rep());
+                $p_sql->bindValue(":resultado_kg", $teste_forca->getResultado_kg());
             
                 return $p_sql->execute();
             } catch (Exception $e) {

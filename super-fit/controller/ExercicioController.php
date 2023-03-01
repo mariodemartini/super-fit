@@ -10,7 +10,7 @@
 
     if(isset($_POST['salvar'])){
 
-        $exercicio->setGrupo_Muscular(($d['grupo_muscular']));
+        $exercicio->setGrupoMuscular(($d['grupo_muscular']));
         $exercicio->setDescricao(($d['descricao']));
         
         $exerciciodao->create($exercicio);
@@ -20,9 +20,9 @@
 
     else if (isset($_POST['editar'])) {
 
-        $exercicio->setIdExercicio(($d['idExercicio']));
-        $exercicio->setGrupo_Muscular(($d['grupo_muscular']));
-        $exercicio->setDescricao(($d['descricao']));
+        $exercicio->setIdExercicio(($d['idExercicios']));
+        $exercicio->setGrupoMuscular(($d['Grupo_Muscular']));
+        $exercicio->setDescricao(($d['Descricao']));
     
         $exerciciodao->update($exercicio);
     
@@ -35,7 +35,7 @@
 
         $exerciciodao->delete($exercicio);
 
-        header("Location: ../pesquisa-exericio.php");
+        header("Location: ../pesquisa-exercicio.php");
     } else {
         header("Location: ../pesquisa-exercicio.php");
     }

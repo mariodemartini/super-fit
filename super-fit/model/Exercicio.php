@@ -22,7 +22,7 @@
 
         function setGrupoMuscular($grupoMuscular)
         { 
-            $this->grupo_Muscular = $grupoMuscular; 
+            $this->grupoMuscular = $grupoMuscular; 
         }
 
         function getDescricao()

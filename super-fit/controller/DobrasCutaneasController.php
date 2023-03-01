@@ -17,7 +17,6 @@
         $dobras_cutaneas->setSubEscapular(($d['subEscapular']));
         $dobras_cutaneas->setTricipital(($d['tricipital']));
         $dobras_cutaneas->setCoxa(($d['coxa']));
-        $dobras_cutaneas->somaDobras(($d['peitoral']['axilarMedia']['abominal']['supraIliaca']['subEscapular']['tricipital']['coxa']));
         $dobras_cutaneas->setData_Cadastro(($d['data_cadastro']));
         
         $dobras_cutaneasdao->create($dobras_cutaneas);
@@ -28,8 +27,8 @@
     else if (isset($_POST['editar'])) {
 
         $dobras_cutaneas->setIdDobrasCutaneas(($d['idDobrasCutaneas']));
-        $dobras_cutaneas->setPeitoral(($d['peitoral']));
-        $dobras_cutaneas->setAxilarMedia(($d['axilarMedia']));
+        $dobras_cutaneas->setPeitoral(($d['Peitoral']));
+        $dobras_cutaneas->setAxilarMedia(($d['AxilarMedia']));
         $dobras_cutaneas->setAbdominal(($d['abdominal']));
         $dobras_cutaneas->setSupraIliaca(($d['supraIliaca']));
         $dobras_cutaneas->setSubEscapular(($d['subEscapular']));

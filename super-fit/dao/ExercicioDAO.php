@@ -10,7 +10,7 @@
                     :grupo_muscular, :descricao)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupo_Muscular());
+                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupoMuscular());
                 $p_sql->bindValue(":descricao", $exercicio->getDescricao());
 
                 return $p_sql->execute();
@@ -37,18 +37,18 @@
 
         private function listaExercicio($row) {
             $exercicio = new Exercicio();
-            $exercicio->setIdExercicio($row['idExercicio']);
-            $exercicio->setGrupoMuscular($row['grupo_muscular']);
-            $exercicio->setDescricao($row['descricao']);
+            $exercicio->setIdExercicio($row['idExercicios']);
+            $exercicio->setGrupoMuscular($row['Grupo_Muscular']);
+            $exercicio->setDescricao($row['Descricao']);
 
             return $exercicio;
         }
 
         public function delete(Exercicio $exercicio){
             try {
-                $sql = "DELETE FROM Exercicios WHERE  idExercicio = :idExercicio";
+                $sql = "DELETE FROM Exercicios WHERE  idExercicios = :idExercicios";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idExercicio", $exercicio->getIdExercicio());
+                $p_sql->bindValue(":idExercicios", $exercicio->getIdExercicio());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir exercicio <br> $e <br>";

@@ -40,7 +40,7 @@ $exerciciodao = new ExercicioDAO();
                 <?php foreach ($exerciciodao->read() as $exercicio) : ?>
                     <tr>
                         <td><?= $exercicio->getIdExercicio() ?></td>
-                        <td><?= $exercicio->getGrupo_Muscular() ?></td>
+                        <td><?= $exercicio->getGrupoMuscular() ?></td>
                         <td><?= $exercicio->getDescricao() ?></td>
                         <td class="text-center">
                             <a href="controller/ExercicioController.php?del=<?= $exercicio->getIdExercicio() ?>"> 

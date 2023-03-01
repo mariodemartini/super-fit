@@ -3,10 +3,15 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+
+include_once('./conexao/Conexao.php');
+
 include_once('./model/DadosIniciais.php');
 include_once('./dao/DadosIniciaisDAO.php');
+
 include_once('./model/Circunferencias.php');
 include_once('./dao/CircunferenciasDAO.php');
+
 include_once('./model/DobrasCutaneas.php');
 include_once('./dao/DobrasCutaneasDAO.php');
 
@@ -45,7 +50,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                     </form>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
-                        <form>
+                        <form action="controller/UsuarioController.php" method="POST">
                         <div class="container">
                             <!-- Linha data, nome e idade -->
                             <div class="row mb-3">
@@ -67,7 +72,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                     <!-- Coluna de Peso e Altura -->
                                     <div class="col-sm">
                                         <h4>Dados Iniciais</h4>
-                                        <form>
+                                        <form action="controller/DadosIniciaisController.php" method="POST">
                                             <div class="form-group row">
                                                 <label for="inputPeso" class="col-sm-3 col-form-label">Peso</label>
                                                 <div class="col-sm-4">
@@ -97,7 +102,7 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                     <!-- Coluna Circunferencias -->
                                     <div class="col-sm">
                                         <h4>Circunferências</h4>
-                                        <form>
+                                        <form action="controller/CircunferenciasController.php" method="POST">
                                             <div class="form-group row">
                                                 <label for="inputTorax" class="col-sm-4 col-form-label">Torax N.</label>
                                                 <div class="col-sm-4">
@@ -216,12 +221,6 @@ $dobras_cutaneasdao = new DobrasCutaneasDAO();
                                                 <label for="inputCoxa" class="col-sm-4 col-form-label">Coxa</label>
                                                 <div class="col-sm-4">
                                                 <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm" name="coxa">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputSoma" class="col-sm-4 col-form-label">Somatorio</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputSoma" placeholder="mm" name="soma" value="<?= $dobras_cutaneas->getSomatorio() ?>" require>
                                                 </div>
                                             </div>
                                         </form>

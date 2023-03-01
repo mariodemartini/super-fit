@@ -39,20 +39,20 @@
 
         private function listaSerie($row) {
             $serie = new Serie();
-            $serie->setIdSerie($row['idSerie']);
-            $serie->setNivel($row['nivel']);
-            $serie->setFase($row['fase']);
-            $serie->setserie($row['serie']);
-            $serie->setPercent_Carga($row['percent_carga']);
+            $serie->setIdSerie($row['idSeries']);
+            $serie->setNivel($row['Nivel']);
+            $serie->setFase($row['Fase']);
+            $serie->setserie($row['Serie']);
+            $serie->setPercent_Carga($row['Percent_Carga']);
 
             return $serie;
         }
 
         public function delete(Serie $serie){
             try {
-                $sql = "DELETE FROM Series WHERE  idSerie = :idSerie";
+                $sql = "DELETE FROM Series WHERE  idSeries = :idSeries";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idSerie", $serie->getIdSerie());
+                $p_sql->bindValue(":idSeries", $serie->getIdSerie());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir serie <br> $e <br>";
@@ -64,13 +64,13 @@
             try {
                 $sql = "UPDATE Series set
                     
-                    idSerie=:idSerie,
+                    idSeries=:idSeries,
                     nivel=:nivel,
                     fase=:fase,
                     serie=:serie,
                     percent_carga=:percent_carga
                                 
-                    WHERE idSerie = :idSerie";
+                    WHERE idSeries = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nivel", $serie->getNivel());
                 $p_sql->bindValue(":fase", $serie->getFase());

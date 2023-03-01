@@ -82,7 +82,7 @@
         {
             return $this->historico_fam;           
         }
-        function setHitorico_fam($historico_fam)
+        function setHistorico_fam($historico_fam)
         {
             $this->historico_fam = $historico_fam;
         }

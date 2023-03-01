@@ -9,7 +9,6 @@
       private $subEscapular;
       private $tricipital;
       private $coxa;
-      private $somatorio;
       private $data_cadastro;
 
       function getidDobrasCutaneas()
@@ -84,15 +83,7 @@
          $this->coxa = $coxa;  
       }
 
-      function getSomatorio()
-      {
-         return $this->somatorio;
-      }
-      function setSomatorio($somatorio)
-      {
-         $this->somatorio = $somatorio;
-      }
-
+ 
       function getData_Cadastro()
       {
          return $this->data_cadastro;

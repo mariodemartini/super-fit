@@ -13,7 +13,7 @@ $exercicio = new Exercicio();
 $exercicioDAO = new ExercicioDAO();
 
 $serie = new Serie();
-$serieDAO = new SerieDAO();
+$seriedao = new SerieDAO();
 ?>
 <main>
     <div class="container">
@@ -65,22 +65,22 @@ $serieDAO = new SerieDAO();
                                         <input type="text" class="form-control" id="inputSerie" name="serie">
                                     </div>
                                     <div class="col-sm-1">
-                                        <label for="inputGM">%CG</label>
+                                        <label for="inputCG">%CG</label>
                                         <input type="text" class="form-control" id="inputCG" name="percent_carga">
                                     </div>
                                     <div class="col-sm-2">
-                                        <label for="inputGM">NIVEL</label>
-                                        <input type="text" class="form-control" id="inputCG" name="nivel">
+                                        <label for="inputNivel">NIVEL</label>
+                                        <input type="text" class="form-control" id="inputNivel" name="nivel">
                                     </div>
                                     <div class="col-sm-2">
-                                        <label for="inputGM">FASE</label>
-                                        <input type="text" class="form-control" id="inputCG" name="serie">
+                                        <label for="inputFase">FASE</label>
+                                        <input type="text" class="form-control" id="inputFase" name="fase">
                                     </div>
                                 </div>
 
                                 <!-- Botões de salvar -->
                                 <div class="mt-4 mb-0">
-                                    <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
+                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                     <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="pesquisa-serie.php">Pesquisar</a></button>
                                 </div>
                             </form>

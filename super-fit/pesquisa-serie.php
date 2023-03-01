@@ -47,7 +47,7 @@ $seriedao = new SerieDAO();
                         <td><?= $serie->getSerie() ?></td>
                         <td><?= $serie->getPercent_Carga() ?></td>
                         <td class="text-center">
-                            <a href="controller/SerieController.php?del=<?= $usuario->getIdSerie() ?>"> 
+                            <a href="controller/SerieController.php?del=<?= $serie->getIdSerie() ?>"> 
                             <button class="btn  btn-danger btn-sm" type="button">Excluir</button></a>
                         </td>
                     </tr>
