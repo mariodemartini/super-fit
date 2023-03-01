@@ -17,19 +17,7 @@ $medidasdao = new MedidasDAO();
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
-                    <div class="card-header"><h3 class="text-center font-weight-light my-4">MEDIDAS ANTROPOMÉTRICAS</h3></div>
-                     <!-- Div menu -->
-                     <div class="card-header text-center">
-                        <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg">ANAMNESE</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
-                    </div>
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">MEDIDAS ANTROPOMÉTRICAS</h3></div>                    
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
@@ -39,13 +27,10 @@ $medidasdao = new MedidasDAO();
                     </form>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
+                    <form action="controller/MedidasController.php" method="POST">
                         <div class="container">
                             <!-- Linha data, nome e idade -->
                             <div class="row mb-3">
-                                <div class="form-group col-md-2">
-                                    <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData" name="data_cadastro">
-                                </div>
                                 <div class="form-group col-md-5">
                                     <label for="inputData">NOME</label>
                                     <input type="text" class="form-control" id="inputData" >
@@ -54,10 +39,14 @@ $medidasdao = new MedidasDAO();
                                     <label for="inputData">IDADE</label>
                                     <input type="number" class="form-control" id="inputData">
                                 </div>
-                            
                             </div>
-                            <br>
-                            <form action="controller/MedidasController.php" method="POST">
+                                <div class="row">
+                                    <div class="form-group col-md-2">
+                                        <label for="inputData">DATA</label>
+                                        <input type="date" class="form-control" id="inputData" name="data_cadastro">
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="row">
                                     <!-- Coluna de Peso e Altura -->
                                     <div class="col-sm">
@@ -213,7 +202,6 @@ $medidasdao = new MedidasDAO();
                                         </form>
                                     </div>
                                 </div>
-                            </form>
                             </div>
                             <br>
                             <!-- Linha de Botões salvar -->
@@ -221,8 +209,9 @@ $medidasdao = new MedidasDAO();
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                 <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="medidas-editar.php">Editar</a></button>
                                 <button type="submit" name="del" class="btn btn-danger btn-lg">Excluir</button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
-                        </form>
+                    </form>
                     </div>
                     <div class="card-footer text-center py-3"></div>
                 </div>

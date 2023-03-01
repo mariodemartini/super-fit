@@ -62,7 +62,7 @@
     
         $anamnesedao->update($anamnese);
     
-        header("Location: ../anamnese.php");
+        header("Location: ../avaliacao.php");
     }
 
     else if (isset($_GET['del'])){

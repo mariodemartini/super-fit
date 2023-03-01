@@ -2,7 +2,7 @@
 
     class MedidasDAO
     {
-        public function create(DadosIniciais $dados_iniciais){
+        public function create(Medidas $medidas){
             try {
                 $sql = "INSERT INTO Medidas (
                     data_cadastro, peso, altura, freq_card, pressao_arterial, torax, cintura, abdomen, quadril, braco_direito, braco_esquerdo, antebraco_direito, antebraco_esquerdo, coxa_direita, coxa_esquerda, panturrilha_direita, panturrilha_esquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa)
@@ -162,7 +162,6 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
-
         
     }
 

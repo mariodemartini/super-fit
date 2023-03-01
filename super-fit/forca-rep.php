@@ -16,18 +16,6 @@ $testeforcadao = new TesteForcaDAO();
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">TESTE DE FORÇA POR REPETIÇÃO</h3></div>
-                    <!-- Div menu -->
-                    <div class="card-header text-center">
-                        <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg">ANAMNESE</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
-
-                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
-                    </div>
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
@@ -452,6 +440,7 @@ $testeforcadao = new TesteForcaDAO();
                             <div class="mt-4 mb-0">
                                 <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
                                 <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>
                     </div>

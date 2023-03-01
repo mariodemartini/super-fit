@@ -17,18 +17,6 @@ $teste_vo2dao = new TesteVO2DAO();
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Titulo principal e barra pesquisar -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">VO² ESTEIRA</h3></div>
-                    <!-- Div menu -->
-                    <div class="card-header text-center">
-                        <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg">ANAMNESE</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg">MEDIDAS</button></a>
-
-                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg">FORÇA</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg">VO2</button></a>
-                        
-                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg">RESULTADOS</button></a>
-                    </div>
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
@@ -174,6 +162,7 @@ $teste_vo2dao = new TesteVO2DAO();
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                 <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>
                     </div>
