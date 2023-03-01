@@ -218,9 +218,7 @@ $medidasdao = new MedidasDAO();
                             <br>
                             <!-- Linha de Botões salvar -->
                             <div class="mt-4 mb-0">
-                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="medidas-editar.php">Editar</a></button>
-                                <button type="submit" name="del" class="btn btn-danger btn-lg">Excluir</button>
+                                <button type="submit" name="editar" class="btn btn-success btn-lg">Salvar</button>
                             </div>
                         </form>
                     </div>
