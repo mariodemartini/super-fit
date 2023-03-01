@@ -34,7 +34,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Usuario ORDER BY Nome ASC";
+                $sql = "SELECT * FROM Usuario ORDER BY idUsuario ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -52,11 +52,18 @@
             $usuario->setIdUsuario($row['idUsuario']);
             $usuario->setNome($row['Nome']);
             $usuario->setData_Nascimento($row['Data_Nascimento']);
+            $usuario->setSexo($row['Sexo']);
             $usuario->setCpf($row['CPF']);
+            $usuario->setRg($row['RG']);
+            $usuario->setTelefone($row['Telefone']);
             $usuario->setCelular($row['Celular']);
+            $usuario->setCep($row['Cep']);
+            $usuario->setEstado($row['Estado']);
             $usuario->setCidade($row['Cidade']);
             $usuario->setEndereco($row['Endereco']);
             $usuario->setEmail($row['Email']);
+            $usuario->setSenha($row['Senha']);
+            $usuario->setData_Cadastro($row['Data_Cadastro']);
 
             return $usuario;
         }

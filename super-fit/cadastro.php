@@ -16,7 +16,7 @@ $usuariodao = new UsuarioDAO();
             <div class="col-lg-10">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
-                    <div class="card-header"><h3 class="text-center font-weight-light my-4">CADASTRAR NOVO USUARIO</h3></div>
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">CADASTRAR NOVO ALUNO</h3></div>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
                         <form action="controller/UsuarioController.php" method="POST">

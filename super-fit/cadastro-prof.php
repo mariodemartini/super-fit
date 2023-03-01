@@ -143,6 +143,8 @@ $professordao = new ProfessorDAO();
                                         <th>CPF</th>
                                         <th>CREF</th>
                                         <th>Celular</th>
+                                        <th>Cep</th>
+                                        <th>Estado</th>
                                         <th>Cidade</th>
                                         <th>Endereço</th>
                                         <th>Email</th>
@@ -159,6 +161,8 @@ $professordao = new ProfessorDAO();
                                         <td><?= $professor->getCpf() ?></td>
                                         <td><?= $professor->getCref() ?></td>
                                         <td><?= $professor->getCelular() ?></td>
+                                        <td><?= $professor->getCep() ?></td>
+                                        <td><?= $professor->getEstado() ?></td>
                                         <td><?= $professor->getCidade() ?></td>
                                         <td><?= $professor->getEndereco() ?></td>
                                         <td><?= $professor->getEmail() ?></td>

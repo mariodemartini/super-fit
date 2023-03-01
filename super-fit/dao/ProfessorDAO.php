@@ -59,6 +59,7 @@
             $professor->setCidade($row['Cidade']);
             $professor->setEndereco($row['Endereco']);
             $professor->setEmail($row['Email']);
+            $professor->setSenha($row['Senha']);
 
             return $professor;
         }
@@ -84,16 +85,14 @@
                     data_nascimento=:data_nascimento,
                     sexo=:sexo,
                     cpf=:cpf,
-                    rg=:rg,
-                    telefone=:telefone,
+                    cref=:cref,
                     celular=:celular,
                     cep=:cep,
                     estado=:estado,
                     cidade=:cidade,
                     endereco=:endereco,
                     email=:email,
-                    senha=:senha,
-                    data_cadastro=:data_cadastro
+                    senha=:senha
                                 
                     WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);

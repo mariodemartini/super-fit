@@ -48,13 +48,13 @@ $anamnesedao = new AnamneseDAO();
                                     <input type="text" class="form-control" id="inputNome">
                                 </div>
                             </div>
-                            <!-- Inicio conteudo da anamnses -->
+                            <!-- Inicio conteudo da anamneses -->
                             <div class="row mb-3">
                                 <!-- Campo de atividade fisica -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Atividade Física:</legend>
+                                        <div class="col-sm-12">
+                                            <legend class="col-form-label col-sm-5 pt-0">Ativ. Física:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="atividade" id="gridRadios" value="sedentario">
                                                 <label class="form-check-label" for="gridRadios2">Sedentário</label>
@@ -73,8 +73,8 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo tempo de pratica -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Tempo de Prática:</legend>
+                                        <div class="col-sm-12">
+                                            <legend class="col-form-label col-sm-5 pt-0">Tempo Prática:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridcheckboxs1" value="meses">
                                                 <label class="form-check-label" for="gridRadios1">até 6 meses</label>
@@ -140,7 +140,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo bebida alcoolica -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Álcool?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="alcool" id="gridRadios1" value="alcool">
@@ -160,7 +160,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo histórico familiar -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Histórico Familiar:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="hipertensao" id="defaultCheck1" name="historico_fam">
@@ -195,7 +195,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo hipertensão -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Hipertensão?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="hipertensao" id="gridRadios1" value="hipertensaoSim">
@@ -211,7 +211,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo colesterol -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Colesterol?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="colesterol" id="gridRadios1" value="colesterolSim">
@@ -227,7 +227,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo diabetes -->
                                 <div class="col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Diabetes?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="diabetes" id="gridRadios1" value="diabetesSim">
@@ -247,7 +247,7 @@ $anamnesedao = new AnamneseDAO();
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
                                         <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Problema Cardíaco?</legend>
+                                            <legend class="col-form-label col-sm-5 pt-0">Doença Cardíaca?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="cardiaco" id="gridRadios1" value="cardiacoSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
@@ -257,7 +257,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="cardiaco">
                                                 </div>
@@ -269,7 +269,7 @@ $anamnesedao = new AnamneseDAO();
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
                                         <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Cirurgia recente?</legend>
+                                            <legend class="col-form-label col-sm-5 pt-0">Cirurgia?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="cirurgia" id="gridRadios1" value="cirurgiaSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
@@ -279,7 +279,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="cirurgia">
                                                 </div>
@@ -304,7 +304,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="fratura">
                                                 </div>
@@ -316,7 +316,7 @@ $anamnesedao = new AnamneseDAO();
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
                                         <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Lesão Muscular?</legend>
+                                            <legend class="col-form-label col-sm-5 pt-0">Lesão?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="lesao" id="gridRadios1" value="lesaoSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
@@ -326,7 +326,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="lesao">
                                                 </div>
@@ -351,7 +351,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="dor">
                                                 </div>
@@ -362,7 +362,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo movimentos -->
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Movimentos limitados?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="movimentos" id="gridRadios1" value="limitacaoSim">
@@ -373,7 +373,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="movimentos">
                                                 </div>
@@ -387,8 +387,8 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo artrite -->
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Artrite ou Tendinite?</legend>
+                                        <div class="col-sm-12">
+                                            <legend class="col-form-label col-sm-5 pt-0">Artrite/Tendinite?</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="artrite" id="gridRadios1" value="artriteSim">
                                                 <label class="form-check-label" for="gridRadios1">Sim</label>
@@ -398,7 +398,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Onde?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="artrite">
                                                 </div>
@@ -420,7 +420,7 @@ $anamnesedao = new AnamneseDAO();
                                                 <label class="form-check-label" for="gridRadios2">Não</label>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Qual?</label>
+                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="inputPassword" placeholder="" name="medicamentos">
                                                 </div>
@@ -496,7 +496,7 @@ $anamnesedao = new AnamneseDAO();
                                 <!-- Campo alimentação -->
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Habitos Alimentares:</legend>
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1"></label>
@@ -510,7 +510,7 @@ $anamnesedao = new AnamneseDAO();
                             <!-- Div dos botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="submit" name="editar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
                             </div>
                         </form>
                     </div>
