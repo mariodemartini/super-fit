@@ -5,7 +5,7 @@
         public function create(Usuario $usuario){
             try {
                 $sql = "INSERT INTO Usuario (
-                    nome, data_nascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, data_cadastro)
+                    nome, data_nascimento, sexo, cpf, rg, telefone, celular, CEP, estado, cidade, endereco, email, senha, data_cadastro)
                     VALUES (
                     :nome, :data_nascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
 
@@ -57,7 +57,7 @@
             $usuario->setRg($row['RG']);
             $usuario->setTelefone($row['Telefone']);
             $usuario->setCelular($row['Celular']);
-            $usuario->setCep($row['Cep']);
+            $usuario->setCep($row['CEP']);
             $usuario->setEstado($row['Estado']);
             $usuario->setCidade($row['Cidade']);
             $usuario->setEndereco($row['Endereco']);
@@ -89,16 +89,16 @@
                       Data_Nascimento=:data_nascimento,
                       Sexo=:sexo,
                       CPF=:cpf,
-                      rg=:rg,
-                      telefone=:telefone,
-                      celular=:celular,
-                      cep=:cep,
-                      estado=:estado,
-                      cidade=:cidade,
-                      endereco=:endereco,
-                      email=:email,
-                      senha=:senha,
-                      data_cadastro=:data_cadastro
+                      RG=:rg,
+                      Telefone=:telefone,
+                      Celular=:celular,
+                      CEP=:cep,
+                      Estado=:estado,
+                      Cidade=:cidade,
+                      Endereco=:endereco,
+                      Email=:email,
+                      Senha=:senha,
+                      Data_Cadastro=:data_cadastro
                                     
                       WHERE idUsuario = :idUsuario";
                 $p_sql = Conexao::getConexao()->prepare($sql);
@@ -122,6 +122,34 @@
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
+        }
+
+        public function exibeUsuario() {
+            try {
+                $sql = "SELECT idUsuario, Nome, Data_Nascimento, CPF, Celular, Email, Data_Cadastro FROM Usuario ORDER BY idUsuario ASC";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaDados($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
+            }
+        }
+
+        private function listaDados($row) {
+            $usuario = new Usuario();
+            $usuario->setIdUsuario($row['idUsuario']);
+            $usuario->setNome($row['Nome']);
+            $usuario->setData_Nascimento($row['Data_Nascimento']);
+            $usuario->setCpf($row['CPF']);
+            $usuario->setCelular($row['Celular']);
+            $usuario->setEmail($row['Email']);
+            $usuario->setData_Cadastro($row['Data_Cadastro']);
+
+            return $usuario;
         }
 
 

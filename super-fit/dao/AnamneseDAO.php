@@ -5,9 +5,9 @@
         public function create(Anamnese $anamnese){
             try {
                 $sql = "INSERT INTO Anamnese (
-                    atividade, tempo_pratica, objetivo, fumante, alcool, historico_fam, hipertensao, colesterol, diabetes, cardiaco, cirurgia, fratura, lesao, dor, movimentos, artrite, medicamentos, outros, alimentacao, data_cadastro)
+                    Atividade, Tempo_Pratica, Objetivo, Fumante, Alcool, Historico_Fam, Hipertensao, Colesterol, Diabetes, Cardiaco, Cirurgia, Fratura, Lesao, Dor, Movimentos, Artrite, Medicamentos, Outros, Alimentacao, Data_Cadastro, idUsuario)
                     VALUES (
-                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historico_fam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :data_cadastro)";
+                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historico_fam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :data_cadastro, :nome)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
@@ -30,6 +30,7 @@
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
                 $p_sql->bindValue(":data_cadastro", $anamnese->getData_Cadastro());
+                $p_sql->bindValue(":nome", $anamnese->getUsuario());
 
                 return $p_sql->execute();
                 
@@ -76,6 +77,7 @@
             $anamnese->setOutros($row['outros']);
             $anamnese->setAlimentacao($row['alimentacao']);
             $anamnese->setData_Cadastro($row['data_cadastro']);
+            $anamnese->setUsuario($row['nome']);
 
             return $anamnese;
         }
@@ -116,7 +118,8 @@
                       medicamentos=:medicamentos,
                       outros=:outros,
                       alimentacao=:alimentacao,
-                      data_cadastro=:data_cadastro
+                      data_cadastro=:data_cadastro.
+                      idUsuario=:nome,
                                     
                       WHERE idAnamnese = :idAnamnese";
                 $p_sql = Conexao::getConexao()->prepare($sql);
@@ -143,6 +146,17 @@
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
+            }
+        }
+
+        public function buscaUsuario() {
+            try {
+                $sql = "SELECT Usuario.Nome FROM Anamnese, Usuario WHERE Usuario.idUsuario = Anamnese.idUsuario LIKE '%'";
+                $result = Conexao::getConexao()->query($sql);
+                $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
+                return $usuario;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Usuario." . $e;
             }
         }
   

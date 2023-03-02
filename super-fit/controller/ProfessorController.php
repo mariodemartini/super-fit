@@ -25,7 +25,7 @@
         
         $professordao->create($professor);
 
-        header("Location: ../cadastro-prof.php");
+        header("Location: ../cadastro-prof.php"); 
     }
 
     else if (isset($_POST['editar'])) {

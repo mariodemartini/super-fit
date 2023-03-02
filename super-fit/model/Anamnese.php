@@ -22,6 +22,7 @@
         private $outros;
         private $alimentacao;
         private $data_cadastro;
+        private $usuario;
         
         function getIdAnamnese()
         {
@@ -211,6 +212,15 @@
         function setData_cadastro($data_cadastro)
         {
             $this->data_cadastro = $data_cadastro;
+        }
+
+        function getUsuario()
+        {
+            return $this->usuario;           
+        }       
+        function setUsuario($usuario)
+        {
+            $this->usuario = $usuario;
         }
 
     }

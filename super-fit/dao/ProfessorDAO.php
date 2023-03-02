@@ -5,7 +5,7 @@
         public function create(Professor $professor){
             try {
                 $sql = "INSERT INTO Professor (
-                    nome, data_nascimento, sexo, cpf, cref, celular, cep, estado, cidade, endereco, email, senha)
+                    nome, Data_Nascimento, sexo, cpf, cref, celular, cep, estado, cidade, endereco, email, senha)
                     VALUES (
                     :nome, :data_nascimento, :sexo, :cpf, :cref, :celular, :cep, :estado, :cidade, :endereco, :email, :senha)";
 
@@ -112,6 +112,34 @@
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
+        }
+
+        public function exibeProf() {
+            try {
+                $sql = "SELECT idProfessor, Data_Nascimento, CPF, CREF, Celular, Email FROM Professor ORDER BY Nome ASC";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaDados($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
+            }
+        }
+
+        private function listaDados($row) {
+            $professor = new Professor();
+            $professor->setIdprofessor($row['idProfessor']);
+            $professor->setNome($row['Nome']);
+            $professor->setData_Nascimento($row['Data_Nascimento']);
+            $professor->setCpf($row['CPF']);
+            $professor->setCref($row['CREF']);
+            $professor->setCelular($row['Celular']);
+            $professor->setEmail($row['Email']);
+
+            return $professor;
         }
 
         

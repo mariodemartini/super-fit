@@ -130,6 +130,11 @@ $professordao = new ProfessorDAO();
                                     </div>
                                 </div>
                             </div>
+                            <!-- Botões de salvar -->
+                            <div class="mt-4 mb-0">
+                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="home.php">Voltar</a></button>
+                            </div>
                             <br>
                             <div class="card mb-4">
                                 <!-- Inicio tabela -->
@@ -143,17 +148,13 @@ $professordao = new ProfessorDAO();
                                         <th>CPF</th>
                                         <th>CREF</th>
                                         <th>Celular</th>
-                                        <th>Cep</th>
-                                        <th>Estado</th>
-                                        <th>Cidade</th>
-                                        <th>Endereço</th>
                                         <th>Email</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <!-- Dados tabela de alunos -->
                                 <tbody>
-                                <?php foreach ($professordao->read() as $professor) : ?>
+                                <?php foreach ($professordao->exibeProf() as $professor) : ?>
                                     <tr>
                                         <td><?= $professor->getIdProfessor() ?></td>
                                         <td><?= $professor->getNome() ?></td>
@@ -161,10 +162,6 @@ $professordao = new ProfessorDAO();
                                         <td><?= $professor->getCpf() ?></td>
                                         <td><?= $professor->getCref() ?></td>
                                         <td><?= $professor->getCelular() ?></td>
-                                        <td><?= $professor->getCep() ?></td>
-                                        <td><?= $professor->getEstado() ?></td>
-                                        <td><?= $professor->getCidade() ?></td>
-                                        <td><?= $professor->getEndereco() ?></td>
                                         <td><?= $professor->getEmail() ?></td>
                                         <td class="text-center">
                                             <a href="editar-prof.php"><button type="button" class="btn btn-warning">editar</button></a>
@@ -177,12 +174,6 @@ $professordao = new ProfessorDAO();
                                 </tbody>
                                 </table>
 			                </div>
-
-                            <!-- Botões de salvar -->
-                            <div class="mt-4 mb-0">
-                                <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="home.php">Voltar</a></button>
-                            </div>
                         </form>
                     </div>
                     <div class="card-footer text-center py-3"></div>
