@@ -109,8 +109,8 @@
         }
 
         public function selecionaExercicio(){
-            $sql = "SELECT exercicio.Descricao FROM Exercicios, Teste_Forca  
-                    WHERE exercicio.idExercicios = teste_forca.idExercicios";
+            $sql = "SELECT exercicios.Descricao FROM Exercicios, Teste_Forca  
+                    WHERE exercicios.idExercicios = teste_forca.idExercicios";
             $result = Conexao::getConexao()->query($sql);
             $exercicio = $result->fetchAll(PDO::FETCH_ASSOC);
 

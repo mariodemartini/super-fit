@@ -4,14 +4,14 @@
     {
         public function create(Medidas $medidas){
             try {
-                $sql = "INSERT INTO Medidas (
-                    data_cadastro, peso, altura, freq_card, pressao_arterial, torax, cintura, abdomen, quadril, braco_direito, braco_esquerdo, antebraco_direito, antebraco_esquerdo, coxa_direita, coxa_esquerda, panturrilha_direita, panturrilha_esquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa)
+                $sql = "INSERT INTO medidas (
+                    Data_Cadastro, Peso, Altura, freq_card, pressao_arterial, torax, cintura, abdomen, quadril, braco_direito, braco_esquerdo, antebraco_direito, antebraco_esquerdo, coxa_direita, coxa_esquerda, panturrilha_direita, panturrilha_esquerda, peitoral, axilarMedia, abdominal, supraIliaca, Sub_Escapular, tricipital, coxa)
                     VALUES (
                     :data_cadastro, :peso, :altura, :freq_card, :pressao_arterial, :torax, :cintura, :abdomen, :quadril, :braco_direito, :braco_esquerdo, :antebraco_direito, :antebraco_esquerdo, :coxa_direita, :coxa_esquerda, :panturrilha_direita, :panturrilha_esquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":data_cadastro", $medidas->getData_Cadastro());
                 $p_sql->bindValue(":peso", $medidas->getPeso());
+                $p_sql->bindValue(":data_cadastro", $medidas->getData_Cadastro());
                 $p_sql->bindValue(":altura", $medidas->getAltura());
                 $p_sql->bindValue(":freq_card", $medidas->getFreq_card());
                 $p_sql->bindValue(":pressao_arterial", $medidas->getPressao_arterial());
@@ -22,7 +22,7 @@
                 $p_sql->bindValue(":braco_direito", $medidas->getBraco_direito());
                 $p_sql->bindValue(":braco_esquerdo", $medidas->getBraco_esquerdo());
                 $p_sql->bindValue(":antebraco_direito", $medidas->getAntebraco_direito());
-                $p_sql->bindValue(":antebraco_esquerdo", $circunferencias->getAntebraco_esquerdo());
+                $p_sql->bindValue(":antebraco_esquerdo", $medidas->getAntebraco_esquerdo());
                 $p_sql->bindValue(":coxa_direita", $medidas->getCoxa_direita());
                 $p_sql->bindValue(":coxa_esquerda", $medidas->getCoxa_esquerda());
                 $p_sql->bindValue(":panturrilha_direita", $medidas->getPanturrilha_direita());
@@ -34,7 +34,7 @@
                 $p_sql->bindValue(":subEscapular", $medidas->getSubEscapular());
                 $p_sql->bindValue(":tricipital", $medidas->getTricipital());
                 $p_sql->bindValue(":coxa", $medidas->getCoxa());
-
+                       
                 return $p_sql->execute();
                 
             } catch (Exception $e) {

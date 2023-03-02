@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Anamnese` (
   `Data_Cadastro` DATE NULL DEFAULT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idAnamnese`),
-  INDEX `fk_Anamnese_Usuario1_idx` (`idUsuario` ASC) VISIBLE,
+  INDEX `fk_Anamnese_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Anamnese_Usuario1`
     FOREIGN KEY (`idUsuario`)
     REFERENCES `mydb`.`Usuario` (`idUsuario`)
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Teste_Forca` (
   `Resultado_Kg` INT NULL DEFAULT NULL,
   `idExercicios` INT NOT NULL,
   PRIMARY KEY (`idTeste_Forca`),
-  INDEX `fk_Teste_Forca_Exercicios1_idx` (`idExercicios` ASC) VISIBLE,
+  INDEX `fk_Teste_Forca_Exercicios1_idx` (`idExercicios` ASC),
   CONSTRAINT `fk_Teste_Forca_Exercicios1`
     FOREIGN KEY (`idExercicios`)
     REFERENCES `mydb`.`Exercicios` (`idExercicios`))
@@ -212,10 +212,10 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Resultado` (
   `idMedidas` INT NOT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idResultado`),
-  INDEX `fk_Resultado_Teste_VO21_idx` (`idTeste_VO2` ASC) VISIBLE,
-  INDEX `fk_Resultado_Teste_Forca1_idx` (`idTeste_Forca` ASC) VISIBLE,
-  INDEX `fk_Resultado_Medidas1_idx` (`idMedidas` ASC) VISIBLE,
-  INDEX `fk_Resultado_Usuario1_idx` (`idUsuario` ASC) VISIBLE,
+  INDEX `fk_Resultado_Teste_VO21_idx` (`idTeste_VO2` ASC),
+  INDEX `fk_Resultado_Teste_Forca1_idx` (`idTeste_Forca` ASC),
+  INDEX `fk_Resultado_Medidas1_idx` (`idMedidas` ASC),
+  INDEX `fk_Resultado_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Resultado_Teste_VO21`
     FOREIGN KEY (`idTeste_VO2`)
     REFERENCES `mydb`.`Teste_VO2` (`idTeste_VO2`)
@@ -265,9 +265,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
   `Feedback` INT NULL DEFAULT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idTreino`),
-  INDEX `fk_Treino_Series1_idx` (`idSeries` ASC) VISIBLE,
-  INDEX `fk_Treino_Exercicios1_idx` (`idExercicios` ASC) VISIBLE,
-  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC) VISIBLE,
+  INDEX `fk_Treino_Series1_idx` (`idSeries` ASC),
+  INDEX `fk_Treino_Exercicios1_idx` (`idExercicios` ASC),
+  INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Treino_Exercicios1`
     FOREIGN KEY (`idExercicios`)
     REFERENCES `mydb`.`Exercicios` (`idExercicios`),

@@ -55,7 +55,7 @@
 
         private function listaAnamnese($row) {
             $anamnese = new Anamnese();
-            $anamnese->setAnamnese($row['idUsuario']);
+            $anamnese->setIdAnamnese($row['idAnamnese']);
             $anamnese->setAtividade($row['atividade']);
             $anamnese->setTempo_pratica($row['tempo_pratica']);
             $anamnese->setObjetivo($row['objetivo']);

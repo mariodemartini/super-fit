@@ -30,10 +30,10 @@ $anamnesedao = new AnamneseDAO();
                             <!-- Div data -->
                             <div class="row mb-3 align-items-center">
                                 <div class="form-group col-md-2">
-                                    <input type="date" class="form-control" id="inputData" placeholder="Nome">
+                                    <input type="date" class="form-control" id="inputData" placeholder="data_cadastro" name="data_cadastro">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="inputNome">
+                                    <input type="text" class="form-control" id="inputNome" name="nome">
                                 </div>
                             </div>
                             <!-- Inicio conteudo da anamneses -->
@@ -169,7 +169,7 @@ $anamnesedao = new AnamneseDAO();
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="cardicao" id="defaultCheck2" name="historico_fam">
+                                                <input class="form-check-input" type="checkbox" value="cardiaco" id="defaultCheck2" name="historico_fam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Cardíaco
                                                 </label>

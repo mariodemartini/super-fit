@@ -12,7 +12,7 @@
         private $terceira_tentativa;
         private $resultado_rep;
         private $resultado_kg;
-        private Exercicio $exercicio;
+        private $exercicio;
 
         function getIdTesteForca()
         {

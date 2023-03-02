@@ -33,11 +33,11 @@ $medidasdao = new MedidasDAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-5">
                                     <label for="inputData">NOME</label>
-                                    <input type="text" class="form-control" id="inputData" >
+                                    <input type="text" class="form-control" id="inputData" name="nome">
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
-                                    <input type="number" class="form-control" id="inputData">
+                                    <input type="number" class="form-control" id="inputData" name="idade">
                                 </div>
                             </div>
                                 <div class="row">
@@ -54,7 +54,7 @@ $medidasdao = new MedidasDAO();
                                             <div class="form-group row">
                                                 <label for="inputPeso" class="col-sm-3 col-form-label">Peso</label>
                                                 <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control" id="inputPeso" placeholder="kg" nome="peso">
+                                                <input type="number" step="0.01" class="form-control" id="inputPeso" placeholder="kg" name="peso">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -75,85 +75,83 @@ $medidasdao = new MedidasDAO();
                                                 <input type="text" class="form-control mt-3" id="inputPA" placeholder="mmHg" name="pressao_arterial">
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                     <!-- Coluna Circunferencias -->
                                     <div class="col-sm">
                                         <h4>Circunferências</h4>
-                                            <div class="form-group row">
-                                                <label for="inputTorax" class="col-sm-4 col-form-label">Torax N.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputTorax" placeholder="cm" name="torax">
-                                                </div>
+                                        <div class="form-group row">
+                                            <label for="inputTorax" class="col-sm-4 col-form-label">Torax N.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputTorax" placeholder="cm" name="torax">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputCintura" class="col-sm-4 col-form-label">Cintura</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCintura" placeholder="cm" name="cintura">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputCintura" class="col-sm-4 col-form-label">Cintura</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputCintura" placeholder="cm" name="cintura">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputAbd" class="col-sm-4 col-form-label">Abdomen</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="cm" name="abdomen">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputAbd" class="col-sm-4 col-form-label">Abdomen</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputAbdomen" placeholder="cm" name="abdomen">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputQuadril" class="col-sm-4 col-form-label">Quadril</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputQuadril" placeholder="cm" name="quadril">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputQuadril" class="col-sm-4 col-form-label">Quadril</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputQuadril" placeholder="cm" name="quadril">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputBracoD" class="col-sm-4 col-form-label">Braço D.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm" name="braco_direito">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputBracoD" class="col-sm-4 col-form-label">Braço D.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm" name="braco_direito">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputBracoE" class="col-sm-4 col-form-label">Braço E.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm" name="braco_esquerdo">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputBracoE" class="col-sm-4 col-form-label">Braço E.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm" name="braco_esquerdo">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputAntebD" class="col-sm-4 col-form-label">Anteb. D.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm" name="antebraco_direito">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputAntebD" class="col-sm-4 col-form-label">Anteb. D.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm" name="antebraco_direito">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputAntebE" class="col-sm-4 col-form-label">Anteb. E.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm" name="antebraco_esquerdo">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputAntebE" class="col-sm-4 col-form-label">Anteb. E.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm" name="antebraco_esquerdo">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputCoxaD" class="col-sm-4 col-form-label">Coxa D.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm" name="coxa_direita">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputCoxaD" class="col-sm-4 col-form-label">Coxa D.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm" name="coxa_direita">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputCoxaE" class="col-sm-4 col-form-label">Coxa E.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm" name="coxa_esquerda">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputCoxaE" class="col-sm-4 col-form-label">Coxa E.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm" name="coxa_esquerda">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputPantD" class="col-sm-4 col-form-label">Pantur. D.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm" name="panturrilha_direita">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPantD" class="col-sm-4 col-form-label">Pantur. D.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm" name="panturrilha_direita">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputPantE" class="col-sm-4 col-form-label">Pantur. E.</label>
-                                                <div class="col-sm-4">
-                                                <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm" name="panturrilha_esquerda">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPantE" class="col-sm-4 col-form-label">Pantur. E.</label>
+                                            <div class="col-sm-4">
+                                            <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm" name="panturrilha_esquerda">
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                     </div>
                                     <!-- Coluna Dobras cutaneas -->
                                     <div class="col-sm">
                                         <h4>Dobras Cutâneas</h4>
@@ -199,10 +197,10 @@ $medidasdao = new MedidasDAO();
                                                 <input type="number" step="0.1" class="form-control" id="inputCoxa" placeholder="mm" name="coxa">
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
+                        
                             <br>
                             <!-- Linha de Botões salvar -->
                             <div class="mt-4 mb-0">

@@ -37,7 +37,7 @@
         
         $medidasdao->create($medidas);
 
-        header("Location: ../medidas.php");
+        //header("Location: ../medidas.php");
     }
 
     else if (isset($_POST['editar'])) {
@@ -79,9 +79,9 @@
 
         $medidasdao->delete($medidas);
 
-        header("Location: ../medidas.php");
+        header("Location: ../avaliacao.php");
     } else {
-        header("Location: ../medidas.php");
+        header("Location: ../avaliacao.php");
     }
-    
+   
 ?>

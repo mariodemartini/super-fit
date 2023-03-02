@@ -188,7 +188,7 @@
 
         function getPanturrilha_esquerda()
         {
-            return $this->antebraco_esquerdo;           
+            return $this->panturrilha_esquerda;           
         }
         function setPanturrilha_esquerda($panturrilha_esquerda)
         {

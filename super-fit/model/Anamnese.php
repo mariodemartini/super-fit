@@ -114,7 +114,7 @@
             $this->diabetes = $diabetes;
         }
 
-        function getCardicaco()
+        function getCardiaco()
         {
             return $this->cardiaco;           
         }
