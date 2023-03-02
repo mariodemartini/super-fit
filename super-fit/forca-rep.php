@@ -47,7 +47,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Peitoral</h4>
-                                    <select class="form-control" id="exercicioPeito">
+                                    <select class="form-control" id="exercicioPeito" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Supino Reto</option>
                                     </select>
