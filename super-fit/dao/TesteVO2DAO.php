@@ -5,7 +5,7 @@
         public function create(TesteVO2 $teste_vo2){
             try {
                 $sql = "INSERT INTO Teste_VO2 (
-                    data_teste, velocidade_inicial, fc_repouso, pressao_inicio, pressao_final, fc_teste, tempo_teste, velocidade_teste, esforco_teste, resultado_vo2)
+                    Data_Teste, Velocidade_Inicial, FC_Repouso, Pressao_Inicio, Pressao_Final, FC_Teste, Tempo_Teste, Velocidade_Teste, Esforco_Teste, Resultado_VO2)
                     VALUES (
                         :data_teste, :velocidade_inicial, :fc_repouso, :pressao_inicio, :pressao_final, :fc_teste, :tempo_teste, :velocidade_teste, :esforco_teste, :resultado_vo2)";
 

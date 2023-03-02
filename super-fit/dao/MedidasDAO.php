@@ -4,7 +4,7 @@
     {
         public function create(Medidas $medidas){
             try {
-                $sql = "INSERT INTO medidas (
+                $sql = "INSERT INTO Medidas (
                     Data_Cadastro, Peso, Altura, freq_card, pressao_arterial, torax, cintura, abdomen, quadril, braco_direito, braco_esquerdo, antebraco_direito, antebraco_esquerdo, coxa_direita, coxa_esquerda, panturrilha_direita, panturrilha_esquerda, peitoral, axilarMedia, abdominal, supraIliaca, Sub_Escapular, tricipital, coxa)
                     VALUES (
                     :data_cadastro, :peso, :altura, :freq_card, :pressao_arterial, :torax, :cintura, :abdomen, :quadril, :braco_direito, :braco_esquerdo, :antebraco_direito, :antebraco_esquerdo, :coxa_direita, :coxa_esquerda, :panturrilha_direita, :panturrilha_esquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa)";

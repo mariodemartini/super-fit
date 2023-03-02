@@ -5,9 +5,9 @@
         public function create(Anamnese $anamnese){
             try {
                 $sql = "INSERT INTO Anamnese (
-                    Atividade, Tempo_Pratica, Objetivo, Fumante, Alcool, Historico_Fam, Hipertensao, Colesterol, Diabetes, Cardiaco, Cirurgia, Fratura, Lesao, Dor, Movimentos, Artrite, Medicamentos, Outros, Alimentacao, Data_Cadastro, idUsuario)
+                    Atividade, Tempo_Pratica, Objetivo, Fumante, Alcool, Historico_Fam, Hipertensao, Colesterol, Diabetes, Cardiaco, Cirurgia, Fratura, Lesao, Dor, Movimentos, Artrite, Medicamentos, Outros, Alimentacao, Data_Cadastro)
                     VALUES (
-                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historico_fam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :data_cadastro, :nome)";
+                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historico_fam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :data_cadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
@@ -30,7 +30,7 @@
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
                 $p_sql->bindValue(":data_cadastro", $anamnese->getData_Cadastro());
-                $p_sql->bindValue(":nome", $anamnese->getUsuario());
+               // $p_sql->bindValue(":nome", $anamnese->buscaUsuario());
 
                 return $p_sql->execute();
                 
@@ -77,14 +77,14 @@
             $anamnese->setOutros($row['outros']);
             $anamnese->setAlimentacao($row['alimentacao']);
             $anamnese->setData_Cadastro($row['data_cadastro']);
-            $anamnese->setUsuario($row['nome']);
+           // $anamnese->setUsuario($row['nome']);
 
             return $anamnese;
         }
 
         public function delete(Anamnese $anamnese){
             try {
-                $sql = "DELETE FROM Anamnese WHERE  idAnamnese = :idAnamnese";
+                $sql = "DELETE FROM Anamnese WHERE idAnamnese = :idAnamnese";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idAnamnese", $anamnese->getIdAnamnese());
                 return $p_sql->execute();
@@ -99,27 +99,26 @@
                 $sql = "UPDATE Anamnese set
                     
                       idAnamnese=:idAnamnese,
-                      atividade=:atividade,
-                      tempo_pratica=:tempo_pratica,
-                      objetivo=:objetivo,
-                      fumante=:fumante,
-                      alcool=:alcool,
-                      historico_fam=:historico_fam,
-                      hipertensao=:hipertensao,
-                      colesterol=:colesterol,
-                      diabetes=:diabetes,
-                      cardiaco=:cardiaco,
-                      cirugia=:cirurgia,
-                      fratura=:fratura,
-                      lesao=:lesao,
-                      dor=:dor,
-                      movimentos=:movimentos,
-                      artrite=:artrite,
-                      medicamentos=:medicamentos,
-                      outros=:outros,
-                      alimentacao=:alimentacao,
-                      data_cadastro=:data_cadastro.
-                      idUsuario=:nome,
+                      Atividade=:atividade,
+                      Tempo_Pratica=:tempo_pratica,
+                      Objetivo=:objetivo,
+                      Fumante=:fumante,
+                      Alcool=:alcool,
+                      Historico_fam=:historico_fam,
+                      Hipertensao=:hipertensao,
+                      Colesterol=:colesterol,
+                      Diabetes=:diabetes,
+                      Cardiaco=:cardiaco,
+                      Cirugia=:cirurgia,
+                      Fratura=:fratura,
+                      Lesao=:lesao,
+                      Dor=:dor,
+                      Movimentos=:movimentos,
+                      Artrite=:artrite,
+                      Medicamentos=:medicamentos,
+                      Outros=:outros,
+                      Alimentacao=:alimentacao,
+                      Data_Cadastro=:data_cadastro,
                                     
                       WHERE idAnamnese = :idAnamnese";
                 $p_sql = Conexao::getConexao()->prepare($sql);
@@ -151,10 +150,12 @@
 
         public function buscaUsuario() {
             try {
-                $sql = "SELECT Usuario.Nome FROM Anamnese, Usuario WHERE Usuario.idUsuario = Anamnese.idUsuario LIKE '%'";
-                $result = Conexao::getConexao()->query($sql);
-                $usuario = $result->fetchAll(PDO::FETCH_ASSOC);
-                return $usuario;
+                $sql = "SELECT Usuario.Nome FROM Anamnese 
+                JOIN Usuario ON Anamnese.idUsuario = Usuario.idUsuario 
+                WHERE Usuario.Name LIKE $nome";;
+                $result = Conexao::getConexao()->prepare($sql);
+                $row = $result->fetch_assoc();
+                return $row;
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar Buscar Usuario." . $e;
             }

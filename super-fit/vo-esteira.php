@@ -54,25 +54,25 @@ $teste_vo2dao = new TesteVO2DAO();
                                 <h4>Dados Iniciais</h4>
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Vel. Inicio</label>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h" name="velocidade_inicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="inputFCRepouso" class="col-sm-5 col-form-label">FC Repouso</label>
-                                    <div class="col-sm-5">
+                                    <label for="inputFCRepouso" class="col-sm-8 col-form-label">FC Repouso</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm" name="fc_repouso">
                                     </div>
                                 </div>
-				<div class="form-group col-md-3">
-                                    <label for="inputPA" class="col-sm-5 col-form-label">PA Inicial</label>
-                                    <div class="col-sm-5">
+				                <div class="form-group col-md-3">
+                                    <label for="inputPA" class="col-sm-6 col-form-label">PA Inicial</label>
+                                    <div class="col-sm-6">
                                         <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_inicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-5 col-form-label">PA Final</label>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-6">
                                         <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_final">
                                     </div>
                                 </div>
@@ -99,8 +99,8 @@ $teste_vo2dao = new TesteVO2DAO();
                                 </div>
                                 <!-- Coluna velocidade -->
                                 <div class="form-group col-md-3">
-                                    <label for="inputVel" class="col-sm-5 col-form-label">Velocidade</label>
-                                    <div class="col-sm-5">
+                                    <label for="inputVel" class="col-sm-7 col-form-label">Velocidade</label>
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
                                         <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
                                         <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
@@ -132,7 +132,7 @@ $teste_vo2dao = new TesteVO2DAO();
                                 <!-- Coluna esforço -->
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Esforço</label>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-6">
                                         <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
                                         <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
                                         <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
@@ -161,7 +161,7 @@ $teste_vo2dao = new TesteVO2DAO();
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="submit" name="editar" class="btn btn-success btn-lg">Editar</button>
+                                <button type="submit" name="editar" class="btn btn-warning btn-lg">Editar</button>
                                 <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>

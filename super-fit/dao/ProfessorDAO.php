@@ -81,18 +81,18 @@
                 $sql = "UPDATE Professor set
                     
                     idProfessor=:idProfessor,
-                    nome=:nome,
-                    data_nascimento=:data_nascimento,
-                    sexo=:sexo,
-                    cpf=:cpf,
-                    cref=:cref,
-                    celular=:celular,
-                    cep=:cep,
-                    estado=:estado,
-                    cidade=:cidade,
-                    endereco=:endereco,
-                    email=:email,
-                    senha=:senha
+                    Nome=:nome,
+                    Data_Nascimento=:data_nascimento,
+                    Sexo=:sexo,
+                    CPF=:cpf,
+                    CREF=:cref,
+                    Celular=:celular,
+                    CEP=:cep,
+                    Estado=:estado,
+                    Cidade=:cidade,
+                    Endereco=:endereco,
+                    Email=:email,
+                    Senha=:senha
                                 
                     WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
@@ -116,7 +116,7 @@
 
         public function exibeProf() {
             try {
-                $sql = "SELECT idProfessor, Data_Nascimento, CPF, CREF, Celular, Email FROM Professor ORDER BY Nome ASC";
+                $sql = "SELECT idProfessor, Nome, Data_Nascimento, CPF, CREF, Celular, Email FROM Professor ORDER BY Nome ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();

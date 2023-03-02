@@ -30,6 +30,7 @@
         $anamnese->setOutros(($d['outros']));
         $anamnese->setAlimentacao(($d['alimentacao']));
         $anamnese->setData_Cadastro(($d['data_cadastro']));
+        $anamnese->setUsuario(($d['nome']));
         
         $anamnesedao->create($anamnese);
 

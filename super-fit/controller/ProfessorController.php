@@ -46,7 +46,7 @@
     
         $professordao->update($professor);
     
-        header("Location: ../editar-prof.php");
+        header("Location: ../cadastro-prof.php");   
     }
 
     else if (isset($_GET['del'])){
