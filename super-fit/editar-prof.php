@@ -39,7 +39,7 @@ $professordao = new ProfessorDAO();
                                 <!-- Campo data nascimento -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="data_nascimento" value="<?= $professor->getData_Nascimento() ?>" require/>
+                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="data_nascimento" value="<?= $professor->getDataNascimento() ?>" require/>
                                         <label for="inputDataNascimento">Data de Nascimento</label>
                                     </div>
                                 </div>

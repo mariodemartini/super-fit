@@ -25,20 +25,20 @@ $testeforcadao = new TesteForcaDAO();
                     </form>
                     <div class="card-body">
                         <!-- Div do formulario principal -->
-                        <form>
+                        <form action="controller/TesteForcaController.php" method="POST">
                             <!-- Linha data e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData">
+                                    <input type="date" class="form-control" id="inputData" name="dataTeste">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="inputData">NOME</label>
-                                    <input type="text" class="form-control" id="inputData">
+                                    <input type="text" class="form-control" id="inputData" name="nome">
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
-                                    <input type="number" class="form-control" id="inputData">
+                                    <input type="number" class="form-control" id="inputData" name="idade">
                                 </div>
                             </div>
                             <br>
@@ -49,7 +49,6 @@ $testeforcadao = new TesteForcaDAO();
                                     <h4>Peitoral</h4>
                                     <select class="form-control" id="exercicioPeito" name="exercicio">
                                         <option>Escolha</option>
-                                        <option>Supino Reto</option>
                                     </select>
                                 </div>
                             </div>
@@ -58,22 +57,23 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="Rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="Rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -82,19 +82,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Costas</h4>
-                                    <select class="form-control" id="exercicioCostas">
+                                    <select class="form-control" id="exercicioCostas" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Remada Maquina</option>
                                     </select>
@@ -115,22 +115,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputResultado" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputResultado" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -139,19 +139,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Coxa</h4>
-                                    <select class="form-control" id="exercicioCoxa">
+                                    <select class="form-control" id="exercicioCoxa" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Agachamento Maquina</option>
                                     </select>
@@ -172,22 +172,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga"> 
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -196,19 +196,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Bíceps</h4>
-                                    <select class="form-control" id="exercicioBiceps">
+                                    <select class="form-control" id="exercicioBiceps" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Rosca Direta</option>
                                     </select>
@@ -228,22 +228,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -252,19 +252,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Tríceps</h4>
-                                    <select class="form-control" id="exercicioTriceps">
+                                    <select class="form-control" id="exercicioTriceps" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Pulley W</option>
                                     </select>
@@ -284,22 +284,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -308,19 +308,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -329,7 +329,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Ombro</h4>
-                                    <select class="form-control" id="exercicioOmbro">
+                                    <select class="form-control" id="exercicioOmbro" name="exercicio">
                                         <option>Escolha</option>
                                         <option>Desenvolvimento Maquina</option>
                                     </select>
@@ -340,22 +340,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -364,19 +364,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +385,7 @@ $testeforcadao = new TesteForcaDAO();
                                 <!-- Seleção exercicio -->
                                 <div class="form-group col-md-3">
                                     <h4>Gluteo</h4>
-                                    <select class="form-control" id="exercicioGluteo">
+                                    <select class="form-control" id="exercicioGluteo" name="exercicio">
                                         <option>Escolha</option>
                                         <option>#</option>
                                     </select>
@@ -396,22 +396,22 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputAquecimento" class="col-sm-9 col-form-label">Aquecimento</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="cargaInicial">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="repInicial">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputMetas" class="col-sm-9 col-form-label">Metas:</label>
                                     <div class="col-sm-5 text-center">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">  
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="metaCarga">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="metaRep">  
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputResultado" class="col-sm-9 col-form-label">Resultado:</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputRep" placeholder="rep">
-                                        <input type="number" class="form-control" id="inputKg" placeholder="kg">
+                                        <input type="number" class="form-control" id="inputKg" placeholder="kg" name="resultadoKg">
+                                        <input type="number" class="form-control" id="inputRep" placeholder="rep" name="resultadoRep">
                                     </div>
                                 </div>
                             </div>
@@ -420,19 +420,19 @@ $testeforcadao = new TesteForcaDAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputPrimeira" placeholder="rep" name="primeiraTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputSegunda" placeholder="rep" name="segundaTentativa">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep">
+                                        <input type="number" class="form-control" id="inputTerceira" placeholder="rep" name="terceiraTentativa">
                                     </div>
                                 </div>
                             </div>

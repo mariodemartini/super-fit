@@ -11,7 +11,7 @@
     if(isset($_POST['salvar'])){
 
         $professor->setNome(($d['nome']));
-        $professor->setData_Nascimento(($d['data_nascimento']));
+        $professor->setDataNascimento(($d['dataNascimento']));
         $professor->setSexo(($d['sexo']));
         $professor->setCpf(($d['cpf']));
         $professor->setCref(($d['cref']));
@@ -32,7 +32,7 @@
 
         $professor->setIdProfessor(($d['idProfessor']));
         $professor->setNome(($d['nome']));
-        $professor->setData_Nascimento(($d['data_nascimento']));
+        $professor->setDataNascimento(($d['dataNascimento']));
         $professor->setSexo(($d['sexo']));
         $professor->setCpf(($d['cpf']));
         $professor->setCref(($d['cref']));

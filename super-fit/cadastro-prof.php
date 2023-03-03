@@ -45,7 +45,7 @@ $professordao = new ProfessorDAO();
                                 <!-- Campo data nascimento -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="data_nascimento"/>
+                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="dataNascimento"/>
                                         <label for="inputDataNascimento">Data de Nascimento</label>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@ $professordao = new ProfessorDAO();
                                     <tr>
                                         <td><?= $professor->getIdProfessor() ?></td>
                                         <td><?= $professor->getNome() ?></td>
-                                        <td><?= $professor->getData_Nascimento() ?></td>
+                                        <td><?= $professor->getDataNascimento() ?></td>
                                         <td><?= $professor->getCpf() ?></td>
                                         <td><?= $professor->getCref() ?></td>
                                         <td><?= $professor->getCelular() ?></td>

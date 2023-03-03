@@ -11,7 +11,7 @@
     if(isset($_POST['salvar'])){
 
         $usuario->setNome(($d['nome']));
-        $usuario->setData_Nascimento(($d['data_nascimento']));
+        $usuario->setDataNascimento(($d['dataNascimento']));
         $usuario->setSexo(($d['sexo']));
         $usuario->setCpf(($d['cpf']));
         $usuario->setRg(($d['rg']));
@@ -23,7 +23,7 @@
         $usuario->setEndereco(($d['endereco']));
         $usuario->setEmail(($d['email']));
         $usuario->setSenha(($d['senha']));
-        $usuario->setData_Cadastro(($d['data_cadastro']));
+        $usuario->setDataCadastro(($d['dataCadastro']));
         
         $usuariodao->create($usuario);
 
@@ -34,7 +34,7 @@
 
         $usuario->setIdUsuario(($d['idUsuario']));
         $usuario->setNome(($d['nome']));
-        $usuario->setData_Nascimento(($d['data_nascimento']));
+        $usuario->setDataNascimento(($d['dataNascimento']));
         $usuario->setSexo(($d['sexo']));
         $usuario->setCpf(($d['cpf']));
         $usuario->setRg(($d['rg']));
@@ -46,7 +46,7 @@
         $usuario->setEndereco(($d['endereco']));
         $usuario->setEmail(($d['email']));
         $usuario->setSenha(($d['senha']));
-        $usuario->setData_Cadastro(($d['data_cadastro']));
+        $usuario->setDataCadastro(($d['dataCadastro']));
     
         $usuariodao->update($usuario);
     

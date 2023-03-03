@@ -22,7 +22,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM exercicios ORDER BY grupoMuscular ASC";
+                $sql = "SELECT * FROM exercicios ORDER BY grupoMuscular";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();

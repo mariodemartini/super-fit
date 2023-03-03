@@ -30,7 +30,7 @@ $anamnesedao = new AnamneseDAO();
                             <!-- Div data -->
                             <div class="row mb-3 align-items-center">
                                 <div class="form-group col-md-2">
-                                    <input type="date" class="form-control" id="inputData" placeholder="data_cadastro" name="data_cadastro">
+                                    <input type="date" class="form-control" id="inputData" placeholder="dataCadastro" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <input type="text" class="form-control" id="inputNome" name="nome">
@@ -64,15 +64,15 @@ $anamnesedao = new AnamneseDAO();
                                         <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Tempo Prática:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridcheckboxs1" value="meses">
+                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridcheckboxs1" value="meses">
                                                 <label class="form-check-label" for="gridRadios1">até 6 meses</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridRadios1" value="ano">
+                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridRadios1" value="ano">
                                                 <label class="form-check-label" for="gridRadios1">Até 1 ano</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempo_pratica" id="gridRadios1" value="maisAno">
+                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridRadios1" value="maisAno">
                                                 <label class="form-check-label" for="gridRadios1">Mais de 1 ano</label>
                                             </div>
                                         </div>
@@ -151,25 +151,25 @@ $anamnesedao = new AnamneseDAO();
                                         <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Histórico Familiar:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="hipertensao" id="defaultCheck1" name="historico_fam">
+                                                <input class="form-check-input" type="checkbox" value="hipertensao" id="defaultCheck1" name="historicoFam">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     Hipertensão
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="diabetes" id="defaultCheck2" name="historico_fam">
+                                                <input class="form-check-input" type="checkbox" value="diabetes" id="defaultCheck2" name="historicoFam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Diabetes
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="colesterol" id="defaultCheck2" name="historico_fam">
+                                                <input class="form-check-input" type="checkbox" value="colesterol" id="defaultCheck2" name="historicoFam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Colesterol
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="cardiaco" id="defaultCheck2" name="historico_fam">
+                                                <input class="form-check-input" type="checkbox" value="cardiaco" id="defaultCheck2" name="historicoFam">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Cardíaco
                                                 </label>
@@ -425,19 +425,19 @@ $anamnesedao = new AnamneseDAO();
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Outros Sintomas:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Hipotireoidismo" id="defaultCheck1" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="hipotireoidismo" id="defaultCheck1" name="outros">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     Hipotireoidismo
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Tontura" id="defaultCheck1" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="tontura" id="defaultCheck1" name="outros">
                                                 <label class="form-check-label" for="defaultCheck1" name="outros">
                                                     Tontura
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Desmaios" id="defaultCheck2" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="desmaios" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Desmaios
                                                 </label>
@@ -455,25 +455,25 @@ $anamnesedao = new AnamneseDAO();
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Taquicardia" id="defaultCheck2" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="taquicardia" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Taquicardia
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Ansiedade" id="defaultCheck2" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="ansiedade" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Ansiedade
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Gastrite" id="defaultCheck2" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="gastrite" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Gastrite
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="Insônia" id="defaultCheck2" name="outros">
+                                                <input class="form-check-input" type="checkbox" value="insônia" id="defaultCheck2" name="outros">
                                                 <label class="form-check-label" for="defaultCheck2">
                                                     Insônia
                                                 </label>

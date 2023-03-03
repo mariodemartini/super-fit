@@ -10,17 +10,17 @@
 
     if(isset($_POST['salvar'])){
 
-        $testeforca->setData_teste($row['data_teste']);
-        $testeforca->setCarga_inicial($row['velocidade_inicial']);
-        $testeforca->setRep_inicial($row['fc_repouso']);
-        $testeforca->setMeta_carga($row['pressao_inicio']);
-        $testeforca->setMeta_rep($row['pressao_final']);
-        $testeforca->setPrimeira_tentativa($row['fc_teste']);
-        $testeforca->setSegunda_tentativa($row['tempo_teste']);
-        $testeforca->setTerceira_tentativa($row['velocidade_teste']);
-        $testeforca->setResultado_rep($row['esforco_teste']);
-        $testeforca->setResultado_kg($row['resultado_vo2']);
-        $testeforca->setExercicio($row['resultado_vo2']);
+        $testeforca->setDataTeste($row['dataTeste']);
+        $testeforca->setCargaInicial($row['cargaInicial']);
+        $testeforca->setRepInicial($row['repInicial']);
+        $testeforca->setMetaCarga($row['metaCarga']);
+        $testeforca->setMetaRep($row['metaRep']);
+        $testeforca->setPrimeiraTentativa($row['primeiraTentativa']);
+        $testeforca->setSegundaTentativa($row['segundaTentativa']);
+        $testeforca->setTerceiraTentativa($row['terceiraTentativa']);
+        $testeforca->setResultadoRep($row['resultadoRep']);
+        $testeforca->setResultadoKg($row['resultadoKg']);
+        $testeforca->setExercicio($row['exercicio']);
         
         $testeforcadao->create($testeforca);
 
@@ -29,18 +29,17 @@
 
     else if (isset($_POST['editar'])) {
 
-        $testeforca->setIdTesteForca(($d['idTesteForca']));
-        $testeforca->setData_teste($row['data_teste']);
-        $testeforca->setCarga_inicial($row['velocidade_inicial']);
-        $testeforca->setRep_inicial($row['fc_repouso']);
-        $testeforca->setMeta_carga($row['pressao_inicio']);
-        $testeforca->setMeta_rep($row['pressao_final']);
-        $testeforca->setPrimeira_tentativa($row['fc_teste']);
-        $testeforca->setSegunda_tentativa($row['tempo_teste']);
-        $testeforca->setTerceira_tentativa($row['velocidade_teste']);
-        $testeforca->setResultado_rep($row['esforco_teste']);
-        $testeforca->setResultado_kg($row['resultado_vo2']);
-        $testeforca->setExercicio($row['resultado_vo2']);
+        $testeforca->setDataTeste($row['dataTeste']);
+        $testeforca->setCargaInicial($row['cargaInicial']);
+        $testeforca->setRepInicial($row['repInicial']);
+        $testeforca->setMetaCarga($row['metaCarga']);
+        $testeforca->setMetaRep($row['metaRep']);
+        $testeforca->setPrimeiraTentativa($row['primeiraTentativa']);
+        $testeforca->setSegundaTentativa($row['segundaTentativa']);
+        $testeforca->setTerceiraTentativa($row['terceiraTentativa']);
+        $testeforca->setResultadoRep($row['resultadoRep']);
+        $testeforca->setResultadoKg($row['resultadoKg']);
+        $testeforca->setExercicio($row['exercicio']);
     
         $testeforcadao->update($testeforca);
     

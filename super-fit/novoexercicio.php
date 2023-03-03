@@ -34,7 +34,7 @@ $seriedao = new SerieDAO();
                                 <div class="row mb-3">
                                     <div class="col-sm-1">
                                         <label for="inputGM">GM</label>
-                                        <input type="text" class="form-control" id="inputGM" name="grupo_muscular">
+                                        <input type="text" class="form-control" id="inputGM" name="grupoMuscular">
                                     </div>
                                     <!-- Coluna exercicios -->
                                     <div class="col-sm-5">
@@ -66,7 +66,7 @@ $seriedao = new SerieDAO();
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="inputCG">%CG</label>
-                                        <input type="text" class="form-control" id="inputCG" name="percent_carga">
+                                        <input type="text" class="form-control" id="inputCG" name="percentCarga">
                                     </div>
                                     <div class="col-sm-2">
                                         <label for="inputNivel">NIVEL</label>

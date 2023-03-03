@@ -4,7 +4,7 @@
     {
         public function create(Usuario $usuario){
             try {
-                $sql = "INSERT INTO Usuario (
+                $sql = "INSERT INTO usuario (
                     nome, dataNascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, dataCadastro)
                     VALUES (
                     :nome, :dataNascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :dataCadastro)";
@@ -34,7 +34,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Usuario ORDER BY idUsuario ASC";
+                $sql = "SELECT * FROM usuario ORDER BY idUsuario ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -70,7 +70,7 @@
 
         public function delete(Usuario $usuario){
             try {
-                $sql = "DELETE FROM Usuario WHERE  idUsuario = :idUsuario";
+                $sql = "DELETE FROM usuario WHERE  idUsuario = :idUsuario";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idUsuario", $usuario->getIdUsuario());
                 return $p_sql->execute();

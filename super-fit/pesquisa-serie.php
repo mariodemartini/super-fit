@@ -45,7 +45,7 @@ $seriedao = new SerieDAO();
                         <td><?= $serie->getNivel() ?></td>
                         <td><?= $serie->getFase() ?></td>
                         <td><?= $serie->getSerie() ?></td>
-                        <td><?= $serie->getPercent_Carga() ?></td>
+                        <td><?= $serie->getPercentCarga() ?></td>
                         <td class="text-center">
                             <a href="controller/SerieController.php?del=<?= $serie->getIdSerie() ?>"> 
                             <button class="btn  btn-danger btn-sm" type="button">Excluir</button></a>

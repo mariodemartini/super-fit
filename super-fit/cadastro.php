@@ -24,7 +24,7 @@ $usuariodao = new UsuarioDAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData" name="data_cadastro">
+                                    <input type="date" class="form-control" id="inputData" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-md-3">
 
@@ -43,7 +43,7 @@ $usuariodao = new UsuarioDAO();
                                 <!-- Campo data nascimento -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="data_nascimento"/>
+                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="dataNascimento"/>
                                         <label for="inputDataNascimento">Data de Nascimento</label>
                                     </div>
                                 </div>

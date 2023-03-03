@@ -31,7 +31,7 @@ $teste_vo2dao = new TesteVO2DAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData" name="data_teste">
+                                    <input type="date" class="form-control" id="inputData" name="dataTeste">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="inputData">NOME</label>
@@ -55,25 +55,25 @@ $teste_vo2dao = new TesteVO2DAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Vel. Inicio</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h" name="velocidade_inicio">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h" name="velocidadeInicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputFCRepouso" class="col-sm-8 col-form-label">FC Repouso</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm" name="fc_repouso">
+                                        <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm" name="fcRepouso">
                                     </div>
                                 </div>
 				                <div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-6 col-form-label">PA Inicial</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_inicio">
+                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressaoInicio">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputPA" class="col-sm-5 col-form-label">PA Final</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressao_final">
+                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressaoFinal">
                                     </div>
                                 </div>
                             </div>
@@ -85,64 +85,64 @@ $teste_vo2dao = new TesteVO2DAO();
                                 <div class="form-group col-md-3">
                                     <label for="inputTempo" class="col-sm-5 col-form-label">Tempo</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
-                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempo_teste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
+                                        <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
                                     </div>
                                 </div>
                                 <!-- Coluna velocidade -->
                                 <div class="form-group col-md-3">
                                     <label for="inputVel" class="col-sm-7 col-form-label">Velocidade</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
-                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidade_teste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
+                                        <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeTeste">
                                     </div>
                                 </div>
                                 <!-- Coluna frequencia cardiaca -->
                                 <div class="form-group col-md-3">
                                     <label for="inputFC" class="col-sm-8 col-form-label">F.C.</label>
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
-                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fc_teste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
+                                        <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcTeste">
                                     </div>
                                 </div>
                                 <!-- Coluna esforço -->
                                 <div class="form-group col-md-3">
                                     <label for="inputVelInicio" class="col-sm-8 col-form-label">Esforço</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
-                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforco_teste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
+                                        <input type="number" class="form-control" id="inputVelInicio" placeholder="0 a 10" name="esforcoTeste">
                                     </div>
                                 </div> 
                             </div>
@@ -151,11 +151,11 @@ $teste_vo2dao = new TesteVO2DAO();
                                 <h5>Resultado:</h5>
                                 <div class="form-group col-md-2">
                                     <label for="inputData">VO² Max:</label>
-                                    <input type="number" class="form-control" id="inputVOmax" placeholder="mL/kg·min" name="resultado_vo2">
+                                    <input type="number" class="form-control" id="inputVOmax" placeholder="mL/kg·min" name="resultadoVO2">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="inputData">FC Max:</label>
-                                    <input type="number" class="form-control" id="inputFCmax" placeholder="bpm" name="fc_teste">
+                                    <input type="number" class="form-control" id="inputFCmax" placeholder="bpm" name="fcTeste">
                                 </div>
                             </div>
                             <!-- Botões de salvar -->

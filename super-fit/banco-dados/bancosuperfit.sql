@@ -18,7 +18,7 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuario`
+-- Table `mydb`.`usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `cidade` VARCHAR(100) NULL DEFAULT NULL,
   `endereco` VARCHAR(100) NULL DEFAULT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `eenha` VARCHAR(10) NOT NULL,
+  `senha` VARCHAR(10) NOT NULL,
   `dataCadastro` DATE NULL DEFAULT NULL,
   PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB
@@ -43,7 +43,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Anamnese`
+-- Table `mydb`.`anamnese`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`anamnese` (
   `idAnamnese` INT NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`anamnese` (
   INDEX `fk_Anamnese_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Anamnese_Usuario1`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `mydb`.`usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -80,7 +80,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Exercicios`
+-- Table `mydb`.`exercicios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`exercicios` (
   `idExercicios` INT NOT NULL AUTO_INCREMENT,
@@ -92,7 +92,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Medidas`
+-- Table `mydb`.`medidas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`medidas` (
   `idMedidas` INT NOT NULL AUTO_INCREMENT,
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`medidas` (
   `peitoral` FLOAT NULL DEFAULT NULL,
   `axilarMedia` FLOAT NULL DEFAULT NULL,
   `abdominal` FLOAT NULL DEFAULT NULL,
-  `aupraIliaca` FLOAT NULL DEFAULT NULL,
+  `supraIliaca` FLOAT NULL DEFAULT NULL,
   `subEscapular` FLOAT NULL DEFAULT NULL,
   `tricipital` FLOAT NULL DEFAULT NULL,
   `coxa` FLOAT NULL DEFAULT NULL,
@@ -126,7 +126,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Professor`
+-- Table `mydb`.`professor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`professor` (
   `idProfessor` INT NOT NULL AUTO_INCREMENT,
@@ -141,14 +141,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`professor` (
   `cidade` VARCHAR(100) NULL DEFAULT NULL,
   `endereco` VARCHAR(100) NULL DEFAULT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `denha` VARCHAR(10) NOT NULL,
+  `senha` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idProfessor`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Teste_VO2`
+-- Table `mydb`.`testeVO2`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`testeVO2` (
   `idTesteVO2` INT NOT NULL AUTO_INCREMENT,
@@ -168,7 +168,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Teste_Forca`
+-- Table `mydb`.`testeForca`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`testeForca` (
   `idTesteForca` INT NOT NULL AUTO_INCREMENT,
@@ -183,17 +183,17 @@ CREATE TABLE IF NOT EXISTS `mydb`.`testeForca` (
   `resultadoRep` INT NULL DEFAULT NULL,
   `resultadoKg` INT NULL DEFAULT NULL,
   `idExercicios` INT NOT NULL,
-  PRIMARY KEY (`idTeste_Forca`),
+  PRIMARY KEY (`idTesteForca`),
   INDEX `fk_TesteForca_Exercicios1_idx` (`idExercicios` ASC),
   CONSTRAINT `fk_TesteForca_Exercicios1`
     FOREIGN KEY (`idExercicios`)
-    REFERENCES `mydb`.`Exercicios` (`idExercicios`))
+    REFERENCES `mydb`.`exercicios` (`idExercicios`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Resultado`
+-- Table `mydb`.`resultado`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`resultado` (
   `idResultado` INT NOT NULL,
@@ -217,23 +217,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`resultado` (
   INDEX `fk_Resultado_Medidas1_idx` (`idMedidas` ASC),
   INDEX `fk_Resultado_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Resultado_TesteVO21`
-    FOREIGN KEY (`idTeste_VO2`)
-    REFERENCES `mydb`.`TesteVO2` (`idTesteVO2`)
+    FOREIGN KEY (`idTesteVO2`)
+    REFERENCES `mydb`.`testeVO2` (`idTesteVO2`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Resultado_TesteForca1`
     FOREIGN KEY (`idTesteForca`)
-    REFERENCES `mydb`.`TesteForca` (`idTesteForca`)
+    REFERENCES `mydb`.`testeForca` (`idTesteForca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Resultado_Medidas1`
     FOREIGN KEY (`idMedidas`)
-    REFERENCES `mydb`.`Medidas` (`idMedidas`)
+    REFERENCES `mydb`.`medidas` (`idMedidas`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Resultado_Usuario1`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `mydb`.`usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -241,12 +241,12 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Series`
+-- Table `mydb`.`series`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`series` (
   `idSeries` INT NOT NULL AUTO_INCREMENT,
   `nivel` VARCHAR(45) NULL DEFAULT NULL,
-  `dase` VARCHAR(45) NULL DEFAULT NULL,
+  `fase` VARCHAR(45) NULL DEFAULT NULL,
   `serie` VARCHAR(45) NULL DEFAULT NULL,
   `percentCarga` VARCHAR(5) NULL DEFAULT NULL,
   PRIMARY KEY (`idSeries`))
@@ -255,7 +255,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Treino`
+-- Table `mydb`.`treino`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`treino` (
   `idTreino` INT NOT NULL AUTO_INCREMENT,
@@ -270,13 +270,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`treino` (
   INDEX `fk_Treino_Usuario1_idx` (`idUsuario` ASC),
   CONSTRAINT `fk_Treino_Exercicios1`
     FOREIGN KEY (`idExercicios`)
-    REFERENCES `mydb`.`Exercicios` (`idExercicios`),
+    REFERENCES `mydb`.`exercicios` (`idExercicios`),
   CONSTRAINT `fk_Treino_Series1`
     FOREIGN KEY (`idSeries`)
-    REFERENCES `mydb`.`Series` (`idSeries`),
+    REFERENCES `mydb`.`series` (`idSeries`),
   CONSTRAINT `fk_Treino_Usuario1`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`))
+    REFERENCES `mydb`.`usuario` (`idUsuario`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 

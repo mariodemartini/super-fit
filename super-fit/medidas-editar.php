@@ -33,7 +33,7 @@ $medidasdao = new MedidasDAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData" name="data_cadastro">
+                                    <input type="date" class="form-control" id="inputData" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="inputData">NOME</label>
@@ -41,7 +41,7 @@ $medidasdao = new MedidasDAO();
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
-                                    <input type="number" class="form-control" id="inputData">
+                                    <input type="number" class="form-control" id="inputData" name="idade">
                                 </div>
                             </div>
                             <div class="row">
@@ -63,13 +63,13 @@ $medidasdao = new MedidasDAO();
                                         <div class="form-group row">
                                             <label for="inputFC" class="col-sm-3 col-form-label">F.C.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="freq_card">
+                                            <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="freqCard">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputPA" class="col-sm-3 col-form-label">Pres. Arterial</label>
                                             <div class="col-sm-4">
-                                            <input type="text" class="form-control mt-3" id="inputPA" placeholder="mmHg" name="pressao_arterial">
+                                            <input type="text" class="form-control mt-3" id="inputPA" placeholder="mmHg" name="pressaoArterial">
                                             </div>
                                         </div>
                                     </form>
@@ -104,49 +104,49 @@ $medidasdao = new MedidasDAO();
                                         <div class="form-group row">
                                             <label for="inputBracoD" class="col-sm-4 col-form-label">Braço D.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm" name="braco_direito">
+                                            <input type="number" step="0.1" class="form-control" id="inputBracoD" placeholder="cm" name="bracoDireito">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputBracoE" class="col-sm-4 col-form-label">Braço E.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm" name="braco_esquerdo">
+                                            <input type="number" step="0.1" class="form-control" id="inputBracoE" placeholder="cm" name="bracoEsquerdo">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputAntebD" class="col-sm-4 col-form-label">Anteb. D.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm" name="antebraco_direito">
+                                            <input type="number" step="0.1" class="form-control" id="inputAntebD" placeholder="cm" name="antebracoDireito">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputAntebE" class="col-sm-4 col-form-label">Anteb. E.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm" name="antebraco_esquerdo">
+                                            <input type="number" step="0.1" class="form-control" id="inputAntebE" placeholder="cm" name="antebracoEsquerdo">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputCoxaD" class="col-sm-4 col-form-label">Coxa D.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm" name="coxa_direita">
+                                            <input type="number" step="0.1" class="form-control" id="inputCoxaD" placeholder="cm" name="coxaDireita">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputCoxaE" class="col-sm-4 col-form-label">Coxa E.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm" name="coxa_esquerda">
+                                            <input type="number" step="0.1" class="form-control" id="inputCoxaE" placeholder="cm" name="coxaEsquerda">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputPantD" class="col-sm-4 col-form-label">Pantur. D.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm" name="panturrilha_direita">
+                                            <input type="number" step="0.1" class="form-control" id="inputPantD" placeholder="cm" name="panturrilhaDireita">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputPantE" class="col-sm-4 col-form-label">Pantur. E.</label>
                                             <div class="col-sm-4">
-                                            <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm" name="panturrilha_esquerda">
+                                            <input type="number" step="0.1" class="form-control" id="inputPantE" placeholder="cm" name="panturrilhaEsquerda">
                                             </div>
                                         </div>
                                 </div>
@@ -202,6 +202,7 @@ $medidasdao = new MedidasDAO();
                             <!-- Linha de Botões salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="editar" class="btn btn-success btn-lg">Salvar</button>
+                                <button type="submit" name="del" class="btn btn-danger btn-lg">Excluir</button>
                                 <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>

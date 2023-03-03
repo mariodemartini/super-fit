@@ -4,7 +4,7 @@
     {
         public function create(Resultado $resultado){
             try {
-                $sql = "INSERT INTO Resultado (
+                $sql = "INSERT INTO resultado (
                     peso, imc, abdomen, rcq, percentGord, massaGorda, percentMagra, massaMagra, fc, vo)
                     VALUES (
                     :peso, :imc, :abdomen, :rcq, :percentGord, :massaGorda, :percentMagra, :massaMagra, :fc, :vo)";

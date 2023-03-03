@@ -25,7 +25,7 @@ $usuariodao = new UsuarioDAO();
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
                                     <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData" name="data_cadastro" value="<?= $usuario->getData_Cadastro() ?>" require>
+                                    <input type="date" class="form-control" id="inputData" name="dataCadastro" value="<?= $usuario->getDataCadastro() ?>" require>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <input type="hidden" class="form-control" id="inputData" name="idUsuario" value="<?= $usuario->getIdUsuario() ?>" require>
@@ -44,7 +44,7 @@ $usuariodao = new UsuarioDAO();
                                 <!-- Campo data nascimento -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="data_nascimento" value="<?= $usuario->getData_Nascimento() ?>" require/>
+                                        <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="dataNascimento" value="<?= $usuario->getDataNascimento() ?>" require/>
                                         <label for="inputDataNascimento">Data de Nascimento</label>
                                     </div>
                                 </div>

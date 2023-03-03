@@ -45,9 +45,9 @@ include_once('include/sidebar.html');
                             <div class="row mb-3">
                                 <h4>TREINO MUSCULAÇÃO</h4>
                                 <!-- Coluna de experiencia de treino -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="xpMusc" id="exampleRadios1" value="1" checked>
@@ -69,9 +69,9 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna de fase de treino -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="faseMusc" id="exampleRadios1" value="adaptacao">
@@ -101,9 +101,9 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna de frequencia semanal -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Frequência:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="freqMusc" id="gridRadios" value="a">
@@ -129,33 +129,33 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna duração do treino -->
-                                <div class="form-group col-md-3">
+                                <!-- <div class="form-group col-md-3">
                                     <fieldset class="form-group">
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Duração:</legend>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="durMusc" id="gridRadios" value="4">
+                                                <input class="form-check-input" type="radio" name="durAer" id="gridRadios" value="4">
                                                 <label class="form-check-label" for="gridRadios2">4 semanas</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="durMusc" id="gridRadios" value="8">
+                                                <input class="form-check-input" type="radio" name="durAer" id="gridRadios" value="8">
                                                 <label class="form-check-label" for="gridRadios2">8 semanas</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="durMusc" id="gridRadios" value="12">
+                                                <input class="form-check-input" type="radio" name="durAer" id="gridRadios" value="12">
                                                 <label class="form-check-label" for="gridRadios2">12 semanas</label>
                                             </div>
                                         </div>
                                     </fieldset>
-                                </div>
+                                </div> -->
                             </div>
                             <br>
                             <div class="row mb-3">
                                 <h4>TREINO AERÓBIO</h4>
                                 <!-- Coluna de experiencia de treino -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="xpAer" id="exampleRadios1" value="1" checked>
@@ -177,9 +177,9 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna de fase de treino -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="faseAer" id="gridRadios" value="adaptacao">
@@ -201,9 +201,9 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna de frequencia semanal -->
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-4">
                                     <fieldset class="form-group">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12">
                                             <legend class="col-form-label col-sm-5 pt-0">Frequência:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="freqAer" id="gridRadios" value="a">
@@ -229,7 +229,7 @@ include_once('include/sidebar.html');
                                     </fieldset>
                                 </div>
                                 <!-- Coluna duração do treino -->
-                                <div class="form-group col-md-3">
+                                <!-- <div class="form-group col-md-3">
                                     <fieldset class="form-group">
                                         <div class="col-sm-10">
                                             <legend class="col-form-label col-sm-5 pt-0">Duração:</legend>
@@ -247,7 +247,7 @@ include_once('include/sidebar.html');
                                             </div>
                                         </div>
                                     </fieldset>
-                                </div>
+                                </div> -->
                             </div>
                             <br>
                             

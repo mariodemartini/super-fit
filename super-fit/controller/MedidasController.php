@@ -23,7 +23,7 @@
         $medidas->setBracoEsquerdo(($d['bracoEsquerdo']));
         $medidas->setAntebracoDireito(($d['antebracoDireito']));
         $medidas->setAntebracoEsquerdo(($d['antebracoEsquerdo']));
-        $medidas->setCoxaDireita(($d['setCoxaDireita']));
+        $medidas->setCoxaDireita(($d['coxaDireita']));
         $medidas->setCoxaEsquerda(($d['coxaEsquerda']));
         $medidas->setPanturrilhaDireita(($d['panturrilhaDireita']));
         $medidas->setPanturrilhaEsquerda(($d['panturrilhaEsquerda']));

@@ -45,11 +45,11 @@ $usuariodao = new UsuarioDAO();
                     <tr>
                         <td><?= $usuario->getIdUsuario() ?></td>
                         <td><?= $usuario->getNome() ?></td>
-                        <td><?= $usuario->getData_Nascimento()?></td>
+                        <td><?= $usuario->getDataNascimento()?></td>
                         <td><?= $usuario->getCpf() ?></td>
                         <td><?= $usuario->getCelular() ?></td>
                         <td><?= $usuario->getEmail() ?></td>
-                        <td><?= $usuario->getData_Cadastro() ?></td>
+                        <td><?= $usuario->getDataCadastro() ?></td>
                         <td class="text-center">
                             <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a>
                             <a href="controller/UsuarioController.php?del=<?= $usuario->getIdUsuario() ?>"> 
