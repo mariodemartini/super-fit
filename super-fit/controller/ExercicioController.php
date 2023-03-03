@@ -10,7 +10,7 @@
 
     if(isset($_POST['salvar'])){
 
-        $exercicio->setGrupoMuscular(($d['grupo_muscular']));
+        $exercicio->setGrupoMuscular(($d['grupoMuscular']));
         $exercicio->setDescricao(($d['descricao']));
         
         $exerciciodao->create($exercicio);
@@ -21,7 +21,7 @@
     else if (isset($_POST['editar'])) {
 
         $exercicio->setIdExercicio(($d['idExercicios']));
-        $exercicio->setGrupoMuscular(($d['Grupo_Muscular']));
+        $exercicio->setGrupoMuscular(($d['grupoMuscular']));
         $exercicio->setDescricao(($d['Descricao']));
     
         $exerciciodao->update($exercicio);

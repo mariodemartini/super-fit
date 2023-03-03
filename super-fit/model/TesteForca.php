@@ -2,16 +2,16 @@
 
     Class TesteForca{
         private $idTesteForca;
-        private $data_teste;
-        private $carga_inicial;
-        private $rep_inicial;
-        private $meta_carga;
-        private $meta_rep;
-        private $primeira_tentativa;
-        private $segunda_tentativa;
-        private $terceira_tentativa;
-        private $resultado_rep;
-        private $resultado_kg;
+        private $dataTeste;
+        private $cargaInicial;
+        private $repInicial;
+        private $metaCarga;
+        private $metaRep;
+        private $primeiraTentativa;
+        private $segundaTentativa;
+        private $terceiraTentativa;
+        private $resultadoRep;
+        private $resultadoKg;
         private $exercicio;
 
         function getIdTesteForca()
@@ -23,94 +23,94 @@
             $this->idTesteForca = $idTesteForca;
         }
 
-        function getData_teste()
+        function getDataTeste()
         {
-            return $this->data_teste;           
+            return $this->dataTeste;           
         }
-        function setData_teste($data_teste)
+        function setDataTeste($dataTeste)
         {
-            $this->data_teste = $data_teste;
-        }
-
-        function getCarga_inicial()
-        {
-            return $this->carga_inicial;           
-        }
-        function setCarga_inicial($carga_inicial)
-        {
-            $this->carga_inicial = $carga_inicial;
+            $this->dataTeste = $dataTeste;
         }
 
-        function getRep_inicial()
+        function getCargaInicial()
         {
-            return $this->rep_inicial;           
+            return $this->cargaInicial;           
         }
-        function setRep_inicial($rep_inicial)
+        function setCargaInicial($cargaInicial)
         {
-            $this->rep_inicial = $rep_inicial;
-        }
-
-        function getMeta_carga()
-        {
-            return $this->meta_carga;           
-        }
-        function setMeta_carga($meta_carga)
-        {
-            $this->meta_carga = $meta_carga;
+            $this->cargaInicial = $cargaInicial;
         }
 
-        function getMeta_rep()
+        function getRepInicial()
         {
-            return $this->meta_rep;           
+            return $this->repInicial;           
         }
-        function setMeta_rep($meta_rep)
+        function setRepInicial($repInicial)
         {
-            $this->meta_rep = $meta_rep;
-        }
-
-        function getPrimeira_tentativa()
-        {
-            return $this->primeira_tentativa;           
-        }
-        function setPrimeira_tentativa($primeira_tentativa)
-        {
-            $this->primeira_tentativa = $primeira_tentativa;
+            $this->repInicial = $repInicial;
         }
 
-        function getSegunda_tentativa()
+        function getMetaCarga()
         {
-            return $this->segunda_tentativa;           
+            return $this->metaCarga;           
         }
-        function setSegunda_tentativa($segunda_tentativa)
+        function setMetaCarga($metaCarga)
         {
-            $this->segunda_tentativa = $segunda_tentativa;
-        }
-
-        function getTerceira_tentativa()
-        {
-            return $this->terceira_tentativa;           
-        }
-        function setTerceira_tentativa($terceira_tentativa)
-        {
-            $this->terceira_tentativa = $terceira_tentativa;
+            $this->metaCarga = $metaCarga;
         }
 
-        function getResultado_rep()
+        function getMetaRep()
         {
-            return $this->resultado_rep;           
+            return $this->metaRep;           
         }
-        function setResultado_rep($resultado_rep)
+        function setMetaRep($metaRep)
         {
-            $this->resultado_rep = $resultado_rep;
+            $this->metaRep = $metaRep;
         }
 
-        function getResultado_kg()
+        function getPrimeiraTentativa()
         {
-            return $this->resultado_kg;           
+            return $this->primeiraTentativa;           
         }
-        function setResultado_kg($resultado_kg)
+        function setPrimeiraTentativa($primeiraTentativa)
         {
-            $this->resultado_kg = $resultado_kg;
+            $this->primeiraTentativa = $primeiraTentativa;
+        }
+
+        function getSegundaTentativa()
+        {
+            return $this->segundaTentativa;           
+        }
+        function setSegundaTentativa($segundaTentativa)
+        {
+            $this->segundaTentativa = $segundaTentativa;
+        }
+
+        function getTerceiraTentativa()
+        {
+            return $this->terceiraTentativa;           
+        }
+        function setTerceiraTentativa($terceiraTentativa)
+        {
+            $this->terceiraTentativa = $terceiraTentativa;
+        }
+
+        function getResultadoRep()
+        {
+            return $this->resultadoRep;           
+        }
+        function setResultadoRep($resultadoRep)
+        {
+            $this->resultadoRep = $resultadoRep;
+        }
+
+        function getResultadoKg()
+        {
+            return $this->resultadoKg;           
+        }
+        function setResultadoKg($resultadoKg)
+        {
+            $this->resultadoKg = $resultadoKg;
         }
 
         function getExercicio()

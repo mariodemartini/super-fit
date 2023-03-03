@@ -4,13 +4,13 @@
     {
         public function create(Exercicio $exercicio){
             try {
-                $sql = "INSERT INTO Exercicios (
-                    grupo_muscular, descricao)
+                $sql = "INSERT INTO exercicios (
+                    grupoMuscular, descricao)
                     VALUES (
-                    :grupo_muscular, :descricao)";
+                    :grupoMuscular, :descricao)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupoMuscular());
+                $p_sql->bindValue(":grupoMuscular", $exercicio->getGrupoMuscular());
                 $p_sql->bindValue(":descricao", $exercicio->getDescricao());
 
                 return $p_sql->execute();
@@ -22,7 +22,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Exercicios ORDER BY Grupo_Muscular ASC";
+                $sql = "SELECT * FROM exercicios ORDER BY grupoMuscular ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -38,15 +38,15 @@
         private function listaExercicio($row) {
             $exercicio = new Exercicio();
             $exercicio->setIdExercicio($row['idExercicios']);
-            $exercicio->setGrupoMuscular($row['Grupo_Muscular']);
-            $exercicio->setDescricao($row['Descricao']);
+            $exercicio->setGrupoMuscular($row['grupoMuscular']);
+            $exercicio->setDescricao($row['descricao']);
 
             return $exercicio;
         }
 
         public function delete(Exercicio $exercicio){
             try {
-                $sql = "DELETE FROM Exercicios WHERE  idExercicios = :idExercicios";
+                $sql = "DELETE FROM exercicios WHERE  idExercicios = :idExercicios";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idExercicios", $exercicio->getIdExercicio());
                 return $p_sql->execute();
@@ -58,15 +58,15 @@
         public function update(Exercicio $exercicio)
         {
             try {
-                $sql = "UPDATE Exercicios set
+                $sql = "UPDATE exercicios set
                     
                     idExercicio=:idExercicio,
-                    grupo_muscular=:grupo_muscular,
+                    grupoMuscular=:grupoMuscular,
                     descricao=:descricao,
                                 
                     WHERE idExercicio = :idExercicio";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":grupo_muscular", $exercicio->getGrupoMuscular());
+                $p_sql->bindValue(":grupoMuscular", $exercicio->getGrupoMuscular());
                 $p_sql->bindValue(":descricao", $exercicio->getDescricao());
                 
                 return $p_sql->execute();

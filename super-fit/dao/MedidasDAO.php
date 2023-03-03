@@ -4,29 +4,29 @@
     {
         public function create(Medidas $medidas){
             try {
-                $sql = "INSERT INTO Medidas (
-                    Data_Cadastro, Peso, Altura, freq_card, pressao_arterial, torax, cintura, abdomen, quadril, braco_direito, braco_esquerdo, antebraco_direito, antebraco_esquerdo, coxa_direita, coxa_esquerda, panturrilha_direita, panturrilha_esquerda, peitoral, axilarMedia, abdominal, supraIliaca, Sub_Escapular, tricipital, coxa)
+                $sql = "INSERT INTO medidas (
+                    dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa)
                     VALUES (
-                    :data_cadastro, :peso, :altura, :freq_card, :pressao_arterial, :torax, :cintura, :abdomen, :quadril, :braco_direito, :braco_esquerdo, :antebraco_direito, :antebraco_esquerdo, :coxa_direita, :coxa_esquerda, :panturrilha_direita, :panturrilha_esquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa)";
+                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peso", $medidas->getPeso());
-                $p_sql->bindValue(":data_cadastro", $medidas->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $medidas->getDataCadastro());
                 $p_sql->bindValue(":altura", $medidas->getAltura());
-                $p_sql->bindValue(":freq_card", $medidas->getFreq_card());
-                $p_sql->bindValue(":pressao_arterial", $medidas->getPressao_arterial());
+                $p_sql->bindValue(":freqCard", $medidas->getFreqCard());
+                $p_sql->bindValue(":pressaoArterial", $medidas->getPressaoArterial());
                 $p_sql->bindValue(":torax", $medidas->getTorax());
                 $p_sql->bindValue(":cintura", $medidas->getCintura());
                 $p_sql->bindValue(":abdomen", $medidas->getAbdomen());
                 $p_sql->bindValue(":quadril", $medidas->getQuadril());
-                $p_sql->bindValue(":braco_direito", $medidas->getBraco_direito());
-                $p_sql->bindValue(":braco_esquerdo", $medidas->getBraco_esquerdo());
-                $p_sql->bindValue(":antebraco_direito", $medidas->getAntebraco_direito());
-                $p_sql->bindValue(":antebraco_esquerdo", $medidas->getAntebraco_esquerdo());
-                $p_sql->bindValue(":coxa_direita", $medidas->getCoxa_direita());
-                $p_sql->bindValue(":coxa_esquerda", $medidas->getCoxa_esquerda());
-                $p_sql->bindValue(":panturrilha_direita", $medidas->getPanturrilha_direita());
-                $p_sql->bindValue(":panturrilha_esquerda", $medidas->getPanturrilha_esquerda());
+                $p_sql->bindValue(":bracoDireito", $medidas->getBracoDireito());
+                $p_sql->bindValue(":bracoEsquerdo", $medidas->getBracoEsquerdo());
+                $p_sql->bindValue(":antebracoDireito", $medidas->getAntebracoDireito());
+                $p_sql->bindValue(":antebracoEsquerdo", $medidas->getAntebracoEsquerdo());
+                $p_sql->bindValue(":coxaDireita", $medidas->getCoxaDireita());
+                $p_sql->bindValue(":coxaEsquerda", $medidas->getCoxaEsquerda());
+                $p_sql->bindValue(":panturrilhaDireita", $medidas->getPanturrilhaDireita());
+                $p_sql->bindValue(":panturrilhaEsquerda", $medidas->getPanturrilhaEsquerda());
                 $p_sql->bindValue(":peitoral", $medidas->getPeitoral());
                 $p_sql->bindValue(":axilarMedia", $medidas->getAxilarMedia());
                 $p_sql->bindValue(":abdominal", $medidas->getAbdominal());
@@ -44,7 +44,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Medidas ORDER BY idMedidas ASC";
+                $sql = "SELECT * FROM medidas ORDER BY idMedidas ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -60,23 +60,23 @@
         private function listaMedidas($row) {
             $medidas = new Medidas();
             $medidas->setIdMedidas($row['idMedidas']);
-            $medidas->setData_Cadastro($row['data_cadastro']);
+            $medidas->setDataCadastro($row['dataCadastro']);
             $medidas->setPeso($row['peso']);
             $medidas->setAltura($row['altura']);
-            $medidas->setFreq_card($row['freq_card']);
-            $medidas->setPressao_arterial($row['pressao_arterial']);
+            $medidas->setFreqCard($row['freqCard']);
+            $medidas->setPressaoArterial($row['pressaoArterial']);
             $medidas->setTorax($row['torax']);
             $medidas->setCintura($row['cintura']);
             $medidas->setAbdomen($row['abdomen']);
             $medidas->setQuadril($row['quadril']);
-            $medidas->setBraco_direito($row['braco_direito']);
-            $medidas->setBraco_esquerdo($row['braco_esquerdo']);
-            $medidas->setAntebraco_direito($row['antebraco_direito']);
-            $medidas->setAntebraco_esquerdo($row['antebraco_esquerdo']);
-            $medidas->setCoxa_direita($row['coxa_direita']);
-            $medidas->setCoxa_esquerda($row['coxa_esquerda']);
-            $medidas->setPanturrilha_direita($row['panturrilha_direita']);
-            $medidas->setPanturrilha_esquerda($row['panturrilha_esquerda']);
+            $medidas->setBracoDireito($row['bracoDireito']);
+            $medidas->setBracoEsquerdo($row['bracoEsquerdo']);
+            $medidas->setAntebracoDireito($row['antebracoDireito']);
+            $medidas->setAntebracoEsquerdo($row['antebracoEsquerdo']);
+            $medidas->setCoxaDireita($row['coxaDireita']);
+            $medidas->setCoxaEsquerda($row['coxaEsquerda']);
+            $medidas->setPanturrilhaDireita($row['panturrilhaDireita']);
+            $medidas->setPanturrilhaEsquerda($row['panturrilhaEsquerda']);
             $medidas->setPeitoral($row['peitoral']);
             $medidas->setAxilarMedia($row['axilarMedia']);
             $medidas->setAbdominal($row['abdominal']);
@@ -90,7 +90,7 @@
 
         public function delete(Medidas $medidas){
             try {
-                $sql = "DELETE FROM Medidas WHERE  idMedidas = :idMedidas";
+                $sql = "DELETE FROM medidas WHERE  idMedidas = :idMedidas";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idMedidas", $medidas->getIdMedidas());
                 return $p_sql->execute();
@@ -102,26 +102,26 @@
         public function update(Medidas $medidas)
         {
             try {
-                $sql = "UPDATE Medidas set
+                $sql = "UPDATE medidas set
                     
                     idMedidas=:idMedidas,
-                    data_cadastro=:data_cadastro,
+                    dataCadastro=:dataCadastro,
                     peso=:peso,
                     altura=:altura,
-                    freq_card=:freq_card,
-                    pressao_arterial=:pressao_arterial,
+                    freqCard=:freqCard,
+                    pressaoArterial=:pressaoArterial,
                     torax=:torax,
                     cintura=:cintura,
                     abdomen=:abdomen,
                     quadril=:quadril,
-                    braco_direito=:braco_direito,
-                    braco_esquerdo=:braco_esquerdo,
-                    antebraco_direito=:antebraco_direito,
-                    antebraco_esquerdo=:antebraco_esquerdo,
-                    coxa_direita=:coxa_direita,
-                    coxa_esquerda=:coxa_esquerda,
-                    panturrilha_direita=:panturrilha_direita,
-                    panturrilha_esquerda=:panturrilha_esquerda,
+                    bracoDireito=:bracoDireito,
+                    bracoEsquerdo=:bracoEsquerdo,
+                    antebracoDireito=:antebracoDireito,
+                    antebracoEsquerdo=:antebracoEsquerdo,
+                    coxaDireita=:coxaDireita,
+                    coxaEsquerda=:coxaEsquerda,
+                    panturrilhaDireita=:panturrilhaEireita,
+                    panturrilhaEsquerda=:panturrilhaEsquerda,
                     peitoral=:peitoral,
                     axilarMedia=:axilarMedia,
                     abdominal=:abdominal,
@@ -132,23 +132,23 @@
                                 
                     WHERE idMedidas = :idMedidas";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":data_cadastro", $medidas->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $medidas->getDataCadastro());
                 $p_sql->bindValue(":peso", $medidas->getPeso());
                 $p_sql->bindValue(":altura", $medidas->getAltura());
-                $p_sql->bindValue(":freq_card", $medidas->getFreq_card());
-                $p_sql->bindValue(":pressao_arterial", $medidas->getPressao_arterial());
+                $p_sql->bindValue(":freqCard", $medidas->getFreqCard());
+                $p_sql->bindValue(":pressaoArterial", $medidas->getPressaoArterial());
                 $p_sql->bindValue(":torax", $medidas->getTorax());
                 $p_sql->bindValue(":cintura", $medidas->getCintura());
                 $p_sql->bindValue(":abdomen", $medidas->getAbdomen());
                 $p_sql->bindValue(":quadril", $medidas->getQuadril());
-                $p_sql->bindValue(":braco_direito", $medidas->getBraco_direito());
-                $p_sql->bindValue(":braco_esquerdo", $medidas->getBraco_esquerdo());
-                $p_sql->bindValue(":antebraco_direito", $medidas->getAntebraco_direito());
-                $p_sql->bindValue(":antebraco_esquerdo", $medidas->getAntebraco_esquerdo());
-                $p_sql->bindValue(":coxa_direita", $medidas->getCoxa_direita());
-                $p_sql->bindValue(":coxa_esquerda", $medidas->getCoxa_esquerda());
-                $p_sql->bindValue(":panturrilha_direita", $medidas->getPanturrilha_direita());
-                $p_sql->bindValue(":panturrilha_esquerda", $medidas->getPanturrilha_esquerda());
+                $p_sql->bindValue(":bracoDireito", $medidas->getBracoDireito());
+                $p_sql->bindValue(":bracoEsquerdo", $medidas->getBracoEsquerdo());
+                $p_sql->bindValue(":antebracoDireito", $medidas->getAntebracoDireito());
+                $p_sql->bindValue(":antebracoEsquerdo", $medidas->getAntebracoEsquerdo());
+                $p_sql->bindValue(":coxaDireita", $medidas->getCoxaDireita());
+                $p_sql->bindValue(":coxaEsquerda", $medidas->getCoxaEsquerda());
+                $p_sql->bindValue(":panturrilhaDireita", $medidas->getPanturrilhaDireita());
+                $p_sql->bindValue(":panturrilhaEsquerda", $medidas->getPanturrilhaEsquerda());
                 $p_sql->bindValue(":peitoral", $medidas->getPeitoral());
                 $p_sql->bindValue(":axilarMedia", $medidas->getAxilarMedia());
                 $p_sql->bindValue(":abdominal", $medidas->getAbdominal());

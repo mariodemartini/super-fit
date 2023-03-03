@@ -3,7 +3,7 @@
     Class Usuario{
         private $idUsuario;
         private $nome;
-        private $data_nascimento;
+        private $dataNascimento;
         private $idade;
         private $sexo;
         private $cpf;
@@ -16,7 +16,7 @@
         private $endereco;
         private $email;
         private $senha;
-        private $data_cadastro;
+        private $dataCadastro;
 
         function getIdUsuario()
         { 
@@ -38,14 +38,14 @@
             $this->nome = $nome; 
         }
 
-        function getData_Nascimento()
+        function getDataNascimento()
         { 
-            return $this->data_nascimento; 
+            return $this->dataNascimento; 
         }
 
-        function setData_Nascimento($data_nascimento)
+        function setDataNascimento($dataNascimento)
         { 
-            $this->data_nascimento = $data_nascimento; 
+            $this->dataNascimento = $dataNascimento; 
         }
 
         function getIdade()
@@ -168,14 +168,14 @@
             $this->senha = $senha;
         }
 
-        function getData_Cadastro()
+        function getDataCadastro()
         {
-            return $this->data_cadastro;
+            return $this->dataCadastro;
         }
 
-        function setData_Cadastro($data_cadastro)
+        function setDataCadastro($dataCadastro)
         {
-            $this->data_cadastro = $data_cadastro;
+            $this->dataCadastro = $dataCadastro;
         }
 
     }

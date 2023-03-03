@@ -4,16 +4,16 @@
     {
         public function create(Serie $serie){
             try {
-                $sql = "INSERT INTO Series (
-                    nivel, fase, serie, percent_carga)
+                $sql = "INSERT INTO series (
+                    nivel, fase, serie, percentCarga)
                     VALUES (
-                    :nivel, :fase, :serie, :percent_carga)";
+                    :nivel, :fase, :serie, :percentCarga)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nivel", $serie->getNivel());
                 $p_sql->bindValue(":fase", $serie->getFase());
                 $p_sql->bindValue(":serie", $serie->getSerie());
-                $p_sql->bindValue(":percent_carga", $serie->getPercent_Carga());
+                $p_sql->bindValue(":percentCarga", $serie->getPercentCarga());
 
                 return $p_sql->execute();
                 
@@ -24,7 +24,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Series ORDER BY Nivel ASC";
+                $sql = "SELECT * FROM series ORDER BY nivel ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -40,17 +40,17 @@
         private function listaSerie($row) {
             $serie = new Serie();
             $serie->setIdSerie($row['idSeries']);
-            $serie->setNivel($row['Nivel']);
-            $serie->setFase($row['Fase']);
-            $serie->setserie($row['Serie']);
-            $serie->setPercent_Carga($row['Percent_Carga']);
+            $serie->setNivel($row['nivel']);
+            $serie->setFase($row['fase']);
+            $serie->setserie($row['serie']);
+            $serie->setPercentCarga($row['percentCarga']);
 
             return $serie;
         }
 
         public function delete(Serie $serie){
             try {
-                $sql = "DELETE FROM Series WHERE  idSeries = :idSeries";
+                $sql = "DELETE FROM series WHERE  idSeries = :idSeries";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idSeries", $serie->getIdSerie());
                 return $p_sql->execute();
@@ -62,20 +62,20 @@
         public function update(Serie $serie)
         {
             try {
-                $sql = "UPDATE Series set
+                $sql = "UPDATE series set
                     
                     idSeries=:idSeries,
                     nivel=:nivel,
                     fase=:fase,
                     serie=:serie,
-                    percent_carga=:percent_carga
+                    percentCarga=:percentCarga
                                 
                     WHERE idSeries = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nivel", $serie->getNivel());
                 $p_sql->bindValue(":fase", $serie->getFase());
                 $p_sql->bindValue(":serie", $serie->getSerie());
-                $p_sql->bindValue(":percent_carga", $serie->getPercent_Carga());
+                $p_sql->bindValue(":percentCarga", $serie->getPercentCarga());
                 
                 return $p_sql->execute();
             } catch (Exception $e) {

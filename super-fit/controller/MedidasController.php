@@ -10,23 +10,23 @@
 
     if(isset($_POST['salvar'])){
 
-        $medidas->setData_Cadastro(($d['data_cadastro']));
+        $medidas->setDataCadastro(($d['dataCadastro']));
         $medidas->setPeso(($d['peso']));
         $medidas->setAltura(($d['altura']));
-        $medidas->setFreq_card(($d['freq_card']));
-        $medidas->setPressao_arterial(($d['pressao_arterial']));
+        $medidas->setFreqCard(($d['freqCard']));
+        $medidas->setPressaoArterial(($d['pressaoArterial']));
         $medidas->setTorax(($d['torax']));
         $medidas->setCintura(($d['cintura']));
         $medidas->setAbdomen(($d['abdomen']));
         $medidas->setQuadril(($d['quadril']));
-        $medidas->setBraco_direito(($d['braco_direito']));
-        $medidas->setBraco_esquerdo(($d['braco_esquerdo']));
-        $medidas->setAntebraco_direito(($d['antebraco_direito']));
-        $medidas->setAntebraco_esquerdo(($d['antebraco_esquerdo']));
-        $medidas->setCoxa_direita(($d['coxa_direita']));
-        $medidas->setCoxa_esquerda(($d['coxa_esquerda']));
-        $medidas->setPanturrilha_direita(($d['panturrilha_direita']));
-        $medidas->setPanturrilha_esquerda(($d['panturrilha_esquerda']));
+        $medidas->setBracoDireito(($d['bracoDireito']));
+        $medidas->setBracoEsquerdo(($d['bracoEsquerdo']));
+        $medidas->setAntebracoDireito(($d['antebracoDireito']));
+        $medidas->setAntebracoEsquerdo(($d['antebracoEsquerdo']));
+        $medidas->setCoxaDireita(($d['setCoxaDireita']));
+        $medidas->setCoxaEsquerda(($d['coxaEsquerda']));
+        $medidas->setPanturrilhaDireita(($d['panturrilhaDireita']));
+        $medidas->setPanturrilhaEsquerda(($d['panturrilhaEsquerda']));
         $medidas->setPeitoral(($d['peitoral']));
         $medidas->setAxilarMedia(($d['axilarMedia']));
         $medidas->setAbdominal(($d['abdominal']));
@@ -43,23 +43,23 @@
     else if (isset($_POST['editar'])) {
 
         $medidas->setIdMedidas(($d['idMedidas']));
-        $medidas->setData_Cadastro(($d['data_cadastro']));
+        $medidas->setDataCadastro(($d['dataCadastro']));
         $medidas->setPeso(($d['peso']));
         $medidas->setAltura(($d['altura']));
-        $medidas->setFreq_card(($d['freq_card']));
-        $medidas->setPressao_arterial(($d['pressao_arterial']));
+        $medidas->setFreqCard(($d['freqCard']));
+        $medidas->setPressaoArterial(($d['pressaoArterial']));
         $medidas->setTorax(($d['torax']));
         $medidas->setCintura(($d['cintura']));
         $medidas->setAbdomen(($d['abdomen']));
         $medidas->setQuadril(($d['quadril']));
-        $medidas->setBraco_direito(($d['braco_direito']));
-        $medidas->setBraco_esquerdo(($d['braco_esquerdo']));
-        $medidas->setAntebraco_direito(($d['antebraco_direito']));
-        $medidas->setAntebraco_esquerdo(($d['antebraco_esquerdo']));
-        $medidas->setCoxa_direita(($d['coxa_direita']));
-        $medidas->setCoxa_esquerda(($d['coxa_esquerda']));
-        $medidas->setPanturrilha_direita(($d['panturrilha_direita']));
-        $medidas->setPanturrilha_esquerda(($d['panturrilha_esquerda']));
+        $medidas->setBracoDireito(($d['bracoDireito']));
+        $medidas->setBracoEsquerdo(($d['bracoEsquerdo']));
+        $medidas->setAntebracoDireito(($d['antebracoDireito']));
+        $medidas->setAntebracoEsquerdo(($d['antebracoEsquerdo']));
+        $medidas->setCoxaDireita(($d['setCoxaDireita']));
+        $medidas->setCoxaEsquerda(($d['coxaEsquerda']));
+        $medidas->setPanturrilhaDireita(($d['panturrilhaDireita']));
+        $medidas->setPanturrilhaEsquerda(($d['panturrilhaEsquerda']));
         $medidas->setPeitoral(($d['Peitoral']));
         $medidas->setAxilarMedia(($d['AxilarMedia']));
         $medidas->setAbdominal(($d['abdominal']));

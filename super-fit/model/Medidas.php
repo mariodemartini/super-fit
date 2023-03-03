@@ -2,23 +2,23 @@
 
     Class Medidas{
         private $idMedidas;
-        private $data_cadastro;
+        private $dataCadastro;
         private $peso;
         private $altura;
-        private $freq_card;
-        private $pressao_arterial;
+        private $freqCard;
+        private $pressaoArterial;
         private $torax;
         private $cintura;
         private $abdomen;
         private $quadril;
-        private $braco_direito;
-        private $braco_esquerdo;
-        private $antebraco_direito;
-        private $antebraco_esquerdo;
-        private $coxa_direita;
-        private $coxa_esquerda;
-        private $panturrilha_direita;
-        private $panturrilha_esquerda;
+        private $bracoDireito;
+        private $bracoEsquerdo;
+        private $antebracoDireito;
+        private $antebracoEsquerdo;
+        private $coxaDireita;
+        private $coxaEsquerda;
+        private $panturrilhaDireita;
+        private $panturrilhaEsquerda;
         private $peitoral;
         private $axilarMedia;
         private $abdominal;
@@ -37,13 +37,13 @@
             $this->idMedidas = $idMedidas;
         }
 
-        function getData_Cadastro()
+        function getDataCadastro()
         {
-            return $this->data_cadastro;           
+            return $this->dataCadastro;           
         }       
-        function setData_cadastro($data_cadastro)
+        function setDataCadastro($dataCadastro)
         {
-            $this->data_cadastro = $data_cadastro;
+            $this->dataCadastro = $dataCadastro;
         }
 
         function getPeso()
@@ -66,24 +66,24 @@
             $this->altura = $altura;
         }
 
-        function getFreq_card()
+        function getFreqCard()
         {
-            return $this->freq_card;           
+            return $this->freqCard;           
         }
 
-        function setFreq_card($freq_card)
+        function setFreqCard($freqCard)
         {
-            $this->freq_card = $freq_card;
+            $this->freqCard = $freqCard;
         }
 
-        function getPressao_arterial()
+        function getPressaoArterial()
         {
-            return $this->pressao_arterial;           
+            return $this->pressaoArterial;           
         }
 
-        function setPressao_arterial($pressao_arterial)
+        function setPressaoArterial($pressaoArterial)
         {
-            $this->pressao_arterial = $pressao_arterial;
+            $this->pressaoArterial = $pressaoArterial;
         }
 
         function getTorax()
@@ -123,140 +123,140 @@
             $this->quadril = $quadril;
         }
 
-        function getBraco_direito()
+        function getBracoDireito()
         {
-            return $this->braco_direito;           
+            return $this->bracoDireito;           
         }
-        function setBraco_direito($braco_direito)
+        function setBracoDireito($bracoDireito)
         {
-            $this->braco_direito = $braco_direito;
-        }
-
-        function getBraco_esquerdo()
-        {
-            return $this->braco_esquerdo;           
-        }
-        function setBraco_esquerdo($braco_esquerdo)
-        {
-            $this->braco_esquerdo = $braco_esquerdo;
+            $this->bracoDireito = $bracoDireito;
         }
 
-        function getAntebraco_direito()
+        function getBracoEsquerdo()
         {
-            return $this->antebraco_direito;           
+            return $this->bracoEsquerdo;           
         }
-        function setAntebraco_direito($antebraco_direito)
+        function setBracoEsquerdo($bracoEsquerdo)
         {
-            $this->antebraco_direito = $antebraco_direito;
-        }
-
-        function getAntebraco_esquerdo()
-        {
-            return $this->antebraco_esquerdo;           
-        }
-        function setAntebraco_esquerdo($antebraco_esquerdo)
-        {
-            $this->antebraco_esquerdo = $antebraco_esquerdo;
+            $this->bracoEsquerdo = $bracoEsquerdo;
         }
 
-        function getCoxa_direita()
+        function getAntebracoDireito()
         {
-            return $this->coxa_direita;           
+            return $this->antebracoDireito;           
         }
-        function setCoxa_direita($coxa_direita)
+        function setAntebracoDireito($antebracoDireito)
         {
-            $this->coxa_direita = $coxa_direita;
-        }
-
-        function getCoxa_esquerda()
-        {
-            return $this->coxa_esquerda;           
-        }
-        function setCoxa_esquerda($coxa_esquerda)
-        {
-            $this->coxa_esquerda = $coxa_esquerda;
+            $this->antebracoDireito = $antebracoDireito;
         }
 
-        function getPanturrilha_direita()
+        function getAntebracoEsquerdo()
         {
-            return $this->panturrilha_direita;           
+            return $this->antebracoEsquerdo;           
         }
-        function setPanturrilha_direita($panturrilha_direita)
+        function setAntebracoEsquerdo($antebracoEsquerdo)
         {
-            $this->panturrilha_direita = $panturrilha_direita;
+            $this->antebracoEsquerdo = $antebracoEsquerdo;
         }
 
-        function getPanturrilha_esquerda()
+        function getCoxaDireita()
         {
-            return $this->panturrilha_esquerda;           
+            return $this->coxaDireita;           
         }
-        function setPanturrilha_esquerda($panturrilha_esquerda)
+        function setCoxaDireita($coxaDireita)
         {
-            $this->panturrilha_esquerda = $panturrilha_esquerda;
+            $this->coxaDireita = $coxaDireita;
+        }
+
+        function getCoxaEsquerda()
+        {
+            return $this->coxaEsquerda;           
+        }
+        function setCoxaEsquerda($coxaEsquerda)
+        {
+            $this->coxaEsquerda = $coxaEsquerda;
+        }
+
+        function getPanturrilhaDireita()
+        {
+            return $this->panturrilhaDireita;           
+        }
+        function setPanturrilhaDireita($panturrilhaDireita)
+        {
+            $this->panturrilhaDireita = $panturrilhaDireita;
+        }
+
+        function getPanturrilhaEsquerda()
+        {
+            return $this->panturrilhaEsquerda;           
+        }
+        function setPanturrilhaEsquerda($panturrilhaEsquerda)
+        {
+            $this->panturrilhaEsquerda = $panturrilhaEsquerda;
         }
 
         function getPeitoral()
-      {
-         return $this->peitoral;
-      }
-      function setPeitoral($peitoral)
-      {
-         $this->peitoral = $peitoral;
-      }
+        {
+            return $this->peitoral;
+        }
+        function setPeitoral($peitoral)
+        {
+            $this->peitoral = $peitoral;
+        }
 
-      function getAxilarMedia()
-      {
-         return $this->axilarMedia;
-      }
-      function setAxilarMedia($axilarMedia)
-      {
-         $this->axilarMedia = $axilarMedia;
-      }
+        function getAxilarMedia()
+        {
+            return $this->axilarMedia;
+        }
+        function setAxilarMedia($axilarMedia)
+        {
+            $this->axilarMedia = $axilarMedia;
+        }
 
-      function getAbdominal()
-      {
-         return $this->abdominal;
-      }
-      function setAbdominal($abdominal)
-      {
-         $this->abdominal = $abdominal;
-      }
+        function getAbdominal()
+        {
+            return $this->abdominal;
+        }
+        function setAbdominal($abdominal)
+        {
+            $this->abdominal = $abdominal;
+        }
 
-      function getSupraIliaca()
-      {
-         return $this->supraIliaca;
-      }
-      function setSupraIliaca($supraIliaca)
-      {
-         $this->supraIliaca = $supraIliaca;  
-      }
+        function getSupraIliaca()
+        {
+            return $this->supraIliaca;
+        }
+        function setSupraIliaca($supraIliaca)
+        {
+            $this->supraIliaca = $supraIliaca;  
+        }
 
-      function getSubEscapular()
-      {
-         return $this->subEscapular;
-      }
-      function setSubEscapular($subEscapular)
-      {
-         $this->subEscapular = $subEscapular;  
-      }
+        function getSubEscapular()
+        {
+            return $this->subEscapular;
+        }
+        function setSubEscapular($subEscapular)
+        {
+            $this->subEscapular = $subEscapular;  
+        }
 
-      function getTricipital()
-      {
-         return $this->tricipital;
-      }
-      function setTricipital($tricipital)
-      {
-         $this->tricipital = $tricipital;  
-      }
+        function getTricipital()
+        {
+            return $this->tricipital;
+        }
+        function setTricipital($tricipital)
+        {
+            $this->tricipital = $tricipital;  
+        }
 
-      function getCoxa()
-      {
-         return $this->coxa;
-      }
-      function setCoxa($coxa)
-      {
-         $this->coxa = $coxa;  
-      }
+        function getCoxa()
+        {
+            return $this->coxa;
+        }
+        function setCoxa($coxa)
+        {
+            $this->coxa = $coxa;  
+        }
 
         
     }

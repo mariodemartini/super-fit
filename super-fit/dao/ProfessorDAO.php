@@ -4,14 +4,14 @@
     {
         public function create(Professor $professor){
             try {
-                $sql = "INSERT INTO Professor (
-                    nome, Data_Nascimento, sexo, cpf, cref, celular, cep, estado, cidade, endereco, email, senha)
+                $sql = "INSERT INTO professor (
+                    nome, dataNascimento, sexo, cpf, cref, celular, cep, estado, cidade, endereco, email, senha)
                     VALUES (
-                    :nome, :data_nascimento, :sexo, :cpf, :cref, :celular, :cep, :estado, :cidade, :endereco, :email, :senha)";
+                    :nome, :dataNascimento, :sexo, :cpf, :cref, :celular, :cep, :estado, :cidade, :endereco, :email, :senha)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $professor->getNome());
-                $p_sql->bindValue(":data_nascimento", $professor->getData_Nascimento());
+                $p_sql->bindValue(":dataNascimento", $professor->getDataNascimento());
                 $p_sql->bindValue(":sexo", $professor->getSexo());
                 $p_sql->bindValue(":cpf", $professor->getCpf());
                 $p_sql->bindValue(":cref", $professor->getCref());
@@ -32,7 +32,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Professor ORDER BY Nome ASC";
+                $sql = "SELECT * FROM professor ORDER BY Nome ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -48,25 +48,25 @@
         private function listaProfessores($row) {
             $professor = new Professor();
             $professor->setIdprofessor($row['idProfessor']);
-            $professor->setNome($row['Nome']);
-            $professor->setData_Nascimento($row['Data_Nascimento']);
-            $professor->setSexo($row['Sexo']);
-            $professor->setCpf($row['CPF']);
-            $professor->setCref($row['CREF']);
-            $professor->setCelular($row['Celular']);
-            $professor->setCep($row['CEP']);
-            $professor->setEstado($row['Estado']);
-            $professor->setCidade($row['Cidade']);
-            $professor->setEndereco($row['Endereco']);
-            $professor->setEmail($row['Email']);
-            $professor->setSenha($row['Senha']);
+            $professor->setNome($row['nome']);
+            $professor->setDataNascimento($row['dataNascimento']);
+            $professor->setSexo($row['sexo']);
+            $professor->setCpf($row['cpf']);
+            $professor->setCref($row['cref']);
+            $professor->setCelular($row['celular']);
+            $professor->setCep($row['cep']);
+            $professor->setEstado($row['estado']);
+            $professor->setCidade($row['eidade']);
+            $professor->setEndereco($row['endereco']);
+            $professor->setEmail($row['email']);
+            $professor->setSenha($row['senha']);
 
             return $professor;
         }
 
         public function delete(Professor $professor){
             try {
-                $sql = "DELETE FROM Professor WHERE  idProfessor = :idProfessor";
+                $sql = "DELETE FROM professor WHERE  idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idProfessor", $professor->getIdProfessor());
                 return $p_sql->execute();
@@ -78,26 +78,26 @@
         public function update(Professor $professor)
         {
             try {
-                $sql = "UPDATE Professor set
+                $sql = "UPDATE professor set
                     
                     idProfessor=:idProfessor,
-                    Nome=:nome,
-                    Data_Nascimento=:data_nascimento,
-                    Sexo=:sexo,
-                    CPF=:cpf,
-                    CREF=:cref,
-                    Celular=:celular,
-                    CEP=:cep,
-                    Estado=:estado,
-                    Cidade=:cidade,
-                    Endereco=:endereco,
-                    Email=:email,
-                    Senha=:senha
+                    nome=:nome,
+                    dataNascimento=:dataNascimento,
+                    sexo=:sexo,
+                    cpf=:cpf,
+                    cref=:cref,
+                    celular=:celular,
+                    cep=:cep,
+                    estado=:estado,
+                    cidade=:cidade,
+                    endereco=:endereco,
+                    email=:email,
+                    eenha=:senha
                                 
                     WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $professor->getNome());
-                $p_sql->bindValue(":data_nascimento", $professor->getData_Nascimento());
+                $p_sql->bindValue(":dataNascimento", $professor->getDataNascimento());
                 $p_sql->bindValue(":sexo", $professor->getSexo());
                 $p_sql->bindValue(":cpf", $professor->getCpf());
                 $p_sql->bindValue(":celular", $professor->getCelular());
@@ -116,7 +116,7 @@
 
         public function exibeProf() {
             try {
-                $sql = "SELECT idProfessor, Nome, Data_Nascimento, CPF, CREF, Celular, Email FROM Professor ORDER BY Nome ASC";
+                $sql = "SELECT idProfessor, nome, dataNascimento, cpf, cref, celular, email FROM professor ORDER BY nome ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -132,12 +132,12 @@
         private function listaDados($row) {
             $professor = new Professor();
             $professor->setIdprofessor($row['idProfessor']);
-            $professor->setNome($row['Nome']);
-            $professor->setData_Nascimento($row['Data_Nascimento']);
-            $professor->setCpf($row['CPF']);
-            $professor->setCref($row['CREF']);
-            $professor->setCelular($row['Celular']);
-            $professor->setEmail($row['Email']);
+            $professor->setNome($row['nome']);
+            $professor->setDataNascimento($row['dataNascimento']);
+            $professor->setCpf($row['cpf']);
+            $professor->setCref($row['cref']);
+            $professor->setCelular($row['celular']);
+            $professor->setEmail($row['email']);
 
             return $professor;
         }

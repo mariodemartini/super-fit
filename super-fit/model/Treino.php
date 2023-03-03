@@ -2,11 +2,11 @@
 
     Class Treino{
         private $idTreino;
-        private Serie $serie;
-        private Exercicio $exercicios;
+        private $serie;
+        private $exercicios;
         private $carga;
         private $feedback;
-        private Usuario $usuario;
+        private $usuario;
 
         function getIdTreino()
         { 
@@ -28,7 +28,7 @@
         
         function getExercicios()
         { 
-            return $this->exericios; 
+            return $this->exercicios; 
         }
         function setExercicios($exercicios)
         { 

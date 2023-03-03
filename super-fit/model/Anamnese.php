@@ -7,7 +7,7 @@
         private $objetivo;
         private $fumante;
         private $alcool;
-        private $historico_fam;
+        private $historicoFam;
         private $hipertensao;
         private $colesterol;
         private $diabetes;
@@ -21,7 +21,7 @@
         private $medicamentos;
         private $outros;
         private $alimentacao;
-        private $data_cadastro;
+        private $dataCadastro;
         private $usuario;
         
         function getIdAnamnese()
@@ -42,14 +42,14 @@
             $this->atividade = $atividade;
         }
 
-        function getTempo_pratica()
+        function getTempoPratica()
         {
             return $this->tempo_pratica;           
         }
 
-        function setTempo_pratica($tempo_pratica)
+        function setTempoPratica($tempoPratica)
         {
-            $this->tempo_pratica = $tempo_pratica;
+            $this->tempoPratica = $tempoPratica;
         }
 
         function getObjetivo()
@@ -79,13 +79,13 @@
             $this->alcool = $alcool;
         }
 
-        function getHistorico_fam()
+        function getHistoricoFam()
         {
-            return $this->historico_fam;           
+            return $this->historicoFam;           
         }
-        function setHistorico_fam($historico_fam)
+        function setHistoricoFam($historicoFam)
         {
-            $this->historico_fam = $historico_fam;
+            $this->historicoFam = $historicoFam;
         }
 
         function getHipertensao()
@@ -205,13 +205,13 @@
             $this->alimentacao = $alimentacao;
         }
         
-        function getData_Cadastro()
+        function getDataCadastro()
         {
-            return $this->data_cadastro;           
+            return $this->dataCadastro;           
         }       
-        function setData_cadastro($data_cadastro)
+        function setDataCadastro($dataCadastro)
         {
-            $this->data_cadastro = $data_cadastro;
+            $this->dataCadastro = $dataCadastro;
         }
 
         function getUsuario()

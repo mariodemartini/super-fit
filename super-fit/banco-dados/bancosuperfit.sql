@@ -20,23 +20,23 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`Usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
-  `Nome` VARCHAR(200) NOT NULL,
-  `Data_Nascimento` DATE NULL DEFAULT NULL,
-  `Idade` INT NULL DEFAULT NULL,
-  `Sexo` VARCHAR(10) NULL DEFAULT NULL,
-  `CPF` VARCHAR(15) NOT NULL,
-  `RG` VARCHAR(15) NULL DEFAULT NULL,
-  `Telefone` VARCHAR(45) NULL DEFAULT NULL,
-  `Celular` VARCHAR(45) NOT NULL,
-  `CEP` VARCHAR(15) NULL DEFAULT NULL,
-  `Estado` VARCHAR(100) NULL DEFAULT NULL,
-  `Cidade` VARCHAR(100) NULL DEFAULT NULL,
-  `Endereco` VARCHAR(100) NULL DEFAULT NULL,
-  `Email` VARCHAR(100) NOT NULL,
-  `Senha` VARCHAR(10) NOT NULL,
-  `Data_Cadastro` DATE NULL DEFAULT NULL,
+  `nome` VARCHAR(200) NOT NULL,
+  `dataNascimento` DATE NULL DEFAULT NULL,
+  `idade` INT NULL DEFAULT NULL,
+  `sexo` VARCHAR(10) NULL DEFAULT NULL,
+  `cpf` VARCHAR(15) NOT NULL,
+  `rg` VARCHAR(15) NULL DEFAULT NULL,
+  `telefone` VARCHAR(45) NULL DEFAULT NULL,
+  `celular` VARCHAR(45) NOT NULL,
+  `cep` VARCHAR(15) NULL DEFAULT NULL,
+  `estado` VARCHAR(100) NULL DEFAULT NULL,
+  `cidade` VARCHAR(100) NULL DEFAULT NULL,
+  `endereco` VARCHAR(100) NULL DEFAULT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `eenha` VARCHAR(10) NOT NULL,
+  `dataCadastro` DATE NULL DEFAULT NULL,
   PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -45,28 +45,28 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Anamnese`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Anamnese` (
+CREATE TABLE IF NOT EXISTS `mydb`.`anamnese` (
   `idAnamnese` INT NOT NULL,
-  `Atividade` VARCHAR(45) NULL DEFAULT NULL,
-  `Tempo_Pratica` VARCHAR(45) NULL DEFAULT NULL,
-  `Objetivo` VARCHAR(45) NULL DEFAULT NULL,
-  `Fumante` VARCHAR(45) NULL DEFAULT NULL,
-  `Alcool` VARCHAR(45) NULL DEFAULT NULL,
-  `Historico_Fam` VARCHAR(100) NULL DEFAULT NULL,
-  `Hipertensao` VARCHAR(45) NULL DEFAULT NULL,
-  `Colesterol` VARCHAR(45) NULL DEFAULT NULL,
-  `Diabetes` VARCHAR(45) NULL DEFAULT NULL,
-  `Cardiaco` VARCHAR(100) NULL DEFAULT NULL,
-  `Cirurgia` VARCHAR(100) NULL DEFAULT NULL,
-  `Fratura` VARCHAR(100) NULL DEFAULT NULL,
-  `Lesao` VARCHAR(100) NULL DEFAULT NULL,
-  `Dor` VARCHAR(100) NULL DEFAULT NULL,
-  `Movimentos` VARCHAR(100) NULL DEFAULT NULL,
-  `Artrite` VARCHAR(100) NULL DEFAULT NULL,
-  `Medicamento` VARCHAR(100) NULL DEFAULT NULL,
-  `Outros` VARCHAR(100) NULL DEFAULT NULL,
-  `Alimentacao` VARCHAR(200) NULL DEFAULT NULL,
-  `Data_Cadastro` DATE NULL DEFAULT NULL,
+  `atividade` VARCHAR(45) NULL DEFAULT NULL,
+  `tempoPratica` VARCHAR(45) NULL DEFAULT NULL,
+  `objetivo` VARCHAR(45) NULL DEFAULT NULL,
+  `fumante` VARCHAR(45) NULL DEFAULT NULL,
+  `alcool` VARCHAR(45) NULL DEFAULT NULL,
+  `historicoFam` VARCHAR(100) NULL DEFAULT NULL,
+  `hipertensao` VARCHAR(45) NULL DEFAULT NULL,
+  `colesterol` VARCHAR(45) NULL DEFAULT NULL,
+  `diabetes` VARCHAR(45) NULL DEFAULT NULL,
+  `cardiaco` VARCHAR(100) NULL DEFAULT NULL,
+  `cirurgia` VARCHAR(100) NULL DEFAULT NULL,
+  `fratura` VARCHAR(100) NULL DEFAULT NULL,
+  `lesao` VARCHAR(100) NULL DEFAULT NULL,
+  `dor` VARCHAR(100) NULL DEFAULT NULL,
+  `movimentos` VARCHAR(100) NULL DEFAULT NULL,
+  `artrite` VARCHAR(100) NULL DEFAULT NULL,
+  `medicamento` VARCHAR(100) NULL DEFAULT NULL,
+  `outros` VARCHAR(100) NULL DEFAULT NULL,
+  `alimentacao` VARCHAR(200) NULL DEFAULT NULL,
+  `dataCadastro` DATE NULL DEFAULT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idAnamnese`),
   INDEX `fk_Anamnese_Usuario1_idx` (`idUsuario` ASC),
@@ -82,10 +82,10 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Exercicios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Exercicios` (
+CREATE TABLE IF NOT EXISTS `mydb`.`exercicios` (
   `idExercicios` INT NOT NULL AUTO_INCREMENT,
-  `Grupo_Muscular` CHAR(3) NULL DEFAULT NULL,
-  `Descricao` VARCHAR(45) NULL DEFAULT NULL,
+  `grupoMuscular` CHAR(3) NULL DEFAULT NULL,
+  `descricao` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`idExercicios`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -94,32 +94,32 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Medidas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Medidas` (
+CREATE TABLE IF NOT EXISTS `mydb`.`medidas` (
   `idMedidas` INT NOT NULL AUTO_INCREMENT,
-  `Data_Cadastro` DATE NULL DEFAULT NULL,
-  `Peso` FLOAT NULL DEFAULT NULL,
-  `Altura` FLOAT NULL DEFAULT NULL,
-  `Freq_Card` INT NULL DEFAULT NULL,
-  `Pressao_Arterial` VARCHAR(45) NULL DEFAULT NULL,
-  `Torax` FLOAT NULL DEFAULT NULL,
-  `Cintura` FLOAT NULL DEFAULT NULL,
-  `Abdomen` FLOAT NULL DEFAULT NULL,
-  `Quadril` FLOAT NULL DEFAULT NULL,
-  `Braco_Direito` FLOAT NULL DEFAULT NULL,
-  `Braco_Esquerdo` FLOAT NULL DEFAULT NULL,
-  `Antebraco_Direito` FLOAT NULL DEFAULT NULL,
-  `Antebraco_Esquerdo` FLOAT NULL DEFAULT NULL,
-  `Coxa_Direita` FLOAT NULL DEFAULT NULL,
-  `Coxa_Esquerda` FLOAT NULL DEFAULT NULL,
-  `Panturrilha_Direita` FLOAT NULL DEFAULT NULL,
-  `Panturrilha_Esquerda` FLOAT NULL DEFAULT NULL,
-  `Peitoral` FLOAT NULL DEFAULT NULL,
-  `AxilarMedia` FLOAT NULL DEFAULT NULL,
-  `Abdominal` FLOAT NULL DEFAULT NULL,
-  `SupraIliaca` FLOAT NULL DEFAULT NULL,
-  `Sub_Escapular` FLOAT NULL DEFAULT NULL,
-  `Tricipital` FLOAT NULL DEFAULT NULL,
-  `Coxa` FLOAT NULL DEFAULT NULL,
+  `dataCadastro` DATE NULL DEFAULT NULL,
+  `peso` FLOAT NULL DEFAULT NULL,
+  `altura` FLOAT NULL DEFAULT NULL,
+  `freqCard` INT NULL DEFAULT NULL,
+  `pressaoArterial` VARCHAR(45) NULL DEFAULT NULL,
+  `torax` FLOAT NULL DEFAULT NULL,
+  `cintura` FLOAT NULL DEFAULT NULL,
+  `abdomen` FLOAT NULL DEFAULT NULL,
+  `quadril` FLOAT NULL DEFAULT NULL,
+  `bracoDireito` FLOAT NULL DEFAULT NULL,
+  `bracoEsquerdo` FLOAT NULL DEFAULT NULL,
+  `antebracoDireito` FLOAT NULL DEFAULT NULL,
+  `antebracoEsquerdo` FLOAT NULL DEFAULT NULL,
+  `coxaDireita` FLOAT NULL DEFAULT NULL,
+  `coxaEsquerda` FLOAT NULL DEFAULT NULL,
+  `panturrilhaDireita` FLOAT NULL DEFAULT NULL,
+  `panturrilhaEsquerda` FLOAT NULL DEFAULT NULL,
+  `peitoral` FLOAT NULL DEFAULT NULL,
+  `axilarMedia` FLOAT NULL DEFAULT NULL,
+  `abdominal` FLOAT NULL DEFAULT NULL,
+  `aupraIliaca` FLOAT NULL DEFAULT NULL,
+  `subEscapular` FLOAT NULL DEFAULT NULL,
+  `tricipital` FLOAT NULL DEFAULT NULL,
+  `coxa` FLOAT NULL DEFAULT NULL,
   PRIMARY KEY (`idMedidas`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -128,20 +128,20 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Professor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Professor` (
+CREATE TABLE IF NOT EXISTS `mydb`.`professor` (
   `idProfessor` INT NOT NULL AUTO_INCREMENT,
-  `Nome` VARCHAR(200) NOT NULL,
-  `Data_Nascimento` DATE NULL DEFAULT NULL,
-  `Sexo` VARCHAR(10) NULL DEFAULT NULL,
-  `CPF` VARCHAR(15) NOT NULL,
-  `Celular` VARCHAR(45) NOT NULL,
-  `CEP` VARCHAR(15) NULL DEFAULT NULL,
-  `CREF` VARCHAR(45) NULL DEFAULT NULL,
-  `Estado` VARCHAR(100) NULL DEFAULT NULL,
-  `Cidade` VARCHAR(100) NULL DEFAULT NULL,
-  `Endereco` VARCHAR(100) NULL DEFAULT NULL,
-  `Email` VARCHAR(100) NOT NULL,
-  `Senha` VARCHAR(10) NOT NULL,
+  `nome` VARCHAR(200) NOT NULL,
+  `dataNascimento` DATE NULL DEFAULT NULL,
+  `sexo` VARCHAR(10) NULL DEFAULT NULL,
+  `cpf` VARCHAR(15) NOT NULL,
+  `celular` VARCHAR(45) NOT NULL,
+  `cep` VARCHAR(15) NULL DEFAULT NULL,
+  `cref` VARCHAR(45) NULL DEFAULT NULL,
+  `estado` VARCHAR(100) NULL DEFAULT NULL,
+  `cidade` VARCHAR(100) NULL DEFAULT NULL,
+  `endereco` VARCHAR(100) NULL DEFAULT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `denha` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idProfessor`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -150,19 +150,19 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Teste_VO2`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Teste_VO2` (
-  `idTeste_VO2` INT NOT NULL AUTO_INCREMENT,
-  `Data_Teste` DATE NULL DEFAULT NULL,
-  `Velocidade_Inicial` INT NULL DEFAULT NULL,
-  `FC_Repouso` INT NULL DEFAULT NULL,
-  `Pressao_Inicio` VARCHAR(45) NULL DEFAULT NULL,
-  `Pressao_Final` VARCHAR(45) NULL DEFAULT NULL,
-  `FC_Teste` INT NULL DEFAULT NULL,
-  `Tempo_Teste` INT NULL DEFAULT NULL,
-  `Velocidade_Teste` INT NULL DEFAULT NULL,
-  `Esforco_Teste` INT NULL DEFAULT NULL,
-  `Resultado_VO2` INT NULL DEFAULT NULL,
-  PRIMARY KEY (`idTeste_VO2`))
+CREATE TABLE IF NOT EXISTS `mydb`.`testeVO2` (
+  `idTesteVO2` INT NOT NULL AUTO_INCREMENT,
+  `dataTeste` DATE NULL DEFAULT NULL,
+  `velocidadeInicial` INT NULL DEFAULT NULL,
+  `fcRepouso` INT NULL DEFAULT NULL,
+  `pressaoInicio` VARCHAR(45) NULL DEFAULT NULL,
+  `pressaoFinal` VARCHAR(45) NULL DEFAULT NULL,
+  `fcTeste` INT NULL DEFAULT NULL,
+  `tempoTeste` INT NULL DEFAULT NULL,
+  `velocidadeTeste` INT NULL DEFAULT NULL,
+  `esforcoTeste` INT NULL DEFAULT NULL,
+  `resultadoVO2` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`idTesteVO2`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -170,22 +170,22 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Teste_Forca`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Teste_Forca` (
-  `idTeste_Forca` INT NOT NULL AUTO_INCREMENT,
-  `Data_Teste` DATE NULL DEFAULT NULL,
-  `Carga_Inicial` INT NULL DEFAULT NULL,
-  `Rep_Inicial` INT NULL DEFAULT NULL,
-  `Meta_Carga` INT NULL DEFAULT NULL,
-  `Meta_Rep` INT NULL DEFAULT NULL,
-  `Primeira_Tentativa` INT NULL DEFAULT NULL,
-  `Segunda_Tentativa` INT NULL DEFAULT NULL,
-  `Terceira_Tentativa` INT NULL DEFAULT NULL,
-  `Resultado_Rep` INT NULL DEFAULT NULL,
-  `Resultado_Kg` INT NULL DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`testeForca` (
+  `idTesteForca` INT NOT NULL AUTO_INCREMENT,
+  `dataTeste` DATE NULL DEFAULT NULL,
+  `cargaInicial` INT NULL DEFAULT NULL,
+  `repInicial` INT NULL DEFAULT NULL,
+  `metaCarga` INT NULL DEFAULT NULL,
+  `metaRep` INT NULL DEFAULT NULL,
+  `primeiraTentativa` INT NULL DEFAULT NULL,
+  `segundaTentativa` INT NULL DEFAULT NULL,
+  `terceiraTentativa` INT NULL DEFAULT NULL,
+  `resultadoRep` INT NULL DEFAULT NULL,
+  `resultadoKg` INT NULL DEFAULT NULL,
   `idExercicios` INT NOT NULL,
   PRIMARY KEY (`idTeste_Forca`),
-  INDEX `fk_Teste_Forca_Exercicios1_idx` (`idExercicios` ASC),
-  CONSTRAINT `fk_Teste_Forca_Exercicios1`
+  INDEX `fk_TesteForca_Exercicios1_idx` (`idExercicios` ASC),
+  CONSTRAINT `fk_TesteForca_Exercicios1`
     FOREIGN KEY (`idExercicios`)
     REFERENCES `mydb`.`Exercicios` (`idExercicios`))
 ENGINE = InnoDB
@@ -195,35 +195,35 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Resultado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Resultado` (
+CREATE TABLE IF NOT EXISTS `mydb`.`resultado` (
   `idResultado` INT NOT NULL,
-  `Peso` FLOAT NULL DEFAULT NULL,
-  `IMC` FLOAT NULL DEFAULT NULL,
-  `Abdomen` FLOAT NULL DEFAULT NULL,
-  `RCQ` FLOAT NULL DEFAULT NULL,
-  `Percent_Gord` FLOAT NULL DEFAULT NULL,
-  `Massa_Gorda` FLOAT NULL DEFAULT NULL,
-  `Percent_Magra` FLOAT NULL DEFAULT NULL,
-  `Massa_Magra` FLOAT NULL DEFAULT NULL,
-  `FC` FLOAT NULL DEFAULT NULL,
-  `VO` FLOAT NULL DEFAULT NULL,
-  `idTeste_VO2` INT NOT NULL,
-  `idTeste_Forca` INT NOT NULL,
+  `peso` FLOAT NULL DEFAULT NULL,
+  `imc` FLOAT NULL DEFAULT NULL,
+  `abdomen` FLOAT NULL DEFAULT NULL,
+  `rcq` FLOAT NULL DEFAULT NULL,
+  `percentGord` FLOAT NULL DEFAULT NULL,
+  `massaGorda` FLOAT NULL DEFAULT NULL,
+  `percentMagra` FLOAT NULL DEFAULT NULL,
+  `massaMagra` FLOAT NULL DEFAULT NULL,
+  `fc` FLOAT NULL DEFAULT NULL,
+  `vo` FLOAT NULL DEFAULT NULL,
+  `idTesteVO2` INT NOT NULL,
+  `idTesteForca` INT NOT NULL,
   `idMedidas` INT NOT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idResultado`),
-  INDEX `fk_Resultado_Teste_VO21_idx` (`idTeste_VO2` ASC),
-  INDEX `fk_Resultado_Teste_Forca1_idx` (`idTeste_Forca` ASC),
+  INDEX `fk_Resultado_TesteVO21_idx` (`idTesteVO2` ASC),
+  INDEX `fk_Resultado_TesteForca1_idx` (`idTesteForca` ASC),
   INDEX `fk_Resultado_Medidas1_idx` (`idMedidas` ASC),
   INDEX `fk_Resultado_Usuario1_idx` (`idUsuario` ASC),
-  CONSTRAINT `fk_Resultado_Teste_VO21`
+  CONSTRAINT `fk_Resultado_TesteVO21`
     FOREIGN KEY (`idTeste_VO2`)
-    REFERENCES `mydb`.`Teste_VO2` (`idTeste_VO2`)
+    REFERENCES `mydb`.`TesteVO2` (`idTesteVO2`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Resultado_Teste_Forca1`
-    FOREIGN KEY (`idTeste_Forca`)
-    REFERENCES `mydb`.`Teste_Forca` (`idTeste_Forca`)
+  CONSTRAINT `fk_Resultado_TesteForca1`
+    FOREIGN KEY (`idTesteForca`)
+    REFERENCES `mydb`.`TesteForca` (`idTesteForca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Resultado_Medidas1`
@@ -243,12 +243,12 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Series`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Series` (
+CREATE TABLE IF NOT EXISTS `mydb`.`series` (
   `idSeries` INT NOT NULL AUTO_INCREMENT,
-  `Nivel` VARCHAR(45) NULL DEFAULT NULL,
-  `Fase` VARCHAR(45) NULL DEFAULT NULL,
-  `Serie` VARCHAR(45) NULL DEFAULT NULL,
-  `Percent_Carga` VARCHAR(5) NULL DEFAULT NULL,
+  `nivel` VARCHAR(45) NULL DEFAULT NULL,
+  `dase` VARCHAR(45) NULL DEFAULT NULL,
+  `serie` VARCHAR(45) NULL DEFAULT NULL,
+  `percentCarga` VARCHAR(5) NULL DEFAULT NULL,
   PRIMARY KEY (`idSeries`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -257,12 +257,12 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`Treino`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Treino` (
+CREATE TABLE IF NOT EXISTS `mydb`.`treino` (
   `idTreino` INT NOT NULL AUTO_INCREMENT,
   `idSeries` INT NOT NULL,
   `idExercicios` INT NOT NULL,
-  `Carga` INT NULL DEFAULT NULL,
-  `Feedback` INT NULL DEFAULT NULL,
+  `carga` INT NULL DEFAULT NULL,
+  `feedback` INT NULL DEFAULT NULL,
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`idTreino`),
   INDEX `fk_Treino_Series1_idx` (`idSeries` ASC),

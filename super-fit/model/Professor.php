@@ -3,7 +3,7 @@
     Class Professor{
         private $idProfessor;
         private $nome;
-        private $data_nascimento;
+        private $dataNascimento;
         private $sexo;
         private $cpf;
         private $cref;
@@ -35,14 +35,14 @@
             $this->nome = $nome; 
         }
 
-        function getData_Nascimento()
+        function getDataNascimento()
         { 
-            return $this->data_nascimento; 
+            return $this->dataNascimento; 
         }
 
-        function setData_Nascimento($data_nascimento)
+        function setDataNascimento($dataNascimento)
         { 
-            $this->data_nascimento = $data_nascimento; 
+            $this->dataNascimento = $dataNascimento; 
         }
 
         function getSexo()

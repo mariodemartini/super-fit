@@ -5,7 +5,7 @@
         private $nivel;
         private $fase;
         private $serie;
-        private $percent_carga;
+        private $percentCarga;
 
         function getIdSerie()
         { 
@@ -47,14 +47,14 @@
             $this->serie = $serie; 
         }
 
-        function getPercent_Carga()
+        function getPercentCarga()
         { 
-            return $this->percent_carga; 
+            return $this->percentCarga; 
         }
 
-        function setPercent_Carga($percent_carga)
+        function setPercentCarga($percentCarga)
         { 
-            $this->percent_carga = $percent_carga; 
+            $this->percentCarga = $percentCarga; 
         }
 
     }

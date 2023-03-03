@@ -5,13 +5,13 @@
         public function create(Usuario $usuario){
             try {
                 $sql = "INSERT INTO Usuario (
-                    nome, data_nascimento, sexo, cpf, rg, telefone, celular, CEP, estado, cidade, endereco, email, senha, data_cadastro)
+                    nome, dataNascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, dataCadastro)
                     VALUES (
-                    :nome, :data_nascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :data_cadastro)";
+                    :nome, :dataNascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :dataCadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $usuario->getNome());
-                $p_sql->bindValue(":data_nascimento", $usuario->getData_Nascimento());
+                $p_sql->bindValue(":dataNascimento", $usuario->getDataNascimento());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());
@@ -23,7 +23,7 @@
                 $p_sql->bindValue(":endereco", $usuario->getEndereco());
                 $p_sql->bindValue(":email", $usuario->getEmail());
                 $p_sql->bindValue(":senha", $usuario->getSenha());
-                $p_sql->bindValue(":data_cadastro", $usuario->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $usuario->getDataCadastro());
 
                 return $p_sql->execute();
                 
@@ -50,20 +50,20 @@
         private function listaUsuarios($row) {
             $usuario = new Usuario();
             $usuario->setIdUsuario($row['idUsuario']);
-            $usuario->setNome($row['Nome']);
-            $usuario->setData_Nascimento($row['Data_Nascimento']);
-            $usuario->setSexo($row['Sexo']);
-            $usuario->setCpf($row['CPF']);
-            $usuario->setRg($row['RG']);
-            $usuario->setTelefone($row['Telefone']);
-            $usuario->setCelular($row['Celular']);
-            $usuario->setCep($row['CEP']);
-            $usuario->setEstado($row['Estado']);
-            $usuario->setCidade($row['Cidade']);
-            $usuario->setEndereco($row['Endereco']);
-            $usuario->setEmail($row['Email']);
-            $usuario->setSenha($row['Senha']);
-            $usuario->setData_Cadastro($row['Data_Cadastro']);
+            $usuario->setNome($row['nome']);
+            $usuario->setDataNascimento($row['dataNascimento']);
+            $usuario->setSexo($row['sexo']);
+            $usuario->setCpf($row['cpf']);
+            $usuario->setRg($row['rg']);
+            $usuario->setTelefone($row['telefone']);
+            $usuario->setCelular($row['celular']);
+            $usuario->setCep($row['cep']);
+            $usuario->setEstado($row['estado']);
+            $usuario->setCidade($row['cidade']);
+            $usuario->setEndereco($row['endereco']);
+            $usuario->setEmail($row['email']);
+            $usuario->setSenha($row['senha']);
+            $usuario->setDataCadastro($row['dataCadastro']);
 
             return $usuario;
         }
@@ -82,29 +82,29 @@
         public function update(Usuario $usuario)
         {
             try {
-                $sql = "UPDATE Usuario set
+                $sql = "UPDATE usuario set
                     
                       idUsuario=:idUsuario,
-                      Nome=:nome,
-                      Data_Nascimento=:data_nascimento,
-                      Sexo=:sexo,
-                      CPF=:cpf,
-                      RG=:rg,
-                      Telefone=:telefone,
-                      Celular=:celular,
-                      CEP=:cep,
-                      Estado=:estado,
-                      Cidade=:cidade,
-                      Endereco=:endereco,
-                      Email=:email,
-                      Senha=:senha,
-                      Data_Cadastro=:data_cadastro
+                      nome=:nome,
+                      dataNascimento=:datanascimento,
+                      sexo=:sexo,
+                      cpf=:cpf,
+                      rg=:rg,
+                      telefone=:telefone,
+                      celular=:celular,
+                      cep=:cep,
+                      estado=:estado,
+                      cidade=:cidade,
+                      endereco=:endereco,
+                      email=:email,
+                      senha=:senha,
+                      dataCadastro=:datacadastro
                                     
                       WHERE idUsuario = :idUsuario";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idUsuario", $usuario->getIdUsuario());
                 $p_sql->bindValue(":nome", $usuario->getNome());
-                $p_sql->bindValue(":data_nascimento", $usuario->getData_Nascimento());
+                $p_sql->bindValue(":dataNascimento", $usuario->getDataNascimento());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());
@@ -116,7 +116,7 @@
                 $p_sql->bindValue(":endereco", $usuario->getEndereco());
                 $p_sql->bindValue(":email", $usuario->getEmail());
                 $p_sql->bindValue(":senha", $usuario->getSenha());
-                $p_sql->bindValue(":data_cadastro", $usuario->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $usuario->getDataCadastro());
             
                 return $p_sql->execute();
             } catch (Exception $e) {
@@ -126,7 +126,7 @@
 
         public function exibeUsuario() {
             try {
-                $sql = "SELECT idUsuario, Nome, Data_Nascimento, CPF, Celular, Email, Data_Cadastro FROM Usuario ORDER BY idUsuario ASC";
+                $sql = "SELECT idUsuario, nome, dataNascimento, cpf, celular, email, dataCadastro FROM usuario ORDER BY idUsuario ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -142,12 +142,12 @@
         private function listaDados($row) {
             $usuario = new Usuario();
             $usuario->setIdUsuario($row['idUsuario']);
-            $usuario->setNome($row['Nome']);
-            $usuario->setData_Nascimento($row['Data_Nascimento']);
-            $usuario->setCpf($row['CPF']);
-            $usuario->setCelular($row['Celular']);
-            $usuario->setEmail($row['Email']);
-            $usuario->setData_Cadastro($row['Data_Cadastro']);
+            $usuario->setNome($row['nome']);
+            $usuario->setDataNascimento($row['dataNascimento']);
+            $usuario->setCpf($row['cpf']);
+            $usuario->setCelular($row['celular']);
+            $usuario->setEmail($row['email']);
+            $usuario->setDataCadastro($row['dataCadastro']);
 
             return $usuario;
         }

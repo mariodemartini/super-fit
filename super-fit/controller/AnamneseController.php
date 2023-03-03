@@ -11,11 +11,11 @@
     if(isset($_POST['salvar'])){
 
         $anamnese->setAtividade(($d['atividade']));
-        $anamnese->setTempo_pratica(($d['tempo_pratica']));
+        $anamnese->setTempoPratica(($d['tempoPratica']));
         $anamnese->setObjetivo(($d['objetivo']));
         $anamnese->setFumante(($d['fumante']));
         $anamnese->setAlcool(($d['alcool']));
-        $anamnese->setHistorico_fam(($d['historico_fam']));
+        $anamnese->setHistoricoFam(($d['historicoFam']));
         $anamnese->setHipertensao(($d['hipertensao']));
         $anamnese->setColesterol(($d['colesterol']));
         $anamnese->setDiabetes(($d['diabetes']));
@@ -29,8 +29,8 @@
         $anamnese->setMedicamentos(($d['medicamentos']));
         $anamnese->setOutros(($d['outros']));
         $anamnese->setAlimentacao(($d['alimentacao']));
-        $anamnese->setData_Cadastro(($d['data_cadastro']));
-        $anamnese->setUsuario(($d['nome']));
+        $anamnese->setDataCadastro(($d['dataCadastro']));
+    //    $anamnese->setUsuario(($d['nome']));
         
         $anamnesedao->create($anamnese);
 
@@ -41,11 +41,11 @@
 
         $anamnese->setIdAnamnese(($d['idAnamnese']));
         $anamnese->setAtividade(($d['atividade']));
-        $anamnese->setTempo_pratica(($d['tempo_pratica']));
+        $anamnese->setTempoPratica(($d['tempoPratica']));
         $anamnese->setObjetivo(($d['objetivo']));
         $anamnese->setFumante(($d['fumante']));
         $anamnese->setAlcool(($d['alcool']));
-        $anamnese->setHistorico_fam(($d['historico_fam']));
+        $anamnese->setHistoricoFam(($d['historicoFam']));
         $anamnese->setHipertensao(($d['hipertensao']));
         $anamnese->setColesterol(($d['colesterol']));
         $anamnese->setDiabetes(($d['diabetes']));
@@ -59,7 +59,7 @@
         $anamnese->setMedicamentos(($d['medicamentos']));
         $anamnese->setOutros(($d['outros']));
         $anamnese->setAlimentacao(($d['alimentacao']));
-        $anamnese->setData_Cadastro(($d['data_cadastro']));
+        $anamnese->setDataCadastro(($d['dataCadastro']));
     
         $anamnesedao->update($anamnese);
     

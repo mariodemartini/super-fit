@@ -2,16 +2,16 @@
     
     Class TesteVO2{
         private $idTesteVO2;
-        private $data_teste;
-        private $velocidade_inicial;
-        private $fc_repouso;
-        private $pressao_inicio;
-        private $pressao_final;
-        private $fc_teste;
-        private $tempo_teste;
-        private $velocidade_teste;
-        private $esforco_teste;
-        private $resultado_vo2;
+        private $dataTeste;
+        private $velocidadeInicial;
+        private $fcRepouso;
+        private $pressaoInicio;
+        private $pressaoFinal;
+        private $fcTeste;
+        private $tempoTeste;
+        private $velocidadeTeste;
+        private $esforcoTeste;
+        private $resultadoVO2;
         
         function getIdTesteVO2()
         {
@@ -22,95 +22,95 @@
             $this->idTesteVO2 = $idTesteVO2;
         }
 
-        function getData_teste()
+        function getDataTeste()
         {
-            return $this->data_teste;           
+            return $this->dataTeste;           
         }
-        function setData_teste($data_teste)
+        function setDataTeste($dataTeste)
         {
-            $this->data_teste = $data_teste;
-        }
-
-        function getVelocidade_inicial()
-        {
-            return $this->velocidade_inicial;           
+            $this->dataTeste = $dataTeste;
         }
 
-        function setVelocidade_inicial($velocidade_inicial)
+        function getVelocidadeInicial()
         {
-            $this->velocidade_inicial = $velocidade_inicial;
+            return $this->velocidadeInicial;           
         }
 
-        function getFc_repouso()
+        function setVelocidadeInicial($velocidadeInicial)
         {
-            return $this->fc_repouso;           
-        }
-        function setFc_repouso($fc_repouso)
-        {
-            $this->fc_repouso = $fc_repouso;
+            $this->velocidadeInicial = $velocidadeInicial;
         }
 
-        function getPressao_inicio()
+        function getFcRepouso()
         {
-            return $this->pressao_inicio;           
+            return $this->fcRepouso;           
         }
-        function setPressao_inicio($pressao_inicio)
+        function setFcRepouso($fcRepouso)
         {
-            $this->pressao_inicio = $pressao_inicio;
-        }
-
-        function getPressao_final()
-        {
-            return $this->pressao_final;           
-        }
-        function setPressao_final($pressao_final)
-        {
-            $this->pressao_final = $pressao_final;
+            $this->fcRepouso = $fcRepouso;
         }
 
-        function getFc_teste()
+        function getPressaoInicio()
         {
-            return $this->fc_teste;           
+            return $this->pressaoInicio;           
         }
-        function setFc_teste($fc_teste)
+        function setPressaoInicio($pressaoInicio)
         {
-            $this->fc_teste = $fc_teste;
-        }
-
-        function getTempo_teste()
-        {
-            return $this->tempo_teste;           
-        }
-        function setTempo_teste($tempo_teste)
-        {
-            $this->tempo_teste = $tempo_teste;
+            $this->pressaoInicio = $pressaoInicio;
         }
 
-        function getVelocidade_teste()
+        function getPressaoFinal()
         {
-            return $this->velocidade_teste;           
+            return $this->pressaoFinal;           
         }
-        function setVelocidade_teste($velocidade_teste)
+        function setPressaoFinal($pressaoFinal)
         {
-            $this->velocidade_teste = $velocidade_teste;
-        }
-
-        function getEsforco_teste()
-        {
-            return $this->esforco_teste;           
-        }
-        function setEsforco_teste($esforco_teste)
-        {
-            $this->esforco_teste = $esforco_teste;
+            $this->pressaoFinal = $pressaoFinal;
         }
 
-        function getResultado_vo2()
+        function getFcTeste()
         {
-            return $this->resultado_vo2;           
+            return $this->fcTeste;           
         }
-        function setResultado_vo2($resultado_vo2)
+        function setFcTeste($fcTeste)
         {
-            $this->resultado_vo2 = $resultado_vo2;
+            $this->fcTeste = $fcTeste;
+        }
+
+        function getTempoTeste()
+        {
+            return $this->tempoTeste;           
+        }
+        function setTempoTeste($tempoTeste)
+        {
+            $this->tempoTeste = $tempoTeste;
+        }
+
+        function getVelocidadeTeste()
+        {
+            return $this->velocidadeTeste;           
+        }
+        function setVelocidadeTeste($velocidadeTeste)
+        {
+            $this->velocidadeTeste = $velocidadeTeste;
+        }
+
+        function getEsforcoTeste()
+        {
+            return $this->esforcoTeste;           
+        }
+        function setEsforcoTeste($esforcoTeste)
+        {
+            $this->esforcoTeste = $esforcoTeste;
+        }
+
+        function getResultadoVO2()
+        {
+            return $this->resultadoVO2;           
+        }
+        function setResultadoVO2($resultadoVO2)
+        {
+            $this->resultadoVO2 = $resultadoVO2;
         }
 
     }

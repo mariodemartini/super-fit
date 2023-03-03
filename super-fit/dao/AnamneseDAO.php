@@ -4,18 +4,18 @@
     {
         public function create(Anamnese $anamnese){
             try {
-                $sql = "INSERT INTO Anamnese (
-                    Atividade, Tempo_Pratica, Objetivo, Fumante, Alcool, Historico_Fam, Hipertensao, Colesterol, Diabetes, Cardiaco, Cirurgia, Fratura, Lesao, Dor, Movimentos, Artrite, Medicamentos, Outros, Alimentacao, Data_Cadastro)
+                $sql = "INSERT INTO anamnese (
+                    atividade, tempoPratica, objetivo, fumante, alcool, historicoFam, hipertensao, colesterol, diabetes, cardiaco, cirurgia, fratura, lesao, dor, movimentos, artrite, medicamentos, outros, alimentacao, dataCadastro)
                     VALUES (
-                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historico_fam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :data_cadastro)";
+                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historicoFam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :dataCadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
-                $p_sql->bindValue(":tempo_pratica", $anamnese->getTempo_pratica());
+                $p_sql->bindValue(":tempoPratica", $anamnese->getTempoPratica());
                 $p_sql->bindValue(":objetivo", $anamnese->getObjetivo());
                 $p_sql->bindValue(":fumante", $anamnese->getFumante());
                 $p_sql->bindValue(":alcool", $anamnese->getAlcool());
-                $p_sql->bindValue(":historico_fam", $anamnese->getHistorico_fam());
+                $p_sql->bindValue(":historicoFam", $anamnese->getHistoricoFam());
                 $p_sql->bindValue(":hipertensao", $anamnese->getHipertensao());
                 $p_sql->bindValue(":colesterol", $anamnese->getColesterol());
                 $p_sql->bindValue(":diabetes", $anamnese->getDiabetes());
@@ -29,7 +29,7 @@
                 $p_sql->bindValue(":medicamentos", $anamnese->getMedicamentos());
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
-                $p_sql->bindValue(":data_cadastro", $anamnese->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $anamnese->getDataCadastro());
                // $p_sql->bindValue(":nome", $anamnese->buscaUsuario());
 
                 return $p_sql->execute();
@@ -41,7 +41,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Anamnese ORDER BY idAnamnese ASC";
+                $sql = "SELECT * FROM anamnese ORDER BY idAnamnese ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -58,11 +58,11 @@
             $anamnese = new Anamnese();
             $anamnese->setIdAnamnese($row['idAnamnese']);
             $anamnese->setAtividade($row['atividade']);
-            $anamnese->setTempo_pratica($row['tempo_pratica']);
+            $anamnese->setTempoPratica($row['tempoPratica']);
             $anamnese->setObjetivo($row['objetivo']);
             $anamnese->setFumante($row['fumante']);
             $anamnese->setAlcool($row['alcool']);
-            $anamnese->setHistorico_fam($row['historico_fam']);
+            $anamnese->setHistoricoFam($row['historicoFam']);
             $anamnese->setHipertensao($row['hipertensao']);
             $anamnese->setColesterol($row['colesterol']);
             $anamnese->setDiabetes($row['diabetes']);
@@ -76,7 +76,7 @@
             $anamnese->setMedicamentos($row['medicamentos']);
             $anamnese->setOutros($row['outros']);
             $anamnese->setAlimentacao($row['alimentacao']);
-            $anamnese->setData_Cadastro($row['data_cadastro']);
+            $anamnese->setDataCadastro($row['dataCadastro']);
            // $anamnese->setUsuario($row['nome']);
 
             return $anamnese;
@@ -84,7 +84,7 @@
 
         public function delete(Anamnese $anamnese){
             try {
-                $sql = "DELETE FROM Anamnese WHERE idAnamnese = :idAnamnese";
+                $sql = "DELETE FROM anamnese WHERE idAnamnese = :idAnamnese";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idAnamnese", $anamnese->getIdAnamnese());
                 return $p_sql->execute();
@@ -96,39 +96,39 @@
         public function update(Anamnese $anamnese)
         {
             try {
-                $sql = "UPDATE Anamnese set
+                $sql = "UPDATE anamnese set
                     
                       idAnamnese=:idAnamnese,
-                      Atividade=:atividade,
-                      Tempo_Pratica=:tempo_pratica,
-                      Objetivo=:objetivo,
-                      Fumante=:fumante,
-                      Alcool=:alcool,
-                      Historico_fam=:historico_fam,
-                      Hipertensao=:hipertensao,
-                      Colesterol=:colesterol,
-                      Diabetes=:diabetes,
-                      Cardiaco=:cardiaco,
-                      Cirugia=:cirurgia,
-                      Fratura=:fratura,
-                      Lesao=:lesao,
-                      Dor=:dor,
-                      Movimentos=:movimentos,
-                      Artrite=:artrite,
-                      Medicamentos=:medicamentos,
-                      Outros=:outros,
-                      Alimentacao=:alimentacao,
-                      Data_Cadastro=:data_cadastro,
+                      atividade=:atividade,
+                      tempoPratica=:tempopratica,
+                      objetivo=:objetivo,
+                      fumante=:fumante,
+                      alcool=:alcool,
+                      historicoFam=:historicoFam,
+                      hipertensao=:hipertensao,
+                      colesterol=:colesterol,
+                      diabetes=:diabetes,
+                      cardiaco=:cardiaco,
+                      cirugia=:cirurgia,
+                      fratura=:fratura,
+                      lesao=:lesao,
+                      dor=:dor,
+                      movimentos=:movimentos,
+                      artrite=:artrite,
+                      medicamentos=:medicamentos,
+                      outros=:outros,
+                      alimentacao=:alimentacao,
+                      dataCadastro=:dataCadastro,
                                     
                       WHERE idAnamnese = :idAnamnese";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idAnamnese", $anamnese->getIdAnamnese());
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
-                $p_sql->bindValue(":tempo_pratica", $anamnese->getTempo_pratica());
+                $p_sql->bindValue(":tempoPratica", $anamnese->getTempoPratica());
                 $p_sql->bindValue(":objetivo", $anamnese->getObjetivo());
                 $p_sql->bindValue(":fumante", $anamnese->getFumante());
                 $p_sql->bindValue(":alcool", $anamnese->getAlcool());
-                $p_sql->bindValue(":historico_fam", $anamnese->getHistorico_fam());
+                $p_sql->bindValue(":historico_fam", $anamnese->getHistoricoFam());
                 $p_sql->bindValue(":hipertensao", $anamnese->getHipertensao());
                 $p_sql->bindValue(":colesterol", $anamnese->getColesterol());
                 $p_sql->bindValue(":cirugia", $anamnese->getCirurgia());
@@ -140,7 +140,7 @@
                 $p_sql->bindValue(":medicamentos", $anamnese->getMedicamentos());
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
-                $p_sql->bindValue(":data_cadastro", $anamnese->getData_Cadastro());
+                $p_sql->bindValue(":dataCadastro", $anamnese->getDataCadastro());
             
                 return $p_sql->execute();
             } catch (Exception $e) {
@@ -150,9 +150,9 @@
 
         public function buscaUsuario() {
             try {
-                $sql = "SELECT Usuario.Nome FROM Anamnese 
-                JOIN Usuario ON Anamnese.idUsuario = Usuario.idUsuario 
-                WHERE Usuario.Name LIKE $nome";;
+                $sql = "SELECT usuario.Nome FROM anamnese 
+                JOIN usuario ON anamnese.idUsuario = usuario.idUsuario 
+                WHERE usuario.Name LIKE $";;
                 $result = Conexao::getConexao()->prepare($sql);
                 $row = $result->fetch_assoc();
                 return $row;

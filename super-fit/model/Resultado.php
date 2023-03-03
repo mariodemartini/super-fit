@@ -6,10 +6,10 @@
         private $imc;
         private $abdomen;
         private $rcq;
-        private $percent_gord;
-        private $massa_gorda;
-        private $percent_magra;
-        private $massa_magra;
+        private $percentGord;
+        private $massaGorda;
+        private $percentMagra;
+        private $massaMagra;
         private $fc;
         private $vo;
 
@@ -62,40 +62,40 @@
             $this->rcq = $rcq;
         }
 
-        function getPercent_gord()
+        function getPercentGord()
         {
-            return $this->percent_gord;           
+            return $this->percentGord;           
         }       
-        function setPercent_gord($percent_gord)
+        function setPercentGord($percentGord)
         {
-            $this->percent_gord = $percent_gord;
+            $this->percentGord = $percentGord;
         }
 
-        function getMassa_gorda()
+        function getMassaGorda()
         {
-            return $this->massa_gorda;           
+            return $this->massaGorda;           
         }       
-        function setMassa_gorda($massa_gorda)
+        function setMassaGorda($massaGorda)
         {
-            $this->massa_gorda = $massa_gorda;
+            $this->massaGorda = $massaGorda;
         }
 
-        function getPercent_magra()
+        function getPercentMagra()
         {
-            return $this->percent_magra;           
+            return $this->percentMagra;           
         }       
-        function setPercent_magra($percent_magra)
+        function setPercentMagra($percentMagra)
         {
-            $this->percent_magra = $percent_magra;
+            $this->percentMagra = $percentMagra;
         }
 
-        function getMassa_magra()
+        function getMassaMagra()
         {
-            return $this->massa_magra;           
+            return $this->massaMagra;           
         }       
-        function setMassa_magra($massa_magra)
+        function setMassaMagra($massaMagra)
         {
-            $this->massa_magra = $massa_magra;
+            $this->massaMagra = $massaMagra;
         }
 
         function getFc()

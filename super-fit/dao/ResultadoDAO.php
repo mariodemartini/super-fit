@@ -5,19 +5,19 @@
         public function create(Resultado $resultado){
             try {
                 $sql = "INSERT INTO Resultado (
-                    peso, imc, abdomen, rcq, percent_gord, massa_gorda, percent_magra, massa_magra, fc, vo)
+                    peso, imc, abdomen, rcq, percentGord, massaGorda, percentMagra, massaMagra, fc, vo)
                     VALUES (
-                    :peso, :imc, :abdomen, :rcq, :percent_gord, :massa_gorda, :percent_magra, :massa_magra, :fc, :vo)";
+                    :peso, :imc, :abdomen, :rcq, :percentGord, :massaGorda, :percentMagra, :massaMagra, :fc, :vo)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peso", $resultado->getPeso());
                 $p_sql->bindValue(":imc", $resultado->getImc());
                 $p_sql->bindValue(":abdomen", $resultado->getAbdomen());
                 $p_sql->bindValue(":rcq", $resultado->getRcq());
-                $p_sql->bindValue(":percent_gord", $resultado->getPercent_gord());
-                $p_sql->bindValue(":massa_gorda", $resultado->getMassa_gorda());
-                $p_sql->bindValue(":percent_magra", $resultado->getPercent_magra());
-                $p_sql->bindValue(":massa_magra", $resultado->getMassa_magra());
+                $p_sql->bindValue(":percentGord", $resultado->getPercentGord());
+                $p_sql->bindValue(":massaGorda", $resultado->getMassaGorda());
+                $p_sql->bindValue(":percentMagra", $resultado->getPercentMagra());
+                $p_sql->bindValue(":massaMagra", $resultado->getMassaMagra());
                 $p_sql->bindValue(":fc", $resultado->getFc());
                 $p_sql->bindValue(":vo", $resultado->getVo());
 
@@ -30,7 +30,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM Resultado ORDER BY idResultado ASC";
+                $sql = "SELECT * FROM resultado ORDER BY idResultado ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -50,10 +50,10 @@
             $resultado->setImc($row['imc']);
             $resultado->setAbdomen($row['abdomen']);
             $resultado->setRcq($row['rcq']);
-            $resultado->setPercent_gord($row['percent_gord']);
-            $resultado->setMassa_gorda($row['massa_gorda']);
-            $resultado->setPercent_magra($row['percent_magra']);
-            $resultado->setMassa_magra($row['massa_magra']);
+            $resultado->setPercentGord($row['percentGord']);
+            $resultado->setMassaGorda($row['massaGorda']);
+            $resultado->setPercentMagra($row['percentMagra']);
+            $resultado->setMassaMagra($row['massaMagra']);
             $resultado->setFc($row['fc']);
             $resultado->setVo($row['vo']);
 
@@ -62,9 +62,9 @@
 
         public function delete(Resultado $resultado){
             try {
-                $sql = "DELETE FROM Resultado WHERE  idResultado = :idResultado";
+                $sql = "DELETE FROM resultado WHERE  idResultado = :idResultado";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idCircunferencias", $resultado->getIdResultado());
+                $p_sql->bindValue(":idResultado", $resultado->getIdResultado());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir resultado <br> $e <br>";
@@ -74,17 +74,17 @@
         public function update(Resultado $resultado)
         {
             try {
-                $sql = "UPDATE Resultado set
+                $sql = "UPDATE resultado set
                     
                       idResultado=:idResultado,
                       peso=:peso,
                       imc=:imc,
                       abdomen=:abdomen,
                       rcq=:rcq,
-                      percent_gord=:percent_gord,
-                      massa_gorda=:massa_gorda,
-                      percent_magra=:percent_magra,
-                      massa_magra=:massa_magra,
+                      percentGord=:percentGord,
+                      massaGorda=:massaGorda,
+                      percentMagra=:percentMagra,
+                      massaMagra=:massaMagra,
                       fc=:fc,
                       vo=:vo,
                                     
@@ -95,10 +95,10 @@
                 $p_sql->bindValue(":imc", $resultado->getImc());
                 $p_sql->bindValue(":abdomen", $resultado->getAbdomen());
                 $p_sql->bindValue(":rcq", $resultado->getRcq());
-                $p_sql->bindValue(":percent_gorda", $resultado->getPercent_gord());
-                $p_sql->bindValue(":massa_gorda", $resultado->getMassa_gorda());
-                $p_sql->bindValue(":percent_magra", $resultado->getPercent_magra());
-                $p_sql->bindValue(":massa_magra", $resultado->getMassa_magra());
+                $p_sql->bindValue(":percentGorda", $resultado->getPercentGord());
+                $p_sql->bindValue(":massaGorda", $resultado->getMassaGorda());
+                $p_sql->bindValue(":percentMagra", $resultado->getPercentMagra());
+                $p_sql->bindValue(":massaMagra", $resultado->getMassaMagra());
                 $p_sql->bindValue(":fc", $resultado->getFc());
                 $p_sql->bindValue(":vo", $resultado->getVo());
             
@@ -109,23 +109,17 @@
         }
 
         public function selecionaPeso(){
-            $sql = "SELECT Dados_Iniciais.peso FROM Dados_Iniciais, Avaliacao_Fisica, Resultado  
-                    WHERE Dados_Iniciais.idDados_Iniciais = Avaliacao_Fisica.idDados_Iniciais AND  Avaliacao_Fisica.idDados_Iniciais = Resultado.idResultado";
+            $sql = "SELECT medidas.peso FROM medidas, resultado  
+                    WHERE medidas.idMedidas = resultado.idMedidas";
             $result = Conexao::getConexao()->query($sql);
             $peso = $result->fetchAll(PDO::FETCH_ASSOC);
 
             $resultado = new Resultado;
-            $peso = selecionaPeso();
 
             $resultado->setPeso($peso);
         }
 
-        public function calculaImc(Resultado $peso, DadosIniciais $altura){
-            $sql = "SELECT Dados_Iniciais.altura FROM Dados_Iniciais, Avaliacao_Fisica, Resultado  
-                    WHERE Dados_Iniciais.idDados_Iniciais = Avaliacao_Fisica.idDados_Iniciais AND  Avaliacao_Fisica.idDados_Iniciais = Resultado.idResultado";
-            $result = Conexao::getConexao()->query($sql);
-            $altura = $result->fetchAll(PDO::FETCH_ASSOC);
-
+        public function calculaImc($peso,  $altura){
             $resultado = new Resultado;
             $imc = $peso / ($altura * $altura);
             $resultado->setImc($imc);
