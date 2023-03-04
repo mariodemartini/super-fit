@@ -24,6 +24,7 @@
         $usuario->setEmail(($d['email']));
         $usuario->setSenha(($d['senha']));
         $usuario->setDataCadastro(($d['dataCadastro']));
+        $usuario->setIdade(($d['dataNascimento']));
         
         $usuariodao->create($usuario);
 

@@ -5,13 +5,14 @@
         public function create(Usuario $usuario){
             try {
                 $sql = "INSERT INTO usuario (
-                    nome, dataNascimento, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, dataCadastro)
+                    nome, dataNascimento, idade, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, dataCadastro)
                     VALUES (
-                    :nome, :dataNascimento, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :dataCadastro)";
+                    :nome, :dataNascimento, :idade, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :dataCadastro)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nome", $usuario->getNome());
                 $p_sql->bindValue(":dataNascimento", $usuario->getDataNascimento());
+                $p_sql->bindValue(":idade", $usuario->getIdade());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());
@@ -87,6 +88,7 @@
                       idUsuario=:idUsuario,
                       nome=:nome,
                       dataNascimento=:datanascimento,
+                      idade=:idade,
                       sexo=:sexo,
                       cpf=:cpf,
                       rg=:rg,
@@ -105,6 +107,7 @@
                 $p_sql->bindValue(":idUsuario", $usuario->getIdUsuario());
                 $p_sql->bindValue(":nome", $usuario->getNome());
                 $p_sql->bindValue(":dataNascimento", $usuario->getDataNascimento());
+                $p_sql->bindValue(":idade", $usuario->getIdade());
                 $p_sql->bindValue(":sexo", $usuario->getSexo());
                 $p_sql->bindValue(":cpf", $usuario->getCpf());
                 $p_sql->bindValue(":rg", $usuario->getRg());
@@ -152,6 +155,24 @@
             return $usuario;
         }
 
+        // public function calculaIdade($dataNascimento){
+        //     $usuario = new Usuario;
+
+        //     // separando yyyy, mm, ddd
+        //     list($ano, $mes, $dia) = explode('-', $dataNascimento);
+
+        //     // data atual
+        //     $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+        //     // Descobre a unix timestamp da data de nascimento
+        //     $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+
+        //     // cálculo
+        //     $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+
+        //     $usuario->setIdade($idade);
+
+        //     return $usuario;
+        // }
 
     }
 
