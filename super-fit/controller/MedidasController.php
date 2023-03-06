@@ -34,6 +34,12 @@
         $medidas->setSubEscapular(($d['subEscapular']));
         $medidas->setTricipital(($d['tricipital']));
         $medidas->setCoxa(($d['coxa']));
+        $medidas->setImc(($d['peso']), ($d['altura']));
+        $medidas->setRcq(($d['cintura']), ($d['quadril']));
+        $medidas->setPercentGord(($d['supraIliaca']));
+        $medidas->setMassaGorda(($d['massaGorda']));
+        $medidas->setMassaMagra(($d['massaMagra']));
+        $medidas->setAluno(($d['nome']));
         
         $medidasdao->create($medidas);
 

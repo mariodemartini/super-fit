@@ -5,21 +5,20 @@
         public function create(TesteVO2 $testeVO2){
             try {
                 $sql = "INSERT INTO testeVO2 (
-                    dataTeste, velocidadeInicial, fcRepouso, pressaoInicio, pressaoFinal, fcTeste, tempoTeste, velocidadeTeste, esforcoTeste, resultadoVO2)
+                    dataTeste, velocidadeInicial, velocidadeFinal, fcInicial, fcFinal, tempoTeste, esforcoTeste, resultadoVO2, idAluno)
                     VALUES (
-                        :dataTeste, :velocidadeInicial, :fcRepouso, :pressaoInicio, :pressaoFinal, :fcTeste, :tempoTeste, :velocidadeTeste, :esforcoTeste, :resultadoVO2)";
+                    :dataTeste, :velocidadeInicial, :velocidadeFinal, :fcInicial, :fcFinal,:tempoTeste, :esforcoTeste, :resultadoVO2, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":dataTeste", $testeVO2->getDataTeste());
                 $p_sql->bindValue(":velocidadeInicial", $testeVO2->getVelocidadeInicial());
-                $p_sql->bindValue(":fcRepouso", $testeVO2->getFcRepouso());
-                $p_sql->bindValue(":pressaoInicio", $testeVO2->getPressaoInicio());
-                $p_sql->bindValue(":pressaoFinal", $testeVO2->getPressaoFinal());
-                $p_sql->bindValue(":fcTeste", $testeVO2->getFcTeste());
+                $p_sql->bindValue(":velocidadeFinal", $testeVO2->getVelocidadeFinal());
+                $p_sql->bindValue(":fcInicial", $testeVO2->getFcInicial());
+                $p_sql->bindValue(":fcFinal", $testeVO2->getFcFinal());
                 $p_sql->bindValue(":tempoTeste", $testeVO2->getTempoTeste());
-                $p_sql->bindValue(":velocidadeTeste", $testeVO2->getVelocidadeTeste());
                 $p_sql->bindValue(":esforcoTeste", $testeVO2->getEsforcoTeste());
                 $p_sql->bindValue(":resultadoVO2", $testeVO2->getResultadoVO2());
+                $p_sql->bindValue(":idAluno", $testeVO2->getAluno());
 
                 return $p_sql->execute();
                 
@@ -47,12 +46,10 @@
             $testeVO2 = new TesteVO2();
             $testeVO2->setDataTeste($row['dataTeste']);
             $testeVO2->setVelocidadeInicial($row['velocidadeInicial']);
-            $testeVO2->setFcRepouso($row['fcRepouso']);
-            $testeVO2->setPressaoInicio($row['pressaoInicio']);
-            $testeVO2->setPressaoFinal($row['pressaoFinal']);
-            $testeVO2->setFcTeste($row['fcTeste']);
+            $testeVO2->setVelocidadeFinal($row['velocidadeFinal']);
+            $testeVO2->setFcIniciaç($row['fcInicial']);
+            $testeVO2->setFcFinal($row['fcFinal']);
             $testeVO2->setTempoTeste($row['tempoTeste']);
-            $testeVO2->setVelocidadeTeste($row['velocidadeTeste']);
             $testeVO2->setEsforcoTeste($row['esforcoTeste']);
             $testeVO2->setResultadoVO2($row['resultadoVO2']);
 
@@ -77,26 +74,22 @@
                     
                     idTesteVO2=:idTesteVO2,
                     dataTeste=:dataTeste,
-                    velocidade_inicial=:velocidade_inicial, 
-                    fc_repouso=:fc_repouso, 
-                    pressao_inicio=:pressao_inicio, 
-                    pressao_final=:pressao_final, 
-                    fc_teste=:fc_teste, 
-                    tempo_teste=:tempo_teste, 
-                    velocidade_teste=:velocidade_teste, 
-                    esforco_teste=:esforco_teste, 
-                    resultado_vo2=:resultado_vo2
+                    velocidadeInicial=:velocidadeInicial, 
+                    velocidadeFinal=:velocidadeFinal, 
+                    fcInicial=:fcInicial, 
+                    fcFinal=:fcfinal,  
+                    tempoTeste=:tempoTeste, 
+                    esforcoTeste=:esforcoTeste, 
+                    resultadoVO2=:resultadoVO2
                                 
                     WHERE idTesteVO2 = :idTesteVO2";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":dataTeste", $testeVO2->getDataTeste());
                 $p_sql->bindValue(":velocidadeInicial", $testeVO2->getVelocidadeInicial());
-                $p_sql->bindValue(":fcRepouso", $testeVO2->getFcRepouso());
-                $p_sql->bindValue(":pressaoInicio", $testeVO2->getPressaoInicio());
-                $p_sql->bindValue(":pressaoFinal", $testeVO2->getPressaoFinal());
-                $p_sql->bindValue(":fcTeste", $testeVO2->getFcTeste());
+                $p_sql->bindValue(":velocidadeFinal", $testeVO2->getVelocidadeFinal());
+                $p_sql->bindValue(":fcInicial", $testeVO2->getFcInicial());
+                $p_sql->bindValue(":fcFinal", $testeVO2->getFcFinal());
                 $p_sql->bindValue(":tempoTeste", $testeVO2->getTempoTeste());
-                $p_sql->bindValue(":velocidade_teste", $testeVO2->getVelocidadeTeste());
                 $p_sql->bindValue(":esforcoTeste", $testeVO2->getEsforcoTeste());
                 $p_sql->bindValue(":resultadoVO2", $testeVO2->getResultadoVO2());
             

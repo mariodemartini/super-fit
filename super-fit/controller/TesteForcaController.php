@@ -12,15 +12,9 @@
 
         $testeforca->setDataTeste($row['dataTeste']);
         $testeforca->setCargaInicial($row['cargaInicial']);
-        $testeforca->setRepInicial($row['repInicial']);
-        $testeforca->setMetaCarga($row['metaCarga']);
-        $testeforca->setMetaRep($row['metaRep']);
-        $testeforca->setPrimeiraTentativa($row['primeiraTentativa']);
-        $testeforca->setSegundaTentativa($row['segundaTentativa']);
-        $testeforca->setTerceiraTentativa($row['terceiraTentativa']);
-        $testeforca->setResultadoRep($row['resultadoRep']);
-        $testeforca->setResultadoKg($row['resultadoKg']);
-        $testeforca->setExercicio($row['exercicio']);
+        $testeforca->setCargaFinal($row['cargaFinal']);
+        $testeforca->setAluno($row['idAluno']);
+        $testeforca->setExercicio($row['idExercicio']);
         
         $testeforcadao->create($testeforca);
 
@@ -31,15 +25,8 @@
 
         $testeforca->setDataTeste($row['dataTeste']);
         $testeforca->setCargaInicial($row['cargaInicial']);
-        $testeforca->setRepInicial($row['repInicial']);
-        $testeforca->setMetaCarga($row['metaCarga']);
-        $testeforca->setMetaRep($row['metaRep']);
-        $testeforca->setPrimeiraTentativa($row['primeiraTentativa']);
-        $testeforca->setSegundaTentativa($row['segundaTentativa']);
-        $testeforca->setTerceiraTentativa($row['terceiraTentativa']);
-        $testeforca->setResultadoRep($row['resultadoRep']);
-        $testeforca->setResultadoKg($row['resultadoKg']);
-        $testeforca->setExercicio($row['exercicio']);
+        $testeforca->setCargaFinal($row['cargaFinal']);
+        $testeforca->setExercicio($row['idExercicio']);
     
         $testeforcadao->update($testeforca);
     

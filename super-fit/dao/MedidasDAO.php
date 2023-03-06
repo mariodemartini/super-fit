@@ -5,9 +5,9 @@
         public function create(Medidas $medidas){
             try {
                 $sql = "INSERT INTO medidas (
-                    dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa)
+                    dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, imc, rcq, percentGord, massaGorda, massaMagra, idAluno)
                     VALUES (
-                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa)";
+                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :imc, :rcq, :percentGord, :massaGorda, :massaMagra, :nome)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peso", $medidas->getPeso());
@@ -34,6 +34,12 @@
                 $p_sql->bindValue(":subEscapular", $medidas->getSubEscapular());
                 $p_sql->bindValue(":tricipital", $medidas->getTricipital());
                 $p_sql->bindValue(":coxa", $medidas->getCoxa());
+                $p_sql->bindValue(":imc", $medidas->getImc());
+                $p_sql->bindValue(":rcq", $medidas->getRcq());
+                $p_sql->bindValue(":percentGord", $medidas->getPercentGord());
+                $p_sql->bindValue(":massaGorda", $medidas->getMassaGorda());
+                $p_sql->bindValue(":massaMagra", $medidas->getMassaMagra());
+                $p_sql->bindValue(":nome", $medidas->getAluno());
                        
                 return $p_sql->execute();
                 
@@ -84,6 +90,12 @@
             $medidas->setSubEscapular($row['subEscapular']);
             $medidas->setTricipital($row['tricipital']);
             $medidas->setCoxa($row['coxa']);
+            $medidas->setImc(($row['peso']), ($row['altura']));
+            $medidas->setRcq(($row['cintura']), ($row['quadril']));
+            $medidas->setPercentGord($row['percentGord']);
+            $medidas->setMassaGorda($row['massaGorda']);
+            $medidas->setMassaMagra($row['massaMagra']);
+            $medidas->setAluno($row['nome']);
 
             return $medidas;
         }

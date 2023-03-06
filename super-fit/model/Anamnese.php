@@ -3,7 +3,6 @@
     Class Anamnese{
         private $idAnamnese;
         private $atividade;
-        private $tempo_pratica;
         private $objetivo;
         private $fumante;
         private $alcool;
@@ -22,7 +21,7 @@
         private $outros;
         private $alimentacao;
         private $dataCadastro;
-        private $usuario;
+        private $aluno;
         
         function getIdAnamnese()
         {
@@ -40,16 +39,6 @@
         function setAtividade($atividade)
         {
             $this->atividade = $atividade;
-        }
-
-        function getTempoPratica()
-        {
-            return $this->tempo_pratica;           
-        }
-
-        function setTempoPratica($tempoPratica)
-        {
-            $this->tempoPratica = $tempoPratica;
         }
 
         function getObjetivo()
@@ -214,13 +203,13 @@
             $this->dataCadastro = $dataCadastro;
         }
 
-        function getUsuario()
+        function getAluno()
         {
-            return $this->usuario;           
+            return $this->aluno;           
         }       
-        function setUsuario($usuario)
+        function setAluno($usuario)
         {
-            $this->usuario = $usuario;
+            $this->aluno = $aluno;
         }
 
     }

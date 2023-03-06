@@ -11,7 +11,6 @@
     if(isset($_POST['salvar'])){
 
         $anamnese->setAtividade(($d['atividade']));
-        $anamnese->setTempoPratica(($d['tempoPratica']));
         $anamnese->setObjetivo(($d['objetivo']));
         $anamnese->setFumante(($d['fumante']));
         $anamnese->setAlcool(($d['alcool']));
@@ -30,7 +29,7 @@
         $anamnese->setOutros(($d['outros']));
         $anamnese->setAlimentacao(($d['alimentacao']));
         $anamnese->setDataCadastro(($d['dataCadastro']));
-    //    $anamnese->setUsuario(($d['nome']));
+        $anamnese->setAluno(($d['nome']));
         
         $anamnesedao->create($anamnese);
 
@@ -41,7 +40,6 @@
 
         $anamnese->setIdAnamnese(($d['idAnamnese']));
         $anamnese->setAtividade(($d['atividade']));
-        $anamnese->setTempoPratica(($d['tempoPratica']));
         $anamnese->setObjetivo(($d['objetivo']));
         $anamnese->setFumante(($d['fumante']));
         $anamnese->setAlcool(($d['alcool']));

@@ -4,15 +4,9 @@
         private $idTesteForca;
         private $dataTeste;
         private $cargaInicial;
-        private $repInicial;
-        private $metaCarga;
-        private $metaRep;
-        private $primeiraTentativa;
-        private $segundaTentativa;
-        private $terceiraTentativa;
-        private $resultadoRep;
-        private $resultadoKg;
+        private $cargaFinal;
         private $exercicio;
+        private $aluno;
 
         function getIdTesteForca()
         {
@@ -41,76 +35,13 @@
             $this->cargaInicial = $cargaInicial;
         }
 
-        function getRepInicial()
+        function getCargaFinal()
         {
-            return $this->repInicial;           
+            return $this->cargaFinal;           
         }
-        function setRepInicial($repInicial)
+        function setCargaFinal($cargaFinal)
         {
-            $this->repInicial = $repInicial;
-        }
-
-        function getMetaCarga()
-        {
-            return $this->metaCarga;           
-        }
-        function setMetaCarga($metaCarga)
-        {
-            $this->metaCarga = $metaCarga;
-        }
-
-        function getMetaRep()
-        {
-            return $this->metaRep;           
-        }
-        function setMetaRep($metaRep)
-        {
-            $this->metaRep = $metaRep;
-        }
-
-        function getPrimeiraTentativa()
-        {
-            return $this->primeiraTentativa;           
-        }
-        function setPrimeiraTentativa($primeiraTentativa)
-        {
-            $this->primeiraTentativa = $primeiraTentativa;
-        }
-
-        function getSegundaTentativa()
-        {
-            return $this->segundaTentativa;           
-        }
-        function setSegundaTentativa($segundaTentativa)
-        {
-            $this->segundaTentativa = $segundaTentativa;
-        }
-
-        function getTerceiraTentativa()
-        {
-            return $this->terceiraTentativa;           
-        }
-        function setTerceiraTentativa($terceiraTentativa)
-        {
-            $this->terceiraTentativa = $terceiraTentativa;
-        }
-
-        function getResultadoRep()
-        {
-            return $this->resultadoRep;           
-        }
-        function setResultadoRep($resultadoRep)
-        {
-            $this->resultadoRep = $resultadoRep;
-        }
-
-        function getResultadoKg()
-        {
-            return $this->resultadoKg;           
-        }
-        function setResultadoKg($resultadoKg)
-        {
-            $this->resultadoKg = $resultadoKg;
+            $this->cargaFinal = $cargaFinal;
         }
 
         function getExercicio()
@@ -120,6 +51,15 @@
         function setExercicio($exercicio)
         {
             $this->exercicio = $exercicio;
+        }
+
+        function getAluno()
+        {
+            return $this->aluno;           
+        }
+        function setAluno($aluno)
+        {
+            $this->aluno = $aluno;
         }
 
     }

@@ -26,6 +26,12 @@
         private $subEscapular;
         private $tricipital;
         private $coxa;
+        private $imc;
+        private $rcq;
+        private $percentGord;
+        private $massaGorda;
+        private $massaMagra;
+        private $aluno;
         
         function getIdMedidas()
         {
@@ -257,6 +263,66 @@
         {
             $this->coxa = $coxa;  
         }
+
+        function getImc()
+        {
+            return $this->imc;
+        }
+        function setImc($peso, $altura)
+        {
+            $imc = $peso / ($altura * $altura);
+
+            $this->imc = $imc;  
+        }
+
+        function getRcq()
+        {
+            return $this->rcq;
+        }
+        function setRcq($cintura, $quadril)
+        {
+            $rcq = $cintura / $quadril;
+            
+            $this->rcq = $rcq;  
+        }
+
+        function getPercentGord()
+        {
+            return $this->percentGord;
+        }
+        function setPercentGord($percentGord)
+        {
+            $this->percentGord = $percentGord;  
+        }
+
+        function getMassaGorda()
+        {
+            return $this->massaGorda;
+        }
+        function setMassaGorda($massaGorda)
+        {
+            $this->massaGorda = $massaGorda;  
+        }
+
+        function getMassaMagra()
+        {
+            return $this->massaMagra;
+        }
+        function setMassaMagra($massaMagra)
+        {
+            $this->massaMagra = $massaMagra;  
+        }
+
+        function getAluno()
+        {
+            return $this->aluno;
+        }
+        function setAluno($aluno)
+        {
+            $this->aluno = $aluno;  
+        }
+
+
 
         
     }

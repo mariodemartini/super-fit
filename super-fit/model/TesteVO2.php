@@ -4,14 +4,13 @@
         private $idTesteVO2;
         private $dataTeste;
         private $velocidadeInicial;
-        private $fcRepouso;
-        private $pressaoInicio;
-        private $pressaoFinal;
-        private $fcTeste;
+        private $velocidadeFinal;
+        private $fcInicial;
+        private $fcFinal;
         private $tempoTeste;
-        private $velocidadeTeste;
         private $esforcoTeste;
         private $resultadoVO2;
+        private $aluno;
         
         function getIdTesteVO2()
         {
@@ -41,40 +40,32 @@
             $this->velocidadeInicial = $velocidadeInicial;
         }
 
-        function getFcRepouso()
+        function getVelocidadeFinal()
         {
-            return $this->fcRepouso;           
-        }
-        function setFcRepouso($fcRepouso)
-        {
-            $this->fcRepouso = $fcRepouso;
+            return $this->velocidadeFinal;           
         }
 
-        function getPressaoInicio()
+        function setVelocidadeFinal($velocidadeFinal)
         {
-            return $this->pressaoInicio;           
-        }
-        function setPressaoInicio($pressaoInicio)
-        {
-            $this->pressaoInicio = $pressaoInicio;
+            $this->velocidadeFinal = $velocidadeFinal;
         }
 
-        function getPressaoFinal()
+        function getFcInicial()
         {
-            return $this->pressaoFinal;           
+            return $this->fcInicial;           
         }
-        function setPressaoFinal($pressaoFinal)
+        function setFcInicial($fcInicial)
         {
-            $this->pressaoFinal = $pressaoFinal;
+            $this->fcInicial = $fcInicial;
         }
 
-        function getFcTeste()
+        function getFcFinal()
         {
-            return $this->fcTeste;           
+            return $this->fcFinal;           
         }
-        function setFcTeste($fcTeste)
+        function setFcFinal($fcFinal)
         {
-            $this->fcTeste = $fcTeste;
+            $this->fcFinal = $fcFinal;
         }
 
         function getTempoTeste()
@@ -84,15 +75,6 @@
         function setTempoTeste($tempoTeste)
         {
             $this->tempoTeste = $tempoTeste;
-        }
-
-        function getVelocidadeTeste()
-        {
-            return $this->velocidadeTeste;           
-        }
-        function setVelocidadeTeste($velocidadeTeste)
-        {
-            $this->velocidadeTeste = $velocidadeTeste;
         }
 
         function getEsforcoTeste()
@@ -111,6 +93,15 @@
         function setResultadoVO2($resultadoVO2)
         {
             $this->resultadoVO2 = $resultadoVO2;
+        }
+
+        function getAluno()
+        {
+            return $this->aluno;           
+        }
+        function setAluno($aluno)
+        {
+            $this->aluno = $aluno;
         }
 
     }

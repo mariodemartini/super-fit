@@ -4,11 +4,11 @@ include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
 include_once('./conexao/Conexao.php');
-include_once('./model/Usuario.php');
-include_once('./dao/UsuarioDAO.php');
+include_once('./model/Aluno.php');
+include_once('./dao/AlunoDAO.php');
 
-$usuario = new Usuario();
-$usuariodao = new UsuarioDAO();
+$aluno = new Aluno();
+$alunodao = new AlunoDAO();
 ?>
 
 <main>
@@ -41,18 +41,18 @@ $usuariodao = new UsuarioDAO();
                 </thead>
                 <!-- Dados tabela de alunos -->
                 <tbody>
-                <?php foreach ($usuariodao->exibeUsuario() as $usuario) : ?>
+                <?php foreach ($alunodao->exibeAluno() as $aluno) : ?>
                     <tr>
-                        <td><?= $usuario->getIdUsuario() ?></td>
-                        <td><?= $usuario->getNome() ?></td>
-                        <td><?= $usuario->getDataNascimento()?></td>
-                        <td><?= $usuario->getCpf() ?></td>
-                        <td><?= $usuario->getCelular() ?></td>
-                        <td><?= $usuario->getEmail() ?></td>
-                        <td><?= $usuario->getDataCadastro() ?></td>
+                        <td><?= $aluno->getIdAluno() ?></td>
+                        <td><?= $aluno->getNome() ?></td>
+                        <td><?= $aluno->getDataNascimento()?></td>
+                        <td><?= $aluno->getCpf() ?></td>
+                        <td><?= $aluno->getCelular() ?></td>
+                        <td><?= $aluno->getEmail() ?></td>
+                        <td><?= $aluno->getDataCadastro() ?></td>
                         <td class="text-center">
                             <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a>
-                            <a href="controller/UsuarioController.php?del=<?= $usuario->getIdUsuario() ?>"> 
+                            <a href="controller/AlunoController.php?del=<?= $aluno->getIdAluno() ?>"> 
                             <button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
                         </td>
                     </tr>

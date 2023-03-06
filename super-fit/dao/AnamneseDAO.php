@@ -5,13 +5,12 @@
         public function create(Anamnese $anamnese){
             try {
                 $sql = "INSERT INTO anamnese (
-                    atividade, tempoPratica, objetivo, fumante, alcool, historicoFam, hipertensao, colesterol, diabetes, cardiaco, cirurgia, fratura, lesao, dor, movimentos, artrite, medicamentos, outros, alimentacao, dataCadastro)
+                    atividade, objetivo, fumante, alcool, historicoFam, hipertensao, colesterol, diabetes, cardiaco, cirurgia, fratura, lesao, dor, movimentos, artrite, medicamentos, outros, alimentacao, dataCadastro, idAluno)
                     VALUES (
-                    :atividade, :tempo_pratica, :objetivo, :fumante, :alcool, :historicoFam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :dataCadastro)";
+                    :atividade, :objetivo, :fumante, :alcool, :historicoFam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :dataCadastro, :nome)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
-                $p_sql->bindValue(":tempoPratica", $anamnese->getTempoPratica());
                 $p_sql->bindValue(":objetivo", $anamnese->getObjetivo());
                 $p_sql->bindValue(":fumante", $anamnese->getFumante());
                 $p_sql->bindValue(":alcool", $anamnese->getAlcool());
@@ -30,7 +29,7 @@
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
                 $p_sql->bindValue(":dataCadastro", $anamnese->getDataCadastro());
-               // $p_sql->bindValue(":nome", $anamnese->buscaUsuario());
+                $p_sql->bindValue(":nome", $anamnese->getAluno());
 
                 return $p_sql->execute();
                 
@@ -58,7 +57,6 @@
             $anamnese = new Anamnese();
             $anamnese->setIdAnamnese($row['idAnamnese']);
             $anamnese->setAtividade($row['atividade']);
-            $anamnese->setTempoPratica($row['tempoPratica']);
             $anamnese->setObjetivo($row['objetivo']);
             $anamnese->setFumante($row['fumante']);
             $anamnese->setAlcool($row['alcool']);
@@ -77,7 +75,7 @@
             $anamnese->setOutros($row['outros']);
             $anamnese->setAlimentacao($row['alimentacao']);
             $anamnese->setDataCadastro($row['dataCadastro']);
-           // $anamnese->setUsuario($row['nome']);
+            $anamnese->setAluno($row['nome']);
 
             return $anamnese;
         }
@@ -100,7 +98,6 @@
                     
                       idAnamnese=:idAnamnese,
                       atividade=:atividade,
-                      tempoPratica=:tempopratica,
                       objetivo=:objetivo,
                       fumante=:fumante,
                       alcool=:alcool,
@@ -124,7 +121,6 @@
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idAnamnese", $anamnese->getIdAnamnese());
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
-                $p_sql->bindValue(":tempoPratica", $anamnese->getTempoPratica());
                 $p_sql->bindValue(":objetivo", $anamnese->getObjetivo());
                 $p_sql->bindValue(":fumante", $anamnese->getFumante());
                 $p_sql->bindValue(":alcool", $anamnese->getAlcool());
@@ -145,19 +141,6 @@
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
-            }
-        }
-
-        public function buscaUsuario() {
-            try {
-                $sql = "SELECT usuario.Nome FROM anamnese 
-                JOIN usuario ON anamnese.idUsuario = usuario.idUsuario 
-                WHERE usuario.Name LIKE $";;
-                $result = Conexao::getConexao()->prepare($sql);
-                $row = $result->fetch_assoc();
-                return $row;
-            } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar Buscar Usuario." . $e;
             }
         }
   

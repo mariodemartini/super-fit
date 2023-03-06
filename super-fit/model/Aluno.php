@@ -1,7 +1,7 @@
 <?php
     
-    Class Usuario{
-        private $idUsuario;
+    Class Aluno{
+        private $idAluno;
         private $nome;
         private $dataNascimento;
         private $idade;
@@ -18,14 +18,14 @@
         private $senha;
         private $dataCadastro;
 
-        function getIdUsuario()
+        function getIdAluno()
         { 
-            return $this->idUsuario; 
+            return $this->idAluno; 
         }
 
-        function setIdUsuario($idUsuario)
+        function setIdAluno($idAluno)
         { 
-            $this->idUsuario = $idUsuario; 
+            $this->idAluno = $idAluno; 
         }
 
         function getNome()

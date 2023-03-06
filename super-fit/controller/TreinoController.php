@@ -10,11 +10,11 @@
 
     if(isset($_POST['salvar'])){
 
-        $treino->setSerie(($d['idSeries']));
-        $treino->setExercicios(($d['idExercicios']));
+        $treino->setSerie(($d['idSerie']));
+        $treino->setExercicio(($d['idExercicio']));
         $treino->setCarga(($d['carga']));
         $treino->setFeedback(($d['feedback']));
-        $treino->setUsuario(($d['idUsuario']));
+        $treino->setAluno(($d['idAluno']));
         
         $treinodao->create($treino);
 
@@ -24,11 +24,11 @@
     else if (isset($_POST['editar'])) {
 
         $treino->setIdtreino(($d['idtreinos']));
-        $treino->setSerie(($d['idSeries']));
-        $treino->setExercicios(($d['idExercicios']));
+        $treino->setSerie(($d['idSerie']));
+        $treino->setExercicio(($d['idExercicio']));
         $treino->setCarga(($d['carga']));
         $treino->setFeedback(($d['feedback']));
-        $treino->setUsuario(($d['idUsuario']));
+        $treino->setAluno(($d['idAluno']));
     
         $treinodao->update($treino);
     

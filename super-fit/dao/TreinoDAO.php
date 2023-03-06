@@ -5,16 +5,16 @@
         public function create(Treino $treino){
             try {
                 $sql = "INSERT INTO treino (
-                    idSeries, idExercicios, carga, feedback, idUsuario)
+                    idSerie, idExercicio, carga, feedback, idAluno)
                     VALUES (
-                    :idSeries, :idExercicios, :carga, :feedback, :idUsuario)";
+                    :idSerie, :idExercicio, :carga, :feedback, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idSeries", $treino->getSerie());
-                $p_sql->bindValue(":idExercicios", $treino->getExercicios());
+                $p_sql->bindValue(":idSerie", $treino->getSerie());
+                $p_sql->bindValue(":idExercicio", $treino->getExercicio());
                 $p_sql->bindValue(":carga", $treino->getCarga());
                 $p_sql->bindValue(":feedback", $treino->getFeedback());
-                $p_sql->bindValue(":idUsuario", $treino->getUsuario());
+                $p_sql->bindValue(":idAluno", $treino->getAluno());
                 
                 return $p_sql->execute();
                 
@@ -42,10 +42,10 @@
             $treino = new Treino();
             $treino->setIdTreino($row['idTreino']);
             $treino->setSerie($row['idSerie']);
-            $treino->setExercicios($row['idExercicios']);
+            $treino->setExercicio($row['idExercicio']);
             $treino->setCarga($row['carga']);
             $treino->setFeedback($row['feedback']);
-            $treino->setUsuario($row['idUsuario']);
+            $treino->setAluno($row['idAluno']);
         
             return $treino;
         }
@@ -67,19 +67,19 @@
                 $sql = "UPDATE treino set
                     
                     idTreino=:idTreino,
-                    idSeries=:idSeries,
-                    idExercicios=:idExercicios,
+                    idSerie=:idSerie,
+                    idExercicio=:idExercicio,
                     carga=:carga,
                     feedback=:feedback,
-                    idUsuario=:idUsuario
+                    idAluno=:idAluno
                                 
                     WHERE idTreino = :idTreino";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idSeries", $treino->getSerie());
-                $p_sql->bindValue(":idExercicios", $treino->getExercicios());
+                $p_sql->bindValue(":idSerie", $treino->getSerie());
+                $p_sql->bindValue(":idExercicio", $treino->getExercicio());
                 $p_sql->bindValue(":carga", $treino->getCarga());
                 $p_sql->bindValue(":feedback", $treino->getFeedback());
-                $p_sql->bindValue(":idUsuario", $treino->getUsuario());
+                $p_sql->bindValue(":idAluno", $treino->getAluno());
             
                 return $p_sql->execute();
             } catch (Exception $e) {

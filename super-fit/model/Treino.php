@@ -3,10 +3,10 @@
     Class Treino{
         private $idTreino;
         private $serie;
-        private $exercicios;
+        private $exercicio;
         private $carga;
         private $feedback;
-        private $usuario;
+        private $aluno;
 
         function getIdTreino()
         { 
@@ -26,13 +26,13 @@
             $this->serie = $serie; 
         }
         
-        function getExercicios()
+        function getExercicio()
         { 
-            return $this->exercicios; 
+            return $this->exercicio; 
         }
-        function setExercicios($exercicios)
+        function setExercicio($exercicio)
         { 
-            $this->exercicios = $exercicios; 
+            $this->exercicio = $exercicio; 
         }
 
         function getCarga()
@@ -53,13 +53,13 @@
             $this->feedback = $feedback; 
         }
 
-        function getUsuario()
+        function getAluno()
         { 
-            return $this->usuario; 
+            return $this->aluno; 
         }
-        function setUsuario($usuario)
+        function setAluno($aluno)
         { 
-            $this->usuario = $usuario; 
+            $this->aluno = $aluno; 
         }
     }
 ?>
