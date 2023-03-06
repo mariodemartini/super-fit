@@ -51,7 +51,7 @@
             $testeVO2->setFcFinal($row['fcFinal']);
             $testeVO2->setTempoTeste($row['tempoTeste']);
             $testeVO2->setEsforcoTeste($row['esforcoTeste']);
-            $testeVO2->setResultadoVO2($row['resultadoVO2']);
+            $testeVO2->setResultadoVO2($row['velocidadeFinal']);
 
             return $testeVO2;
         }

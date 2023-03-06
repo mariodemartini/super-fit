@@ -12,12 +12,12 @@
 
         $testeVO2->setDataTeste(($d['dataTeste']));
         $testeVO2->setVelocidadeInicial(($d['velocidadeInicial']));
-        $testeVO2->setVelocidadeFinal(($d['velocidadeInicial']));
+        $testeVO2->setVelocidadeFinal(($d['velocidadeFinal']));
         $testeVO2->setfcInicial(($d['fcInicial']));
         $testeVO2->setfcFinal(($d['fcFinal']));
         $testeVO2->setTempoTeste(($d['tempoTeste']));
         $testeVO2->setEsforcoTeste(($d['esforcoTeste']));
-        $testeVO2->setResultadoVO2(($d['resultadoVO2']));
+        $testeVO2->setResultadoVO2(($d['velocidadeFinal']));
         $testeVO2->setAluno(($d['idAluno']));
                 
         $testeVO2dao->create($testeVO2);
@@ -34,7 +34,7 @@
         $testeVO2->setfcFinal(($d['fcFinal']));
         $testeVO2->setTempoTeste(($d['tempoTeste']));
         $testeVO2->setEsforcoTeste(($d['esforcoTeste']));
-        $testeVO2->setResultadoVO2(($d['resultadoVO2']));
+        $testeVO2->setResultadoVO2(($d['velocidadeFinal']));
     
         $testeVO2dao->update($testeVO2);
     

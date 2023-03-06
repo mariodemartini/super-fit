@@ -4,7 +4,7 @@
     {
         public function create(Aluno $aluno){
             try {
-                $sql = "INSERT INTO Aluno (
+                $sql = "INSERT INTO alunos (
                     nome, dataNascimento, idade, sexo, cpf, rg, telefone, celular, cep, estado, cidade, endereco, email, senha, dataCadastro)
                     VALUES (
                     :nome, :dataNascimento, :idade, :sexo, :cpf, :rg, :telefone, :celular, :cep, :estado, :cidade, :endereco, :email, :senha, :dataCadastro)";
@@ -35,7 +35,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM alunos ORDER BY idAlunos ASC";
+                $sql = "SELECT * FROM alunos ORDER BY idAluno ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -53,6 +53,7 @@
             $aluno->setIdAluno($row['idAluno']);
             $aluno->setNome($row['nome']);
             $aluno->setDataNascimento($row['dataNascimento']);
+            $aluno->setIdade($row['dataNascimento']);
             $aluno->setSexo($row['sexo']);
             $aluno->setCpf($row['cpf']);
             $aluno->setRg($row['rg']);
@@ -88,7 +89,6 @@
                       idAluno=:idAluno,
                       nome=:nome,
                       dataNascimento=:datanascimento,
-                      idade=:idade,
                       sexo=:sexo,
                       cpf=:cpf,
                       rg=:rg,
@@ -107,7 +107,6 @@
                 $p_sql->bindValue(":idAluno", $aluno->getIdAluno());
                 $p_sql->bindValue(":nome", $aluno->getNome());
                 $p_sql->bindValue(":dataNascimento", $aluno->getDataNascimento());
-                $p_sql->bindValue(":idade", $aluno->getIdade());
                 $p_sql->bindValue(":sexo", $aluno->getSexo());
                 $p_sql->bindValue(":cpf", $aluno->getCpf());
                 $p_sql->bindValue(":rg", $aluno->getRg());
@@ -129,7 +128,7 @@
 
         public function exibeAluno() {
             try {
-                $sql = "SELECT idAluno, nome, dataNascimento, cpf, celular, email, dataCadastro FROM alunos ORDER BY idAluno ASC";
+                $sql = "SELECT idAluno, nome, dataNascimento, idade, cpf, celular, email, dataCadastro FROM alunos ORDER BY idAluno ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -147,6 +146,7 @@
             $aluno->setIdAluno($row['idAluno']);
             $aluno->setNome($row['nome']);
             $aluno->setDataNascimento($row['dataNascimento']);
+            $aluno->setIdade($row['dataNascimento']);
             $aluno->setCpf($row['cpf']);
             $aluno->setCelular($row['celular']);
             $aluno->setEmail($row['email']);

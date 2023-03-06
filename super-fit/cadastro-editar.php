@@ -48,8 +48,15 @@ $alunodao = new AlunoDAO();
                                         <label for="inputDataNascimento">Data de Nascimento</label>
                                     </div>
                                 </div>
+                                <!-- Campo idade -->
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade" value="<?= $aluno->getIdade() ?>" require/>
+                                        <label for="inputIdade">Idade</label>
+                                    </div>
+                                </div>
                                 <!-- Campo sexo -->
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputSexo" type="text" placeholder="Sexo" name="sexo" value="<?= $aluno->getSexo() ?>" require/>
                                         <label for="inputSexo">Sexo</label>

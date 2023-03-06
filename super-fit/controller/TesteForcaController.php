@@ -18,7 +18,7 @@
         
         $testeforcadao->create($testeforca);
 
-        header("Location: ../forca-rep.php");
+        header("Location: ../forca.php");
     }
 
     else if (isset($_POST['editar'])) {
@@ -30,7 +30,7 @@
     
         $testeforcadao->update($testeforca);
     
-        header("Location: ../forca-rep.php");
+        header("Location: ../forca.php");
     }
 
     else if (isset($_GET['del'])){
@@ -39,9 +39,9 @@
 
         $testeforcadao->delete($testeforca);
 
-        header("Location: ../forca-rep.php");
+        header("Location: ../forca.php");
     } else {
-        header("Location: ../forca-rep.php");
+        header("Location: ../forca.php");
     }
     
 ?>

@@ -90,8 +90,9 @@
         {
             return $this->resultadoVO2;           
         }
-        function setResultadoVO2($resultadoVO2)
+        function setResultadoVO2($velocidadeFinal)
         {
+            $resultadoVO2 = ($velocidadeFinal * 3.5);
             $this->resultadoVO2 = $resultadoVO2;
         }
 

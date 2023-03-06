@@ -4,11 +4,11 @@ include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
 include_once('./conexao/Conexao.php');
-include_once('./model/Usuario.php');
-include_once('./dao/UsuarioDAO.php');
+include_once('./model/Aluno.php');
+include_once('./dao/AlunoDAO.php');
 
-$usuario = new Usuario();
-$usuariodao = new UsuarioDAO();
+$aluno = new Aluno();
+$alunodao = new AlunoDAO();
 ?>
 <main>
     <div class="container">
@@ -19,7 +19,7 @@ $usuariodao = new UsuarioDAO();
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">CADASTRAR NOVO ALUNO</h3></div>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
-                        <form action="controller/UsuarioController.php" method="POST">
+                        <form action="controller/AlunoController.php" method="POST">
                             <!-- Campo data -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">

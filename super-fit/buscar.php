@@ -32,6 +32,7 @@ $alunodao = new AlunoDAO();
                     	<th>Id</th>
                         <th>Nome</th>
                         <th>Data Nasc.</th>
+                        <th>Idade</th>
                         <th>CPF</th>
                         <th>Celular</th>
                         <th>Email</th>  
@@ -46,6 +47,7 @@ $alunodao = new AlunoDAO();
                         <td><?= $aluno->getIdAluno() ?></td>
                         <td><?= $aluno->getNome() ?></td>
                         <td><?= $aluno->getDataNascimento()?></td>
+                        <td><?= $aluno->getIdade() ?></td>
                         <td><?= $aluno->getCpf() ?></td>
                         <td><?= $aluno->getCelular() ?></td>
                         <td><?= $aluno->getEmail() ?></td>
