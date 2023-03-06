@@ -20,7 +20,7 @@ $anamnesedao = new AnamneseDAO();
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch"/>
                             <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
@@ -32,466 +32,126 @@ $anamnesedao = new AnamneseDAO();
                                 <div class="form-group col-md-2">
                                     <input type="date" class="form-control" id="inputData" placeholder="dataCadastro" name="dataCadastro">
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="inputNome" name="nome">
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nomeAluno">
                                 </div>
                             </div>
                             <!-- Inicio conteudo da anamneses -->
                             <div class="row mb-3">
                                 <!-- Campo de atividade fisica -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Ativ. Física:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="atividade" id="gridRadios" value="sedentario">
-                                                <label class="form-check-label" for="gridRadios2">Sedentário</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="atividade" id="gridRadios" value="moderado">
-                                                <label class="form-check-label" for="gridRadios2">Moderado</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="atividade" id="gridRadios" value="ativo">
-                                                <label class="form-check-label" for="gridRadios2">Ativo</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo tempo de pratica -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Tempo Prática:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridcheckboxs1" value="meses">
-                                                <label class="form-check-label" for="gridRadios1">até 6 meses</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridRadios1" value="ano">
-                                                <label class="form-check-label" for="gridRadios1">Até 1 ano</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="tempoPratica" id="gridRadios1" value="maisAno">
-                                                <label class="form-check-label" for="gridRadios1">Mais de 1 ano</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo objetivos -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-check">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Objetivo:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="saude">
-                                                <label class="form-check-label" for="gridRadios1">Saúde</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="emagrecimento">
-                                                <label class="form-check-label" for="gridRadios1">Emagrecimento</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="hipertrofia">
-                                                <label class="form-check-label" for="gridRadios1">Hipertrofia</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="objetivo" id="gridRadios1" value="manutencao">
-                                                <label class="form-check-label" for="gridRadios1">Manutenção</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <div class="col-md-10">
+                                     <label for="inputData">OBJETIVOS:</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="objetivo">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo fumar -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Fumante?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fumante" id="gridRadios2" value="fumante">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fumante" id="gridRadios2" value="fumante">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fumante" id="gridRadios2" value="fumante">
-                                                <label class="form-check-label" for="gridRadios2">Ex-fumante</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo bebida alcoolica -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Álcool?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="alcool" id="gridRadios1" value="alcool">
-                                                <label class="form-check-label" for="gridRadios1">Raramente</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="alcool" id="gridRadios" value="alcool">
-                                                <label class="form-check-label" for="gridRadios2">Ocasionalmente</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="alcool" id="gridRadios" value="alcool">
-                                                <label class="form-check-label" for="gridRadios2">Frequentemente</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo histórico familiar -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Histórico Familiar:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="hipertensao" id="defaultCheck1" name="historicoFam">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                    Hipertensão
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="diabetes" id="defaultCheck2" name="historicoFam">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Diabetes
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="colesterol" id="defaultCheck2" name="historicoFam">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Colesterol
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="cardiaco" id="defaultCheck2" name="historicoFam">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Cardíaco
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">PRATICA ATIVADE FÍSICA? QUANTO TEMPO?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="atividade">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo hipertensão -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Hipertensão?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="hipertensao" id="gridRadios1" value="hipertensaoSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="hipertensao" id="gridRadios2" value="hipertensaoNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo colesterol -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Colesterol?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="colesterol" id="gridRadios1" value="colesterolSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="colesterol" id="gridRadios2" value="colesterolNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                        </div>
-                                    </fieldset> 
-                                </div>
-                                <!-- Campo diabetes -->
-                                <div class="col-md-4">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Diabetes?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="diabetes" id="gridRadios1" value="diabetesSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="diabetes" id="gridRadios2" value="diabetesNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                        </div>
-                                    </fieldset> 
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">FUMA? QUANTOS CIGARROS/DIA?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="fumante">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo problema cardíaco -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Doença Cardíaca?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="cardiaco" id="gridRadios1" value="cardiacoSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="cardiaco" id="gridRadios2" value="cardiacoNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="cardiaco">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo cirurgia -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Cirurgia?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="cirurgia" id="gridRadios1" value="cirurgiaSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="cirurgia" id="gridRadios2" value="cirurgiaNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="cirurgia">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">CONSOME BEBIDA ALCOOLICA? QUAL FREQUENCIA?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="alcool">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo fratura -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Fratura ou Luxação?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fratura" id="gridRadios1" value="fraturaSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="fratura" id="gridRadios2" value="fraturaNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="fratura">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo lesão -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Lesão?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="lesao" id="gridRadios1" value="lesaoSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="lesao" id="gridRadios2" value="lesaoNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="lesao">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">HIPERTENSÃO ARTERIAL?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="hipertensao">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo dores -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Dor no corpo?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="dor" id="gridRadios1" value="dorSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="dor" id="gridRadios2" value="dorNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="dor">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo movimentos -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Movimentos limitados?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="movimentos" id="gridRadios1" value="limitacaoSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="movimentos" id="gridRadios2" value="limitacaoNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="movimentos">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">COLESTEROL ALTO?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="colesterol">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo artrite -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Artrite/Tendinite?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="artrite" id="gridRadios1" value="artriteSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="artite" id="gridRadios2" value="artriteNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Onde?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="artrite">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <!-- Campo medicamentos -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Medicamentos?</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="medicamentos" id="gridRadios1" value="medicamentoSim">
-                                                <label class="form-check-label" for="gridRadios1">Sim</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="medicamentos" id="gridRadios2" value="medicamentoNao">
-                                                <label class="form-check-label" for="gridRadios2">Não</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="formGroupExampleInput" class="col-sm-3 col-form-label">Qual?</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputPassword" placeholder="" name="medicamentos">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">DIABETES?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="diabetes">
                                 </div>
                             </div>
-                            <br>
                             <div class="row mb-3">
-                                <!-- Campo outros sintomas -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-10">
-                                            <legend class="col-form-label col-sm-5 pt-0">Outros Sintomas:</legend>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="hipotireoidismo" id="defaultCheck1" name="outros">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                    Hipotireoidismo
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="tontura" id="defaultCheck1" name="outros">
-                                                <label class="form-check-label" for="defaultCheck1" name="outros">
-                                                    Tontura
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="desmaios" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Desmaios
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="dor-peito" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                Dor no peito
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="falta-ar" id="defaultCheck2">
-                                                <label class="form-check-label" for="defaultCheck2" name="outros">
-                                                    Falta de ar
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="taquicardia" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Taquicardia
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="ansiedade" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Ansiedade
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="gastrite" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Gastrite
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="insônia" id="defaultCheck2" name="outros">
-                                                <label class="form-check-label" for="defaultCheck2">
-                                                    Insônia
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">DOENÇA CARDÍACA?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="cardiaco">
                                 </div>
-                                <!-- Campo alimentação -->
-                                <div class="col-md-6">
-                                    <fieldset class="form-group">
-                                        <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Habitos Alimentares:</legend>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1"></label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="alimentacao"></textarea>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">HISTÓRICO FAMILIAR: (colesterol, diabetes, etc)</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="historicoFam">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- Campo de atividade fisica -->
+                                <div class="col-md-10">
+                                     <label for="inputData">JÁ FEZ ALGUMA CIRURGIA? TEMPO?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="cirurgia">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">FRATURA OU LUXAÇÃO?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="fratura">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">LESÃO MUSCULAR OU LIGAMENTAR?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="lesao">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">SENTE ALGUMA DOR NO CORPO?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="dor">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">LIMITAÇÃO DE MOVIMENTOS?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="movimento">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">ARTRITE OU TENDINITE? ONDE?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="artrite">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">USO DE MEDICAMENTOS? QUAIS?</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="medicamentos">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">ALGUM OUTRO SINTOMA? (falta de ar, tonturas, taquicardia, ansiedade, etc) </label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="outros">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-10">
+                                     <label for="inputData">HABITOS ALIMENTARES:</label>
+                                    <input type="text" class="form-control" id="inputAtividade" name="alimentacao">
                                 </div>
                             </div>
                             <br>
