@@ -29,11 +29,11 @@ $anamnesedao = new AnamneseDAO();
                         <form action="controller/AnamneseController.php" method="POST">
                             <!-- Div data -->
                             <div class="row mb-3 align-items-center">
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <input type="date" class="form-control" id="inputData" placeholder="dataCadastro" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nomeAluno">
+                                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
                                 </div>
                             </div>
                             <!-- Inicio conteudo da anamneses -->
@@ -127,7 +127,7 @@ $anamnesedao = new AnamneseDAO();
                             <div class="row mb-3">
                                 <div class="col-md-10">
                                      <label for="inputData">LIMITAÇÃO DE MOVIMENTOS?</label>
-                                    <input type="text" class="form-control" id="inputAtividade" name="movimento">
+                                    <input type="text" class="form-control" id="inputAtividade" name="movimentos">
                                 </div>
                             </div>
                             <div class="row mb-3">

@@ -53,7 +53,7 @@ $seriedao = new SerieDAO();
                         </div> 
                         <br>  
 
-                            <!-- Formulário treino Aerobio -->
+                            <!-- Formulário SERIE -->
                         <div class="row mb-3">
                             <form action="controller/SerieController.php" method="POST">
 
@@ -68,7 +68,7 @@ $seriedao = new SerieDAO();
                                         <label for="inputCG">%CG</label>
                                         <input type="text" class="form-control" id="inputCG" name="percentCarga">
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <label for="inputNivel">NIVEL</label>
                                         <input type="text" class="form-control" id="inputNivel" name="nivel">
                                     </div>

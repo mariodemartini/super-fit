@@ -10,6 +10,7 @@ include_once('./dao/ProfessorDAO.php');
 $professor = new Professor();
 $professordao = new ProfessorDAO();
 ?>
+<body>
 <main>
     <div class="container">
         <div class="row justify-content-center">
@@ -17,13 +18,6 @@ $professordao = new ProfessorDAO();
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">CADASTRAR PROFESSOR</h3></div>
-                    <!-- Div barra de pesquisa -->
-                    <form class="card-header inline-block form-inline mb-3">
-                        <div class="input-group">
-                            <input name="busca" class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                        </div>
-                    </form>
                     <!-- Div do formulario principal --> 
                     <div class="card-body">
                         <form action="controller/ProfessorController.php" method="POST">
@@ -133,47 +127,10 @@ $professordao = new ProfessorDAO();
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="home.php">Voltar</a></button>
+                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="buscar-prof.php">Buscar</a></button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
                             </div>
                             <br>
-                            <div class="card mb-4">
-                                <!-- Inicio tabela -->
-                                <table class="table table-bordered">
-                                <!-- Cabeçalho tabela -->
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nome</th>
-                                        <th>Data Nasc.</th>
-                                        <th>CPF</th>
-                                        <th>CREF</th>
-                                        <th>Celular</th>
-                                        <th>Email</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-                                <!-- Dados tabela de alunos -->
-                                <tbody>
-                                <?php foreach ($professordao->exibeProf() as $professor) : ?>
-                                    <tr>
-                                        <td><?= $professor->getIdProfessor() ?></td>
-                                        <td><?= $professor->getNome() ?></td>
-                                        <td><?= $professor->getDataNascimento() ?></td>
-                                        <td><?= $professor->getCpf() ?></td>
-                                        <td><?= $professor->getCref() ?></td>
-                                        <td><?= $professor->getCelular() ?></td>
-                                        <td><?= $professor->getEmail() ?></td>
-                                        <td class="text-center">
-                                            <a href="editar-prof.php"><button type="button" class="btn btn-warning">editar</button></a>
-                                            <a href="controller/ProfessorController.php?del=<?= $professor->getIdProfessor() ?>">
-                                            <button class="btn  btn-danger btn-sm" type="button">Excluir</button> 
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach ?>
-                                </tbody>
-                                </table>
-			                </div>
                         </form>
                     </div>
                     <div class="card-footer text-center py-3"></div>
@@ -182,6 +139,7 @@ $professordao = new ProfessorDAO();
         </div>
     </div>
 </main>
+</body>
 <!-- Include php rodapé -->
 <?php
 include_once('include/footer.html');

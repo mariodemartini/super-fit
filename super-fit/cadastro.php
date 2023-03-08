@@ -144,6 +144,7 @@ $alunodao = new AlunoDAO();
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                 <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="buscar.php">Buscar</a></button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
                             </div>
                         </form>
                     </div>
