@@ -207,7 +207,7 @@
         {
             return $this->aluno;           
         }       
-        function setAluno($usuario)
+        function setAluno($aluno)
         {
             $this->aluno = $aluno;
         }
