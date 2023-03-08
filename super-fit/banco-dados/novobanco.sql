@@ -46,7 +46,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `mydb`.`anamnese`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`anamnese` (
-  `idAnamnese` INT NOT NULL,
+  `idAnamnese` INT NOT NULL AUTO_INCREMENT,
   `atividade` VARCHAR(45) NULL DEFAULT NULL,
   `objetivo` VARCHAR(45) NULL DEFAULT NULL,
   `fumante` VARCHAR(45) NULL DEFAULT NULL,
@@ -62,13 +62,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`anamnese` (
   `dor` VARCHAR(100) NULL DEFAULT NULL,
   `movimentos` VARCHAR(100) NULL DEFAULT NULL,
   `artrite` VARCHAR(100) NULL DEFAULT NULL,
-  `medicamento` VARCHAR(100) NULL DEFAULT NULL,
+  `medicamentos` VARCHAR(100) NULL DEFAULT NULL,
   `outros` VARCHAR(100) NULL DEFAULT NULL,
   `alimentacao` VARCHAR(200) NULL DEFAULT NULL,
   `dataCadastro` DATE NULL DEFAULT NULL,
   `idAluno` INT NOT NULL,
   PRIMARY KEY (`idAnamnese`),
-  INDEX `fk_anamnese_alunos1_idx` (`idAluno` ASC) VISIBLE,
+  INDEX `fk_anamnese_alunos1_idx` (`idAluno` ASC),
   CONSTRAINT `fk_anamnese_alunos1`
     FOREIGN KEY (`idAluno`)
     REFERENCES `mydb`.`alunos` (`idAluno`)
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`medidas` (
   `massaMagra` FLOAT NULL,
   `idAluno` INT NOT NULL,
   PRIMARY KEY (`idMedidas`),
-  INDEX `fk_medidas_alunos_idx` (`idAluno` ASC) VISIBLE,
+  INDEX `fk_medidas_alunos_idx` (`idAluno` ASC) ,
   CONSTRAINT `fk_medidas_alunos`
     FOREIGN KEY (`idAluno`)
     REFERENCES `mydb`.`alunos` (`idAluno`)
@@ -183,8 +183,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`testeForca` (
   `idAluno` INT NOT NULL,
   `idExercicio` INT NOT NULL,
   PRIMARY KEY (`idTesteForca`),
-  INDEX `fk_testeForca_alunos1_idx` (`idAluno` ASC) VISIBLE,
-  INDEX `fk_testeForca_exercicios1_idx` (`idExercicio` ASC) VISIBLE,
+  INDEX `fk_testeForca_alunos1_idx` (`idAluno` ASC),
+  INDEX `fk_testeForca_exercicios1_idx` (`idExercicio` ASC),
   CONSTRAINT `fk_testeForca_alunos1`
     FOREIGN KEY (`idAluno`)
     REFERENCES `mydb`.`alunos` (`idAluno`)
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`testeVO2` (
   `resultadoVO2` INT NULL DEFAULT NULL,
   `idAluno` INT NOT NULL,
   PRIMARY KEY (`idTesteVO2`),
-  INDEX `fk_testeVO2_alunos1_idx` (`idAluno` ASC) VISIBLE,
+  INDEX `fk_testeVO2_alunos1_idx` (`idAluno` ASC),
   CONSTRAINT `fk_testeVO2_alunos1`
     FOREIGN KEY (`idAluno`)
     REFERENCES `mydb`.`alunos` (`idAluno`)
@@ -235,9 +235,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`treino` (
   `idExercicio` INT NOT NULL,
   `idSerie` INT NOT NULL,
   PRIMARY KEY (`idTreino`),
-  INDEX `fk_treino_alunos1_idx` (`idAluno` ASC) VISIBLE,
-  INDEX `fk_treino_exercicios1_idx` (`idExercicio` ASC) VISIBLE,
-  INDEX `fk_treino_series1_idx` (`idSerie` ASC) VISIBLE,
+  INDEX `fk_treino_alunos1_idx` (`idAluno` ASC),
+  INDEX `fk_treino_exercicios1_idx` (`idExercicio` ASC),
+  INDEX `fk_treino_series1_idx` (`idSerie` ASC),
   CONSTRAINT `fk_treino_alunos1`
     FOREIGN KEY (`idAluno`)
     REFERENCES `mydb`.`alunos` (`idAluno`)
