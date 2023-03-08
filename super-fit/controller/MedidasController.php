@@ -36,14 +36,14 @@
         $medidas->setCoxa(($d['coxa']));
         $medidas->setImc(($d['peso']), ($d['altura']));
         $medidas->setRcq(($d['cintura']), ($d['quadril']));
-        $medidas->setPercentGord(($d['supraIliaca']));
-        $medidas->setMassaGorda(($d['massaGorda']));
-        $medidas->setMassaMagra(($d['massaMagra']));
-        $medidas->setAluno(($d['nome']));
+       // $medidas->setPercentGord(($d['supraIliaca']));
+       // $medidas->setMassaGorda(($d['massaGorda']));
+       // $medidas->setMassaMagra(($d['massaMagra']));
+       // $medidas->setAluno(($d['nome']));
         
         $medidasdao->create($medidas);
 
-        header("Location: ../medidas.php");
+     //   header("Location: ../medidas.php");
     }
 
     else if (isset($_POST['editar'])) {

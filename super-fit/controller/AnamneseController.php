@@ -33,7 +33,7 @@
         
         $anamnesedao->create($anamnese);
 
-        header("Location: ../anamnese.php");
+     //   header("Location: ../anamnese.php");
     }
 
     else if (isset($_POST['editar'])) {

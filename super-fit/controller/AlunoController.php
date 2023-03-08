@@ -51,7 +51,7 @@
     
         $alunodao->update($aluno);
     
-        header("Location: ../cadastro-editar.php");
+        header("Location: ../");
     }
 
     else if (isset($_GET['del'])){

@@ -22,7 +22,7 @@
 
     else if (isset($_POST['editar'])) {
 
-        $serie->setIdSerie(($d['idSeries']));
+        $serie->setIdSerie(($d['idSerie']));
         $serie->setNivel(($d['nivel']));
         $serie->setFase(($d['fase']));
         $serie->setSerie(($d['serie']));

@@ -20,9 +20,9 @@
 
     else if (isset($_POST['editar'])) {
 
-        $exercicio->setIdExercicio(($d['idExercicios']));
+        $exercicio->setIdExercicio(($d['idExercicio']));
         $exercicio->setGrupoMuscular(($d['grupoMuscular']));
-        $exercicio->setDescricao(($d['Descricao']));
+        $exercicio->setDescricao(($d['descricao']));
     
         $exerciciodao->update($exercicio);
     
