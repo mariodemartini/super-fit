@@ -70,11 +70,11 @@
             return $aluno;
         }
 
-        public function delete(aluno $aluno){
+        public function delete(Aluno $aluno){
             try {
                 $sql = "DELETE FROM alunos WHERE  idAluno = :idAluno";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idaluno", $aluno->getIdAluno());
+                $p_sql->bindValue(":idAluno", $aluno->getIdAluno());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir aluno <br> $e <br>";

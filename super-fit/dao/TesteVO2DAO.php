@@ -47,7 +47,7 @@
             $testeVO2->setDataTeste($row['dataTeste']);
             $testeVO2->setVelocidadeInicial($row['velocidadeInicial']);
             $testeVO2->setVelocidadeFinal($row['velocidadeFinal']);
-            $testeVO2->setFcIniciaç($row['fcInicial']);
+            $testeVO2->setFcInicial($row['fcInicial']);
             $testeVO2->setFcFinal($row['fcFinal']);
             $testeVO2->setTempoTeste($row['tempoTeste']);
             $testeVO2->setEsforcoTeste($row['esforcoTeste']);

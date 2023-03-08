@@ -24,7 +24,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM series ORDER BY nivel ASC";
+                $sql = "SELECT * FROM series ORDER BY idSerie ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -39,7 +39,7 @@
 
         private function listaSerie($row) {
             $serie = new Serie();
-            $serie->setIdSerie($row['idSeries']);
+            $serie->setIdSerie($row['idSerie']);
             $serie->setNivel($row['nivel']);
             $serie->setFase($row['fase']);
             $serie->setserie($row['serie']);
@@ -50,7 +50,7 @@
 
         public function delete(Serie $serie){
             try {
-                $sql = "DELETE FROM series WHERE  idSeries = :idSeries";
+                $sql = "DELETE FROM series WHERE  idSerie = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idSeries", $serie->getIdSerie());
                 return $p_sql->execute();
@@ -64,13 +64,13 @@
             try {
                 $sql = "UPDATE series set
                     
-                    idSeries=:idSeries,
+                    idSerie=:idSerie,
                     nivel=:nivel,
                     fase=:fase,
                     serie=:serie,
                     percentCarga=:percentCarga
                                 
-                    WHERE idSeries = :idSerie";
+                    WHERE idSerie = :idSerie";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":nivel", $serie->getNivel());
                 $p_sql->bindValue(":fase", $serie->getFase());

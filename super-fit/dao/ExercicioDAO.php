@@ -22,7 +22,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM exercicios ORDER BY grupoMuscular";
+                $sql = "SELECT * FROM exercicios ORDER BY idExercicio";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -37,7 +37,7 @@
 
         private function listaExercicio($row) {
             $exercicio = new Exercicio();
-            $exercicio->setIdExercicio($row['idExercicios']);
+            $exercicio->setIdExercicio($row['idExercicio']);
             $exercicio->setGrupoMuscular($row['grupoMuscular']);
             $exercicio->setDescricao($row['descricao']);
 
@@ -46,9 +46,9 @@
 
         public function delete(Exercicio $exercicio){
             try {
-                $sql = "DELETE FROM exercicios WHERE  idExercicios = :idExercicios";
+                $sql = "DELETE FROM exercicios WHERE  idExercicio = :idExercicio";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idExercicios", $exercicio->getIdExercicio());
+                $p_sql->bindValue(":idExercicio", $exercicio->getIdExercicio());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir exercicio <br> $e <br>";
