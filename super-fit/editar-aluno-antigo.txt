@@ -28,7 +28,7 @@ $alunodao = new AlunoDAO();
                                     <input type="date" class="form-control" id="inputData" name="dataCadastro" value="<?= $aluno->getDataCadastro() ?>" require>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <input type="hidden" class="form-control" id="inputData" name="idaluno" value="<?= $aluno->getIdAluno() ?>" require>
+                                    <input type="hidden" class="form-control" id="inputData" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require>
                                 </div>
                             </div>
                             <!-- Campo Nome -->
