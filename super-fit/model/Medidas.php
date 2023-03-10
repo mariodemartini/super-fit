@@ -270,7 +270,7 @@
         }
         function setImc($peso, $altura)
         {
-            $imc = $peso / ($altura * $altura);
+            $imc = $peso / ($altura**2);
 
             $this->imc = $imc;  
         }
@@ -290,8 +290,27 @@
         {
             return $this->percentGord;
         }
-        function setPercentGord($percentGord)
+        function setPercentGord($sexo, $idade)
         {
+            $peito = $this->getPeitoral();
+            $ax = $this->getAxilarMedia();
+            $abd = $this->getAbdominal();
+            $supra = $this->getSupraIliaca();
+            $sub = $this->getSubEscapular();
+            $tri = $this->getTricipital();
+            $coxa = $this->getCoxa();
+
+            $soma = $peito + $ax + $abd + $supra + $sub + $tri + $coxa;
+
+            if($sexo == 'M' || $sexo == 'm'){
+                $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
+                $percentGord = ((4.95 / $dc) - 4.5)*100;
+
+            } else if ($sexo == 'F' || $sexo == 'f'){
+                $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
+                $percentGord = ((4.95 / $dc) - 4.5)*100;
+            }
+
             $this->percentGord = $percentGord;  
         }
 
@@ -299,8 +318,12 @@
         {
             return $this->massaGorda;
         }
-        function setMassaGorda($massaGorda)
+        function setMassaGorda($peso)
         {
+            $percentual = $this->getPercentGord();
+
+            $massaGorda = ($peso * $percentual) / 100;
+
             $this->massaGorda = $massaGorda;  
         }
 
@@ -308,8 +331,12 @@
         {
             return $this->massaMagra;
         }
-        function setMassaMagra($massaMagra)
+        function setMassaMagra($peso, $pesoGordo)
         {
+            $pesoGordo = $this->getMassaGorda();
+
+            $massaMagra = $peso - $pesoGordo;
+
             $this->massaMagra = $massaMagra;  
         }
 
