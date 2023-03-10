@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb5ubuntu1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 10/03/2023 às 14:43
--- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
--- Versão do PHP: 8.1.2-1ubuntu2.11
+-- Generation Time: 10-Mar-2023 às 01:44
+-- Versão do servidor: 5.7.23
+-- versão do PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,22 +19,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `mydb`
+-- Database: `mydb`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci;
+CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `mydb`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `alunos`
+-- Estrutura da tabela `alunos`
 --
 
-CREATE TABLE `alunos` (
-  `idAluno` int NOT NULL,
+DROP TABLE IF EXISTS `alunos`;
+CREATE TABLE IF NOT EXISTS `alunos` (
+  `idAluno` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `dataNascimento` date DEFAULT NULL,
-  `idade` int DEFAULT NULL,
+  `idade` int(11) DEFAULT NULL,
   `sexo` varchar(10) DEFAULT NULL,
   `cpf` varchar(15) NOT NULL,
   `rg` varchar(15) DEFAULT NULL,
@@ -45,24 +47,26 @@ CREATE TABLE `alunos` (
   `endereco` varchar(100) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(10) NOT NULL,
-  `dataCadastro` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `dataCadastro` date DEFAULT NULL,
+  PRIMARY KEY (`idAluno`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `alunos`
+-- Extraindo dados da tabela `alunos`
 --
 
 INSERT INTO `alunos` (`idAluno`, `nome`, `dataNascimento`, `idade`, `sexo`, `cpf`, `rg`, `telefone`, `celular`, `cep`, `estado`, `cidade`, `endereco`, `email`, `senha`, `dataCadastro`) VALUES
-(1, 'Cadastro Teste', '2000-01-01', 23, 'M', '111.111.111-11', '11.111.111-1', '36081111', '(19)99999-9999', '13720-000', 'SP', 'São José do Rio Pardo', 'Rua Central, 01, Centro', 'teste@teste.com', '1234', '2023-03-10');
+(7, 'Teste', '2010-10-10', 12, '', '', '', '', '', '', '', '', '', '', '', '2023-03-08');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese`
+-- Estrutura da tabela `anamnese`
 --
 
-CREATE TABLE `anamnese` (
-  `idAnamnese` int NOT NULL,
+DROP TABLE IF EXISTS `anamnese`;
+CREATE TABLE IF NOT EXISTS `anamnese` (
+  `idAnamnese` int(11) NOT NULL AUTO_INCREMENT,
   `atividade` varchar(45) DEFAULT NULL,
   `objetivo` varchar(45) DEFAULT NULL,
   `fumante` varchar(45) DEFAULT NULL,
@@ -82,30 +86,35 @@ CREATE TABLE `anamnese` (
   `outros` varchar(100) DEFAULT NULL,
   `alimentacao` varchar(200) DEFAULT NULL,
   `dataCadastro` date DEFAULT NULL,
-  `idAluno` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `idAluno` int(11) NOT NULL,
+  PRIMARY KEY (`idAnamnese`),
+  KEY `fk_anamnese_alunos1_idx` (`idAluno`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `anamnese`
+-- Extraindo dados da tabela `anamnese`
 --
 
 INSERT INTO `anamnese` (`idAnamnese`, `atividade`, `objetivo`, `fumante`, `alcool`, `historicoFam`, `hipertensao`, `colesterol`, `diabetes`, `cardiaco`, `cirurgia`, `fratura`, `lesao`, `dor`, `movimentos`, `artrite`, `medicamentos`, `outros`, `alimentacao`, `dataCadastro`, `idAluno`) VALUES
-(1, 'Não', 'Saúde', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', NULL, 1);
+(1, '', 'dddddd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 7),
+(2, 'não', 'emagrecimento', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 7);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `exercicios`
+-- Estrutura da tabela `exercicios`
 --
 
-CREATE TABLE `exercicios` (
-  `idExercicio` int NOT NULL,
+DROP TABLE IF EXISTS `exercicios`;
+CREATE TABLE IF NOT EXISTS `exercicios` (
+  `idExercicio` int(11) NOT NULL AUTO_INCREMENT,
   `grupoMuscular` char(3) DEFAULT NULL,
-  `descricao` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `descricao` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idExercicio`)
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `exercicios`
+-- Extraindo dados da tabela `exercicios`
 --
 
 INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
@@ -288,15 +297,16 @@ INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `medidas`
+-- Estrutura da tabela `medidas`
 --
 
-CREATE TABLE `medidas` (
-  `idMedidas` int NOT NULL,
+DROP TABLE IF EXISTS `medidas`;
+CREATE TABLE IF NOT EXISTS `medidas` (
+  `idMedidas` int(11) NOT NULL AUTO_INCREMENT,
   `dataCadastro` date DEFAULT NULL,
   `peso` float DEFAULT NULL,
   `altura` float DEFAULT NULL,
-  `freqCard` int DEFAULT NULL,
+  `freqCard` int(11) DEFAULT NULL,
   `pressaoArterial` varchar(45) DEFAULT NULL,
   `torax` float DEFAULT NULL,
   `cintura` float DEFAULT NULL,
@@ -322,24 +332,20 @@ CREATE TABLE `medidas` (
   `percentGord` float DEFAULT NULL,
   `massaGorda` float DEFAULT NULL,
   `massaMagra` float DEFAULT NULL,
-  `idAluno` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `medidas`
---
-
-INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `imc`, `rcq`, `percentGord`, `massaGorda`, `massaMagra`, `idAluno`) VALUES
-(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 30.8642, 0.909091, 24.2648, 24.2648, 75.7352, 1);
+  `idAluno` int(11) NOT NULL,
+  PRIMARY KEY (`idMedidas`),
+  KEY `fk_medidas_alunos_idx` (`idAluno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor`
+-- Estrutura da tabela `professor`
 --
 
-CREATE TABLE `professor` (
-  `idProfessor` int NOT NULL,
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE IF NOT EXISTS `professor` (
+  `idProfessor` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `dataNascimento` date DEFAULT NULL,
   `sexo` varchar(10) DEFAULT NULL,
@@ -351,32 +357,28 @@ CREATE TABLE `professor` (
   `cidade` varchar(100) DEFAULT NULL,
   `endereco` varchar(100) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `professor`
---
-
-INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Mario Henrique Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22');
+  `senha` varchar(10) NOT NULL,
+  PRIMARY KEY (`idProfessor`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `series`
+-- Estrutura da tabela `series`
 --
 
-CREATE TABLE `series` (
-  `idSerie` int NOT NULL,
+DROP TABLE IF EXISTS `series`;
+CREATE TABLE IF NOT EXISTS `series` (
+  `idSerie` int(11) NOT NULL AUTO_INCREMENT,
   `nivel` varchar(45) DEFAULT NULL,
   `fase` varchar(45) DEFAULT NULL,
   `serie` varchar(45) DEFAULT NULL,
-  `percentCarga` varchar(5) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `percentCarga` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`idSerie`)
+) ENGINE=InnoDB AUTO_INCREMENT=391 DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `series`
+-- Extraindo dados da tabela `series`
 --
 
 INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUES
@@ -774,214 +776,95 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `testeForca`
+-- Estrutura da tabela `testeforca`
 --
 
-CREATE TABLE `testeForca` (
-  `idTesteForca` int NOT NULL,
+DROP TABLE IF EXISTS `testeforca`;
+CREATE TABLE IF NOT EXISTS `testeforca` (
+  `idTesteForca` int(11) NOT NULL AUTO_INCREMENT,
   `dataTeste` date DEFAULT NULL,
-  `cargaInicial` int DEFAULT NULL,
-  `cargaFinal` int DEFAULT NULL,
-  `idAluno` int NOT NULL,
-  `idExercicio` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `cargaInicial` int(11) DEFAULT NULL,
+  `cargaFinal` int(11) DEFAULT NULL,
+  `idAluno` int(11) NOT NULL,
+  `idExercicio` int(11) NOT NULL,
+  PRIMARY KEY (`idTesteForca`),
+  KEY `fk_testeForca_alunos1_idx` (`idAluno`),
+  KEY `fk_testeForca_exercicios1_idx` (`idExercicio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `testeVO2`
+-- Estrutura da tabela `testevo2`
 --
 
-CREATE TABLE `testeVO2` (
-  `idTesteVO2` int NOT NULL,
+DROP TABLE IF EXISTS `testevo2`;
+CREATE TABLE IF NOT EXISTS `testevo2` (
+  `idTesteVO2` int(11) NOT NULL AUTO_INCREMENT,
   `dataTeste` date DEFAULT NULL,
-  `velocidadeInicial` int DEFAULT NULL,
-  `velocidadeFinal` int DEFAULT NULL,
+  `velocidadeInicial` int(11) DEFAULT NULL,
+  `velocidadeFinal` int(11) DEFAULT NULL,
   `fcInicial` varchar(45) DEFAULT NULL,
   `fcFinal` varchar(45) DEFAULT NULL,
-  `tempoTeste` int DEFAULT NULL,
-  `esforcoTeste` int DEFAULT NULL,
-  `resultadoVO2` int DEFAULT NULL,
-  `idAluno` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `testeVO2`
---
-
-INSERT INTO `testeVO2` (`idTesteVO2`, `dataTeste`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, 56, 1);
+  `tempoTeste` int(11) DEFAULT NULL,
+  `esforcoTeste` int(11) DEFAULT NULL,
+  `resultadoVO2` int(11) DEFAULT NULL,
+  `idAluno` int(11) NOT NULL,
+  PRIMARY KEY (`idTesteVO2`),
+  KEY `fk_testeVO2_alunos1_idx` (`idAluno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `treino`
+-- Estrutura da tabela `treino`
 --
 
-CREATE TABLE `treino` (
-  `idTreino` int NOT NULL,
-  `carga` int DEFAULT NULL,
-  `feedback` int DEFAULT NULL,
-  `idAluno` int NOT NULL,
-  `idExercicio` int NOT NULL,
-  `idSerie` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+DROP TABLE IF EXISTS `treino`;
+CREATE TABLE IF NOT EXISTS `treino` (
+  `idTreino` int(11) NOT NULL AUTO_INCREMENT,
+  `carga` int(11) DEFAULT NULL,
+  `feedback` int(11) DEFAULT NULL,
+  `idAluno` int(11) NOT NULL,
+  `idExercicio` int(11) NOT NULL,
+  `idSerie` int(11) NOT NULL,
+  PRIMARY KEY (`idTreino`),
+  KEY `fk_treino_alunos1_idx` (`idAluno`),
+  KEY `fk_treino_exercicios1_idx` (`idExercicio`),
+  KEY `fk_treino_series1_idx` (`idSerie`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `alunos`
---
-ALTER TABLE `alunos`
-  ADD PRIMARY KEY (`idAluno`);
-
---
--- Índices de tabela `anamnese`
---
-ALTER TABLE `anamnese`
-  ADD PRIMARY KEY (`idAnamnese`),
-  ADD KEY `fk_anamnese_alunos1_idx` (`idAluno`);
-
---
--- Índices de tabela `exercicios`
---
-ALTER TABLE `exercicios`
-  ADD PRIMARY KEY (`idExercicio`);
-
---
--- Índices de tabela `medidas`
---
-ALTER TABLE `medidas`
-  ADD PRIMARY KEY (`idMedidas`),
-  ADD KEY `fk_medidas_alunos_idx` (`idAluno`);
-
---
--- Índices de tabela `professor`
---
-ALTER TABLE `professor`
-  ADD PRIMARY KEY (`idProfessor`);
-
---
--- Índices de tabela `series`
---
-ALTER TABLE `series`
-  ADD PRIMARY KEY (`idSerie`);
-
---
--- Índices de tabela `testeForca`
---
-ALTER TABLE `testeForca`
-  ADD PRIMARY KEY (`idTesteForca`),
-  ADD KEY `fk_testeForca_alunos1_idx` (`idAluno`),
-  ADD KEY `fk_testeForca_exercicios1_idx` (`idExercicio`);
-
---
--- Índices de tabela `testeVO2`
---
-ALTER TABLE `testeVO2`
-  ADD PRIMARY KEY (`idTesteVO2`),
-  ADD KEY `fk_testeVO2_alunos1_idx` (`idAluno`);
-
---
--- Índices de tabela `treino`
---
-ALTER TABLE `treino`
-  ADD PRIMARY KEY (`idTreino`),
-  ADD KEY `fk_treino_alunos1_idx` (`idAluno`),
-  ADD KEY `fk_treino_exercicios1_idx` (`idExercicio`),
-  ADD KEY `fk_treino_series1_idx` (`idSerie`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `alunos`
---
-ALTER TABLE `alunos`
-  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `anamnese`
---
-ALTER TABLE `anamnese`
-  MODIFY `idAnamnese` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `exercicios`
---
-ALTER TABLE `exercicios`
-  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
-
---
--- AUTO_INCREMENT de tabela `medidas`
---
-ALTER TABLE `medidas`
-  MODIFY `idMedidas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `professor`
---
-ALTER TABLE `professor`
-  MODIFY `idProfessor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `series`
---
-ALTER TABLE `series`
-  MODIFY `idSerie` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=391;
-
---
--- AUTO_INCREMENT de tabela `testeForca`
---
-ALTER TABLE `testeForca`
-  MODIFY `idTesteForca` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `testeVO2`
---
-ALTER TABLE `testeVO2`
-  MODIFY `idTesteVO2` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `treino`
---
-ALTER TABLE `treino`
-  MODIFY `idTreino` int NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `anamnese`
+-- Limitadores para a tabela `anamnese`
 --
 ALTER TABLE `anamnese`
   ADD CONSTRAINT `fk_anamnese_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`);
 
 --
--- Restrições para tabelas `medidas`
+-- Limitadores para a tabela `medidas`
 --
 ALTER TABLE `medidas`
   ADD CONSTRAINT `fk_medidas_alunos` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`);
 
 --
--- Restrições para tabelas `testeForca`
+-- Limitadores para a tabela `testeforca`
 --
-ALTER TABLE `testeForca`
+ALTER TABLE `testeforca`
   ADD CONSTRAINT `fk_testeForca_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`),
   ADD CONSTRAINT `fk_testeForca_exercicios1` FOREIGN KEY (`idExercicio`) REFERENCES `exercicios` (`idExercicio`);
 
 --
--- Restrições para tabelas `testeVO2`
+-- Limitadores para a tabela `testevo2`
 --
-ALTER TABLE `testeVO2`
+ALTER TABLE `testevo2`
   ADD CONSTRAINT `fk_testeVO2_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`);
 
 --
--- Restrições para tabelas `treino`
+-- Limitadores para a tabela `treino`
 --
 ALTER TABLE `treino`
   ADD CONSTRAINT `fk_treino_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`),
