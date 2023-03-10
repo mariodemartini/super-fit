@@ -113,35 +113,6 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
-
-        public function exibeProf() {
-            try {
-                $sql = "SELECT idProfessor, nome, dataNascimento, cpf, cref, celular, email FROM professor ORDER BY nome ASC";
-                $result = Conexao::getConexao()->query($sql);
-                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
-                $f_lista = array();
-                foreach ($lista as $l) {
-                    $f_lista[] = $this->listaDados($l);
-                } 
-                return $f_lista;
-            } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
-            }
-        }
-
-        private function listaDados($row) {
-            $professor = new Professor();
-            $professor->setIdprofessor($row['idProfessor']);
-            $professor->setNome($row['nome']);
-            $professor->setDataNascimento($row['dataNascimento']);
-            $professor->setCpf($row['cpf']);
-            $professor->setCref($row['cref']);
-            $professor->setCelular($row['celular']);
-            $professor->setEmail($row['email']);
-
-            return $professor;
-        }
-
         
     }
 
