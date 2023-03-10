@@ -18,24 +18,28 @@ $anamnesedao = new AnamneseDAO();
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">ANAMNESE</h3></div>
                     <!-- Div barra de pesquisa -->
-                    <form class="card-header inline-block form-inline mb-3">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch"/>
-                            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                        </div>
-                    </form>
+
                     <!-- Div do conteudo principal -->
                     <div class="card-body">
+                    <?php foreach ($anamnesedao->busca() as $anamnese2) : ?>
                         <form action="controller/AnamneseController.php" method="POST">
+
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" nome="nome"/>
+                            <button type="submit" name="buscar" class="btn btn-success btn-lg">Buscar</button>
+                        </div>
+<br> 
+
                             <!-- Div data -->
                             <div class="row mb-3 align-items-center">
                                 <div class="form-group col-md-3">
                                     <input type="date" class="form-control" id="inputData" placeholder="dataCadastro" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
+                                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome" value="<?= $anamnese2->getAluno() ?>" require>
                                 </div>
                             </div>
+                            <?php endforeach ?>
                             <!-- Inicio conteudo da anamneses -->
                             <div class="row mb-3">
                                 <!-- Campo de atividade fisica -->
@@ -163,6 +167,7 @@ $anamnesedao = new AnamneseDAO();
                             </div>
                         </form>
                     </div>
+                    
                     <div class="card-footer text-center py-3">
                         <!-- <div class="small"><a href="login.html">Have an account? Go to login</a></div> -->
                     </div>

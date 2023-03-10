@@ -7,8 +7,8 @@ include_once('./conexao/Conexao.php');
 include_once('./model/TesteVO2.php');
 include_once('./dao/TesteVO2DAO.php');
 
-$teste_vo2 = new TesteVO2();
-$teste_vo2dao = new TesteVO2DAO();
+$testevo2 = new TesteVO2();
+$testevo2dao = new TesteVO2DAO();
 ?>
 <main>
     <div class="container">
