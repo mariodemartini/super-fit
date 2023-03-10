@@ -190,7 +190,7 @@ $professordao = new ProfessorDAO();
             </table>
         </div>
             <div class="col-sm-1 mt-4 mb-0">
-                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
+                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="cadastro.php">Voltar</a></button>
             </div>
     </div>
 </main>

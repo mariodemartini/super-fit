@@ -224,14 +224,6 @@ $alunodao = new AlunoDAO();
                                             <label for="inputPassword">Senha</label>
                                         </div>
                                     </div>
-                                    <!-- Campo  confirmar senha -->
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3 mb-md-0">
-                                            <input class="form-control" id="inputPasswordConfirm" type="password"
-                                                placeholder="Confirmar senha" name="senha" />
-                                            <label for="inputPasswordConfirm">Confirmar Senha</label>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2">
