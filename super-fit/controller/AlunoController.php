@@ -28,7 +28,7 @@
         
         $alunodao->create($aluno);
 
-        header("Location: ../cadastro.php");
+        header("Location: ../cadastro-aluno.php");
     }
 
     else if (isset($_POST['editar'])) {
@@ -50,7 +50,7 @@
     
         $alunodao->update($aluno);
     
-        header("Location: ../buscar.php");
+        header("Location: ../buscar-aluno.php");
     }
 
     else if (isset($_GET['del'])){
@@ -59,7 +59,7 @@
 
         $alunodao->delete($aluno);
 
-        header("Location: ../buscar.php");
+        header("Location: ../buscar-aluno.php");
     } else {
         //header("Location: ../buscar.php");
     }
