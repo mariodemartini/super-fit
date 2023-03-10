@@ -15,7 +15,7 @@ include_once('include/sidebar.html');
                     <div class="card-body">
                         <!-- Sub-menu -->
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="cadastro-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">NOVA</button></a>
+                            <a class="btn btn-success btn-block" href="cadastro-avaliacao.php"><button type="button" class="btn btn-success btn-lg btn-block">NOVA AVALIAÇÃO</button></a>
                         </div>
                         
                         <div class="row mb-3">
