@@ -47,11 +47,10 @@
         $aluno->setEndereco(($d['endereco']));
         $aluno->setEmail(($d['email']));
         $aluno->setSenha(($d['senha']));
-        $aluno->setDataCadastro(($d['dataCadastro']));
     
         $alunodao->update($aluno);
     
-        header("Location: ../");
+        header("Location: ../buscar.php");
     }
 
     else if (isset($_GET['del'])){

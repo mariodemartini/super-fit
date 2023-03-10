@@ -46,7 +46,7 @@
     
         $professordao->update($professor);
     
-        header("Location: ../cadastro-prof.php");   
+      //  header("Location: ../buscar-prof.php");   
     }
 
     else if (isset($_GET['del'])){
@@ -55,9 +55,9 @@
 
         $professordao->delete($professor);
 
-        header("Location: ../cadastro-prof.php");
+        header("Location: ../buscar-prof.php");
     } else {
-        header("Location: ../cadastro-prof.php");
+        header("Location: ../buscar-prof.php");
     }
     
 ?>

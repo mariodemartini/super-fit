@@ -3,6 +3,7 @@
     include_once "../model/Anamnese.php";
     include_once "../dao/AnamneseDAO.php";
 
+
     $anamnese = new Anamnese();
     $anamnesedao = new AnamneseDAO();
 
@@ -29,11 +30,11 @@
         $anamnese->setOutros(($d['outros']));
         $anamnese->setAlimentacao(($d['alimentacao']));
         $anamnese->setDataCadastro(($d['dataCadastro']));
-        $anamnese->setAluno(($d['nome']));
+        $anamnese->setAluno(($d['idAluno']));
         
         $anamnesedao->create($anamnese);
 
-     //   header("Location: ../anamnese.php");
+        header("Location: ../cadastro-avaliacao.php");  
     }
 
     else if (isset($_POST['editar'])) {
@@ -71,8 +72,17 @@
         $anamnesedao->delete($anamnese);
 
         header("Location: ../avaliacao.php");
-    } else {
-        header("Location: ../home.php");
+    } 
+    
+    else if (isset($_POST['buscar'])){
+
+        $anamnesedao->busca();
+
+        header("Location: ../anamnese.php");
+    }
+    
+    else {
+     //   header("Location: ../home.php");
     }
     
 ?>
