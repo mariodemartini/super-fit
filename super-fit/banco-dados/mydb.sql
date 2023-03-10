@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 10/03/2023 às 14:43
+-- Tempo de geração: 08/03/2023 às 16:17
 -- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
 -- Versão do PHP: 8.1.2-1ubuntu2.11
 
@@ -53,7 +53,7 @@ CREATE TABLE `alunos` (
 --
 
 INSERT INTO `alunos` (`idAluno`, `nome`, `dataNascimento`, `idade`, `sexo`, `cpf`, `rg`, `telefone`, `celular`, `cep`, `estado`, `cidade`, `endereco`, `email`, `senha`, `dataCadastro`) VALUES
-(1, 'Cadastro Teste', '2000-01-01', 23, 'M', '111.111.111-11', '11.111.111-1', '36081111', '(19)99999-9999', '13720-000', 'SP', 'São José do Rio Pardo', 'Rua Central, 01, Centro', 'teste@teste.com', '1234', '2023-03-10');
+(7, 'Teste', '2010-10-10', 12, '', '', '', '', '', '', '', '', '', '', '', '2023-03-08');
 
 -- --------------------------------------------------------
 
@@ -84,13 +84,6 @@ CREATE TABLE `anamnese` (
   `dataCadastro` date DEFAULT NULL,
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `anamnese`
---
-
-INSERT INTO `anamnese` (`idAnamnese`, `atividade`, `objetivo`, `fumante`, `alcool`, `historicoFam`, `hipertensao`, `colesterol`, `diabetes`, `cardiaco`, `cirurgia`, `fratura`, `lesao`, `dor`, `movimentos`, `artrite`, `medicamentos`, `outros`, `alimentacao`, `dataCadastro`, `idAluno`) VALUES
-(1, 'Não', 'Saúde', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -176,7 +169,7 @@ INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
 (72, 'BIC', 'ROSCA INVERSA BARRA RETA '),
 (73, 'BIC', 'ROSCA INVERSA BARRA W '),
 (74, 'BIC', 'ROSCA INVERSA CROSS '),
-(75, 'BIC', 'ROSCA ALTERNADA '),
+(75, 'GLT', 'ROSCA ALTERNADA '),
 (76, 'BIC', 'ROSCA CONCENTRADA'),
 (77, 'BIC', 'ROSCA MARTELO HALTER '),
 (78, 'BIC', 'ROSCA INCLINADA '),
@@ -242,48 +235,7 @@ INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
 (138, 'COX', 'PANTURRILHA MAQUINA'),
 (139, 'COX', 'PANTURRILHA MAQUINA UNILATERAL'),
 (140, 'COX', 'PANTURRILHA TRILHO'),
-(141, 'COX', 'FLEXÃO NORDICA'),
-(142, 'TRI', 'TRICEPIS PULLEY RETO'),
-(143, 'TRI', 'TRICEPIS PULLEY W'),
-(144, 'TRI', 'TRICEPIS PULLEY CORDA '),
-(145, 'TRI', 'TRICEPIS PULLEY UNILATERAL'),
-(146, 'TRI', 'TRICEPIS UNI INVERSO'),
-(147, 'TRI', 'TRICEPIS TESTA HALTER'),
-(148, 'TRI', 'TRICEPIS TESTA BARRA RETA '),
-(149, 'TRI', 'TRICEPIS TESTA BARRA W'),
-(150, 'TRI', 'TRICEPIS TESTA CROSS RETO'),
-(151, 'TRI', 'TRICEPIS TESTA CROSS W '),
-(152, 'TRI', 'TRICEPIS FRANCES SIMULTANEO '),
-(153, 'TRI', 'TRICEPIS FRANCES UNILATERAL'),
-(154, 'TRI', 'TRICEPIS  FRANCES CROSS W '),
-(155, 'TRI', 'TRICEPIS FRANCES CROSS CORDA '),
-(156, 'TRI', 'TRICEPIS COICE UNILATERAL '),
-(157, 'TRI', 'TRICEPIS COICE SIMULTANEO'),
-(158, 'TRI', 'TRICEPIS COICE CROSS'),
-(159, 'TRI', 'TRICEPS COICE CROSS UNI '),
-(160, 'TRI', 'TRICEPIS PARALELAS/BANCO'),
-(161, 'OMB', 'DESENVOLVIMENTO MAQUINA '),
-(162, 'OMB', 'DESENVOLVIMENTO HALTER'),
-(163, 'OMB', 'DESENVOLVIMENTO TRILHO FRENTE '),
-(164, 'OMB', 'DESENVOLVIMENTO TRILHO ATRAS  '),
-(165, 'OMB', 'DESENVOLVIMENTO BARRA FRENTE '),
-(166, 'OMB', 'DESNVOLVIMENTO BARRA ATRAS'),
-(167, 'OMB', 'DESNVOLVIMENTO ARNOLD '),
-(168, 'OMB', 'ELEVAÇAO LATERAL HALTER'),
-(169, 'OMB', 'ELEVAÇAO LATERAL ALTERNADA'),
-(170, 'OMB', 'ELEVAÇAO  LATERAL CROSS SIMULT '),
-(171, 'OMB', 'ELEVAÇAO FRONTAL '),
-(172, 'OMB', 'ELEVAÇAO FRONTAL NEUTRA '),
-(173, 'OMB', 'ELEVAÇAO FRONTAL BARRA RETA'),
-(174, 'OMB', 'ELEVAÇAO FRONTAL BARRA ROMANA '),
-(175, 'OMB', 'ELEVAÇAO FRONTAL CROSS'),
-(176, 'OMB', 'REMADA ALTA CROSS'),
-(177, 'OMB', 'REMADA ALTA HALDER'),
-(178, 'OMB', 'REMADA ALTA BARRA'),
-(179, 'OMB', 'REMADA ALTA UNILATERAL'),
-(180, 'OMB', 'ELEVAÇAO DE OMBRO BARRA'),
-(181, 'OMB', 'ELEVAÇAO DE OMBRO CROSS'),
-(182, 'OMB', 'ELEVAÇAO DE OMBRO HALTER');
+(141, 'COX', 'FLEXÃO NORDICA');
 
 -- --------------------------------------------------------
 
@@ -325,13 +277,6 @@ CREATE TABLE `medidas` (
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
---
--- Despejando dados para a tabela `medidas`
---
-
-INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `imc`, `rcq`, `percentGord`, `massaGorda`, `massaMagra`, `idAluno`) VALUES
-(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 30.8642, 0.909091, 24.2648, 24.2648, 75.7352, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -353,13 +298,6 @@ CREATE TABLE `professor` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `professor`
---
-
-INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Mario Henrique Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22');
 
 -- --------------------------------------------------------
 
@@ -774,10 +712,10 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `testeForca`
+-- Estrutura para tabela `testeforca`
 --
 
-CREATE TABLE `testeForca` (
+CREATE TABLE `testeforca` (
   `idTesteForca` int NOT NULL,
   `dataTeste` date DEFAULT NULL,
   `cargaInicial` int DEFAULT NULL,
@@ -789,10 +727,10 @@ CREATE TABLE `testeForca` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `testeVO2`
+-- Estrutura para tabela `testevo2`
 --
 
-CREATE TABLE `testeVO2` (
+CREATE TABLE `testevo2` (
   `idTesteVO2` int NOT NULL,
   `dataTeste` date DEFAULT NULL,
   `velocidadeInicial` int DEFAULT NULL,
@@ -804,13 +742,6 @@ CREATE TABLE `testeVO2` (
   `resultadoVO2` int DEFAULT NULL,
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `testeVO2`
---
-
-INSERT INTO `testeVO2` (`idTesteVO2`, `dataTeste`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, 56, 1);
 
 -- --------------------------------------------------------
 
@@ -870,17 +801,17 @@ ALTER TABLE `series`
   ADD PRIMARY KEY (`idSerie`);
 
 --
--- Índices de tabela `testeForca`
+-- Índices de tabela `testeforca`
 --
-ALTER TABLE `testeForca`
+ALTER TABLE `testeforca`
   ADD PRIMARY KEY (`idTesteForca`),
   ADD KEY `fk_testeForca_alunos1_idx` (`idAluno`),
   ADD KEY `fk_testeForca_exercicios1_idx` (`idExercicio`);
 
 --
--- Índices de tabela `testeVO2`
+-- Índices de tabela `testevo2`
 --
-ALTER TABLE `testeVO2`
+ALTER TABLE `testevo2`
   ADD PRIMARY KEY (`idTesteVO2`),
   ADD KEY `fk_testeVO2_alunos1_idx` (`idAluno`);
 
@@ -901,25 +832,25 @@ ALTER TABLE `treino`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `anamnese`
 --
 ALTER TABLE `anamnese`
-  MODIFY `idAnamnese` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAnamnese` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `exercicios`
 --
 ALTER TABLE `exercicios`
-  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT de tabela `medidas`
 --
 ALTER TABLE `medidas`
-  MODIFY `idMedidas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idMedidas` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -934,16 +865,16 @@ ALTER TABLE `series`
   MODIFY `idSerie` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=391;
 
 --
--- AUTO_INCREMENT de tabela `testeForca`
+-- AUTO_INCREMENT de tabela `testeforca`
 --
-ALTER TABLE `testeForca`
+ALTER TABLE `testeforca`
   MODIFY `idTesteForca` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `testeVO2`
+-- AUTO_INCREMENT de tabela `testevo2`
 --
-ALTER TABLE `testeVO2`
-  MODIFY `idTesteVO2` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `testevo2`
+  MODIFY `idTesteVO2` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `treino`
@@ -968,16 +899,16 @@ ALTER TABLE `medidas`
   ADD CONSTRAINT `fk_medidas_alunos` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`);
 
 --
--- Restrições para tabelas `testeForca`
+-- Restrições para tabelas `testeforca`
 --
-ALTER TABLE `testeForca`
+ALTER TABLE `testeforca`
   ADD CONSTRAINT `fk_testeForca_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`),
   ADD CONSTRAINT `fk_testeForca_exercicios1` FOREIGN KEY (`idExercicio`) REFERENCES `exercicios` (`idExercicio`);
 
 --
--- Restrições para tabelas `testeVO2`
+-- Restrições para tabelas `testevo2`
 --
-ALTER TABLE `testeVO2`
+ALTER TABLE `testevo2`
   ADD CONSTRAINT `fk_testeVO2_alunos1` FOREIGN KEY (`idAluno`) REFERENCES `alunos` (`idAluno`);
 
 --
