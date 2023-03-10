@@ -88,7 +88,7 @@
                     
                       idAluno=:idAluno,
                       nome=:nome,
-                      dataNascimento=:datanascimento,
+                      dataNascimento=:dataNascimento,
                       sexo=:sexo,
                       cpf=:cpf,
                       rg=:rg,
@@ -99,8 +99,7 @@
                       cidade=:cidade,
                       endereco=:endereco,
                       email=:email,
-                      senha=:senha,
-                      dataCadastro=:datacadastro
+                      senha=:senha
                                     
                       WHERE idAluno = :idAluno";
                 $p_sql = Conexao::getConexao()->prepare($sql);
@@ -118,41 +117,11 @@
                 $p_sql->bindValue(":endereco", $aluno->getEndereco());
                 $p_sql->bindValue(":email", $aluno->getEmail());
                 $p_sql->bindValue(":senha", $aluno->getSenha());
-                $p_sql->bindValue(":dataCadastro", $aluno->getDataCadastro());
             
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
-        }
-
-        public function exibeAluno() {
-            try {
-                $sql = "SELECT idAluno, nome, dataNascimento, idade, cpf, celular, email, dataCadastro FROM alunos ORDER BY idAluno ASC";
-                $result = Conexao::getConexao()->query($sql);
-                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
-                $f_lista = array();
-                foreach ($lista as $l) {
-                    $f_lista[] = $this->listaDados($l);
-                } 
-                return $f_lista;
-            } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
-            }
-        }
-
-        private function listaDados($row) {
-            $aluno = new Aluno();
-            $aluno->setIdAluno($row['idAluno']);
-            $aluno->setNome($row['nome']);
-            $aluno->setDataNascimento($row['dataNascimento']);
-            $aluno->setIdade($row['dataNascimento']);
-            $aluno->setCpf($row['cpf']);
-            $aluno->setCelular($row['celular']);
-            $aluno->setEmail($row['email']);
-            $aluno->setDataCadastro($row['dataCadastro']);
-
-            return $aluno;
         }
 
     }

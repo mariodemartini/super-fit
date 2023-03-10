@@ -7,7 +7,7 @@
                 $sql = "INSERT INTO anamnese (
                     atividade, objetivo, fumante, alcool, historicoFam, hipertensao, colesterol, diabetes, cardiaco, cirurgia, fratura, lesao, dor, movimentos, artrite, medicamentos, outros, alimentacao, dataCadastro, idAluno)
                     VALUES (
-                    :atividade, :objetivo, :fumante, :alcool, :historicoFam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :dataCadastro, :nome)";
+                    :atividade, :objetivo, :fumante, :alcool, :historicoFam, :hipertensao, :colesterol, :diabetes, :cardiaco, :cirurgia, :fratura, :lesao, :dor, :movimentos, :artrite, :medicamentos, :outros, :alimentacao, :dataCadastro, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":atividade", $anamnese->getAtividade());
@@ -29,7 +29,7 @@
                 $p_sql->bindValue(":outros", $anamnese->getOutros());
                 $p_sql->bindValue(":alimentacao", $anamnese->getAlimentacao());
                 $p_sql->bindValue(":dataCadastro", $anamnese->getDataCadastro());
-                $p_sql->bindValue(":nome", $anamnese->getAluno());
+                $p_sql->bindValue(":idAluno", $anamnese->getAluno());
 
                 return $p_sql->execute();
                 
@@ -75,7 +75,7 @@
             $anamnese->setOutros($row['outros']);
             $anamnese->setAlimentacao($row['alimentacao']);
             $anamnese->setDataCadastro($row['dataCadastro']);
-            $anamnese->setAluno($row['nome']);
+            $anamnese->setAluno($row['idAluno']);
 
             return $anamnese;
         }
@@ -141,6 +141,30 @@
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
+            }
+        }
+
+        private function listaAnamnese2($row) {
+            $anamnese2 = new Anamnese();
+
+            $anamnese2->setAluno($row['nome']);
+
+            return $anamnese2;
+        }
+
+        public function busca() {
+            try {
+                $sql = "SELECT idAluno FROM alunos WHERE nome = ':nome' ";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaAnamnese2($l);
+                } 
+                return $f_lista;
+
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
             }
         }
   

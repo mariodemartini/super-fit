@@ -7,7 +7,7 @@
                 $sql = "INSERT INTO medidas (
                     dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, imc, rcq, percentGord, massaGorda, massaMagra, idAluno)
                     VALUES (
-                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :imc, :rcq, :percentGord, :massaGorda, :massaMagra, :nome)";
+                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :imc, :rcq, :percentGord, :massaGorda, :massaMagra, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peso", $medidas->getPeso());
@@ -39,7 +39,7 @@
                 $p_sql->bindValue(":percentGord", $medidas->getPercentGord());
                 $p_sql->bindValue(":massaGorda", $medidas->getMassaGorda());
                 $p_sql->bindValue(":massaMagra", $medidas->getMassaMagra());
-                $p_sql->bindValue(":nome", $medidas->getAluno());
+                $p_sql->bindValue(":idAluno", $medidas->getAluno());
                        
                 return $p_sql->execute();
                 
@@ -92,10 +92,10 @@
             $medidas->setCoxa($row['coxa']);
             $medidas->setImc(($row['peso']), ($row['altura']));
             $medidas->setRcq(($row['cintura']), ($row['quadril']));
-            $medidas->setPercentGord($row['percentGord']);
-            $medidas->setMassaGorda($row['massaGorda']);
-            $medidas->setMassaMagra($row['massaMagra']);
-            $medidas->setAluno($row['nome']);
+            $medidas->setPercentGord($row['sexo'], $row['idade']);
+            $medidas->setMassaGorda($row['peso']);
+            $medidas->setMassaMagra($row['peso'], $row['massaGorda']);
+            $medidas->setAluno($row['idAluno']);
 
             return $medidas;
         }
