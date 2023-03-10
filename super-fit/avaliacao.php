@@ -15,14 +15,14 @@ include_once('include/sidebar.html');
                     <div class="card-body">
                         <!-- Sub-menu -->
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="anamnese.php"><button type="button" class="btn btn-info btn-lg btn-block">ANAMNESE</button></a>
+                            <a class="btn btn-info btn-block" href="cadastro-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">NOVA</button></a>
                         </div>
                         
                         <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="medidas.php"><button type="button" class="btn btn-info btn-lg btn-block">MEDIDAS</button></a>
+                        <a class="btn btn-info btn-block" href="ver-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">RELATORIOS</button></a>
                         </div>
                         
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                         <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg btn-block">TESTE FORÇA</button></a>
                         </div>
 
@@ -32,7 +32,7 @@ include_once('include/sidebar.html');
 
                         <div class="row mb-3">
                         <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg btn-block">RESULTADOS</button></a>
-                        </div> 
+                        </div>  -->
                     </div>
                     <div class="card-footer text-center py-3">
                         <!-- <div class="small"><a href="login.html">Have an account? Go to login</a></div> -->
