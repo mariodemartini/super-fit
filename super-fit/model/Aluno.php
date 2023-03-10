@@ -2,13 +2,13 @@
     
     Class Aluno{
         private $idAluno;
-        public $nome;
+        private $nome;
         private $dataNascimento;
         private $idade;
         private $sexo;
         private $cpf;
         private $rg;
-        public $telefone;
+        private $telefone;
         private $celular;
         private $cep;
         private $estado;
