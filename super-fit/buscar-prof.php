@@ -34,7 +34,7 @@ $professordao = new ProfessorDAO();
                 </thead>
                 <!-- Dados tabela de -->
                 <tbody>
-                <?php foreach ($professordao->exibeProf() as $professor) : ?>
+                <?php foreach ($professordao->read() as $professor) : ?>
                     <tr>
                         <td><?= $professor->getIdProfessor() ?></td>
                         <td><?= $professor->getNome() ?></td>
@@ -66,10 +66,6 @@ $professordao = new ProfessorDAO();
                                     <form action="Controller/ProfessorController.php" method="POST">
                                         <!-- Campo data -->
                                             <div class="row mb-3">
-                                                <div class="form-group col-md-3">
-                                                    <label for="inputData">DATA</label>
-                                                    <input type="date" class="form-control" id="inputData" name="dataCadastro" value="<?= $professor->getDataCadastro() ?>" require>
-                                                </div>
                                                 <div class="form-group col-md-3">
                                                     <input type="hidden" class="form-control" id="inputData" name="idProfessor" value="<?= $professor->getIdProfessor() ?>" require>
                                                 </div>
