@@ -272,7 +272,7 @@
         {
             $imc = $peso / ($altura**2);
 
-            $this->imc = $imc;  
+            $this->imc = number_format($imc, 2);  
         }
 
         function getRcq()
@@ -283,7 +283,7 @@
         {
             $rcq = $cintura / $quadril;
             
-            $this->rcq = $rcq;  
+            $this->rcq = number_format($rcq, 2);  
         }
 
         function getPercentGord()
@@ -311,7 +311,7 @@
                 $percentGord = ((4.95 / $dc) - 4.5)*100;
             }
 
-            $this->percentGord = $percentGord;  
+            $this->percentGord = number_format($percentGord, 2);
         }
 
         function getMassaGorda()
@@ -324,7 +324,7 @@
 
             $massaGorda = ($peso * $percentual) / 100;
 
-            $this->massaGorda = $massaGorda;  
+            $this->massaGorda = number_format($massaGorda, 2);  
         }
 
         function getMassaMagra()
@@ -335,9 +335,9 @@
         {
             $pesoGordo = $this->getMassaGorda();
 
-            $massaMagra = $peso - $pesoGordo;
+            $massaMagra = $peso - ($pesoGordo);
 
-            $this->massaMagra = $massaMagra;  
+            $this->massaMagra = number_format($massaMagra, 2);
         }
 
         function getAluno()
