@@ -46,7 +46,7 @@
     
         $professordao->update($professor);
     
-      //  header("Location: ../buscar-prof.php");   
+        header("Location: ../buscar-prof.php");   
     }
 
     else if (isset($_GET['del'])){

@@ -22,7 +22,7 @@
                 
         $testeVO2dao->create($testeVO2);
 
-       // header("Location: ../cadastro-avaliacao.php");
+        header("Location: ../cadastro-avaliacao.php");
     }
 
     else if (isset($_POST['editar'])) {
