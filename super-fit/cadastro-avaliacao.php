@@ -95,7 +95,7 @@ $testevo2dao = new TesteVO2DAO();
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">ANAMNESE</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -292,7 +292,7 @@ $testevo2dao = new TesteVO2DAO();
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">MEDIDAS</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -543,7 +543,7 @@ $testevo2dao = new TesteVO2DAO();
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">TESTE VO2</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -698,7 +698,7 @@ $testevo2dao = new TesteVO2DAO();
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">TESTE FORÇA</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -1003,6 +1003,152 @@ $testevo2dao = new TesteVO2DAO();
                 </div>
             <?php endforeach ?>
         </div>
+
+        <!-- Modal Resultado -->
+        <div>
+            <?php foreach ($alunodao->read() as $aluno): ?>
+                <div class="modal fade" id="resultado><?= $aluno->getIdAluno() ?>" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">RESULTADOS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <!-- Aluno -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-2">
+                                            <div class="form-floating mb-3 mb-md-3">
+                                                <input class="form-control" id="inputNome" type="number" placeholder="idAluno"
+                                                    name="idAluno" value="<?= $aluno->getIdAluno() ?>" require />
+                                                <label for="inputNome">ID</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-floating mb-3 mb-md-3">
+                                                <input class="form-control" id="inputNome" type="text" placeholder="nome"
+                                                    name="nome" value="<?= $aluno->getNome() ?>" require />
+                                                <label for="inputNome">Nome Completo</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating mb-3 mb-md-3">
+                                                <input class="form-control" id="inputIdade" type="text" placeholder="Idade"
+                                                    name="idade" value="<?= $aluno->getIdade() ?>" require />
+                                                <label for="inputIdade">Idade</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating mb-3 mb-md-3">
+                                                <input class="form-control" id="inputSexo" type="text" placeholder="Sexo"
+                                                    name="sexo" value="<?= $aluno->getSexo() ?>" require />
+                                                <label for="inputSexo">Sexo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Medidas -->
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">Peso(kg)</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="peso" value="<?= $medidas->getPeso() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">IMC</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="imc" value="<?= $medidas->getImc() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">Abdomen</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="abdomen" value="<?= $medidas->getAbdomen() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">RCQ</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="rcq" value="<?= $medidas->getRcq() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">%Gordura</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="percentGord" value="<?= $medidas->getPercentGord() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">M.Gorda</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="massaGorda" value="<?= $medidas->getMassaGorda() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">M.Magra</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="massaMagra" value="<?= $medidas->getMassaMagra() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    <!-- Resultado VO2 -->
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item">VO2</li>
+                                        </ul>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="number" step="0.01" placeholder="" nome="resultadoVO2" value="<?= $testevo2->getResultadoVO2() ?>" require>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input class="form-control p-2" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+
     </div>
 
     <div class="col-sm-1 mt-4 mb-0">
