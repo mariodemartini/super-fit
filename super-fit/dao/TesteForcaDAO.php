@@ -84,29 +84,28 @@
             }
         }
 
-        public function selecionaExercicioPeito(){
-            try{
-                $sql = "SELECT exercicios.Descricao FROM exercicios, testeForca  
-                    WHERE exercicios.idExercicios = testeForca.idExercicios AND exercicios.grupoMuscular = 'PTL'";
-                    $result = Conexao::getConexao()->query($sql);
-                    $lista = $result->fetchAll(PDO::FETCH_ASSOC);
-                    $f_lista = array();
-                    foreach ($lista as $l) {
-                        $f_lista[] = $this->listaPeito($l);
-                    } 
-                        return $f_lista;
+        public function exercicioPeito() {
+            try {
+                $sql = "SELECT idExercicio, descricao FROM exercicios WHERE grupoMuscular = 'PTL'";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaPeito($l);
+                } 
+                return $f_lista;
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar Buscar Todos." . $e;
-            }                
+            }
         }
 
         private function listaPeito($row) {
-            $testeforca = new TesteForca();
-            $testeforca->setExercicio($row['exercicio']);;
+            $exercicioPeito = new Exercicio();
+            $exercicioPeito->setIdExercicio($row['idExercicio']);
+            $exercicioPeito->setDescricao($row['descricao']);
 
-            return $testeforca;
+            return $exercicioPeito;
         }
-
         
     }
 

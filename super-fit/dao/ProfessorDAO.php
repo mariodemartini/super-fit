@@ -32,7 +32,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM professor ORDER BY Nome ASC";
+                $sql = "SELECT * FROM professor ORDER BY idProfessor ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -47,7 +47,7 @@
 
         private function listaProfessores($row) {
             $professor = new Professor();
-            $professor->setIdprofessor($row['idProfessor']);
+            $professor->setIdProfessor($row['idProfessor']);
             $professor->setNome($row['nome']);
             $professor->setDataNascimento($row['dataNascimento']);
             $professor->setSexo($row['sexo']);
@@ -56,7 +56,7 @@
             $professor->setCelular($row['celular']);
             $professor->setCep($row['cep']);
             $professor->setEstado($row['estado']);
-            $professor->setCidade($row['eidade']);
+            $professor->setCidade($row['cidade']);
             $professor->setEndereco($row['endereco']);
             $professor->setEmail($row['email']);
             $professor->setSenha($row['senha']);
@@ -78,7 +78,7 @@
         public function update(Professor $professor)
         {
             try {
-                $sql = "UPDATE professor set
+                $sql = "UPDATE professor SET
                     
                     idProfessor=:idProfessor,
                     nome=:nome,
@@ -92,14 +92,16 @@
                     cidade=:cidade,
                     endereco=:endereco,
                     email=:email,
-                    eenha=:senha
+                    senha=:senha
                                 
                     WHERE idProfessor = :idProfessor";
                 $p_sql = Conexao::getConexao()->prepare($sql);
+                $p_sql->bindValue(":idProfessor", $professor->getIdProfessor());
                 $p_sql->bindValue(":nome", $professor->getNome());
                 $p_sql->bindValue(":dataNascimento", $professor->getDataNascimento());
                 $p_sql->bindValue(":sexo", $professor->getSexo());
                 $p_sql->bindValue(":cpf", $professor->getCpf());
+                $p_sql->bindValue(":cref", $professor->getCref());
                 $p_sql->bindValue(":celular", $professor->getCelular());
                 $p_sql->bindValue(":cep", $professor->getCep());
                 $p_sql->bindValue(":estado", $professor->getEstado());

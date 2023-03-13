@@ -40,7 +40,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM anamnese ORDER BY idAnamnese ASC";
+                $sql = "SELECT alunos.nome, anamnese.* FROM anamnese, alunos WHERE anamnese.idAluno = alunos.idAluno";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
