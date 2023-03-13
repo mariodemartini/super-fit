@@ -22,9 +22,6 @@ include_once('include/sidebar.html');
                             <a class="btn btn-info btn-block" href="buscar-aluno.php"><button type="button" class="btn btn-info btn-lg btn-block">PESQUISAR ALUNO</button></a>
                         </div> 
                     </div>
-                    <div class="mt-4 mb-0">
-                        <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
-                    </div>
                 </div>
             </div>
         </div>
