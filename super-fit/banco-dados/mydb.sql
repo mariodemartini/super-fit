@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 11/03/2023 às 15:10
+-- Tempo de geração: 13/03/2023 às 16:18
 -- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
 -- Versão do PHP: 8.1.2-1ubuntu2.11
 
@@ -53,7 +53,8 @@ CREATE TABLE `alunos` (
 --
 
 INSERT INTO `alunos` (`idAluno`, `nome`, `dataNascimento`, `idade`, `sexo`, `cpf`, `rg`, `telefone`, `celular`, `cep`, `estado`, `cidade`, `endereco`, `email`, `senha`, `dataCadastro`) VALUES
-(1, 'Cadastro Teste', '2000-01-01', 23, 'M', '111.111.111-11', '11.111.111-1', '36081111', '(19)99999-9999', '13720-000', 'SP', 'São José do Rio Pardo', 'Rua Central, 01, Centro', 'teste@teste.com', '1234', '2023-03-10');
+(1, 'Cadastro Teste', '2000-01-01', 23, 'M', '111.111.111-11', '11.111.111-1', '36081111', '(19)99999-9999', '13720-000', 'SP', 'São José do Rio Pardo', 'Rua Central, 01, Centro', 'teste@teste.com', '1234', '2023-03-10'),
+(2, 'Ana Silva', '1995-08-15', 27, 'F', '222222222-22', '22222222-2', '36087777', '(19)988887777', '13720-000', 'SP', 'São José do Rio Pardo', 'Rua Rio Pardo, 100, Centro', 'ana@teste.com', '1234', '2023-03-11');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,8 @@ CREATE TABLE `anamnese` (
 --
 
 INSERT INTO `anamnese` (`idAnamnese`, `atividade`, `objetivo`, `fumante`, `alcool`, `historicoFam`, `hipertensao`, `colesterol`, `diabetes`, `cardiaco`, `cirurgia`, `fratura`, `lesao`, `dor`, `movimentos`, `artrite`, `medicamentos`, `outros`, `alimentacao`, `dataCadastro`, `idAluno`) VALUES
-(1, 'Não', 'Saúde', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', NULL, 1);
+(1, 'Não', 'Saúde', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', NULL, 1),
+(2, 'Não', 'Emagrecimento', 'Não', 'Sim, final de semana', 'diabetes', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim, nas costas', 'Não', 'Não', 'Anticoncepcional', 'Não', 'Ruins', '2023-03-13', 2);
 
 -- --------------------------------------------------------
 
@@ -267,23 +269,47 @@ INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
 (163, 'OMB', 'DESENVOLVIMENTO TRILHO FRENTE '),
 (164, 'OMB', 'DESENVOLVIMENTO TRILHO ATRAS  '),
 (165, 'OMB', 'DESENVOLVIMENTO BARRA FRENTE '),
-(166, 'OMB', 'DESNVOLVIMENTO BARRA ATRAS'),
+(166, 'OMB', 'DESENVOLVIMENTO BARRA ATRAS'),
 (167, 'OMB', 'DESNVOLVIMENTO ARNOLD '),
 (168, 'OMB', 'ELEVAÇAO LATERAL HALTER'),
 (169, 'OMB', 'ELEVAÇAO LATERAL ALTERNADA'),
-(170, 'OMB', 'ELEVAÇAO  LATERAL CROSS SIMULT '),
+(170, 'OMB', 'ELEVAÇAO  LATERAL CROSS'),
 (171, 'OMB', 'ELEVAÇAO FRONTAL '),
 (172, 'OMB', 'ELEVAÇAO FRONTAL NEUTRA '),
 (173, 'OMB', 'ELEVAÇAO FRONTAL BARRA RETA'),
 (174, 'OMB', 'ELEVAÇAO FRONTAL BARRA ROMANA '),
 (175, 'OMB', 'ELEVAÇAO FRONTAL CROSS'),
 (176, 'OMB', 'REMADA ALTA CROSS'),
-(177, 'OMB', 'REMADA ALTA HALDER'),
+(177, 'OMB', 'REMADA ALTA HALTER'),
 (178, 'OMB', 'REMADA ALTA BARRA'),
 (179, 'OMB', 'REMADA ALTA UNILATERAL'),
 (180, 'OMB', 'ELEVAÇAO DE OMBRO BARRA'),
 (181, 'OMB', 'ELEVAÇAO DE OMBRO CROSS'),
-(182, 'OMB', 'ELEVAÇAO DE OMBRO HALTER');
+(182, 'OMB', 'ELEVAÇAO DE OMBRO HALTER'),
+(183, 'ABD', 'RETO PÉS NO CHÃO'),
+(184, 'ABD', 'RETO PERNAS SUSPENSAS'),
+(185, 'ABD', 'RETO BOLA'),
+(186, 'ABD', 'RETO BOZU'),
+(187, 'ABD', 'OBLIQUO CRUZADO'),
+(188, 'ABD', 'OBLIQUO ALTERNADO'),
+(189, 'ABD', 'OBLIQUO BOLA'),
+(190, 'ABD', 'OBLIQUO BOZU'),
+(191, 'ABD', 'ELEVACAO DE PERNAS'),
+(192, 'ABD', 'REMADOR'),
+(193, 'ABD', 'DECLINADO'),
+(194, 'ABD', 'DECLINADO ALTERNADO'),
+(195, 'ABD', 'PARALELAS'),
+(196, 'ABD', 'PARALELAS ALTERNADO'),
+(197, 'ABD', 'PRANCHA'),
+(198, 'ABD', 'PRANCHA BOLA'),
+(199, 'ABD', 'PRANCHA BOZU'),
+(200, 'ABD', 'PRANCHA 2 APOIOS'),
+(201, 'ABD', 'PRANCHA LATERAL'),
+(202, 'EST', 'ESTEIRA'),
+(203, 'BIK', 'BICICLETA'),
+(204, 'ELI', 'ELIPTICO'),
+(205, 'BIK', 'ARIBIKE'),
+(206, 'REM', 'REMO');
 
 -- --------------------------------------------------------
 
@@ -330,7 +356,8 @@ CREATE TABLE `medidas` (
 --
 
 INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `imc`, `rcq`, `percentGord`, `massaGorda`, `massaMagra`, `idAluno`) VALUES
-(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 30.8642, 0.909091, 24.2648, 24.2648, 75.7352, 1);
+(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 30.8642, 0.909091, 24.2648, 24.2648, 75.7352, 1),
+(3, '2023-03-13', 75, 1.65, 70, '120/80', 80, 85, 85, 100, 30, 30, 25, 25, 65, 65, 35, 35, 20, 30, 35, 40, 30, 20, 35, 27.55, 0.85, 35.49, 26.62, 48.38, 2);
 
 -- --------------------------------------------------------
 
@@ -359,7 +386,7 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Mario Henrique Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22');
+(1, 'Mario H. Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22');
 
 -- --------------------------------------------------------
 
@@ -769,7 +796,78 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 (387, 'AVANCADO', 'TRANS-RESIST', '2X8, 20 - 45\" - ONDA', '80'),
 (388, 'AVANCADO', 'TRANS-RESIST', '2X10, 15 - 45\" - ONDA', '70'),
 (389, 'AVANCADO', 'TRANS-RESIST', '2X10, 20 - 45\" - ONDA', '70'),
-(390, 'AVANCADO', 'TRANS-RESIST', '2X6, 20 - 45\" - ONDA', '80');
+(390, 'AVANCADO', 'TRANS-RESIST', '2X6, 20 - 45\" - ONDA', '80'),
+(391, 'INICIANTE', 'ADAPTACAO', '10 min CONTINUO', '50'),
+(392, 'INICIANTE', 'ADAPTACAO', '15 min CONTINUO', '50'),
+(393, 'INICIANTE', 'ADAPTACAO', '20 min CONTINUO', '50'),
+(394, 'INICIANTE', 'ADAPTACAO', '25 min CONTINUO', '50'),
+(395, 'INICIANTE', 'ADAPTACAO', '30 min CONTINUO', '50'),
+(396, 'INICIANTE', 'RESISTENCIA', '30 min CONTINUO', '60'),
+(397, 'INICIANTE', 'RESISTENCIA', '40 min CONTINUO', '60'),
+(398, 'INICIANTE', 'RESISTENCIA', '50 min CONTINUO', '60'),
+(399, 'INICIANTE', 'RESISTENCIA', '60 min CONTINUO', '60'),
+(400, 'INICIANTE', 'HIIT', '5x – 30s Forte : 2min Fraco', '70'),
+(401, 'INICIANTE', 'HIIT', '8x – 30s Forte : 2min Fraco', '70'),
+(402, 'INICIANTE', 'HIIT', '5x – 30s Forte : 1m30s Fraco', '70'),
+(403, 'INICIANTE', 'HIIT', '8x – 30s Forte : 1m30s Fraco', '70'),
+(404, 'INICIANTE', 'HIIT', '10x – 30s Forte : 1m Fraco', '70'),
+(405, 'INICIANTE', 'HIIT', '5x – 30s Forte : 1m Fraco', '70'),
+(406, 'INICIANTE', 'HIIT', '8x – 30s Forte : 1m Fraco', '70'),
+(407, 'INICIANTE', 'HIIT', '10x – 30s Forte : 1m Fraco', '70'),
+(408, 'INICIANTE', 'HIIT', '5x – 1m Forte : 2m Fraco', '70'),
+(409, 'INICIANTE', 'HIIT', '8x – 1m Forte : 2m Fraco', '70'),
+(410, 'INTERMEDIARIO', 'RESISTENCIA', '30 min CONTINUO', '70'),
+(411, 'INTERMEDIARIO', 'RESISTENCIA', '40 min CONTINUO', '70'),
+(412, 'INTERMEDIARIO', 'RESISTENCIA', '50 min CONTINUO', '60'),
+(413, 'INTERMEDIARIO', 'RESISTENCIA', '60 min CONTINUO', '60'),
+(414, 'INTERMEDIARIO', 'HIIT', '8x 30s : 30s', '80'),
+(415, 'INTERMEDIARIO', 'HIIT', '8x 30s : 1m', '80'),
+(416, 'INTERMEDIARIO', 'HIIT', '8x 30s : 2m', '80'),
+(417, 'INTERMEDIARIO', 'HIIT', '8x 1m : 1m', '80'),
+(418, 'INTERMEDIARIO', 'HIIT', '8x 1m : 30s', '80'),
+(419, 'INTERMEDIARIO', 'HIIT', '8x 2m : 1m', '80'),
+(420, 'INTERMEDIARIO', 'HIIT', '8x 2m : 30s', '80'),
+(421, 'INTERMEDIARIO', 'HIIT', '10x 30s : 30s', '80'),
+(422, 'INTERMEDIARIO', 'HIIT', '10x 30s : 1m', '80'),
+(423, 'INTERMEDIARIO', 'HIIT', '10x 30s : 2m', '80'),
+(424, 'INTERMEDIARIO', 'HIIT', '10x 1m : 1m', '80'),
+(425, 'INTERMEDIARIO', 'HIIT', '10x 1m : 30s', '80'),
+(426, 'INTERMEDIARIO', 'HIIT', '10x 2m : 1m', '80'),
+(427, 'INTERMEDIARIO', 'HIIT', '10x 2m : 30s', '80'),
+(428, 'INTERMEDIARIO', 'HIIT', '5x 45s : 2m passivo', '80'),
+(429, 'INTERMEDIARIO', 'HIIT', '5x 45s : 2m', '80'),
+(430, 'INTERMEDIARIO', 'HIIT', '5x 1m : 3m passivo', '80'),
+(431, 'INTERMEDIARIO', 'HIIT', '5x 1m : 3m', '80'),
+(432, 'INTERMEDIARIO', 'RECUPERATIVO', '15 min CONTINUO', '50'),
+(433, 'INTERMEDIARIO', 'RECUPERATIVO', '20 min CONTINUO', '50'),
+(434, 'INTERMEDIARIO', 'RECUPERATIVO', '25 min CONTINUO', '50'),
+(435, 'INTERMEDIARIO', 'RECUPERATIVO', '30 min CONTINUO', '50'),
+(436, 'AVANCADO', 'RESISTENCIA', '30 min CONTINUO', '70'),
+(437, 'AVANCADO', 'RESISTENCIA', '40 min CONTINUO', '70'),
+(438, 'AVANCADO', 'RESISTENCIA', '50 min CONTINUO', '60'),
+(439, 'AVANCADO', 'RESISTENCIA', '60 min CONTINUO', '60'),
+(440, 'AVANCADO', 'HIIT', '10x 30s : 30s', '80'),
+(441, 'AVANCADO', 'HIIT', '10x 30s : 1m', '80'),
+(442, 'AVANCADO', 'HIIT', '10x 30s : 2m', '80'),
+(443, 'AVANCADO', 'HIIT', '10x 1m : 1m', '80'),
+(444, 'AVANCADO', 'HIIT', '8x 1m : 30s', '80'),
+(445, 'AVANCADO', 'HIIT', '10x 2m : 1m', '80'),
+(446, 'AVANCADO', 'HIIT', '8x 2m : 30s', '80'),
+(447, 'AVANCADO', 'HIIT', '12x 30s : 30s', '80'),
+(448, 'AVANCADO', 'HIIT', '12x 30s : 1m', '80'),
+(449, 'AVANCADO', 'HIIT', '10x 30s : 2m', '80'),
+(450, 'AVANCADO', 'HIIT', '10x 1m : 1m', '80'),
+(451, 'AVANCADO', 'HIIT', '10x 1m : 30s', '80'),
+(452, 'AVANCADO', 'HIIT', '10x 2m : 1m', '80'),
+(453, 'AVANCADO', 'HIIT', '10x 2m : 30s', '80'),
+(454, 'AVANCADO', 'HIIT', '5x 45s : 2m passivo', '80'),
+(455, 'AVANCADO', 'HIIT', '5x 45s : 2m', '80'),
+(456, 'AVANCADO', 'HIIT', '10x 1m : 3m passivo', '80'),
+(457, 'AVANCADO', 'HIIT', '10x 1m : 3m', '80'),
+(458, 'AVANCADO', 'RECUPERATIVO', '15 min CONTINUO', '50'),
+(459, 'AVANCADO', 'RECUPERATIVO', '20 min CONTINUO', '50'),
+(460, 'AVANCADO', 'RECUPERATIVO', '25 min CONTINUO', '50'),
+(461, 'AVANCADO', 'RECUPERATIVO', '30 min CONTINUO', '50');
 
 -- --------------------------------------------------------
 
@@ -810,7 +908,8 @@ CREATE TABLE `testeVO2` (
 --
 
 INSERT INTO `testeVO2` (`idTesteVO2`, `dataTeste`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, 56, 1);
+(1, '2023-03-10', 6, 16, '60', '', 20, 9, 56, 1),
+(2, '2023-03-11', 6, 17, '60', '190', 20, 10, 60, 1);
 
 -- --------------------------------------------------------
 
@@ -901,25 +1000,25 @@ ALTER TABLE `treino`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `anamnese`
 --
 ALTER TABLE `anamnese`
-  MODIFY `idAnamnese` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAnamnese` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `exercicios`
 --
 ALTER TABLE `exercicios`
-  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
 --
 -- AUTO_INCREMENT de tabela `medidas`
 --
 ALTER TABLE `medidas`
-  MODIFY `idMedidas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idMedidas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -931,7 +1030,7 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT de tabela `series`
 --
 ALTER TABLE `series`
-  MODIFY `idSerie` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=391;
+  MODIFY `idSerie` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=462;
 
 --
 -- AUTO_INCREMENT de tabela `testeForca`
@@ -943,7 +1042,7 @@ ALTER TABLE `testeForca`
 -- AUTO_INCREMENT de tabela `testeVO2`
 --
 ALTER TABLE `testeVO2`
-  MODIFY `idTesteVO2` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTesteVO2` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `treino`
