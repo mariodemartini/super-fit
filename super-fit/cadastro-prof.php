@@ -127,7 +127,8 @@ $professordao = new ProfessorDAO();
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
-                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="cadastro.php">Voltar</a></button>
+                                <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
+                                <button type="button" class="btn btn-primary btn-sm"><a class="btn btn-primary btn-block" href="buscar-prof.php">Buscar</a></button>
                             </div>
                             <br>
                         </form>

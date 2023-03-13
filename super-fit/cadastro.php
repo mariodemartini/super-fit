@@ -20,17 +20,6 @@ include_once('include/sidebar.html');
 
                         <div class="row mb-3">
                             <a class="btn btn-info btn-block" href="buscar-aluno.php"><button type="button" class="btn btn-info btn-lg btn-block">PESQUISAR ALUNO</button></a>
-                        </div>
-
-                        <br><br>
-
-
-                        <div class="row mb-3">
-                        <a class="btn btn-success btn-block" href="cadastro-prof.php"><button type="button" class="btn btn-success btn-lg btn-block">NOVO PROFESSOR</button></a>
-                        </div>
-
-                        <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="buscar-prof.php"><button type="button" class="btn btn-info btn-lg btn-block">PESQUISAR PROFESSOR</button></a>
                         </div> 
                     </div>
                     <div class="mt-4 mb-0">
