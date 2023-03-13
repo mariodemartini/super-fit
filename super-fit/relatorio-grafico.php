@@ -11,13 +11,7 @@ include_once('include/sidebar.html');
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">GRÁFICO DE EVOLUÇÃO</h3></div>
-                     <!-- Div menu -->
-                     <div class="card-header text-center">
-                        <a class="btn btn-info btn-block" href="relatorio-avaliacao.php"><button type="button" class="btn btn-info btn-lg">COMPARATIVO</button></a>
                         
-                        <a class="btn btn-info btn-block" href="relatorio-grafico.php"><button type="button" class="btn btn-info btn-lg">GRÁFICO</button></a>
-                        
-                    </div>
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
@@ -58,7 +52,7 @@ include_once('include/sidebar.html');
                             <!-- Div dos botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <!-- <button type="button" class="btn btn-primary"><a class="btn btn-primary btn-block" href="#">Salvar</a></button> -->
-                                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>
+                                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="relatorios.php">Voltar</a></button>
                             </div>
                         </form>
                     </div>
