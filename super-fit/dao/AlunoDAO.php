@@ -49,7 +49,7 @@
         }
 
         private function listaAlunos($row) {
-            $aluno = new aluno();
+            $aluno = new Aluno();
             $aluno->setIdAluno($row['idAluno']);
             $aluno->setNome($row['nome']);
             $aluno->setDataNascimento($row['dataNascimento']);
