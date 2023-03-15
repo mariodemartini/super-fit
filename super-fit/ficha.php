@@ -46,7 +46,7 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
+                                            <legend class="col-form-label col-sm-7 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="xpMusc" id="exampleRadios1" value="1" checked>
                                                 <label class="form-check-label" for="exampleRadios1">Iniciante</label>
@@ -70,7 +70,7 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
+                                            <legend class="col-form-label col-sm-7 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="faseMusc" id="exampleRadios1" value="adaptacao">
                                                 <label class="form-check-label" for="exampleRadios1">Adaptação</label>
@@ -153,7 +153,7 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Nível de treino:</legend>
+                                            <legend class="col-form-label col-sm-7 pt-0">Nível de treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="xpAer" id="exampleRadios1" value="1" checked>
                                                 <label class="form-check-label" for="exampleRadios1">Iniciante</label>
@@ -177,7 +177,7 @@ include_once('include/sidebar.html');
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
-                                            <legend class="col-form-label col-sm-5 pt-0">Fase do treino:</legend>
+                                            <legend class="col-form-label col-sm-7 pt-0">Fase do treino:</legend>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="faseAer" id="gridRadios" value="adaptacao">
                                                 <label class="form-check-label" for="gridRadios2">Adaptação</label>

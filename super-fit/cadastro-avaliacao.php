@@ -738,7 +738,7 @@ $testevo2dao = new TesteVO2DAO();
                                         </div>
                                         <!-- Linha dados de repouso -->
                                         <div class="row mb-3">
-                                            <h4>Peitoral</h4>
+                                            <h4 class="text-left">Selecione o exercicio</h4>
                                             <div class="form-group col-md-3 text-left">
                                                 <select class="form-control" id="exercicioPeito" name="idExercicio" type="number">
                                                     <option value="">Escolha</option>
@@ -764,7 +764,7 @@ $testevo2dao = new TesteVO2DAO();
                                         <br>
                                         <div class="row mb-3">
                                             <div class="form-group col-md-4 text-left">
-                                                <label for="inputTempo" class="col-sm-6 col-form-label">Carga Inicial</label>
+                                                <label for="inputTempo" class="col-sm-7 col-form-label">Carga Inicial</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputTempo" placeholder="" name="cargaInicial">
                                                 </div>
