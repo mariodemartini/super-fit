@@ -35,14 +35,6 @@ $testevo2dao = new TesteVO2DAO();
 <main>
     <div class="container-fluid px-4 text-center">
         <h1 class="card-header mt-4">AVALIÇÃO FÍSICA</h1>
-        <!-- <div class="card mb-4">
-            <div class="card-body">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div> -->
         <br>
         <div class="card mb-4">
             <!-- Inicio tabela -->
@@ -142,8 +134,6 @@ $testevo2dao = new TesteVO2DAO();
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <br>
-                                            <!-- Campo de atividade fisica -->
                                             <div class="col-md-10">
                                                 <label for="inputData">OBJETIVOS:</label>
                                                 <input type="text" class="form-control" id="inputAtividade" name="objetivo">
@@ -153,8 +143,7 @@ $testevo2dao = new TesteVO2DAO();
                                             <!-- Campo de atividade fisica -->
                                             <div class="col-md-10">
                                                 <label for="inputData">PRATICA ATIVADE FÍSICA? QUANTO TEMPO?</label>
-                                                <input type="text" class="form-control" id="inputAtividade"
-                                                    name="atividade">
+                                                <input type="text" class="form-control" id="inputAtividade" name="atividade">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -593,13 +582,13 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Linha dados de repouso -->
                                         <div class="row mb-3">
                                             <h4>Dados Iniciais</h4>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputVelInicio" class="col-sm-8 col-form-label">Vel. Inicio</label>
+                                            <div class="form-group col-md-3 text-left">
+                                                <label for="inputVelInicio" class="col-sm-8 col-form-label text-left">Vel. Inicio</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputVelInicio" placeholder="km/h" name="velocidadeInicial">
                                                 </div>
                                             </div>
-                                            <div class="form-group col-md-5">
+                                            <div class="form-group col-md-5 text-left">
                                                 <label for="inputFCRepouso" class="col-sm-8 col-form-label">FC Repouso</label>
                                                 <div class="col-sm-6">
                                                     <input type="number" class="form-control" id="inputFCRepouso" placeholder="bpm" name="fcInicial">
@@ -610,8 +599,7 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Dados do teste -->
                                         <div class="row mb-3">
                                             <h4>Teste</h4>
-                                            <!-- Coluna tempo -->
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-3 text-left">
                                                 <label for="inputTempo" class="col-sm-5 col-form-label">Tempo</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
@@ -627,7 +615,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 </div>
                                             </div>
                                             <!-- Coluna velocidade -->
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-3 text-left">
                                                 <label for="inputVel" class="col-sm- col-form-label">Velocidade</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputVel" placeholder="km/h" name="velocidadeFinal">
@@ -643,7 +631,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 </div>
                                             </div>
                                             <!-- Coluna frequencia cardiaca -->
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-3 text-left">
                                                 <label for="inputFC" class="col-sm-8 col-form-label">F.C.</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputFC" placeholder="bpm" name="fcFinal">
@@ -659,7 +647,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 </div>
                                             </div>
                                             <!-- Coluna esforço -->
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-3 text-left">
                                                 <label for="inputVelInicio" class="col-sm-8 col-form-label">Esforço</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="inputVelInicio" placeholder="0-10" name="esforcoTeste">
@@ -704,288 +692,87 @@ $testevo2dao = new TesteVO2DAO();
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="controller/TesteForcaController.php" method="POST">
-                                    <div>
+                                <div>
+                                    <!-- form -->
+                                    <form action="controller/TesteForcaController.php" method="POST">
+									<div>
+										<div class="row mb-3">
+											<div class="col-md-3">
+												<div class="form-floating mb-3 mb-md-3">
+													<input class="form-control" id="inputNome" type="date" placeholder="nome"
+														name="dataTeste"/>
+													<label for="inputData">Data</label>
+												</div>
+											</div>
+										</div>
+										<!-- Campo Nome -->
+										<div class="row mb-3">
+											<div class="col-md-2">
+												<div class="form-floating mb-3 mb-md-3">
+													<input class="form-control" id="inputNome" type="number" placeholder="idAluno"
+														name="idAluno" value="<?= $aluno->getIdAluno() ?>" require />
+													<label for="inputNome">ID</label>
+												</div>
+											</div>
+											<div class="col-md-7">
+												<div class="form-floating mb-3 mb-md-3">
+													<input class="form-control" id="inputNome" type="text" placeholder="nome"
+														name="nome" value="<?= $aluno->getNome() ?>" require />
+													<label for="inputNome">Nome Completo</label>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-floating mb-3 mb-md-3">
+													<input class="form-control" id="inputIdade" type="text" placeholder="Sexo"
+														name="idade" value="<?= $aluno->getIdade() ?>" require />
+													<label for="inputIdade">Idade</label>
+												</div>
+											</div>
+										</div>
+                                        <!-- Linha de Informação inicial -->
                                         <div class="row mb-3">
-                                            <div class="col-md-3">
-                                                <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="date" placeholder="nome"
-                                                        name="dataCadastro" />
-                                                    <label for="inputData">Data</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Campo Nome -->
-                                        <div class="row mb-3">
-                                            <div class="col-md-2">
-                                                <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="number" placeholder="idAluno"
-                                                        name="idAluno" value="<?= $aluno->getIdAluno() ?>" require />
-                                                    <label for="inputNome">ID</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome"
-                                                        name="nome" value="<?= $aluno->getNome() ?>" require />
-                                                    <label for="inputNome">Nome Completo</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo"
-                                                        name="idade" value="<?= $aluno->getIdade() ?>" require />
-                                                    <label for="inputIdade">Idade</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <h3>Descrição:</h3>
-                                            <p>Realizar aquecimento no exercicio com carga leve.</p>
-                                            <p>O aluno tem 3 tentativas para realizar 1 repetição máxima, com descanso de 3 a 5
-                                                minutos.</p>
+                                            <h3>TESTE FORÇA MAXIMA</h3>
+                                            <p>Realizar aquecimento no exercicio com carga leve.</p> 
+                                            <p>O aluno tem 3 tentativas para realizar 1 repetição máxima, com descanso de 3 a 5 minutos.</p>
                                             <p>Acrescentar carga a cada tentativa completa.</p>
                                         </div>
-                                        <!-- TESTE PEITORAL -->
+                                        <!-- Linha dados de repouso -->
                                         <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Peitoral</h4>
-                                                <select class="form-control" id="exercicioPeito" name="exercicio">
-                                                    <option>Escolha</option>
+                                            <h4>Peitoral</h4>
+                                            <div class="form-group col-md-3 text-left">
+                                                <select class="form-control" id="exercicioPeito" name="idExercicio" type="number">
+                                                    <option value="">Escolha</option>
+                                                    <option value="1">Supino Reto</option>
+                                                    <option value="13">Fly Reto</option>
+                                                    <option value="16">Crucifixo Reto</option>
+                                                    <option value="24">Puxada Frente Aberta</option>
+                                                    <option value="38">Remada Maquina Pronada</option>
+                                                    <option value="44">Remada Baixa Fechado</option>
+                                                    <option value="96">Agachamento Livre</option>
+                                                    <option value="105">Leg Press 45°</option>
+                                                    <option value="124">Mesa Flexora</option>
+                                                    <option value="128">Cadeira Extensora</option>
+                                                    <option value="69">Rosca Direta W</option>
+                                                    <option value="142">Triceps Pulley Reto</option>
+                                                    <option value="143">Triceps Pulley W</option>
+                                                    <option value="161">Desenvolvimento Maquina</option>
+                                                    <option value="168">Elevação Lateral</option>
+                                                    <option value="171">Elevação Frontal</option>
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg" name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                    name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                    name="cargaFinal">
-                                                </div>
                                             </div>
                                         </div>
                                         <br>
-                                        <!-- TESTE COSTAS -->
                                         <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Costas</h4>
-                                                <select class="form-control" id="exercicioCostas" name="exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
+                                            <div class="form-group col-md-4 text-left">
+                                                <label for="inputTempo" class="col-sm-6 col-form-label">Carga Inicial</label>
                                                 <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
+                                                    <input type="number" class="form-control" id="inputTempo" placeholder="" name="cargaInicial">
                                                 </div>
                                             </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
+                                            <div class="form-group col-md-4 text-left">
+                                                <label for="inputTempo" class="col-sm-6 col-form-label">Carga Final</label>
                                                 <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <!-- TESTE PERNA -->
-                                        <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Coxa</h4>
-                                                <select class="form-control" id="exercicioPerna" name="exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <!-- TESTE BICEPS -->
-                                        <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Bíceps</h4>
-                                                <select class="form-control" id="exercicioBiceps" name="exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <!-- TESTE TRICEPS -->
-                                        <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Tríceps</h4>
-                                                <select class="form-control" id="exercicioTriceps" name="exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <!-- TESTE OMBRO -->
-                                        <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Ombro</h4>
-                                                <select class="form-control" id="exercicioOmbro" name="exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <!-- TESTE GLUTEO -->
-                                        <div class="row mb-3">
-                                            <!-- Seleção exercicio -->
-                                            <div class="form-group col-md-3">
-                                                <h4>Glúteo</h4>
-                                                <select class="form-control" id="exercicioGluteo=" exercicio">
-                                                    <option>Escolha</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- Linha tentativas -->
-                                        <div class="row mb-3">
-                                            <div class="form-group col-md-3">
-                                                <label for="inputPrimeira" class="col-sm-9 col-form-label">1ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputPrimeira" placeholder="kg"
-                                                        name="cargaInicial">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputSegunda" class="col-sm-9 col-form-label">2ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputSegunda" placeholder="kg"
-                                                        name="cargaFinal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="inputTerceira" class="col-sm-9 col-form-label">3ª Tentativa</label>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="inputTerceira" placeholder="kg"
-                                                        name="cargaFinal">
+                                                    <input type="number" class="form-control" id="inputTempo" placeholder="" name="cargaFinal">
                                                 </div>
                                             </div>
                                         </div>
@@ -997,12 +784,17 @@ $testevo2dao = new TesteVO2DAO();
                                         </div>
                                     </div>
                                 </form>
+                                    <!-- form fim -->
+
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach ?>
         </div>
+        
 
         <!-- Modal Resultado -->
         <div>

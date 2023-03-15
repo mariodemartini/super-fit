@@ -4,10 +4,11 @@
     {
         public function create(TesteForca $testeforca){
             try {
+                
                 $sql = "INSERT INTO testeForca (
                     dataTeste, cargaInicial, cargaFinal, idAluno, idExercicio)
                     VALUES (
-                    :dataTeste, :cargaInicial, :cargaFinal, :idAluno, :exercicio)";
+                    :dataTeste, :cargaInicial, :cargaFinal, :idAluno, :idExercicio)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":dataTeste", $testeforca->getDataTeste());
@@ -15,7 +16,7 @@
                 $p_sql->bindValue(":cargaFinal", $testeforca->getCargaFinal());
                 $p_sql->bindValue(":idAluno", $testeforca->getAluno());
                 $p_sql->bindValue(":idExercicio", $testeforca->getExercicio());
-
+                
                 return $p_sql->execute();
                 
             } catch (Exception $e) {

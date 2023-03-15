@@ -9,24 +9,24 @@
     $d = filter_input_array(INPUT_POST);
 
     if(isset($_POST['salvar'])){
-
-        $testeforca->setDataTeste($row['dataTeste']);
-        $testeforca->setCargaInicial($row['cargaInicial']);
-        $testeforca->setCargaFinal($row['cargaFinal']);
-        $testeforca->setAluno($row['idAluno']);
-        $testeforca->setExercicio($row['idExercicio']);
+        
+        $testeforca->setDataTeste($d['dataTeste']);
+        $testeforca->setCargaInicial($d['cargaInicial']);
+        $testeforca->setCargaFinal($d['cargaFinal']);
+        $testeforca->setAluno($d['idAluno']);
+        $testeforca->setExercicio($d['idExercicio']);
         
         $testeforcadao->create($testeforca);
 
-        header("Location: ../forca.php");
+        header("Location: ../cadastro-avaliacao.php");
     }
 
     else if (isset($_POST['editar'])) {
 
-        $testeforca->setDataTeste($row['dataTeste']);
-        $testeforca->setCargaInicial($row['cargaInicial']);
-        $testeforca->setCargaFinal($row['cargaFinal']);
-        $testeforca->setExercicio($row['idExercicio']);
+        $testeforca->setDataTeste($d['dataTeste']);
+        $testeforca->setCargaInicial($d['cargaInicial']);
+        $testeforca->setCargaFinal($d['cargaFinal']);
+        $testeforca->setExercicio($d['idExercicio']);
     
         $testeforcadao->update($testeforca);
     

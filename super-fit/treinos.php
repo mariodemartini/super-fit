@@ -14,12 +14,12 @@ include_once('include/sidebar.html');
                     <!-- Botões sub-menu treinos -->
                     <div class="card-body">
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="montagem.php"><button type="button" class="btn btn-info btn-lg btn-block">MONTAGEM DE TREINO</button></a>
+                            <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg btn-block">MONTAGEM DE TREINO</button></a>
                         </div>
                         
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                         <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg btn-block">FICHA DE TREINO</button></a>
-                        </div>
+                        </div> -->
 
                         <div class="row mb-3">
                         <a class="btn btn-info btn-block" href="novoexercicio.php"><button type="button" class="btn btn-info btn-lg btn-block">INCLUIR EXERCICIO/SERIE</button></a>
