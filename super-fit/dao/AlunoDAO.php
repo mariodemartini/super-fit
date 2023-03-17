@@ -123,7 +123,6 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
-
     }
 
 ?>

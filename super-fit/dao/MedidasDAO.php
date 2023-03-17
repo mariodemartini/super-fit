@@ -50,7 +50,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM medidas ORDER BY idMedidas ASC";
+                $sql = "SELECT * FROM medidas WHERE idAluno = :idAluno";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -102,7 +102,7 @@
 
         public function delete(Medidas $medidas){
             try {
-                $sql = "DELETE FROM medidas WHERE  idMedidas = :idMedidas";
+                $sql = "DELETE FROM medidas WHERE idMedidas = :idMedidas";
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":idMedidas", $medidas->getIdMedidas());
                 return $p_sql->execute();
@@ -172,6 +172,21 @@
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
+            }
+        }
+
+        public function resultado() {
+            try {
+                $sql = "SELECT alunos.nome, alunos.idade, alunos.sexo, medidas.idMedidas, medidas.peso, medidas.abdomen, medidas.imc, medidas.rcq, medidas.percentGord, medidas.massaGorda, medidas.massaMagra FROM alunos, medidas WHERE alunos.idAluno = medidas.idAluno";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaMedidas($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
             }
         }
         

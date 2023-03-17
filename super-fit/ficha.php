@@ -3,6 +3,14 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/Aluno.php');
+include_once('./dao/AlunoDAO.php');
+include_once('./model/Medidas.php');
+include_once('./dao/MedidasDAO.php');
+
+$aluno = new Aluno();
+$alunodao = new AlunoDAO();
 ?>
 <main>
     <div class="container">
@@ -13,10 +21,15 @@ include_once('include/sidebar.html');
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE TREINO</h3></div>
                     <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                        </div>
+                        <div class="form-group mt-3 col-md-6">
+                            <!-- <label for="aluno">Aluno</label> -->
+                            <select class="form-control custom-select" id="aluno" name="idAluno">
+                                <option value="">Selecione o aluno</option>
+                                <?php foreach ($alunodao->read() as $aluno): ?>
+                                    <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>  
                     </form>
                     <!-- Div do formulario principal -->
                     <div class="card-body">

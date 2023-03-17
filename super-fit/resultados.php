@@ -3,6 +3,17 @@
 include_once('include/header.html');
 include_once('include/navbar.html');
 include_once('include/sidebar.html');
+include_once('./conexao/Conexao.php');
+include_once('./model/Aluno.php');
+include_once('./dao/AlunoDAO.php');
+include_once('./model/Medidas.php');
+include_once('./dao/MedidasDAO.php');
+
+$aluno = new Aluno();
+$alunodao = new AlunoDAO();
+
+$medidas = new Medidas();
+$medidasdao = new MedidasDAO();
 ?>
 <main>
     <div class="container">
@@ -11,47 +22,60 @@ include_once('include/sidebar.html');
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">RESULTADOS</h3></div>
-
-                    <!-- Div barra de pesquisa -->
-                    <form class="card-header inline-block form-inline mb-3">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                    
+                    <div class="card mb-4">
+                        <div class="form-group mt-3 col-md-6">
+                            <!-- <label for="aluno">Aluno</label> -->
+                            <select class="form-control custom-select" id="aluno" name="idAluno">
+                                <option value="">Selecione o aluno</option>
+                                <?php foreach ($alunodao->read() as $aluno): ?>
+                                    <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
-                    </form>
+                    </div>                  
+
                     <!-- Div do conteudo principal -->
                     <div class="card-body">
                         <form>
                             <!-- Div data e idade -->
                             <div class="row mb-3">
-                                <div class="form-group col-md-2">
-                                    <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData">
+                                <div class="form-group col-md-1">
+                                    <label for="inputNome">ID</label>
+                                    <input type="text" class="form-control" id="inputId" name="idAluno">
                                 </div>
                                 <div class="form-group col-md-7">
                                     <label for="inputNome">NOME</label>
-                                    <input type="text" class="form-control" id="inputNome">
+                                    <input type="text" class="form-control" id="inputNome" name="nome">
                                 </div>
                                 <div class="form-group col-sm-1">
                                     <label for="inputIdade">IDADE</label>
-                                    <input type="number" class="form-control" id="inputIdade">
+                                    <input type="number" class="form-control" id="inputIdade" nome="idade">
+                                </div>
+                                <div class="form-group col-sm-1">
+                                    <label for="inputIdade">SEXO</label>
+                                    <input type="text" class="form-control" id="inputSexo" name="sexo">
                                 </div>
                             </div>
+                            
                             <!-- Div titulos das colunas -->
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-2"></div>
+                                <ul class="col-sm-2 list-group">
+                                    <li class="list-group-item">DATA</li>
+                                </ul>
+                                <div class="col-sm-2">
+                                    <input class="form-control p-2" type="date" placeholder="" name="dataCadastro">
+                                </div>
+                                <!-- <div class="col-sm-2"></div>
                                 <div class="col-sm-2 my-4 bg-dark text-white text-center">ATUAL</div>
-                                <div class="col-sm-2 my-4 bg-dark text-white text-center">DIFERENÇA</div>
-                                <div class="col-sm-2 my-4 bg-dark text-white text-center">CLASSIFICAÇÃO</div>
+                                <div class="col-sm-2 my-4 bg-dark text-white text-center">DIFERENÇA</div> -->
+                                <div class="col-sm-2 my-3 bg-dark text-white text-center">CLASSIFICAÇÃO</div>
                             </div>
                             <!-- Linha compativo peso -->
                             <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
                                     <li class="list-group-item">Peso (kg)</li>
                                 </ul>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
-                                </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
                                 </div>
@@ -68,9 +92,6 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg/m2">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg/m2">
-                                </div>
-                                <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
@@ -79,9 +100,6 @@ include_once('include/sidebar.html');
                                 <ul class="col-sm-2 list-group">
                                     <li class="list-group-item">Abdomen</li>
                                 </ul>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" placeholder="cm">
-                                </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" placeholder="cm">
                                 </div>
@@ -98,9 +116,6 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="number" placeholder="cm">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" placeholder="cm">
-                                </div>
-                                <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
@@ -109,9 +124,6 @@ include_once('include/sidebar.html');
                                 <ul class="col-sm-2 list-group">
                                     <li class="list-group-item">% Gordura</li>
                                 </ul>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="%">
-                                </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="%">
                                 </div>
@@ -128,9 +140,6 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
-                                </div>
-                                <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
@@ -139,9 +148,6 @@ include_once('include/sidebar.html');
                                 <ul class="col-sm-2 list-group">
                                     <li class="list-group-item">M. Magra (kg)</li>
                                 </ul>
-                                <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
-                                </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
                                 </div>
@@ -158,14 +164,12 @@ include_once('include/sidebar.html');
                                     <input class="form-control p-2" type="number" placeholder="bpm">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" placeholder="bpm">
-                                </div>
-                                <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
                             </div>
+                            
                             <!-- Linha compativo VO2 maximo -->
-                            <div class="row d-flex justify-content-center">
+                            <!-- <div class="row d-flex justify-content-center">
                                 <ul class="col-sm-2 list-group">
                                     <li class="list-group-item">VO²</li>
                                 </ul>
@@ -178,7 +182,7 @@ include_once('include/sidebar.html');
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Div dos botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
