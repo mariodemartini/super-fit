@@ -54,7 +54,7 @@
             try {
                 $sql = "DELETE FROM treino WHERE idTreino = :idTreino";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":idTreino", $medidas->getIdTreino());
+                $p_sql->bindValue(":idTreino", $treino->getIdTreino());
                 return $p_sql->execute();
             } catch (Exception $e) {
                 echo "Erro ao Excluir treino <br> $e <br>";

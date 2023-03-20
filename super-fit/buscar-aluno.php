@@ -67,7 +67,7 @@ $alunodao = new AlunoDAO();
                                         data-target="#editar><?= $aluno->getIdAluno() ?>">
                                         Editar
                                     </button>
-                                    <a href="controller/alunoController.php?del=<?= $aluno->getIdAluno() ?>">
+                                    <a href="controller/AlunoController.php?del=<?= $aluno->getIdAluno() ?>">
                                         <button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
                                 </td>
                             </tr>

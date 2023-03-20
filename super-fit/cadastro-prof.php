@@ -116,13 +116,6 @@ $professordao = new ProfessorDAO();
                                         <label for="inputPassword">Senha</label>
                                     </div>
                                 </div>
-                                <!-- Campo  confirmar senha -->
-                                <div class="col-md-3">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirmar senha" name="senha"/>
-                                        <label for="inputPasswordConfirm">Confirmar Senha</label>
-                                    </div>
-                                </div>
                             </div>
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">

@@ -26,23 +26,24 @@ $medidasdao = new MedidasDAO();
                     <div class="card mb-4">
                         <div class="form-group mt-3 col-md-6">
                             <!-- <label for="aluno">Aluno</label> -->
-                            <select class="form-control custom-select" id="aluno" name="idAluno">
+                            <!-- <select class="form-control custom-select" id="aluno" name="idAluno">
                                 <option value="">Selecione o aluno</option>
                                 <?php foreach ($alunodao->read() as $aluno): ?>
                                     <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
                                 <?php endforeach ?>
-                            </select>
+                            </select> -->
                         </div>
                     </div>                  
 
                     <!-- Div do conteudo principal -->
                     <div class="card-body">
-                        <form>
+                        <?php foreach ($medidasdao->read() as $medidas): ?>
+                        <form >
                             <!-- Div data e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-1">
                                     <label for="inputNome">ID</label>
-                                    <input type="text" class="form-control" id="inputId" name="idAluno">
+                                    <input type="text" class="form-control" id="inputId" name="idAluno" value="1" require>
                                 </div>
                                 <div class="form-group col-md-7">
                                     <label for="inputNome">NOME</label>
@@ -64,7 +65,7 @@ $medidasdao = new MedidasDAO();
                                     <li class="list-group-item">DATA</li>
                                 </ul>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="date" placeholder="" name="dataCadastro">
+                                    <input class="form-control p-2" type="date" placeholder="" name="dataCadastro" value="<?= $medidas->getDataCadastro() ?>" require>
                                 </div>
                                 <!-- <div class="col-sm-2"></div>
                                 <div class="col-sm-2 my-4 bg-dark text-white text-center">ATUAL</div>
@@ -77,7 +78,7 @@ $medidasdao = new MedidasDAO();
                                     <li class="list-group-item">Peso (kg)</li>
                                 </ul>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg" name="peso" value="<?= $medidas->getAluno() ?>" require>
                                 </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
@@ -89,7 +90,7 @@ $medidasdao = new MedidasDAO();
                                     <li class="list-group-item">IMC</li>
                                 </ul>
                                 <div class="col-sm-2">
-                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg/m2">
+                                    <input class="form-control p-2" type="number" step="0.01" placeholder="Kg/m2" name="imc" value="<?= $medidas->getImc() ?>" require>
                                 </div>
                                 <div class="col-sm-2">
                                     <input class="form-control p-2" type="text" placeholder="">
@@ -188,6 +189,7 @@ $medidasdao = new MedidasDAO();
                                 <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
                             </div>
                         </form>
+                        <?php endforeach ?>
                     </div>
                     <div class="card-footer text-center py-3">
                     </div>

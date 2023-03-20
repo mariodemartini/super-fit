@@ -50,7 +50,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM medidas WHERE idAluno = :idAluno";
+                $sql = "SELECT * FROM medidas WHERE idMedidas = idMedidas AND idAluno = :idAluno";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();

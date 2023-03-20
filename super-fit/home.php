@@ -1,8 +1,8 @@
 <!-- Include php cabeçalho e barras -->
 <?php
-include_once('include/header.html');
-include_once('include/navbar.html');
-include_once('include/sidebar.html');
+    include_once('include/header.html');
+    include_once('include/navbar.html');
+    include_once('include/sidebar.html');
 ?>
 <main>
     <!-- Titulo da pagina -->
