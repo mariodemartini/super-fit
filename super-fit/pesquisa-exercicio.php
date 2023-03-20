@@ -1,4 +1,3 @@
-<!-- Include php cabeçalho e menus -->
 <?php
 include_once('include/header.html');
 include_once('include/navbar.html');
@@ -49,7 +48,7 @@ $exerciciodao = new ExercicioDAO();
                     </tr>
                     <?php endforeach ?>
                 </tbody>
-            </table>
+            </table> 
         </div>
         <div class="col-sm-1 mt-4 mb-0">
             <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="novoexercicio.php">Voltar</a></button>
