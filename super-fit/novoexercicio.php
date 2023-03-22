@@ -1,8 +1,14 @@
 <!-- Include php rodapé e menus -->
 <?php
-include_once('include/header.html');
-include_once('include/navbar.html');
-include_once('include/sidebar.html');
+session_start();
+if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+    unset($_SESSION["email"]);
+    unset($_SESSION["senha"]);
+    header('Location: index.php');
+}
+include_once('include/header.php');
+include_once('include/navbar.php');
+include_once('include/sidebar.php');
 include_once('./conexao/Conexao.php');
 include_once('./model/Exercicio.php');
 include_once('./dao/ExercicioDAO.php');
@@ -100,5 +106,5 @@ $seriedao = new SerieDAO();
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php');
 ?>

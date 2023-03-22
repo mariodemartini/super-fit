@@ -1,8 +1,14 @@
 <!-- Include php cabeçalho e barras -->
 <?php
-    include_once('include/header.html');
-    include_once('include/navbar.html');
-    include_once('include/sidebar.html');
+    session_start();
+    if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+        unset($_SESSION["email"]);
+        unset($_SESSION["senha"]);
+        header('Location: index.php');
+    }
+    include_once('include/header.php');
+    include_once('include/navbar.php');
+    include_once('include/sidebar.php');
 ?>
 <main>
     <!-- Titulo da pagina -->
@@ -27,5 +33,5 @@
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php'); 
 ?>

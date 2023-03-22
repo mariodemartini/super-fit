@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="home.php">SUPER FIT</a>
@@ -17,7 +20,7 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="cadastro-prof.php">Professor</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="index.php">Sair</a></li>
+                <li><a class="dropdown-item" href="logout.php">Sair</a></li>
             </ul>
         </li>
     </ul>

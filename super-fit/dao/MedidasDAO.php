@@ -50,7 +50,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM medidas WHERE idMedidas = idMedidas AND idAluno = :idAluno";
+                $sql = "SELECT * FROM medidas WHERE idAluno = ':idAluno'";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -175,16 +175,26 @@
             }
         }
 
-        public function resultado() {
+        public function resultado(Medidas $medidas) {
             try {
-                $sql = "SELECT alunos.nome, alunos.idade, alunos.sexo, medidas.idMedidas, medidas.peso, medidas.abdomen, medidas.imc, medidas.rcq, medidas.percentGord, medidas.massaGorda, medidas.massaMagra FROM alunos, medidas WHERE alunos.idAluno = medidas.idAluno";
-                $result = Conexao::getConexao()->query($sql);
-                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
-                $f_lista = array();
-                foreach ($lista as $l) {
-                    $f_lista[] = $this->listaMedidas($l);
+                $sql = "SELECT alunos.idAluno, alunos.nome, alunos.sexo, alunos.idade, medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.abdomen, medidas.imc, medidas.rcq, medidas.percentGord, medidas.massaGorda, medidas.massaMagra FROM alunos, medidas WHERE alunos.idAluno = medidas.idAluno AND alunos.idAluno = ':idAluno'";
+                $p_sql = Conexao::getConexao()->query($sql);
+                $p_sql->bindValue(":idAluno", $medidas->getAluno());
+                while ($linha1 = $p_sql->fetch(PDO::FETCH_ASSOC)){
+                    echo $linha1["idAluno"];
+                    echo $linha1["nome"];
+                    echo $linha1["sexo"];
+                    echo $linha1["idade"];
+                    echo $linha1["idMedidas"];
+                    echo $linha1["dataCadastro"];
+                    echo $linha1["peso"];
+                    echo $linha1["abdomen"];
+                    echo $linha1["imc"];
+                    echo $linha1["rcq"];
+                    echo $linha1["percentGord"];
+                    echo $linha1["massaGorda"];
+                    echo $linha1["massaMagra"];
                 } 
-                return $f_lista;
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar Buscar Todos." . $e;
             }

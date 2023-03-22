@@ -1,8 +1,14 @@
 <!-- Include php cabeçalho e barras -->
 <?php
-include_once('include/header.html');
-include_once('include/navbar.html');
-include_once('include/sidebar.html');
+session_start();
+if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+    unset($_SESSION["email"]);
+    unset($_SESSION["senha"]);
+    header('Location: index.php');
+}
+include_once('include/header.php');
+include_once('include/navbar.php');
+include_once('include/sidebar.php');
 include_once('./conexao/Conexao.php');
 include_once('./model/Aluno.php');
 include_once('./dao/AlunoDAO.php');
@@ -50,8 +56,12 @@ $alunodao = new AlunoDAO();
                                 <!-- Campo sexo -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputSexo" type="text" placeholder="Sexo" name="sexo"/>
                                         <label for="inputSexo">Sexo</label>
+                                        <select class="form-control h-50" id="inputSexo" name="sexo" type="text" >
+                                            <option value=""></option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Feminino</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -89,28 +99,57 @@ $alunodao = new AlunoDAO();
                             </div>
                             <div class="row mb-3">
                                 <!-- Campo CEP -->
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputCep" type="text" placeholder="CEP" name="cep"/>
                                         <label for="inputCep">CEP</label>
                                     </div>
                                 </div>
                                 <!-- Campo estado -->
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputEstado" type="text" placeholder="Estado" name="estado"/>
                                         <label for="inputEstado">Estado</label>
+                                        <select class="form-control h-50" id="inputEstado" name="estado" type="text" >
+                                            <option value=""></option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
                                 <!-- Campo cidade -->
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputCidade" type="text" placeholder="Cidade" name="cidade"/>
                                         <label for="inputCidade">Cidade</label>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mb-3">
                                 <!-- Campo endereço -->
                                 <div class="col-md-8">
                                     <div class="form-floating">
@@ -119,10 +158,14 @@ $alunodao = new AlunoDAO();
                                     </div>
                                 </div>
                             </div>
-                            <!-- Campo email -->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" name="email"/>
-                                <label for="inputEmail">Email</label>
+                            <div class="row mb-3">
+                                <!-- Campo email -->
+                                <div class="col-md-8">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="inputEmail" type="email" placeholder="email" name="email"/>
+                                        <label for="inputEmail">Email</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row mb-3">
                                 <!-- Campo senha -->
@@ -148,5 +191,5 @@ $alunodao = new AlunoDAO();
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php');
 ?>

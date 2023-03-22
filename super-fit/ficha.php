@@ -1,8 +1,14 @@
 <!-- Include php rodapé e menus -->
 <?php
-include_once('include/header.html');
-include_once('include/navbar.html');
-include_once('include/sidebar.html');
+session_start();
+if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+    unset($_SESSION["email"]);
+    unset($_SESSION["senha"]);
+    header('Location: index.php');
+}
+include_once('include/header.php');
+include_once('include/navbar.php');
+include_once('include/sidebar.php');
 include_once('./conexao/Conexao.php');
 include_once('./model/Aluno.php');
 include_once('./dao/AlunoDAO.php');
@@ -31,7 +37,7 @@ $alunodao = new AlunoDAO();
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="form-group mt-3 col-md-6">
                             <!-- <label for="aluno">Aluno</label> -->
-                            <select class="form-control custom-select" id="aluno" name="idAluno">
+                            <select class="form-control custom-select w-75" id="aluno" name="idAluno">
                                 <option value="">Selecione o aluno</option>
                                 <?php foreach ($alunodao->read() as $aluno): ?>
                                     <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
@@ -41,7 +47,7 @@ $alunodao = new AlunoDAO();
                     </form>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
-                        <form>
+                        <form action="controller/TreinoController.php" method="POST">
                             <!-- Linha data e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-6">
@@ -17990,5 +17996,5 @@ $alunodao = new AlunoDAO();
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php');
 ?>
