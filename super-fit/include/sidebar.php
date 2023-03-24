@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
 ?>
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
@@ -23,10 +23,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-dumbbell"></i></div>
                         TREINOS
                     </a>
-                    <a class="nav-link" href="relatorios.php">
+                    <!-- <a class="nav-link" href="relatorios.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                         RELATÓRIOS
-                    </a>
+                    </a> -->
                 </div> 
             </div>
             <div class="sb-sidenav-footer">

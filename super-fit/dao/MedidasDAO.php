@@ -5,9 +5,9 @@
         public function create(Medidas $medidas){
             try {
                 $sql = "INSERT INTO medidas (
-                    dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, imc, rcq, percentGord, massaGorda, massaMagra, idAluno)
+                    dataCadastro, peso, altura, freqCard, pressaoArterial, torax, cintura, abdomen, quadril, bracoDireito, bracoEsquerdo, antebracoDireito, antebracoEsquerdo, coxaDireita, coxaEsquerda, panturrilhaDireita, panturrilhaEsquerda, peitoral, axilarMedia, abdominal, supraIliaca, subEscapular, tricipital, coxa, idAluno)
                     VALUES (
-                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :imc, :rcq, :percentGord, :massaGorda, :massaMagra, :idAluno)";
+                    :dataCadastro, :peso, :altura, :freqCard, :pressaoArterial, :torax, :cintura, :abdomen, :quadril, :bracoDireito, :bracoEsquerdo, :antebracoDireito, :antebracoEsquerdo, :coxaDireita, :coxaEsquerda, :panturrilhaDireita, :panturrilhaEsquerda, :peitoral, :axilarMedia, :abdominal, :supraIliaca, :subEscapular, :tricipital, :coxa, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
                 $p_sql->bindValue(":peso", $medidas->getPeso());
@@ -34,11 +34,6 @@
                 $p_sql->bindValue(":subEscapular", $medidas->getSubEscapular());
                 $p_sql->bindValue(":tricipital", $medidas->getTricipital());
                 $p_sql->bindValue(":coxa", $medidas->getCoxa());
-                $p_sql->bindValue(":imc", $medidas->getImc());
-                $p_sql->bindValue(":rcq", $medidas->getRcq());
-                $p_sql->bindValue(":percentGord", $medidas->getPercentGord());
-                $p_sql->bindValue(":massaGorda", $medidas->getMassaGorda());
-                $p_sql->bindValue(":massaMagra", $medidas->getMassaMagra());
                 $p_sql->bindValue(":idAluno", $medidas->getAluno());
                        
                 return $p_sql->execute();
@@ -50,7 +45,7 @@
 
         public function read() {
             try {
-                $sql = "SELECT * FROM medidas WHERE idAluno = ':idAluno'";
+                $sql = "SELECT * FROM medidas ORDER BY idMedidas ASC";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -90,11 +85,6 @@
             $medidas->setSubEscapular($row['subEscapular']);
             $medidas->setTricipital($row['tricipital']);
             $medidas->setCoxa($row['coxa']);
-            $medidas->setImc(($row['peso']), ($row['altura']));
-            $medidas->setRcq(($row['cintura']), ($row['quadril']));
-            $medidas->setPercentGord($row['sexo'], $row['idade']);
-            $medidas->setMassaGorda($row['peso']);
-            $medidas->setMassaMagra($row['peso'], $row['massaGorda']);
             $medidas->setAluno($row['idAluno']);
 
             return $medidas;
@@ -175,31 +165,114 @@
             }
         }
 
-        public function resultado(Medidas $medidas) {
+        private function lista($row) {
+            $medidas = new Medidas();
+            $medidas->setIdMedidas($row['idMedidas']);
+            $medidas->setDataCadastro($row['dataCadastro']);
+            $medidas->setPeso($row['peso']);
+            $medidas->setAbdomen($row['abdomen']);
+
+            return $medidas;
+        }
+
+        public function exibeData($id) {
             try {
-                $sql = "SELECT alunos.idAluno, alunos.nome, alunos.sexo, alunos.idade, medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.abdomen, medidas.imc, medidas.rcq, medidas.percentGord, medidas.massaGorda, medidas.massaMagra FROM alunos, medidas WHERE alunos.idAluno = medidas.idAluno AND alunos.idAluno = ':idAluno'";
-                $p_sql = Conexao::getConexao()->query($sql);
-                $p_sql->bindValue(":idAluno", $medidas->getAluno());
-                while ($linha1 = $p_sql->fetch(PDO::FETCH_ASSOC)){
-                    echo $linha1["idAluno"];
-                    echo $linha1["nome"];
-                    echo $linha1["sexo"];
-                    echo $linha1["idade"];
-                    echo $linha1["idMedidas"];
-                    echo $linha1["dataCadastro"];
-                    echo $linha1["peso"];
-                    echo $linha1["abdomen"];
-                    echo $linha1["imc"];
-                    echo $linha1["rcq"];
-                    echo $linha1["percentGord"];
-                    echo $linha1["massaGorda"];
-                    echo $linha1["massaMagra"];
+                $sql = "SELECT medidas.dataCadastro FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->lista($l);
                 } 
+                return $f_lista;
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar Buscar Todos." . $e;
             }
         }
+
+        public function exibeDados($id) {
+            try {
+                $sql = "SELECT medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.abdomen FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->lista($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
+            }
+        }
+
+        public function rcq($id){
+            $sql = "SELECT medidas.cintura, medidas.quadril FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $cintura = $linha1['cintura'];
+                $quadril = $linha1['quadril'];
+            }
+            $rcq = $cintura / $quadril;
+
+            $rcqFormatado = number_format($rcq, 2);
+
+            print $rcqFormatado;     
+        }
+
+        public function imc($id){
+            $sql = "SELECT medidas.peso, medidas.altura FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $peso = $linha1['peso'];
+                $altura = $linha1['altura'];
+            }
+            $imc = $peso / ($altura**2);
+            $imcFormatado = number_format($imc, 2);
+
+            print $imcFormatado;   
+        }
+
+        public function percentGord($id, $sexo, $idade){
+            $sql = "SELECT medidas.tricipital, medidas.axilarMedia, medidas.peitoral, medidas.abdominal, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $tric = $linha1['tricipital'];
+                $ax = $linha1['axilarMedia'];
+                $peito = $linha1['peitoral'];
+                $abd = $linha1['abdominal'];
+                $supra = $linha1['supraIliaca'];
+                $sub = $linha1['subEscapular'];
+                $coxa = $linha1['coxa'];
+            }
+            $soma = $peito + $ax + $abd + $supra + $sub + $tric + $coxa;
+            if($sexo == 'M' || $sexo == 'm'){
+                $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
+                $percentGord = ((4.95 / $dc) - 4.5)*100;
+            } else if ($sexo == 'F' || $sexo == 'f'){
+                $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
+                $percentGord = ((4.95 / $dc) - 4.5)*100;
+            }
+            $perc = number_format($percentGord, 2);
+            print $perc;   
+        } 
         
+        public function massaGorda($peso, $perc){
+            $massaGorda = ($peso * $perc) / 100;
+            $pesoG = number_format($massaGorda, 2);
+            print $pesoG;
+        }
+
+        public function massaMagra($peso, $pesoG){
+            $massaMagra = ($peso - $pesoG); 
+            $pesoM = number_format($massaMagra, 2);
+            print $pesoM;
+        }
+        
+        
+
     }
 
 ?>

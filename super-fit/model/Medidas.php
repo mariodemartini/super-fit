@@ -26,11 +26,6 @@
         private $subEscapular;
         private $tricipital;
         private $coxa;
-        private $imc;
-        private $rcq;
-        private $percentGord;
-        private $massaGorda;
-        private $massaMagra;
         private $aluno;
         
         function getIdMedidas()
@@ -262,82 +257,6 @@
         function setCoxa($coxa)
         {
             $this->coxa = $coxa;  
-        }
-
-        function getImc()
-        {
-            return $this->imc;
-        }
-        function setImc($peso, $altura)
-        {
-            $imc = $peso / ($altura**2);
-
-            $this->imc = number_format($imc, 2);  
-        }
-
-        function getRcq()
-        {
-            return $this->rcq;
-        }
-        function setRcq($cintura, $quadril)
-        {
-            $rcq = $cintura / $quadril;
-            
-            $this->rcq = number_format($rcq, 2);  
-        }
-
-        function getPercentGord()
-        {
-            return $this->percentGord;
-        }
-        function setPercentGord($sexo, $idade)
-        {
-            $peito = $this->getPeitoral();
-            $ax = $this->getAxilarMedia();
-            $abd = $this->getAbdominal();
-            $supra = $this->getSupraIliaca();
-            $sub = $this->getSubEscapular();
-            $tri = $this->getTricipital();
-            $coxa = $this->getCoxa();
-
-            $soma = $peito + $ax + $abd + $supra + $sub + $tri + $coxa;
-
-            if($sexo == 'M' || $sexo == 'm'){
-                $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
-                $percentGord = ((4.95 / $dc) - 4.5)*100;
-
-            } else if ($sexo == 'F' || $sexo == 'f'){
-                $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
-                $percentGord = ((4.95 / $dc) - 4.5)*100;
-            }
-
-            $this->percentGord = number_format($percentGord, 2);
-        }
-
-        function getMassaGorda()
-        {
-            return $this->massaGorda;
-        }
-        function setMassaGorda($peso)
-        {
-            $percentual = $this->getPercentGord();
-
-            $massaGorda = ($peso * $percentual) / 100;
-
-            $this->massaGorda = number_format($massaGorda, 2);  
-        }
-
-        function getMassaMagra()
-        {
-            return $this->massaMagra;
-        }
-        function setMassaMagra($peso, $pesoGordo)
-        {
-            $pesoGordo = $this->getMassaGorda();
-
-            $massaMagra = $peso - ($pesoGordo);
-
-            $this->massaMagra = number_format($massaMagra, 2);
         }
 
         function getAluno()

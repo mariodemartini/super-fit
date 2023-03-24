@@ -343,11 +343,6 @@ CREATE TABLE `medidas` (
   `subEscapular` float DEFAULT NULL,
   `tricipital` float DEFAULT NULL,
   `coxa` float DEFAULT NULL,
-  `imc` float DEFAULT NULL,
-  `rcq` float DEFAULT NULL,
-  `percentGord` float DEFAULT NULL,
-  `massaGorda` float DEFAULT NULL,
-  `massaMagra` float DEFAULT NULL,
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -355,9 +350,9 @@ CREATE TABLE `medidas` (
 -- Despejando dados para a tabela `medidas`
 --
 
-INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `imc`, `rcq`, `percentGord`, `massaGorda`, `massaMagra`, `idAluno`) VALUES
-(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 30.8642, 0.909091, 24.2648, 24.2648, 75.7352, 1),
-(3, '2023-03-13', 75, 1.65, 70, '120/80', 80, 85, 85, 100, 30, 30, 25, 25, 65, 65, 35, 35, 20, 30, 35, 40, 30, 20, 35, 27.55, 0.85, 35.49, 26.62, 48.38, 2);
+INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `idAluno`) VALUES
+(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 1),
+(3, '2023-03-13', 75, 1.65, 70, '120/80', 80, 85, 85, 100, 30, 30, 25, 25, 65, 65, 35, 35, 20, 30, 35, 40, 30, 20, 35, 2);
 
 -- --------------------------------------------------------
 
@@ -877,7 +872,7 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 
 CREATE TABLE `testeForca` (
   `idTesteForca` int NOT NULL,
-  `dataTeste` date DEFAULT NULL,
+  `dataCadastro` date DEFAULT NULL,
   `cargaInicial` int DEFAULT NULL,
   `cargaMeio` int DEFAULT NULL,
   `cargaFinal` int DEFAULT NULL,
@@ -893,7 +888,7 @@ CREATE TABLE `testeForca` (
 
 CREATE TABLE `testeVO2` (
   `idTesteVO2` int NOT NULL,
-  `dataTeste` date DEFAULT NULL,
+  `dataCadastro` date DEFAULT NULL,
   `velocidadeInicial` int DEFAULT NULL,
   `velocidadeFinal` int DEFAULT NULL,
   `fcInicial` varchar(45) DEFAULT NULL,
@@ -908,9 +903,9 @@ CREATE TABLE `testeVO2` (
 -- Despejando dados para a tabela `testeVO2`
 --
 
-INSERT INTO `testeVO2` (`idTesteVO2`, `dataTeste`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, 56, 1),
-(2, '2023-03-11', 6, 17, '60', '190', 20, 10, 60, 1);
+INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `idAluno`) VALUES
+(1, '2023-03-10', 6, 16, '60', '', 20, 9, 1),
+(2, '2023-03-11', 6, 17, '60', '190', 20, 10, 1);
 
 -- --------------------------------------------------------
 

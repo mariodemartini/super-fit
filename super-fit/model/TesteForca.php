@@ -2,7 +2,7 @@
 
     Class TesteForca{
         private $idTesteForca;
-        private $dataTeste;
+        private $dataCadastro;
         private $cargaInicial;
         private $cargaFinal;
         private $exercicio;
@@ -17,13 +17,13 @@
             $this->idTesteForca = $idTesteForca;
         }
 
-        function getDataTeste()
+        function getDataCadastro()
         {
-            return $this->dataTeste;           
+            return $this->dataCadastro;           
         }
-        function setDataTeste($dataTeste)
+        function setDataCadastro($dataCadastro)
         {
-            $this->dataTeste = $dataTeste;
+            $this->dataCadastro = $dataCadastro;
         }
 
         function getCargaInicial()

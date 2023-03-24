@@ -123,6 +123,23 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
+
+        public function exibeDobras(){
+            $sql = "SELECT medidas.tricipital, medidas.axilarMedia, medidas.peitoral, medidas.abdominal, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '1' ORDER BY medidas.idMedidas DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $tric = $linha1['tricipital'];
+                $ax = $linha1['axilarMedia'];
+                $peito = $linha1['peitoral'];
+                $abd = $linha1['abdominal'];
+                $supra = $linha1['supraIliaca'];
+                $sub = $linha1['subEscapular'];
+                $coxa = $linha1['coxa'];
+            }
+
+        }
+        
     }
 
 ?>

@@ -56,9 +56,9 @@ $alunodao = new AlunoDAO();
                                 <!-- Campo sexo -->
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <label for="inputSexo">Sexo</label>
+                                        <label for="inputSexo"></label>
                                         <select class="form-control h-50" id="inputSexo" name="sexo" type="text" >
-                                            <option value=""></option>
+                                            <option value="">Sexo</option>
                                             <option value="M">Masculino</option>
                                             <option value="F">Feminino</option>
                                         </select>
@@ -108,9 +108,9 @@ $alunodao = new AlunoDAO();
                                 <!-- Campo estado -->
                                 <div class="col-md-4">
                                     <div class="form-floating">
-                                        <label for="inputEstado">Estado</label>
+                                        <label for="inputEstado"></label>
                                         <select class="form-control h-50" id="inputEstado" name="estado" type="text" >
-                                            <option value=""></option>
+                                            <option value="">Estado</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
                                             <option value="AP">Amapá</option>

@@ -5,19 +5,18 @@
         public function create(TesteVO2 $testeVO2){
             try {
                 $sql = "INSERT INTO testeVO2 (
-                    dataTeste, velocidadeInicial, velocidadeFinal, fcInicial, fcFinal, tempoTeste, esforcoTeste, resultadoVO2, idAluno)
+                    dataCadastro, velocidadeInicial, velocidadeFinal, fcInicial, fcFinal, tempoTeste, esforcoTeste, idAluno)
                     VALUES (
-                    :dataTeste, :velocidadeInicial, :velocidadeFinal, :fcInicial, :fcFinal,:tempoTeste, :esforcoTeste, :resultadoVO2, :idAluno)";
+                    :dataCadastro, :velocidadeInicial, :velocidadeFinal, :fcInicial, :fcFinal,:tempoTeste, :esforcoTeste, :idAluno)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":dataTeste", $testeVO2->getDataTeste());
+                $p_sql->bindValue(":dataCadastro", $testeVO2->getDataCadastro());
                 $p_sql->bindValue(":velocidadeInicial", $testeVO2->getVelocidadeInicial());
                 $p_sql->bindValue(":velocidadeFinal", $testeVO2->getVelocidadeFinal());
                 $p_sql->bindValue(":fcInicial", $testeVO2->getFcInicial());
                 $p_sql->bindValue(":fcFinal", $testeVO2->getFcFinal());
                 $p_sql->bindValue(":tempoTeste", $testeVO2->getTempoTeste());
                 $p_sql->bindValue(":esforcoTeste", $testeVO2->getEsforcoTeste());
-                $p_sql->bindValue(":resultadoVO2", $testeVO2->getResultadoVO2());
                 $p_sql->bindValue(":idAluno", $testeVO2->getAluno());
 
                 return $p_sql->execute();
@@ -44,14 +43,13 @@
 
         private function listaTesteVo2($row) {
             $testeVO2 = new TesteVO2();
-            $testeVO2->setDataTeste($row['dataTeste']);
+            $testeVO2->setDataCadastro($row['dataCadastro']);
             $testeVO2->setVelocidadeInicial($row['velocidadeInicial']);
             $testeVO2->setVelocidadeFinal($row['velocidadeFinal']);
             $testeVO2->setFcInicial($row['fcInicial']);
             $testeVO2->setFcFinal($row['fcFinal']);
             $testeVO2->setTempoTeste($row['tempoTeste']);
             $testeVO2->setEsforcoTeste($row['esforcoTeste']);
-            $testeVO2->setResultadoVO2($row['velocidadeFinal']);
 
             return $testeVO2;
         }
@@ -73,30 +71,49 @@
                 $sql = "UPDATE testeVO2 set
                     
                     idTesteVO2=:idTesteVO2,
-                    dataTeste=:dataTeste,
+                    dataCadastro=:dataCadastro,
                     velocidadeInicial=:velocidadeInicial, 
                     velocidadeFinal=:velocidadeFinal, 
                     fcInicial=:fcInicial, 
                     fcFinal=:fcfinal,  
                     tempoTeste=:tempoTeste, 
                     esforcoTeste=:esforcoTeste, 
-                    resultadoVO2=:resultadoVO2
                                 
                     WHERE idTesteVO2 = :idTesteVO2";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":dataTeste", $testeVO2->getDataTeste());
+                $p_sql->bindValue(":dataCadastro", $testeVO2->getDataCadastro());
                 $p_sql->bindValue(":velocidadeInicial", $testeVO2->getVelocidadeInicial());
                 $p_sql->bindValue(":velocidadeFinal", $testeVO2->getVelocidadeFinal());
                 $p_sql->bindValue(":fcInicial", $testeVO2->getFcInicial());
                 $p_sql->bindValue(":fcFinal", $testeVO2->getFcFinal());
                 $p_sql->bindValue(":tempoTeste", $testeVO2->getTempoTeste());
                 $p_sql->bindValue(":esforcoTeste", $testeVO2->getEsforcoTeste());
-                $p_sql->bindValue(":resultadoVO2", $testeVO2->getResultadoVO2());
             
                 return $p_sql->execute();
             } catch (Exception $e) {
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
+        }
+
+        public function resultadoVO($id){
+            $sql = "SELECT testeVO2.velocidadeFinal FROM testeVO2, alunos WHERE testeVO2.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY testeVO2.idTesteVO2 DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            
+                while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                    $vel = $linha1['velocidadeFinal'];
+                } 
+                if(isset($vel)){
+                $vo = $vel * 3.5;
+    
+                $voFormatado = number_format($vo, 2);
+    
+                print $voFormatado; 
+            } 
+            else{
+                echo '❌';
+            }
+                
         }
 
         

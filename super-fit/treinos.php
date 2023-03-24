@@ -1,11 +1,11 @@
 <!-- Include php cabeçalho e menus -->
 <?php
-session_start();
-if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header('Location: index.php');
-}
+// session_start();
+// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+//     unset($_SESSION["email"]);
+//     unset($_SESSION["senha"]);
+//     header('Location: index.php');
+// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -20,7 +20,7 @@ include_once('include/sidebar.php');
                     <!-- Botões sub-menu treinos -->
                     <div class="card-body">
                         <div class="row mb-3">
-                            <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg btn-block">MONTAGEM DE TREINO</button></a>
+                            <a class="btn btn-danger btn-block" href="ficha.php"><button type="button" class="btn btn-danger btn-lg btn-block">MONTAGEM DE TREINO</button></a>
                         </div>
                         
                         <!-- <div class="row mb-3">

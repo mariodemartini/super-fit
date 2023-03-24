@@ -2,14 +2,13 @@
     
     Class TesteVO2{
         private $idTesteVO2;
-        private $dataTeste;
+        private $dataCadastro;
         private $velocidadeInicial;
         private $velocidadeFinal;
         private $fcInicial;
         private $fcFinal;
         private $tempoTeste;
         private $esforcoTeste;
-        private $resultadoVO2;
         private $aluno;
         
         function getIdTesteVO2()
@@ -21,13 +20,13 @@
             $this->idTesteVO2 = $idTesteVO2;
         }
 
-        function getDataTeste()
+        function getDataCadastro()
         {
-            return $this->dataTeste;           
+            return $this->dataCadastro;           
         }
-        function setDataTeste($dataTeste)
+        function setDataCadastro($dataCadastro)
         {
-            $this->dataTeste = $dataTeste;
+            $this->dataCadastro = $dataCadastro;
         }
 
         function getVelocidadeInicial()
@@ -84,16 +83,6 @@
         function setEsforcoTeste($esforcoTeste)
         {
             $this->esforcoTeste = $esforcoTeste;
-        }
-
-        function getResultadoVO2()
-        {
-            return $this->resultadoVO2;           
-        }
-        function setResultadoVO2($velocidadeFinal)
-        {
-            $resultadoVO2 = ($velocidadeFinal * 3.5);
-            $this->resultadoVO2 = $resultadoVO2;
         }
 
         function getAluno()

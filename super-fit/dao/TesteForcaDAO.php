@@ -6,12 +6,12 @@
             try {
                 
                 $sql = "INSERT INTO testeForca (
-                    dataTeste, cargaInicial, cargaFinal, idAluno, idExercicio)
+                    dataCadastro, cargaInicial, cargaFinal, idAluno, idExercicio)
                     VALUES (
-                    :dataTeste, :cargaInicial, :cargaFinal, :idAluno, :idExercicio)";
+                    :dataCadastro, :cargaInicial, :cargaFinal, :idAluno, :idExercicio)";
 
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":dataTeste", $testeforca->getDataTeste());
+                $p_sql->bindValue(":dataCadastro", $testeforca->getDataCadastro());
                 $p_sql->bindValue(":cargaInicial", $testeforca->getCargaInicial());
                 $p_sql->bindValue(":cargaFinal", $testeforca->getCargaFinal());
                 $p_sql->bindValue(":idAluno", $testeforca->getAluno());
@@ -41,7 +41,7 @@
 
         private function listaTesteForca($row) {
             $testeforca = new TesteForca();
-            $testeforca->setDataTeste($row['dataTeste']);
+            $testeforca->setDataCadastro($row['dataCadastro']);
             $testeforca->setCargaInicial($row['cargaInicial']);
             $testeforca->setCargaFinal($row['cargaFinal']);
             $testeforca->setAluno($row['idAluno']);
@@ -67,14 +67,14 @@
                 $sql = "UPDATE testeForca set
                     
                     idTesteForca=:idTesteForca,
-                    dataTeste=:dataTeste,
+                    dataCadastro=:dataCadastro,
                     cargaInicial=:cargaInicial, 
                     cargaFinal=:cargaFinal, 
                     idExercicio=:idExercicio
                                 
                     WHERE idTesteForca = :idTesteForca";
                 $p_sql = Conexao::getConexao()->prepare($sql);
-                $p_sql->bindValue(":dataTeste", $testeforca->getDataTeste());
+                $p_sql->bindValue(":dataCadastro", $testeforca->getDataCadastro());
                 $p_sql->bindValue(":cargaInicial", $testeforca->getCargaInicial());
                 $p_sql->bindValue(":cargaFinal", $testeforca->getCargaFinal());
                 $p_sql->bindValue(":idExercicio", $testeforca->getExercicio());

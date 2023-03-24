@@ -1,11 +1,11 @@
 <!-- Include php cabeçalho e barras -->
 <?php
-session_start();
-if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header('Location: index.php');
-}   
+// session_start();
+// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+//     unset($_SESSION["email"]);
+//     unset($_SESSION["senha"]);
+//     header('Location: index.php');
+// }   
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -25,23 +25,11 @@ include_once('include/sidebar.php');
                         </div>
                         
                         <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="ver-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">RELATORIOS</button></a>
+                            <a class="btn btn-info btn-block" href="ver-avaliacao.php"><button type="button" class="btn btn-info btn-lg btn-block">RELATORIOS</button></a>
                         </div>
                         
-                        <!-- <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="forca-rep.php"><button type="button" class="btn btn-info btn-lg btn-block">TESTE FORÇA</button></a>
-                        </div>
-
-                        <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="vo-esteira.php"><button type="button" class="btn btn-info btn-lg btn-block">TESTE VO2</button></a>
-                        </div>
-
-                        <div class="row mb-3">
-                        <a class="btn btn-info btn-block" href="resultados.php"><button type="button" class="btn btn-info btn-lg btn-block">RESULTADOS</button></a>
-                        </div>  -->
                     </div>
                     <div class="card-footer text-center py-3">
-                        <!-- <div class="small"><a href="login.html">Have an account? Go to login</a></div> -->
                     </div>
                 </div>
             </div>

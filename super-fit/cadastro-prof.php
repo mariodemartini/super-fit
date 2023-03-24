@@ -1,11 +1,11 @@
 <!-- Include php cabeçalho e barras -->
 <?php
-session_start();
-if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header('Location: index.php');
-}
+// session_start();
+// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+//     unset($_SESSION["email"]);
+//     unset($_SESSION["senha"]);
+//     header('Location: index.php');
+// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -38,8 +38,12 @@ $professordao = new ProfessorDAO();
                                 <!-- Campo sexo -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputSexo" type="text" placeholder="Sexo" name="sexo"/>
-                                        <label for="inputSexo">Sexo</label>
+                                        <label for="inputSexo"></label>
+                                        <select class="form-control h-50" id="inputSexo" name="sexo" type="text" >
+                                            <option value="">Sexo</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Feminino</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- Campo data nascimento -->
@@ -93,8 +97,37 @@ $professordao = new ProfessorDAO();
                                 <!-- Campo estado -->
                                 <div class="col-md-3">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputEstado" type="text" placeholder="Estado" name="estado"/>
-                                        <label for="inputEstado">Estado</label>
+                                        <label for="inputEstado"></label>
+                                        <select class="form-control h-50" id="inputEstado" name="estado" type="text" >
+                                            <option value="">Estado</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- Campo cidade -->
