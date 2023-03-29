@@ -21,7 +21,8 @@
                 print "<script>alert('Email e/ou senha incorretos');</script>";
                 print "<script>location.href='index.php';</script>"; 
 
-            } else{
+            } 
+            else{
                 $row = $res->fetch_object(); 
                 $_SESSION["email"] = $email;
                 $_SESSION["senha"] = $senha;
@@ -29,7 +30,8 @@
                 print "<script>location.href='home.php';</script>";
             } 
 
-        } else if($_POST["usuario"] == 'alunos'){
+        } 
+        else if($_POST["usuario"] == 'alunos'){
             $sql = "SELECT * FROM alunos WHERE email = '$email' AND senha = '$senha'";
 
             $res = $conn->query($sql);
@@ -41,11 +43,14 @@
                 print "<script>alert('Email e/ou senha incorretos');</script>";
                 print "<script>location.href='index.php';</script>"; 
 
-            } else {
-                $row = $res->fetch_object(); 
-                $_SESSION["email"] = $email;
-                $_SESSION["senha"] = $senha;
-                print "<script>location.href='home.php';</script>";
+            } 
+            else {
+                // $row = $res->fetch_object(); 
+                // $_SESSION["email"] = $email;
+                // $_SESSION["senha"] = $senha;
+                // print "<script>location.href='home.php';</script>";
+                print "<script>alert('Email e/ou senha incorretos');</script>";
+                print "<script>location.href='index.php';</script>";
             }
         } else{
             print "<script>alert('Selecione tipo de usuário');</script>"; 
@@ -57,17 +62,4 @@
     	print "<script>location.href='index.php';</script>"; 
     }
 
-    
-    
-
-    // $row = $res->fetch_object(); 
-
-    // $qtd = $res->num_rows;
-
-    // if($qtd>0){
-    //     $_SESSION["email"] = $usuario;
-    //     $_SESSION["nome"] = $row->nome;
-    //     print "<script>location.href='home.php';</script>";
-
-    // }
 ?>

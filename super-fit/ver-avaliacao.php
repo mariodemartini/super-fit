@@ -98,7 +98,7 @@ $testevo2dao = new TesteVO2DAO();
                                     <div class="row mb-3">
                                         <div class="col-md-2">
                                             <div class="form-floating mb-3 mb-md-3">
-                                                <input class="form-control" id="inputNome" type="number" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
+                                                <input class="form-control" id="inputNome" type="text" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
                                                 <label for="inputNome">ID</label>
                                             </div>
                                         </div>
@@ -118,15 +118,15 @@ $testevo2dao = new TesteVO2DAO();
                                     <!-- Div titulos das colunas -->
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-2"></div>
-                                        <div class="col-sm-2 my-4 bg-dark text-white text-center">ANTERIOR</div>
-                                        <div class="col-sm-2 my-4 bg-dark text-white text-center">ATUAL</div>
+                                        <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
+                                        <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
                                     </div>
                                     <!-- Linha de data -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
                                             <li class="list-group-item bg-secondary text-white">Data</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                 <option>Escolha</option>
                                                 <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -134,7 +134,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <?php endforeach ?>
                                             </select>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                 <option>Escolha</option>
                                                 <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -146,94 +146,94 @@ $testevo2dao = new TesteVO2DAO();
                                     <!-- Linha compativo peso -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">Peso(kg)</li>
+                                            <li class="list-group-item bg-light text-dark">Peso(kg)</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
                                     </div>
                                     <!-- Linha compativo imc -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">IMC</li>
+                                            <li class="list-group-item bg-light text-dark">IMC</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
                                     </div>
                                     <!-- Linha RCQ -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">RCQ</li>
+                                            <li class="list-group-item bg-light text-dark">RCQ</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" placeholder="">
                                         </div>
                                     </div>
                                     <!-- Linha compativo % gordura -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">%Gordura</li>
+                                            <li class="list-group-item bg-light text-dark">%Gordura</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
                                     </div>
                                     <!-- Linha compativo peso massa gorda -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">M.Gorda(kg)</li>
+                                            <li class="list-group-item bg-light text-dark">M.Gorda(kg)</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
                                     </div>
                                     <!-- Linha compativo peso massa magra -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">M.Magra(kg)</li>
+                                            <li class="list-group-item bg-light text-dark">M.Magra(kg)</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">F.C</li>
+                                            <li class="list-group-item bg-light text-dark">F.C</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="text" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item">P.A</li>
+                                            <li class="list-group-item bg-light text-dark">P.A</li>
                                         </ul>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="text" placeholder="">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control p-2" type="text" placeholder="">
                                         </div>
                                     </div>
@@ -264,7 +264,7 @@ $testevo2dao = new TesteVO2DAO();
                                         <div class="row mb-3">
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="number" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
@@ -284,15 +284,15 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Div titulos das colunas -->
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-2"></div>
-                                            <div class="col-sm-2 my-4 bg-dark text-white text-center">ANTERIOR</div>
-                                            <div class="col-sm-2 my-4 bg-dark text-white text-center">ATUAL</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
                                         </div>
                                         <!-- Linha de data -->
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
                                                 <li class="list-group-item bg-secondary text-white">Data</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                     <option>Escolha</option>
                                                     <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -300,7 +300,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <?php endforeach ?>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                     <option>Escolha</option>
                                                     <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -311,133 +311,133 @@ $testevo2dao = new TesteVO2DAO();
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Torax</li>
+                                                <li class="list-group-item bg-light text-dark">Torax</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Abdomen</li>
+                                                <li class="list-group-item bg-light text-dark">Abdomen</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
-                                                <input class="form-control p-2" type="number" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="row d-flex justify-content-center">
-                                            <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Cintura</li>
-                                            </ul>
-                                            <div class="col-sm-2">
-                                                <input class="form-control p-2" type="number" placeholder="">
-                                            </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Quadril</li>
+                                                <li class="list-group-item bg-light text-dark">Cintura</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
+                                                <input class="form-control p-2" type="number" placeholder="">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control p-2" type="number" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <ul class="col-sm-2 list-group">
+                                                <li class="list-group-item bg-light text-dark">Quadril</li>
+                                            </ul>
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Braço D</li>
+                                                <li class="list-group-item bg-light text-dark">Braço D</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Braço E</li>
+                                                <li class="list-group-item bg-light text-dark">Braço E</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Anteb. D</li>
+                                                <li class="list-group-item bg-light text-dark">Anteb. D</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Anteb. E</li>
+                                                <li class="list-group-item bg-light text-dark">Anteb. E</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Coxa D</li>
+                                                <li class="list-group-item bg-light text-dark">Coxa D</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Coxa E</li>
+                                                <li class="list-group-item bg-light text-dark">Coxa E</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Pant. D</li>
+                                                <li class="list-group-item bg-light text-dark">Pant. D</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Pant. E</li>
+                                                <li class="list-group-item bg-light text-dark">Pant. E</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
@@ -469,7 +469,7 @@ $testevo2dao = new TesteVO2DAO();
                                         <div class="row mb-3">
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="number" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
@@ -489,15 +489,15 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Div titulos das colunas -->
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-2"></div>
-                                            <div class="col-sm-2 my-4 bg-dark text-white text-center">ANTERIOR</div>
-                                            <div class="col-sm-2 my-4 bg-dark text-white text-center">ATUAL</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
                                         </div>
                                         <!-- Linha de data -->
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
                                                 <li class="list-group-item bg-secondary text-white">Data</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                     <option>Escolha</option>
                                                     <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -505,7 +505,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <?php endforeach ?>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <select class="form-control" id="dataCadastro" name="dataCadastro">
                                                     <option>Escolha</option>
                                                     <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
@@ -516,78 +516,78 @@ $testevo2dao = new TesteVO2DAO();
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">Peitoral</li>
+                                                <li class="list-group-item bg-light text-dark">Peitoral</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">Ax. Media</li>
+                                                <li class="list-group-item bg-light text-dark">Ax. Media</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
-                                                <input class="form-control p-2" type="number" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="row d-flex justify-content-center">
-                                            <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">Abdominal</li>
-                                            </ul>
-                                            <div class="col-sm-2">
-                                                <input class="form-control p-2" type="number" placeholder="">
-                                            </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">SupraIliaca</li>
+                                                <li class="list-group-item bg-light text-dark">Abdominal</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
+                                                <input class="form-control p-2" type="number" placeholder="">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control p-2" type="number" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <ul class="col-sm-2 list-group">
+                                                <li class="list-group-item bg-light text-dark">SupraIliaca</li>
+                                            </ul>
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">SubEscap.</li>
+                                                <li class="list-group-item bg-light text-dark">SubEscap.</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">Tricipital</li>
+                                                <li class="list-group-item bg-light text-dark">Tricipital</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item bg-info text-white">Coxa</li>
+                                                <li class="list-group-item bg-light text-dark">Coxa</li>
                                             </ul>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-3">
                                                 <input class="form-control p-2" type="number" step="0.01" placeholder="">
                                             </div>
                                         </div>

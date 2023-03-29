@@ -1,11 +1,5 @@
 <!-- Include php cabeçalho e menus -->
 <?php
-// session_start();
-// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-//     unset($_SESSION["email"]);
-//     unset($_SESSION["senha"]);
-//     header('Location: index.php');
-// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -73,8 +67,8 @@ $alunodao = new AlunoDAO();
                                         data-target="#editar><?= $aluno->getIdAluno() ?>">
                                         Editar
                                     </button>
-                                    <a href="controller/AlunoController.php?del=<?= $aluno->getIdAluno() ?>">
-                                        <button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
+                                    <!-- <a href="controller/AlunoController.php?del=<?= $aluno->getIdAluno() ?>">
+                                        <button class="btn btn-danger btn-sm" type="button">Excluir</button></a> -->
                                 </td>
                             </tr>
                         <?php endforeach ?>
@@ -100,7 +94,7 @@ $alunodao = new AlunoDAO();
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     <input class="form-control" id="inputId" type="text" placeholder="id"
-                                                        name="idAluno" value="<?= $aluno->getIdAluno() ?>" require />
+                                                        name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
                                                     <label for="inputId">Id</label>
                                                 </div>
                                             </div>

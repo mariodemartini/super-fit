@@ -10,7 +10,7 @@
 
     if(isset($_POST['salvar'])){
         
-        $testeforca->setDataTeste($d['dataCadastro']);
+        $testeforca->setDataCadastro($d['dataCadastro']);
         $testeforca->setCargaInicial($d['cargaInicial']);
         $testeforca->setCargaFinal($d['cargaFinal']);
         $testeforca->setAluno($d['idAluno']);
@@ -23,7 +23,7 @@
 
     else if (isset($_POST['editar'])) {
 
-        $testeforca->setDataTeste($d['dataCadastro']);
+        $testeforca->setDataCadastro($d['dataCadastro']);
         $testeforca->setCargaInicial($d['cargaInicial']);
         $testeforca->setCargaFinal($d['cargaFinal']);
         $testeforca->setExercicio($d['idExercicio']);

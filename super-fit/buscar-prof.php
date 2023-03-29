@@ -98,7 +98,7 @@ $professordao = new ProfessorDAO();
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     <input class="form-control" id="inputId" type="text" placeholder="id"
                                                         name="idProfessor" value="<?= $professor->getIdProfessor() ?>"
-                                                        require />
+                                                        require readonly/>
                                                     <label for="inputId">Id</label>
                                                 </div>
                                             </div>

@@ -112,11 +112,137 @@
             } 
             else{
                 echo '❌';
-            }
-                
+            }       
         }
 
-        
+        public function classVO($id, $sexo, $idade){
+            $sql = "SELECT testeVO2.velocidadeFinal FROM testeVO2, alunos WHERE testeVO2.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY testeVO2.idTesteVO2 DESC LIMIT 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+                while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                    $vel = $linha1['velocidadeFinal'];
+                } 
+                if(isset($vel)){
+                $vo = $vel * 3.5;
+                $voFormatado = number_format($vo, 2);
+
+                if($sexo == 'F'){
+                    if($idade < 29){
+                        if($voFormatado < 30){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 38){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 49){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    } else if($idade < 39){
+                        if($voFormatado < 28){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 34){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 45){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    } else if($idade < 49){
+                        if($voFormatado < 24){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 31){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 42){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+
+                    } else if($idade < 59){
+                        if($voFormatado < 20){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 28){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 38){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+
+                    } else{
+                        if($voFormatado < 18){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 24){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 35){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    }
+
+                } else{
+                    if($idade < 29){
+                        if($voFormatado < 34){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 43){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 52){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    } else if($idade < 39){
+                        if($voFormatado < 30){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 38){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 48){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    } else if($idade < 49){
+                        if($voFormatado < 24){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 31){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 42){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+
+                    } else if($idade < 59){
+                        if($voFormatado < 27){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 39){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 44){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+
+                    } else{
+                        if($voFormatado < 23){
+                            $classVO = 'FRACO';
+                        } else if($voFormatado < 31){
+                            $classVO = 'REGULAR';
+                        } else if($voFormatado < 41){
+                            $classVO = 'BOM';
+                        } else{
+                            $classVO = 'OTIMO';
+                        }
+                    }
+                }
+                print $classVO;
+            } 
+            else{
+                echo '❌';
+            }
+        }
+
     }
 
 ?>

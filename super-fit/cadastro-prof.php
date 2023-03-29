@@ -1,4 +1,3 @@
-<!-- Include php cabeçalho e barras -->
 <?php
 // session_start();
 // if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){

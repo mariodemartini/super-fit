@@ -1,11 +1,10 @@
-<!-- Include php cabeçalho e barras -->
 <?php
-session_start();
-if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header('Location: index.php');
-}
+// session_start();
+// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
+//     unset($_SESSION["email"]);
+//     unset($_SESSION["senha"]);
+//     header('Location: index.php');
+// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -29,7 +28,7 @@ $alunodao = new AlunoDAO();
                             <!-- Campo data -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-3">
-                                    <label for="inputData">DATA</label>
+                                    <label for="inputData">Data Cadastro</label>
                                     <input type="date" class="form-control" id="inputData" name="dataCadastro">
                                 </div>
                                 <div class="form-group col-md-3">

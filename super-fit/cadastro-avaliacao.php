@@ -91,17 +91,15 @@ $testevo2dao = new TesteVO2DAO();
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-
                             <div class="modal-body">
-
                                 <form action="controller/AnamneseController.php" method="POST">
+                                    <?php echo '<div class="alert alert-danger" role="alert">Por favor, preencha o campo DATA CADASTRO.</div>'; ?>
                                     <div>
                                         <div class="row mb-3">
                                             <div class="col-md-3">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="date"
-                                                        placeholder="nome" name="dataCadastro" />
-                                                    <label for="inputData">Data</label>
+                                                    <input class="form-control" id="inputNome" type="date" placeholder="" name="dataCadastro" />
+                                                    <label for="inputData">Data Cadastro</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,20 +107,20 @@ $testevo2dao = new TesteVO2DAO();
                                         <div class="row mb-3">
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="number" placeholder="nome" name="idAluno"  value="<?= $aluno->getIdAluno() ?>" require />
+                                                    <input class="form-control" id="inputNome" type="number" placeholder="nome" name="idAluno" readonly value="<?= $aluno->getIdAluno() ?>" require />
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome"  value="<?= $aluno->getNome() ?>"
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome" readonly value="<?= $aluno->getNome() ?>"
                                                         require />
                                                     <label for="inputNome">Nome Completo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputIdade" type="text"     placeholder="Sexo" name="idade"  value="<?= $aluno->getIdade() ?>" require />
+                                                    <input class="form-control" id="inputIdade" type="text"     placeholder="Sexo" name="idade" readonly value="<?= $aluno->getIdade() ?>" require />
                                                     <label for="inputIdade">Idade</label>
                                                 </div>
                                             </div>
@@ -284,12 +282,12 @@ $testevo2dao = new TesteVO2DAO();
                             <div class="modal-body">
                                 <form action="controller/MedidasController.php" method="POST">
                                     <div>
+                                    <?php echo '<div class="alert alert-danger" role="alert">Por favor, preencha o campo DATA CADASTRO.</div>'; ?>
                                         <div class="row mb-3">
                                             <div class="col-md-3">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="date"
-                                                        placeholder="data" name="dataCadastro" />
-                                                    <label for="inputData">Data</label>
+                                                    <input class="form-control" id="inputNome" type="date" placeholder="data" name="dataCadastro" />
+                                                    <label for="inputData">Data Cadastro</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,26 +295,25 @@ $testevo2dao = new TesteVO2DAO();
                                         <div class="row mb-3">
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text" placeholder="idAluno" name="idAluno"  value="<?= $aluno->getIdAluno() ?>" require />
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="idAluno" name="idAluno" readonly value="<?= $aluno->getIdAluno() ?>" require />
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text"
-                                                        placeholder="nome" name="nome"  value="<?= $aluno->getNome() ?>"require />
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome" readonly value="<?= $aluno->getNome() ?>"require />
                                                     <label for="inputNome">Nome Completo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputSexo" type="text" placeholder="sexo" name="sexo"  value="<?= $aluno->getSexo() ?>" require/>
+                                                    <input class="form-control" id="inputSexo" type="text" placeholder="sexo" name="sexo" readonly value="<?= $aluno->getSexo() ?>" require/>
                                                     <label for="inputSexo">Sexo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade"  value="<?= $aluno->getIdade() ?>" require />
+                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade" readonly value="<?= $aluno->getIdade() ?>" require />
                                                     <label for="inputIdade">Idade</label>
                                                 </div>
                                             </div>
@@ -327,13 +324,13 @@ $testevo2dao = new TesteVO2DAO();
                                                 <div class="form-group row">
                                                     <label for="inputPeso" class="col-sm-4 col-form-label">Peso (kg)</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" step="0.1" class="form-control" id="inputPeso" placeholder="kg" name="peso">
+                                                        <input type="number" step="0.01" class="form-control" id="inputPeso" placeholder="kg" name="peso">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="inputAltura" class="col-sm-4 col-form-label">Altura</label>
                                                     <div class="col-sm-4">
-                                                        <input type="number" step="0.1" class="form-control" id="inputAltura" placeholder="metro" name="altura">
+                                                        <input type="number" step="0.01" class="form-control" id="inputAltura" placeholder="metros" name="altura">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -345,7 +342,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <div class="form-group row">
                                                     <label for="inputSupra" class="col-sm-4 col-form-label">Pressão Arterial</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control" id="inputPA" placeholder="mmHg" name="pressaoArterial">
+                                                        <input type="text" class="form-control" id="inputPA" placeholder="ex: 120/80" name="pressaoArterial">  
                                                     </div>
                                                 </div>
                                             </div>
@@ -537,11 +534,12 @@ $testevo2dao = new TesteVO2DAO();
                             <div class="modal-body">
                                 <form action="controller/TesteVO2Controller.php" method="POST">
                                     <div>
+                                    <?php echo '<div class="alert alert-danger" role="alert">Por favor, preencha o campo DATA CADASTRO.</div>'; ?>
                                         <div class="row mb-3">
                                             <div class="col-md-3">
                                                 <div class="form-floating mb-3 mb-md-3">
                                                     <input class="form-control" id="inputNome" type="date" placeholder="nome" name="dataCadastro" />
-                                                    <label for="inputData">Data</label>
+                                                    <label for="inputData">Data Cadastro</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -550,24 +548,19 @@ $testevo2dao = new TesteVO2DAO();
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
                                                     <input class="form-control" id="inputNome" type="text"
-                                                        placeholder="idAluno" name="idAluno" 
-                                                        value="<?= $aluno->getIdAluno() ?>" require />
+                                                        placeholder="idAluno" name="idAluno" readonly value="<?= $aluno->getIdAluno() ?>" require />
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text"
-                                                        placeholder="nome" name="nome"  value="<?= $aluno->getNome() ?>"
-                                                        require />
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome" readonly value="<?= $aluno->getNome() ?>" require />
                                                     <label for="inputNome">Nome Completo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputIdade" type="text"
-                                                        placeholder="Sexo" name="idade"  value="<?= $aluno->getIdade() ?>"
-                                                        require />
+                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade" readonly value="<?= $aluno->getIdade() ?>" require />
                                                     <label for="inputIdade">Idade</label>
                                                 </div>
                                             </div>
@@ -830,12 +823,13 @@ $testevo2dao = new TesteVO2DAO();
                                     <!-- form -->
                                     <form action="controller/TesteForcaController.php" method="POST">
                                         <div>
+                                        <?php echo '<div class="alert alert-danger" role="alert">Por favor, preencha o campo DATA CADASTRO.</div>'; ?>
                                             <div class="row mb-3">
                                                 <div class="col-md-3">
                                                     <div class="form-floating mb-3 mb-md-3">
                                                         <input class="form-control" id="inputNome" type="date"
                                                             placeholder="nome" name="dataCadastro" />
-                                                        <label for="inputData">Data</label>
+                                                        <label for="inputData">Data Cadastro</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -844,15 +838,14 @@ $testevo2dao = new TesteVO2DAO();
                                                 <div class="col-md-2">
                                                     <div class="form-floating mb-3 mb-md-3">
                                                         <input class="form-control" id="inputNome" type="text"
-                                                            placeholder="idAluno" name="idAluno" 
-                                                            value="<?= $aluno->getIdAluno() ?>" require />
+                                                            placeholder="idAluno" name="idAluno" readonly value="<?= $aluno->getIdAluno() ?>" require />
                                                         <label for="inputNome">ID</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7">
                                                     <div class="form-floating mb-3 mb-md-3">
                                                         <input class="form-control" id="inputNome" type="text"
-                                                            placeholder="nome" name="nome"  value="<?= $aluno->getNome() ?>"
+                                                            placeholder="nome" name="nome" readonly value="<?= $aluno->getNome() ?>"
                                                             require />
                                                         <label for="inputNome">Nome Completo</label>
                                                     </div>
@@ -860,8 +853,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <div class="col-md-2">
                                                     <div class="form-floating mb-3 mb-md-3">
                                                         <input class="form-control" id="inputIdade" type="text"
-                                                            placeholder="Sexo" name="idade" 
-                                                            value="<?= $aluno->getIdade() ?>" require />
+                                                            placeholder="Sexo" name="idade" readonly value="<?= $aluno->getIdade() ?>" require />
                                                         <label for="inputIdade">Idade</label>
                                                     </div>
                                                 </div>
@@ -958,25 +950,25 @@ $testevo2dao = new TesteVO2DAO();
                                         <div class="row mb-3">
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="number" placeholder="idAluno" name="idAluno"  value="<?= $aluno->getIdAluno() ?>" require/>
+                                                    <input class="form-control" id="inputNome" type="number" placeholder="idAluno" name="idAluno" value="<?= $aluno->getIdAluno() ?>" require readonly/>
                                                     <label for="inputNome">ID</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome"  value="<?= $aluno->getNome() ?>" require/>
+                                                    <input class="form-control" id="inputNome" type="text" placeholder="nome" name="nome" value="<?= $aluno->getNome() ?>" require readonly/>
                                                     <label for="inputNome">Nome Completo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputSexo" type="text" placeholder="sexo" name="sexo"  value="<?= $aluno->getSexo() ?>" require/>
+                                                    <input class="form-control" id="inputSexo" type="text" placeholder="sexo" name="sexo" readonly value="<?= $aluno->getSexo() ?>" require/>
                                                     <label for="inputSexo">Sexo</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-floating mb-3 mb-md-3">
-                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade"  value="<?= $aluno->getIdade() ?>" require />
+                                                    <input class="form-control" id="inputIdade" type="text" placeholder="Sexo" name="idade" readonly value="<?= $aluno->getIdade() ?>" require />
                                                     <label for="inputIdade">Idade</label>
                                                 </div>
                                             </div>
@@ -987,7 +979,7 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-secondary text-white">DATA</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="text" placeholder="" nome="dataCadastro"  value="<?= $medidas->getDataCadastro() ?>">
+                                                <input class="form-control p-2" type="text" placeholder="" nome="dataCadastro" readonly value="<?= $medidas->getDataCadastro() ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 
@@ -995,92 +987,103 @@ $testevo2dao = new TesteVO2DAO();
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Peso(kg)</li>
+                                                <li class="list-group-item bg-light text-dark">Peso(kg)</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" nome="peso" readonly value="<?= $medidas->getPeso() ?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <!-- <input class="form-control p-2" type="text" placeholder=""> -->
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">Abdomen</li>
+                                                <li class="list-group-item bg-light text-dark">Abdomen</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" nome="abdomen" readonly value="<?= $medidas->getAbdomen() ?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?= $medidasdao->classAbd($medidas->getAbdomen(), $aluno->getSexo()) ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <ul class="col-sm-2 list-group">
+                                                <li class="list-group-item bg-light text-dark">F. C.</li>
+                                            </ul>
+                                            <div class="col-sm-3">
+                                                <input class="form-control p-2" type="text" placeholder="" nome="freqCard" readonly value="<?= $medidas->getFreqCard() ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?= $medidasdao->classFc($medidas->getFreqCard(), $aluno->getIdade()) ?>">
                                             </div>
                                         </div>
                                         <?php endforeach ?>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">IMC</li>
+                                                <li class="list-group-item bg-light text-dark">IMC</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" readonly nome="imc" value="<?php $medidasdao->imc($aluno->getIdAluno())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?php $medidasdao->classImc($aluno->getIdAluno())?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">RCQ</li>
+                                                <li class="list-group-item bg-light text-dark">RCQ</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" nome="rcq" readonly value="<?php $medidasdao->rcq($aluno->getIdAluno())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?php $medidasdao->classRcq($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                             </div>
                                         </div>
                                         
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">%Gordura</li>
+                                                <li class="list-group-item bg-light text-dark">%Gordura</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" readonly nome="percentGord" value="<?php $medidasdao->percentGord($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?php $medidasdao->classPerc($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade()) ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">M.Gorda</li>
+                                                <li class="list-group-item bg-light text-dark">M.Gorda</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="text" placeholder="" nome="massaGorda" readonly value="">
+                                                <input class="form-control p-2" type="text" placeholder="" nome="massaGorda" readonly value="<?php $medidasdao->gordura($medidas->getPeso(), $aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <!-- <input class="form-control p-2" type="text" placeholder=""> -->
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">M.Magra</li>
+                                                <li class="list-group-item bg-light text-dark">M.Magra</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="text" placeholder="" nome="massaMagra" readonly value="">
+                                                <input class="form-control p-2" type="text" placeholder="" nome="massaMagra" readonly value="<?php $medidasdao->magra($medidas->getPeso(), $aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <!-- <input class="form-control p-2" type="text" placeholder=""> -->
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
-                                                <li class="list-group-item">VO²max</li>
+                                                <li class="list-group-item bg-light text-dark">VO²max</li>
                                             </ul>
                                             <div class="col-sm-3">
                                                 <input class="form-control p-2" type="text" placeholder="" nome="vo2" readonly value="<?php $testevo2dao->resultadoVO($aluno->getIdAluno())?>">
                                             </div>
                                             <div class="col-sm-2">
-                                                <input class="form-control p-2" type="text" placeholder="">
+                                                <input class="form-control p-2" type="text" placeholder="" readonly value="<?php $testevo2dao->classVO($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade()) ?>">
                                             </div>
                                         </div>
                                     </div>
