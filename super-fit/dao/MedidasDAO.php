@@ -618,7 +618,7 @@
         public function classFc($fc, $idade){
             if($idade < 35){
                 if($fc < 55){
-                    $classFc = 'null';
+                    $classFc = '❌';
                 } else if($fc >= 55 && $fc <= 61){
                     $classFc = 'OTIMO';
                 } else if($fc > 61 && $fc <= 70){
@@ -630,7 +630,7 @@
                 }
             } else if ($idade >= 36 && $idade <= 45){
                 if($fc < 55){
-                    $classFc = 'null';
+                    $classFc = '❌';
                 } else if($fc > 55 && $fc <= 62){
                     $classFc = 'OTIMO';
                 } else if($fc > 62 && $fc <= 75){
@@ -642,7 +642,7 @@
                 }
             } else if($idade >= 46 && $idade <= 54){
                 if($fc < 55){
-                    $classFc = 'null';
+                    $classFc = '❌';
                 } else if($fc > 55 && $fc <= 63){
                     $classFc = 'OTIMO';
                 } else if($fc > 63 && $fc <= 75){
@@ -654,7 +654,7 @@
                 }
             } else{
                 if($fc < 55){
-                    $classFc = 'null';
+                    $classFc = '❌';
                 } else if($fc > 55 && $fc <= 64){
                     $classFc = 'OTIMO';
                 } else if($fc > 64 && $fc <= 75){
