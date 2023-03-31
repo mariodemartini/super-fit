@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 13/03/2023 às 16:18
+-- Tempo de geração: 31/03/2023 às 03:00
 -- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
 -- Versão do PHP: 8.1.2-1ubuntu2.11
 
@@ -85,14 +85,6 @@ CREATE TABLE `anamnese` (
   `dataCadastro` date DEFAULT NULL,
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Despejando dados para a tabela `anamnese`
---
-
-INSERT INTO `anamnese` (`idAnamnese`, `atividade`, `objetivo`, `fumante`, `alcool`, `historicoFam`, `hipertensao`, `colesterol`, `diabetes`, `cardiaco`, `cirurgia`, `fratura`, `lesao`, `dor`, `movimentos`, `artrite`, `medicamentos`, `outros`, `alimentacao`, `dataCadastro`, `idAluno`) VALUES
-(1, 'Não', 'Saúde', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', NULL, 1),
-(2, 'Não', 'Emagrecimento', 'Não', 'Sim, final de semana', 'diabetes', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim, nas costas', 'Não', 'Não', 'Anticoncepcional', 'Não', 'Ruins', '2023-03-13', 2);
 
 -- --------------------------------------------------------
 
@@ -531,22 +523,22 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 (127, 'INTERMEDIARIO I', 'FORCA', '4X6 - 1\' 30\"', '80'),
 (128, 'INTERMEDIARIO I', 'FORCA', '5X4 - 2\'', '80'),
 (129, 'INTERMEDIARIO I', 'FORCA', '5X6 - 2\'', '80'),
-(130, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X15, 12, 10 - 45\" - PIRAMIDE CRESC.', '60'),
-(131, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X15, 12, 10, 8 - 45\" - PIRAMIDE CRESC.', '60'),
-(132, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X12, 10, 8 - 45\" - PIRAMIDE CRESC.', '70'),
-(133, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X12, 10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
-(134, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
-(135, 'INTERMEDIARIO I', 'TRANS-FORCA', '1X12, 9, 6, 4 - 45\" - PIRAMIDE CRESC.', '70'),
-(136, 'INTERMEDIARIO I', 'TRANS-FORCA', '2X15, 8 - 45\" - ONDA', '60'),
-(137, 'INTERMEDIARIO I', 'TRANS-FORCA', '2X15, 10 - 45\" - ONDA', '70'),
-(138, 'INTERMEDIARIO I', 'TRANS-FORCA', '2X15, 6 - 45\" - ONDA', '70'),
-(139, 'INTERMEDIARIO I', 'TRANS-RESIST', '1X8, 10, 12 - 30\" - PIRAMIDE DECRESC.', '70'),
-(140, 'INTERMEDIARIO I', 'TRANS-RESIST', '1X10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
-(141, 'INTERMEDIARIO I', 'TRANS-RESIST', '1X12, 15, 18 - 30\" - PIRAMIDE DECRESC.', '70'),
-(142, 'INTERMEDIARIO I', 'TRANS-RESIST', '1X12, 15, 20 - 30\" - PIRAMIDE DECRESC.', '60'),
-(143, 'INTERMEDIARIO I', 'TRANS-RESIST', '1X10, 15, 20 - 30\" - PIRAMIDE DECRESC.', '70'),
-(144, 'INTERMEDIARIO I', 'TRANS-RESIST', '2X8, 15 - 30\" - ONDA', '70'),
-(145, 'INTERMEDIARIO I', 'TRANS-RESIST', '2X10, 20 - 30\" - ONDA', '70'),
+(130, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X15, 12, 10 - 45\" - PIRAMIDE CRESC.', '60'),
+(131, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X15, 12, 10, 8 - 45\" - PIRAMIDE CRESC.', '60'),
+(132, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X12, 10, 8 - 45\" - PIRAMIDE CRESC.', '70'),
+(133, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X12, 10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
+(134, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
+(135, 'INTERMEDIARIO I', 'HIPERTROFIA', '1X12, 9, 6, 4 - 45\" - PIRAMIDE CRESC.', '70'),
+(136, 'INTERMEDIARIO I', 'HIPERTROFIA', '2X15, 8 - 45\" - ONDA', '60'),
+(137, 'INTERMEDIARIO I', 'HIPERTROFIA', '2X15, 10 - 45\" - ONDA', '70'),
+(138, 'INTERMEDIARIO I', 'HIPERTROFIA', '2X15, 6 - 45\" - ONDA', '70'),
+(139, 'INTERMEDIARIO I', 'RML', '1X8, 10, 12 - 30\" - PIRAMIDE DECRESC.', '70'),
+(140, 'INTERMEDIARIO I', 'RML', '1X10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
+(141, 'INTERMEDIARIO I', 'RML', '1X12, 15, 18 - 30\" - PIRAMIDE DECRESC.', '70'),
+(142, 'INTERMEDIARIO I', 'RML', '1X12, 15, 20 - 30\" - PIRAMIDE DECRESC.', '60'),
+(143, 'INTERMEDIARIO I', 'RML', '1X10, 15, 20 - 30\" - PIRAMIDE DECRESC.', '70'),
+(144, 'INTERMEDIARIO I', 'RML', '2X8, 15 - 30\" - ONDA', '70'),
+(145, 'INTERMEDIARIO I', 'RML', '2X10, 20 - 30\" - ONDA', '70'),
 (146, 'INTERMEDIARIO II', 'RML', '2X15 - 30\' - ALTERNADO P/ SEGMENTO', '60'),
 (147, 'INTERMEDIARIO II', 'RML', '2X18 - 30\' - ALTERNADO P/ SEGMENTO', '60'),
 (148, 'INTERMEDIARIO II', 'RML', '2X20 - 30\' - ALTERNADO P/ SEGMENTO', '50'),
@@ -655,21 +647,21 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 (251, 'INTERMEDIARIO II', 'HIPERTROFIA', '3X12 - 30\" - DROP SET', '70'),
 (252, 'INTERMEDIARIO II', 'HIPERTROFIA', '4X10 - 30\" - DROP SET', '70'),
 (253, 'INTERMEDIARIO II', 'HIPERTROFIA', '4X12 - 30\" - DROP SET', '70'),
-(254, 'INTERMEDIARIO II', 'TRANS-FORCA', '1X15, 12, 10 - 30\" - PIRAMIDE CRESC.', '60'),
-(255, 'INTERMEDIARIO II', 'TRANS-FORCA', '1X15, 12, 10, 8 - 30\" - PIRAMIDE CRESC.', '60'),
-(256, 'INTERMEDIARIO II', 'TRANS-FORCA', '1X12, 10, 8 - 30\" - PIRAMIDE CRESC.', '60'),
-(257, 'INTERMEDIARIO II', 'TRANS-FORCA', '1X12, 10, 8, 6 - 30\" - PIRAMIDE CRESC.', '60'),
-(258, 'INTERMEDIARIO II', 'TRANS-FORCA', '1X12, 9, 6, 4 - 30\" - PIRAMIDE CRESC.', '60'),
-(259, 'INTERMEDIARIO II', 'TRANS-FORCA', '2X15, 8 - 30\" - ONDA', '60'),
-(260, 'INTERMEDIARIO II', 'TRANS-FORCA', '2X15, 10 - 30\" - ONDA', '60'),
-(261, 'INTERMEDIARIO II', 'TRANS-FORCA', '2X20, 10 - 30\" - ONDA', '60'),
-(262, 'INTERMEDIARIO II', 'TRANS-RESIST', '1X8, 10, 12 - 30\" - PIRAMIDE DECRESC.', '70'),
-(263, 'INTERMEDIARIO II', 'TRANS-RESIST', '1X8, 10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
-(264, 'INTERMEDIARIO II', 'TRANS-RESIST', '1X10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
-(265, 'INTERMEDIARIO II', 'TRANS-RESIST', '1X12, 15, 20 - 30\" - PIRAMIDE DECRESC.', '70'),
-(266, 'INTERMEDIARIO II', 'TRANS-RESIST', '2X8, 15 - 30\" - ONDA', '70'),
-(267, 'INTERMEDIARIO II', 'TRANS-RESIST', '2X10, 15 - 30\" - ONDA', '70'),
-(268, 'INTERMEDIARIO II', 'TRANS-RESIST', '2X10, 20 - 30\" - ONDA', '70'),
+(254, 'INTERMEDIARIO II', 'HIPERTROFIA', '1X15, 12, 10 - 30\" - PIRAMIDE CRESC.', '60'),
+(255, 'INTERMEDIARIO II', 'HIPERTROFIA', '1X15, 12, 10, 8 - 30\" - PIRAMIDE CRESC.', '60'),
+(256, 'INTERMEDIARIO II', 'HIPERTROFIA', '1X12, 10, 8 - 30\" - PIRAMIDE CRESC.', '60'),
+(257, 'INTERMEDIARIO II', 'HIPERTROFIA', '1X12, 10, 8, 6 - 30\" - PIRAMIDE CRESC.', '60'),
+(258, 'INTERMEDIARIO II', 'HIPERTROFIA', '1X12, 9, 6, 4 - 30\" - PIRAMIDE CRESC.', '60'),
+(259, 'INTERMEDIARIO II', 'HIPERTROFIA', '2X15, 8 - 30\" - ONDA', '60'),
+(260, 'INTERMEDIARIO II', 'HIPERTROFIA', '2X15, 10 - 30\" - ONDA', '60'),
+(261, 'INTERMEDIARIO II', 'HIPERTROFIA', '2X20, 10 - 30\" - ONDA', '60'),
+(262, 'INTERMEDIARIO II', 'RML', '1X8, 10, 12 - 30\" - PIRAMIDE DECRESC.', '70'),
+(263, 'INTERMEDIARIO II', 'RML', '1X8, 10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
+(264, 'INTERMEDIARIO II', 'RML', '1X10, 12, 15 - 30\" - PIRAMIDE DECRESC.', '70'),
+(265, 'INTERMEDIARIO II', 'RML', '1X12, 15, 20 - 30\" - PIRAMIDE DECRESC.', '70'),
+(266, 'INTERMEDIARIO II', 'RML', '2X8, 15 - 30\" - ONDA', '70'),
+(267, 'INTERMEDIARIO II', 'RML', '2X10, 15 - 30\" - ONDA', '70'),
+(268, 'INTERMEDIARIO II', 'RML', '2X10, 20 - 30\" - ONDA', '70'),
 (269, 'AVANCADO', 'RML', '1X50 - 1\' - ALTERNADO P/ SEGMENTO', '30'),
 (270, 'AVANCADO', 'RML', '1X100 - 1\' - ALTERNADO P/ SEGMENTO', '20'),
 (271, 'AVANCADO', 'RML', '1X150 - 1\' - ALTERNADO P/ SEGMENTO', '20'),
@@ -775,23 +767,23 @@ INSERT INTO `series` (`idSerie`, `nivel`, `fase`, `serie`, `percentCarga`) VALUE
 (371, 'AVANCADO', 'FORCA', '7X2 - 90\"', '90'),
 (372, 'AVANCADO', 'FORCA', '7X4 - 90\"', '80'),
 (373, 'AVANCADO', 'FORCA', '7X6 - 90\"', '80'),
-(374, 'AVANCADO', 'TRANS-FORCA', '1X15, 12, 10, 8 - 45\" - PIRAMIDE CRESC.', '60'),
-(375, 'AVANCADO', 'TRANS-FORCA', '1X12, 10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
-(376, 'AVANCADO', 'TRANS-FORCA', '1X10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
-(377, 'AVANCADO', 'TRANS-FORCA', '2X15, 8 - 45\" - ONDA', '60'),
-(378, 'AVANCADO', 'TRANS-FORCA', '2X15, 10 - 45\" - ONDA', '60'),
-(379, 'AVANCADO', 'TRANS-FORCA', '2X20, 6 - 45\" - ONDA', '50'),
-(380, 'AVANCADO', 'TRANS-FORCA', '2X20, 8 - 45\" - ONDA', '50'),
-(381, 'AVANCADO', 'TRANS-RESIST', '1X6, 8, 10, 12 - 45\" - PIRAMIDE DECRESC.', '80'),
-(382, 'AVANCADO', 'TRANS-RESIST', '1X8, 10, 12, 15 - 45\" - PIRAMIDE DECRESC.', '80'),
-(383, 'AVANCADO', 'TRANS-RESIST', '1X10, 12, 15 - 45\" - PIRAMIDE DECRESC.', '70'),
-(384, 'AVANCADO', 'TRANS-RESIST', '1X12, 15, 20 - 45\" - PIRAMIDE DECRESC.', '70'),
-(385, 'AVANCADO', 'TRANS-RESIST', '1X10, 15, 20 - 45\" - PIRAMIDE DECRESC.', '70'),
-(386, 'AVANCADO', 'TRANS-RESIST', '2X8, 15 - 45\" - ONDA', '80'),
-(387, 'AVANCADO', 'TRANS-RESIST', '2X8, 20 - 45\" - ONDA', '80'),
-(388, 'AVANCADO', 'TRANS-RESIST', '2X10, 15 - 45\" - ONDA', '70'),
-(389, 'AVANCADO', 'TRANS-RESIST', '2X10, 20 - 45\" - ONDA', '70'),
-(390, 'AVANCADO', 'TRANS-RESIST', '2X6, 20 - 45\" - ONDA', '80'),
+(374, 'AVANCADO', 'HIPERTROFIA', '1X15, 12, 10, 8 - 45\" - PIRAMIDE CRESC.', '60'),
+(375, 'AVANCADO', 'HIPERTROFIA', '1X12, 10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
+(376, 'AVANCADO', 'HIPERTROFIA', '1X10, 8, 6 - 45\" - PIRAMIDE CRESC.', '70'),
+(377, 'AVANCADO', 'HIPERTROFIA', '2X15, 8 - 45\" - ONDA', '60'),
+(378, 'AVANCADO', 'HIPERTROFIA', '2X15, 10 - 45\" - ONDA', '60'),
+(379, 'AVANCADO', 'HIPERTROFIA', '2X20, 6 - 45\" - ONDA', '50'),
+(380, 'AVANCADO', 'HIPERTROFIA', '2X20, 8 - 45\" - ONDA', '50'),
+(381, 'AVANCADO', 'RML', '1X6, 8, 10, 12 - 45\" - PIRAMIDE DECRESC.', '80'),
+(382, 'AVANCADO', 'RML', '1X8, 10, 12, 15 - 45\" - PIRAMIDE DECRESC.', '80'),
+(383, 'AVANCADO', 'RML', '1X10, 12, 15 - 45\" - PIRAMIDE DECRESC.', '70'),
+(384, 'AVANCADO', 'RML', '1X12, 15, 20 - 45\" - PIRAMIDE DECRESC.', '70'),
+(385, 'AVANCADO', 'RML', '1X10, 15, 20 - 45\" - PIRAMIDE DECRESC.', '70'),
+(386, 'AVANCADO', 'RML', '2X8, 15 - 45\" - ONDA', '80'),
+(387, 'AVANCADO', 'RML', '2X8, 20 - 45\" - ONDA', '80'),
+(388, 'AVANCADO', 'RML', '2X10, 15 - 45\" - ONDA', '70'),
+(389, 'AVANCADO', 'RML', '2X10, 20 - 45\" - ONDA', '70'),
+(390, 'AVANCADO', 'RML', '2X6, 20 - 45\" - ONDA', '80'),
 (391, 'INICIANTE', 'ADAPTACAO', '10 min CONTINUO', '50'),
 (392, 'INICIANTE', 'ADAPTACAO', '15 min CONTINUO', '50'),
 (393, 'INICIANTE', 'ADAPTACAO', '20 min CONTINUO', '50'),
@@ -903,9 +895,9 @@ CREATE TABLE `testeVO2` (
 -- Despejando dados para a tabela `testeVO2`
 --
 
-INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, 1),
-(2, '2023-03-11', 6, 17, '60', '190', 20, 10, 1);
+INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
+(1, '2023-03-10', 6, 16, '60', '', 20, 9, NULL, 1),
+(2, '2023-03-11', 6, 17, '60', '190', 20, 10, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -916,7 +908,6 @@ INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velo
 CREATE TABLE `treino` (
   `idTreino` int NOT NULL,
   `carga` int DEFAULT NULL,
-  `feedback` int DEFAULT NULL,
   `idAluno` int NOT NULL,
   `idExercicio` int NOT NULL,
   `idSerie` int NOT NULL
