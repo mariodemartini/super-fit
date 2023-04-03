@@ -1,11 +1,4 @@
-<!-- Include php cabeçalho e barras -->
 <?php
-// session_start();
-// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-//     unset($_SESSION["email"]);
-//     unset($_SESSION["senha"]);
-//     header('Location: index.php');
-// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -15,17 +8,13 @@ include_once('include/sidebar.php');
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">COMPARATIVO</h3></div>
-                        
-                    <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                             <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
-                    <!-- Div do conteudo principal -->
                     <div class="card-body">
                         <form>
                             <!-- Div data e idade -->

@@ -1,11 +1,4 @@
-<!-- Include php rodapé e menus -->
 <?php
-// session_start();
-// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-//     unset($_SESSION["email"]);
-//     unset($_SESSION["senha"]);
-//     header('Location: index.php');
-// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -17,7 +10,6 @@ include_once('./dao/SerieDAO.php');
 
 $exercicio = new Exercicio();
 $exercicioDAO = new ExercicioDAO();
-
 $serie = new Serie();
 $seriedao = new SerieDAO();
 ?>
@@ -26,30 +18,21 @@ $seriedao = new SerieDAO();
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div titulo principal-->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE EXERCÍCIOS</h3></div>
-                    <!-- Div do formulario principal -->
                     <div class="card-body">
-                        
-                        <!-- Formulário do treino Musculação-->
                         <div class="row mb-3">
                             <form action="controller/ExercicioController.php" method="POST">
-
                                 <h4>Novo Execício</h4>
-                                <!-- Coluna grupo muscular -->
                                 <div class="row mb-3">
                                     <div class="col-sm-1">
                                         <label for="inputGM">GM</label>
                                         <input type="text" class="form-control" id="inputGM" name="grupoMuscular">
                                     </div>
-                                    <!-- Coluna exercicios -->
                                     <div class="col-sm-5">
                                         <label for="inputExercicio">EXERCÍCIO</label>
                                         <input type="text" class="form-control" id="inputExercicio" name="descricao">
                                     </div>
                                 </div>
-
-                                <!-- Botões de salvar -->
                                 <div class="mt-4 mb-0">
                                     <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                     <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="pesquisa-exercicio.php">Pesquisar</a></button>
@@ -57,14 +40,10 @@ $seriedao = new SerieDAO();
 
                             </form>
                         </div> 
-                        <br>  
-
-                            <!-- Formulário SERIE -->
+                        <br>
                         <div class="row mb-3">
                             <form action="controller/SerieController.php" method="POST">
-
                                 <h4>Nova Série</h4>
-
                                 <div class="row mb-3">
                                     <div class="col-sm-4">
                                         <label for="inputGM">SERIE</label>
@@ -83,8 +62,6 @@ $seriedao = new SerieDAO();
                                         <input type="text" class="form-control" id="inputFase" name="fase">
                                     </div>
                                 </div>
-
-                                <!-- Botões de salvar -->
                                 <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                     <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="pesquisa-serie.php">Pesquisar</a></button>
@@ -92,8 +69,6 @@ $seriedao = new SerieDAO();
                             </form>
                         </div>
                         <br>
-
-                        <!-- Botões de salvar -->
                         <div class="mt-4 mb-0">
                             <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
                         </div>

@@ -86,7 +86,14 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
-        
-    }
 
+        public function selecionaSerie($nivel, $fase){
+            $sql = "SELECT * FROM series, treino WHERE nivel = 'AVANCADO' AND fase = 'FORCA' OR fase = 'TRANS-FORCA' AND series.idSerie = treino.idTreino ORDER BY RAND() LIMIT 12";
+            $result = Conexao::getConexao()->query($sql);
+            $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+            $f_lista = array();
+            
+
+        }
+    }
 ?>

@@ -22,9 +22,7 @@ $alunodao = new AlunoDAO();
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div titulo principal-->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE TREINO</h3></div>
-                    <!-- Div barra de pesquisa -->
                     <div class="card-header">
                         <form class="card-body inline-block form-inline mb-3" action="controller/AlunoController.php" method="GET">
                             <label for="busca">Buscar por:</label>
@@ -40,7 +38,6 @@ $alunodao = new AlunoDAO();
                     <!-- Div do formulario principal -->
                     <div class="card-body">
                         <form action="controller/TreinoController.php" method="POST">
-                            <!-- Linha data e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-1">
                                     <label for="inputData">ID</label>
@@ -50,19 +47,16 @@ $alunodao = new AlunoDAO();
                                     <label for="inputData">NOME</label>
                                     <input type="text" class="form-control" id="inputData" name="nome" value="">
                                 </div>
-
                                 <div class="form-group col-md-1">
                                     <label for="inputData">Sexo</label>
                                     <input type="text" class="form-control" id="inputData" name="sexo" value="">
                                 </div>
                             </div>
                             <br>
-                            <div class="row mb-3">
-                                <h4>MONTAGEM DE TREINO</h4>
+                            <div class="row mb-3"><h4>MONTAGEM DE TREINO</h4>
                             </div>
                             <div class="row mb-3">
                                 <h5>TREINO MUSCULAÇÃO</h5>
-                                <!-- Coluna de experiencia de treino -->
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
@@ -86,7 +80,6 @@ $alunodao = new AlunoDAO();
                                         </div>
                                     </fieldset>
                                 </div>
-                                <!-- Coluna de fase de treino -->
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
@@ -113,7 +106,6 @@ $alunodao = new AlunoDAO();
                             </div>
                             <div class="row mb-3">
                                 <h5>TREINO AERÓBIO</h5>
-                                <!-- Coluna de experiencia de treino -->
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
@@ -137,7 +129,6 @@ $alunodao = new AlunoDAO();
                                         </div>
                                     </fieldset>
                                 </div>
-                                <!-- Coluna de fase de treino -->
                                 <div class="form-group col-md-4">
                                     <fieldset class="form-group">
                                         <div class="col-sm-12">
@@ -399,7 +390,6 @@ $alunodao = new AlunoDAO();
                                                 </form>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                     <!-- semana 2 -->
                                     <div class="tab-pane fade" id="nav-s2" role="tabpanel" aria-labelledby="nav-s2-tab">
@@ -2853,8 +2843,8 @@ $alunodao = new AlunoDAO();
                             <br>    
                             <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
-                                <button type="button" class="btn btn-success"><a class="btn btn-success btn-block" href="#">Salvar</a></button>
-                                <button type="button" class="btn btn-warning"><a class="btn btn-warning btn-block" href="#">Editar</a></button>
+                                <button type="submit" name="salvar" class="btn btn-success">Salvar</button>
+                                <button type="submit" name="editar" class="btn btn-warning">Editar</button>
                                 <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
                             </div>
                         </form>
@@ -2865,6 +2855,7 @@ $alunodao = new AlunoDAO();
         </div>
     </div>
 </main>
+<!-- Include php rodapé -->
 <?php
 include_once('include/footer.php');
 ?>

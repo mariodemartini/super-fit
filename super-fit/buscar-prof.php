@@ -1,11 +1,4 @@
-<!-- Include php cabeçalho e menus -->
 <?php
-session_start();
-if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header('Location: index.php');
-}
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -16,17 +9,13 @@ include_once('./dao/ProfessorDAO.php');
 $professor = new Professor();
 $professordao = new ProfessorDAO();
 ?>
-
 <body>
     <main>
         <div class="container-fluid px-4 text-center">
-            <!-- Titulo principal e barra de pesquisa -->
             <h1 class="card-header mt-4">PROFESSORES CADASTRADOS</h1>
             <br>
             <div class="card mb-4">
-                <!-- Inicio tabela -->
                 <table class="table table-bordered">
-                    <!-- Cabeçalho tabela -->
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -39,7 +28,6 @@ $professordao = new ProfessorDAO();
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <!-- Dados tabela de -->
                     <tbody>
                         <?php foreach ($professordao->read() as $professor): ?>
                             <tr>
@@ -65,13 +53,11 @@ $professordao = new ProfessorDAO();
                                     <?= $professor->getEmail() ?>
                                 </td>
                                 <td class="text-center">
-                                    <!-- <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a> -->
                                     <button class="btn  btn-warning btn-sm" data-toggle="modal"
                                         data-target="#editar><?= $professor->getIdProfessor() ?>">
                                         Editar
                                     </button>
-                                    <a href="controller/ProfessorController.php?del=<?= $professor->getIdProfessor() ?>">
-                                        <button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
+                                    <a href="controller/ProfessorController.php?del=<?= $professor->getIdProfessor() ?>"><button class="btn btn-danger btn-sm" type="button">Excluir</button></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
@@ -223,8 +209,7 @@ $professordao = new ProfessorDAO();
                 <?php endforeach ?>
             </div>
             <div class="col-sm-1 mt-4 mb-0">
-                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block"
-                        href="cadastro-prof.php">Voltar</a></button>
+                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="cadastro-prof.php">Voltar</a></button>
             </div>
         </div>
     </main>

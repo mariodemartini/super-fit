@@ -31,7 +31,7 @@
         header("Location: ../cadastro-aluno.php");
     }
 
-    else if (isset($_POST['editar'])) {
+    else if(isset($_POST['editar'])) {
 
         $aluno->setIdAluno(($d['idAluno']));
         $aluno->setNome(($d['nome']));
@@ -53,14 +53,24 @@
         header("Location: ../buscar-aluno.php");
     }
 
-    else if (isset($_GET['del'])){
+    else if(isset($_GET['del'])){
 
         $aluno->setIdAluno($_GET['del']);
 
         $alunodao->delete($aluno);
 
         header("Location: ../buscar-aluno.php");
-    } else {
+
+    } else if(isset($_GET['busca'])){
+
+        $aluno->setIdAluno($_GET['busca']);
+
+        $alunodao->buscaAluno($aluno);
+
+       // header("Location: ../ficha.php");
+    }
+
+    else {
         //header("Location: ../buscar.php");
     }
     

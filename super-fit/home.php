@@ -1,13 +1,9 @@
-<!-- Include php cabeçalho e barras -->
 <?php
-    // session_start();
-    
     include_once('include/header.php');
     include_once('include/navbar.php');
     include_once('include/sidebar.php');
 ?>
 <main>
-    <!-- Titulo da pagina -->
     <div class="container-fluid px-4">
         <h1 class="mt-4">SUPER FIT</h1>
         <ol class="breadcrumb mb-4">

@@ -9,10 +9,8 @@ include_once('./dao/ExercicioDAO.php');
 $exercicio = new Exercicio();
 $exerciciodao = new ExercicioDAO();
 ?>
-
 <main>
     <div class="container-fluid px-4 text-center">
-        <!-- Titulo principal e barra de pesquisa -->
         <h1 class="card-header mt-4">EXERCÍCIOS CADASTRADOS</h1>
         <div class="card mb-4">
             <div class="card-body">
@@ -23,9 +21,7 @@ $exerciciodao = new ExercicioDAO();
             </div>
         </div>
         <div class="card mb-4">
-            <!-- Inicio tabela -->
             <table class="table table-bordered">
-                <!-- Cabeçalho tabela -->
                 <thead>
                     <tr>
                     	<th>Id</th>
@@ -34,7 +30,6 @@ $exerciciodao = new ExercicioDAO();
                         <th>Ação</th>
                     </tr>
                 </thead>
-                <!-- Dados tabela de alunos -->
                 <tbody>
                 <?php foreach ($exerciciodao->read() as $exercicio) : ?>
                     <tr>
@@ -55,9 +50,8 @@ $exerciciodao = new ExercicioDAO();
         </div>
     </div>
 </main>
-</body>
-<!-- Inclue php rodapé -->
+</body>            
+<!-- Include php rodapé -->
 <?php
 include_once('include/footer.php');
 ?>
-                

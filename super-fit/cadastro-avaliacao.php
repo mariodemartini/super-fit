@@ -16,29 +16,22 @@ include_once('./dao/TesteVO2DAO.php');
 
 $aluno = new Aluno();
 $alunodao = new AlunoDAO();
-
 $anamnese = new Anamnese();
 $anamnesedao = new AnamneseDAO();
-
 $medidas = new Medidas();
 $medidasdao = new MedidasDAO();
-
 $testeforca = new TesteForca();
 $testeforcadao = new TesteForcaDAO();
-
 $testevo2 = new TesteVO2();
 $testevo2dao = new TesteVO2DAO();
 
 ?>
-
 <main>
     <div class="container-fluid px-4 text-center">
         <h1 class="card-header mt-4">AVALIÇÃO FÍSICA</h1>
         <br>
         <div class="card mb-4">
-            <!-- Inicio tabela -->
             <table class="table table-bordered">
-                <!-- Cabeçalho tabela -->
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -47,7 +40,6 @@ $testevo2dao = new TesteVO2DAO();
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <!-- Dados tabela de alunos -->
                 <tbody>
                     <?php foreach ($alunodao->read() as $aluno): ?>
                         <tr>
@@ -61,17 +53,11 @@ $testevo2dao = new TesteVO2DAO();
                                 <?= $aluno->getIdade() ?>
                             </td>
                             <td class="text-center">
-                                <!-- <a href="cadastro-editar.php"><button type="button" class="btn btn-warning">editar</button></a> -->
-                                <button class="btn  btn-warning btn-sm" data-toggle="modal"
-                                    data-target="#anamnese><?= $aluno->getIdAluno() ?>"> Anamnese </button>
-                                <button class="btn  btn-danger btn-sm" data-toggle="modal"
-                                    data-target="#medidas><?= $aluno->getIdAluno() ?>"> Medidas </button>
-                                <button class="btn  btn-secondary btn-sm" data-toggle="modal"
-                                    data-target="#forca><?= $aluno->getIdAluno() ?>"> Teste Força </button>
-                                <button class="btn  btn-primary btn-sm" data-toggle="modal"
-                                    data-target="#vo><?= $aluno->getIdAluno() ?>"> Teste VO2 </button>
-                                <button class="btn  btn-success btn-sm" data-toggle="modal"
-                                    data-target="#resultado><?= $aluno->getIdAluno() ?>"> Resultado </button>
+                                <button class="btn  btn-warning btn-sm" data-toggle="modal" data-target="#anamnese><?= $aluno->getIdAluno() ?>"> Anamnese </button>
+                                <button class="btn  btn-danger btn-sm" data-toggle="modal" data-target="#medidas><?= $aluno->getIdAluno() ?>"> Medidas </button>
+                                <button class="btn  btn-secondary btn-sm" data-toggle="modal" data-target="#forca><?= $aluno->getIdAluno() ?>"> Teste Força </button>
+                                <button class="btn  btn-primary btn-sm" data-toggle="modal" data-target="#vo><?= $aluno->getIdAluno() ?>"> Teste VO2 </button>
+                                <button class="btn  btn-success btn-sm" data-toggle="modal" data-target="#resultado><?= $aluno->getIdAluno() ?>"> Resultado </button>
                             </td>
                         </tr>
                     <?php endforeach ?>
@@ -1098,9 +1084,7 @@ $testevo2dao = new TesteVO2DAO();
     </div>
 
     <div class="col-sm-1 mt-4 mb-0">
-        <!-- <button class="btn btn-secondary btn-block" onclick="window.location.href='avaliacao.php'">Voltar</button> -->
-        <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block"
-                href="avaliacao.php">Voltar</a></button>
+        <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
     </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -1112,7 +1096,6 @@ $testevo2dao = new TesteVO2DAO();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
 <!-- Inclue php rodapé -->
 <?php
 include_once('include/footer.php');

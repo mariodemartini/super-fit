@@ -16,37 +16,21 @@ include_once('./dao/TesteVO2DAO.php');
 
 $aluno = new Aluno();
 $alunodao = new AlunoDAO();
-
 $anamnese = new Anamnese();
 $anamnesedao = new AnamneseDAO();
-
 $medidas = new Medidas();
 $medidasdao = new MedidasDAO();
-
 $testeforca = new TesteForca();
 $testeforcadao = new TesteForcaDAO();
-
 $testevo2 = new TesteVO2();
 $testevo2dao = new TesteVO2DAO();
-
 ?>
-
 <main>
     <div class="container-fluid px-4 text-center">
         <h1 class="card-header mt-4"> COMPARATIVO AVALIÇÃO FÍSICA</h1>
-        <!-- <div class="card mb-4">
-            <div class="card-body">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div> -->
         <br>
         <div class="card mb-4">
-            <!-- Inicio tabela -->
             <table class="table table-bordered">
-                <!-- Cabeçalho tabela -->
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -55,7 +39,6 @@ $testevo2dao = new TesteVO2DAO();
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <!-- Dados tabela de alunos -->
                 <tbody>
                     <?php foreach ($alunodao->read() as $aluno): ?>
                             <tr>
@@ -604,7 +587,7 @@ $testevo2dao = new TesteVO2DAO();
         <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block"
                 href="avaliacao.php">Voltar</a></button>
     </div>
-</m ain>
+</main>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -614,8 +597,7 @@ $testevo2dao = new TesteVO2DAO();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-<!-- Inclue php rodapé -->
+<!-- Include php rodapé -->
 <?php
 include_once('include/footer.php');
 ?>

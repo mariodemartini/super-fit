@@ -21,12 +21,9 @@ $professordao = new ProfessorDAO();
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">CADASTRAR PROFESSOR</h3></div>
-                    <!-- Div do formulario principal --> 
                     <div class="card-body">
                         <form action="controller/ProfessorController.php" method="POST">
-                            <!-- Campo Nome -->
                             <div class="row mb-3">
                                 <div class="col-md-5">
                                     <div class="form-floating mb-3 mb-md-0">
@@ -34,7 +31,6 @@ $professordao = new ProfessorDAO();
                                         <label for="inputNome">Nome Completo</label>
                                     </div>
                                 </div>
-                                <!-- Campo sexo -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <label for="inputSexo"></label>
@@ -45,7 +41,6 @@ $professordao = new ProfessorDAO();
                                         </select>
                                     </div>
                                 </div>
-                                <!-- Campo data nascimento -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Nascimento" name="dataNascimento"/>
@@ -54,14 +49,12 @@ $professordao = new ProfessorDAO();
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <!-- Campo CPF -->
                                 <div class="col-md-4">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputCpf" type="text" placeholder="CPF" name="cpf"/>
                                         <label for="inputCpf">CPF</label>
                                     </div>
                                 </div>
-                                <!-- Campo CREF -->
                                 <div class="col-md-4">
                                     <div class="form-floating">
                                         <input class="form-control" id="inpuCREF" type="text" placeholder="CREF" name="cref"/>
@@ -70,14 +63,12 @@ $professordao = new ProfessorDAO();
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <!-- Campo celular -->
                                 <div class="col-md-3">
                                     <div class="form-floating">
                                         <input class="form-control" id="inputCelular" type="text" placeholder="(xx)xxxx-xxxx" name="celular"/>
                                         <label for="inputCelular">Celular</label>
                                     </div>
                                 </div>
-                                <!-- Campo email -->
                                 <div class="col-md-5">
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" name="email"/>
@@ -86,14 +77,12 @@ $professordao = new ProfessorDAO();
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <!-- Campo CEP -->
                                 <div class="col-md-4">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputCep" type="text" placeholder="CEP" name="cep"/>
                                         <label for="inputCep">CEP</label>
                                     </div>
                                 </div>
-                                <!-- Campo estado -->
                                 <div class="col-md-3">
                                     <div class="form-floating">
                                         <label for="inputEstado"></label>
@@ -129,7 +118,6 @@ $professordao = new ProfessorDAO();
                                         </select>
                                     </div>
                                 </div>
-                                <!-- Campo cidade -->
                                 <div class="col-md-4">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputCidade" type="text" placeholder="Cidade" name="cidade"/>
@@ -138,7 +126,6 @@ $professordao = new ProfessorDAO();
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <!-- Campo endereço -->
                                 <div class="col-md-8">
                                     <div class="form-floating">
                                         <input class="form-control" id="inputEndereco" type="text" placeholder="endereco" name="endereco"/>
@@ -147,7 +134,6 @@ $professordao = new ProfessorDAO();
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <!-- Campo senha -->
                                 <div class="col-md-3">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputPassword" type="password" placeholder="Senha" name="senha"/>
@@ -155,7 +141,6 @@ $professordao = new ProfessorDAO();
                                     </div>
                                 </div>
                             </div>
-                            <!-- Botões de salvar -->
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success btn-lg">Salvar</button>
                                 <button type="button" class="btn btn-secondary btn-sm"><a class="btn btn-secondary btn-block" href="home.php">Voltar</a></button>

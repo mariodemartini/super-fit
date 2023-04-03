@@ -1,4 +1,3 @@
-<!-- Include php rodapé e menus -->
 <?php
 include_once('include/header.html');
 include_once('include/navbar.html');
@@ -9,12 +8,9 @@ include_once('include/sidebar.html');
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div titulo principal-->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">MONTAGEM DE TREINO</h3></div>
-                    <!-- Botões sub-menu treinos -->
                     <div class="card-header text-center">
                         <a class="btn btn-info btn-block" href="montagem.php"><button type="button" class="btn btn-info btn-lg">MONTAGEM</button></a>
-
                         <a class="btn btn-info btn-block" href="ficha.php"><button type="button" class="btn btn-info btn-lg">FICHA</button></a>
                     </div>
                     <!-- Div barra de pesquisa -->
@@ -268,5 +264,5 @@ include_once('include/sidebar.html');
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php');
 ?>

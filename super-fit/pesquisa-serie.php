@@ -1,11 +1,4 @@
-<!-- Include php cabeçalho e menus -->
 <?php
-// session_start();
-// if(((!isset($_SESSION['email'])) == true) && ((!isset($_SESSION['senha'])) == true)){
-//     unset($_SESSION["email"]);
-//     unset($_SESSION["senha"]);
-//     header('Location: index.php');
-// }
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
@@ -16,10 +9,8 @@ include_once('./dao/SerieDAO.php');
 $serie = new Serie();
 $seriedao = new SerieDAO();
 ?>
-
 <main>
     <div class="container-fluid px-4 text-center">
-        <!-- Titulo principal e barra de pesquisa -->
         <h1 class="card-header mt-4">SÉRIES CADASTRADAS</h1>
         <div class="card mb-4">
             <div class="card-body">
@@ -30,9 +21,7 @@ $seriedao = new SerieDAO();
             </div>
         </div>
         <div class="card mb-4">
-            <!-- Inicio tabela -->
             <table class="table table-bordered">
-                <!-- Cabeçalho tabela -->
                 <thead>
                     <tr>
                     	<th>Id</th>
@@ -43,7 +32,6 @@ $seriedao = new SerieDAO();
                         <th>Ação</th>
                     </tr>
                 </thead>
-                <!-- Dados tabela de alunos -->
                 <tbody>
                 <?php foreach ($seriedao->read() as $serie) : ?>
                     <tr>
@@ -66,9 +54,8 @@ $seriedao = new SerieDAO();
         </div>
     </div>
 </main>
-</body>
-<!-- Inclue php rodapé -->
+</body>             
+<!-- Include php rodapé -->
 <?php
 include_once('include/footer.php');
 ?>
-                

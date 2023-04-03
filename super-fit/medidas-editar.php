@@ -1,4 +1,3 @@
-<!-- Include php cabeçalho e barras -->
 <?php
 include_once('include/header.html');
 include_once('include/navbar.html');
@@ -9,17 +8,13 @@ include_once('./dao/MedidasDAO.php');
 
 $medidas = new Medidas();
 $medidasdao = new MedidasDAO();
-
 ?>
 <main>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- Div do Titulo da página -->
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">EDITAR MEDIDAS</h3></div>
-
-                    <!-- Div barra de pesquisa -->
                     <form class="card-header inline-block form-inline mb-3">
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -29,7 +24,6 @@ $medidasdao = new MedidasDAO();
                     <!-- Div do formulario principal -->
                     <div class="card-body">
                         <div class="container">
-                            <!-- Linha data, nome e idade -->
                             <div class="row mb-3">
                                 <div class="form-group col-md-2">
                                     <label for="inputData">DATA</label>
@@ -45,7 +39,6 @@ $medidasdao = new MedidasDAO();
                                 </div>
                             </div>
                             <div class="row">
-                                <!-- Coluna de Peso e Altura -->
                                 <div class="col-sm">
                                     <h4>Dados Iniciais</h4>
                                         <div class="form-group row">
@@ -215,5 +208,5 @@ $medidasdao = new MedidasDAO();
 </main>
 <!-- Include php rodapé -->
 <?php
-include_once('include/footer.html');
+include_once('include/footer.php');
 ?>
