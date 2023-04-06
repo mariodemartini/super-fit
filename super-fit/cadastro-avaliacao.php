@@ -13,6 +13,8 @@ include_once('./model/TesteForca.php');
 include_once('./dao/TesteForcaDAO.php');
 include_once('./model/TesteVO2.php');
 include_once('./dao/TesteVO2DAO.php');
+include_once('./model/Exercicio.php');
+include_once('./dao/ExercicioDAO.php');
 
 $aluno = new Aluno();
 $alunodao = new AlunoDAO();
@@ -24,7 +26,8 @@ $testeforca = new TesteForca();
 $testeforcadao = new TesteForcaDAO();
 $testevo2 = new TesteVO2();
 $testevo2dao = new TesteVO2DAO();
-
+$exercicio = new Exercicio();
+$exerciciodao = new ExercicioDAO();
 ?>
 <main>
     <div class="container-fluid px-4 text-center">
@@ -36,7 +39,7 @@ $testevo2dao = new TesteVO2DAO();
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Idade</th>
+                        <!-- <th>Idade</th> -->
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -49,9 +52,7 @@ $testevo2dao = new TesteVO2DAO();
                             <td>
                                 <?= $aluno->getNome() ?>
                             </td>
-                            <td>
-                                <?= $aluno->getIdade() ?>
-                            </td>
+                            <!-- <td><?= $aluno->getIdade() ?></td> -->
                             <td class="text-center">
                                 <button class="btn  btn-warning btn-sm" data-toggle="modal" data-target="#anamnese><?= $aluno->getIdAluno() ?>"> Anamnese </button>
                                 <button class="btn  btn-danger btn-sm" data-toggle="modal" data-target="#medidas><?= $aluno->getIdAluno() ?>"> Medidas </button>
@@ -595,11 +596,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <label for="inputVel" class="col-sm- col-form-label">Esforço</label>
                                             </div>
                                         </div>
-
+                                        <?php for ($i = 0; $i < 10; $i++) { ?>
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
+                                                <input type="number" class="form-control" id="inputTempo" placeholder="min" name="tempoTeste">
                                             </div>
                                             <div class="col-sm-3">
                                                 <input type="number" class="form-control" id="inputVel" placeholder="km/h"
@@ -614,167 +614,7 @@ $testevo2dao = new TesteVO2DAO();
                                                     placeholder="0-10" name="esforcoTeste">
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputTempo" placeholder="min"
-                                                    name="tempoTeste">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVel" placeholder="km/h"
-                                                    name="velocidadeFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputFC" placeholder="bpm"
-                                                    name="fcFinal">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <input type="number" class="form-control" id="inputVelInicio"
-                                                    placeholder="0-10" name="esforcoTeste">
-                                            </div>
+                                        <?php } ?>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-2">
@@ -856,25 +696,11 @@ $testevo2dao = new TesteVO2DAO();
                                             <div class="row mb-3">
                                                 <h4 class="text-left">Selecione o exercicio</h4>
                                                 <div class="form-group col-md-3 text-left">
-                                                    <select class="form-control" id="exercicioPeito" name="idExercicio"
-                                                        type="number">
+                                                    <select class="form-control" id="exercicioPeito" name="idExercicio" type="number">
                                                         <option value="">Escolha</option>
-                                                        <option value="1">Supino Reto</option>
-                                                        <option value="13">Fly Reto</option>
-                                                        <option value="16">Crucifixo Reto</option>
-                                                        <option value="24">Puxada Frente Aberta</option>
-                                                        <option value="38">Remada Maquina Pronada</option>
-                                                        <option value="44">Remada Baixa Fechado</option>
-                                                        <option value="96">Agachamento Livre</option>
-                                                        <option value="105">Leg Press 45°</option>
-                                                        <option value="124">Mesa Flexora</option>
-                                                        <option value="128">Cadeira Extensora</option>
-                                                        <option value="69">Rosca Direta W</option>
-                                                        <option value="142">Triceps Pulley Reto</option>
-                                                        <option value="143">Triceps Pulley W</option>
-                                                        <option value="161">Desenvolvimento Maquina</option>
-                                                        <option value="168">Elevação Lateral</option>
-                                                        <option value="171">Elevação Frontal</option>
+                                                        <?php foreach ($exerciciodao->read() as $exercicio): ?>
+                                                            <option value="<?= $exercicio->getIdExercicio() ?>"><?= $exercicio->getDescricao() ?></option>
+                                                        <?php endforeach ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -906,9 +732,6 @@ $testevo2dao = new TesteVO2DAO();
                                             </div>
                                         </div>
                                     </form>
-                                    <!-- form fim -->
-
-
                                 </div>
                             </div>
                         </div>
@@ -1080,9 +903,7 @@ $testevo2dao = new TesteVO2DAO();
                 </div>
             <?php endforeach ?>
         </div>
-
     </div>
-
     <div class="col-sm-1 mt-4 mb-0">
         <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
     </div>

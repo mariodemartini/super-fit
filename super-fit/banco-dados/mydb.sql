@@ -300,7 +300,7 @@ INSERT INTO `exercicios` (`idExercicio`, `grupoMuscular`, `descricao`) VALUES
 (202, 'EST', 'ESTEIRA'),
 (203, 'BIK', 'BICICLETA'),
 (204, 'ELI', 'ELIPTICO'),
-(205, 'BIK', 'ARIBIKE'),
+(205, 'BIK', 'AIRBIKE'),
 (206, 'REM', 'REMO');
 
 -- --------------------------------------------------------
@@ -343,8 +343,11 @@ CREATE TABLE `medidas` (
 --
 
 INSERT INTO `medidas` (`idMedidas`, `dataCadastro`, `peso`, `altura`, `freqCard`, `pressaoArterial`, `torax`, `cintura`, `abdomen`, `quadril`, `bracoDireito`, `bracoEsquerdo`, `antebracoDireito`, `antebracoEsquerdo`, `coxaDireita`, `coxaEsquerda`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peitoral`, `axilarMedia`, `abdominal`, `supraIliaca`, `subEscapular`, `tricipital`, `coxa`, `idAluno`) VALUES
-(2, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 1),
-(3, '2023-03-13', 75, 1.65, 70, '120/80', 80, 85, 85, 100, 30, 30, 25, 25, 65, 65, 35, 35, 20, 30, 35, 40, 30, 20, 35, 2);
+(1, '2023-03-10', 100, 1.8, 60, '120/80', 100, 100, 110, 110, 30, 30, 30, 30, 50, 50, 30, 30, 20, 25, 30, 30, 30, 20, 30, 1),
+(2, '2023-03-13', 75, 1.65, 70, '120/80', 80, 85, 85, 100, 30, 30, 25, 25, 65, 65, 35, 35, 20, 30, 35, 40, 30, 20, 35, 2),
+(3, '2023-03-25', 70, 1.65, 60, '120/80', 75, 80, 80, 105, 27, 27, 25, 25, 63, 63, 35, 35, 18, 26, 30, 36, 27, 15, 30, 2),
+(4, '2023-04-05', 90, 1.8, 60, '120/80', 90, 85, 95, 100, 32, 32, 27, 27, 50, 50, 36, 36, 16, 25, 32, 35, 25, 18, 30, 1),
+(5, '2023-04-05', 70, 1.65, 60, '120/80', 80, 80, 80, 105, 27, 27, 25, 25, 65, 65, 35, 35, 15, 25, 32, 35, 28, 13, 27, 2);
 
 -- --------------------------------------------------------
 
@@ -373,7 +376,8 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Mario H. Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22');
+(1, 'Mario H. Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22'),
+(2, 'Professor Teste', '1990-05-23', 'F', '111.111.111-11', '(19)999998888', '13720-000', '099999-G/SP', 'SP', 'São José do Rio Pardo', 'Av. Brasil, 100, Centro', 'profteste@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -887,7 +891,6 @@ CREATE TABLE `testeVO2` (
   `fcFinal` varchar(45) DEFAULT NULL,
   `tempoTeste` int DEFAULT NULL,
   `esforcoTeste` int DEFAULT NULL,
-  `resultadoVO2` int DEFAULT NULL,
   `idAluno` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -895,9 +898,9 @@ CREATE TABLE `testeVO2` (
 -- Despejando dados para a tabela `testeVO2`
 --
 
-INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `resultadoVO2`, `idAluno`) VALUES
-(1, '2023-03-10', 6, 16, '60', '', 20, 9, NULL, 1),
-(2, '2023-03-11', 6, 17, '60', '190', 20, 10, NULL, 1);
+INSERT INTO `testeVO2` (`idTesteVO2`, `dataCadastro`, `velocidadeInicial`, `velocidadeFinal`, `fcInicial`, `fcFinal`, `tempoTeste`, `esforcoTeste`, `idAluno`) VALUES
+(1, '2023-03-10', 6, 16, '60', '', 20, 9, 1),
+(2, '2023-03-11', 6, 17, '60', '190', 20, 10, 1);
 
 -- --------------------------------------------------------
 

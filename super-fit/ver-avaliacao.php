@@ -101,29 +101,21 @@ $testevo2dao = new TesteVO2DAO();
                                     <!-- Div titulos das colunas -->
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-2"></div>
-                                        <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                         <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
+                                        <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                     </div>
                                     <!-- Linha de data -->
+                                    <?php foreach ($medidasdao->exibeDados($aluno->getIdAluno()) as $medidas): ?>
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
                                             <li class="list-group-item bg-secondary text-white">Data</li>
                                         </ul>
+                                        <?php foreach ($medidasdao->exibeAnt($aluno->getIdAluno()) as $medidasAnt): ?>
                                         <div class="col-sm-3">
-                                            <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                <option>Escolha</option>
-                                                <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                            </select>
+                                            <input class="form-control p-2" type="text" placeholder="" nome="dataCadastro" readonly value="<?= $medidasAnt->getDataCadastro() ?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                <option>Escolha</option>
-                                                <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                            </select>
+                                            <input class="form-control p-2" type="text" placeholder="" nome="dataCadastro" readonly value="<?= $medidas->getDataCadastro() ?>">
                                         </div>
                                     </div>
                                     <!-- Linha compativo peso -->
@@ -132,22 +124,46 @@ $testevo2dao = new TesteVO2DAO();
                                             <li class="list-group-item bg-light text-dark">Peso(kg)</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getPeso() ?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly value="<?= $medidas->getPeso() ?>">
                                         </div>
                                     </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item bg-light text-dark">F.C</li>
+                                        </ul>
+                                        <div class="col-sm-3">
+                                            <input class="form-control p-2" type="text" nome="freqCard" readonly value="<?= $medidasAnt->getFreqCard() ?>">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input class="form-control p-2" type="text" nome="freqCard" readonly value="<?= $medidas->getFreqCard() ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <ul class="col-sm-2 list-group">
+                                            <li class="list-group-item bg-light text-dark">P.A</li>
+                                        </ul>
+                                        <div class="col-sm-3">
+                                            <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getPressaoArterial() ?>">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input class="form-control p-2" type="text" readonly value="<?= $medidas->getPressaoArterial() ?>">
+                                        </div>
+                                        <?php endforeach ?>
+                                    </div>
+                                    <?php endforeach ?>
                                     <!-- Linha compativo imc -->
                                     <div class="row d-flex justify-content-center">
                                         <ul class="col-sm-2 list-group">
                                             <li class="list-group-item bg-light text-dark">IMC</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" ttype="text" readonly nome="imc" value="<?php $medidasdao->imcAnt($aluno->getIdAluno())?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly nome="imc" value="<?php $medidasdao->imc($aluno->getIdAluno())?>">
                                         </div>
                                     </div>
                                     <!-- Linha RCQ -->
@@ -156,10 +172,10 @@ $testevo2dao = new TesteVO2DAO();
                                             <li class="list-group-item bg-light text-dark">RCQ</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly value="<?php $medidasdao->rcqAnt($aluno->getIdAluno())?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly value="<?php $medidasdao->rcq($aluno->getIdAluno())?>">
                                         </div>
                                     </div>
                                     <!-- Linha compativo % gordura -->
@@ -168,10 +184,10 @@ $testevo2dao = new TesteVO2DAO();
                                             <li class="list-group-item bg-light text-dark">%Gordura</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly nome="percentGord" value="<?php $medidasdao->percentGordAnt($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" readonly nome="percentGord" value="<?php $medidasdao->percentGord($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                         </div>
                                     </div>
                                     <!-- Linha compativo peso massa gorda -->
@@ -180,10 +196,10 @@ $testevo2dao = new TesteVO2DAO();
                                             <li class="list-group-item bg-light text-dark">M.Gorda(kg)</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" nome="massaGorda" readonly value="<?php $medidasdao->gorduraAnt($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade()) ?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" nome="massaGorda" readonly value="<?php $medidasdao->gordura($medidas->getPeso(), $aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                         </div>
                                     </div>
                                     <!-- Linha compativo peso massa magra -->
@@ -192,32 +208,10 @@ $testevo2dao = new TesteVO2DAO();
                                             <li class="list-group-item bg-light text-dark">M.Magra(kg)</li>
                                         </ul>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                            <input class="form-control p-2" type="text" nome="massaMagra" readonly value="<?php $medidasdao->magraAnt($aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade()) ?>">
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control p-2" type="number" step="0.01" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="row d-flex justify-content-center">
-                                        <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item bg-light text-dark">F.C</li>
-                                        </ul>
-                                        <div class="col-sm-3">
-                                            <input class="form-control p-2" type="text" placeholder="">
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <input class="form-control p-2" type="text" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="row d-flex justify-content-center">
-                                        <ul class="col-sm-2 list-group">
-                                            <li class="list-group-item bg-light text-dark">P.A</li>
-                                        </ul>
-                                        <div class="col-sm-3">
-                                            <input class="form-control p-2" type="text" placeholder="">
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <input class="form-control p-2" type="text" placeholder="">
+                                            <input class="form-control p-2" type="text" nome="massaMagra" readonly value="<?php $medidasdao->magra($medidas->getPeso(), $aluno->getIdAluno(), $aluno->getSexo(), $aluno->getIdade())?>">
                                         </div>
                                     </div>
                                 </form>
@@ -242,6 +236,7 @@ $testevo2dao = new TesteVO2DAO();
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                <?php foreach($medidasdao->circAnt($aluno->getIdAluno()) as $medidasAnt) : ?>
                                     <form action="" method="POST">
                                         <!-- Campo Nome -->
                                         <div class="row mb-3">
@@ -267,29 +262,20 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Div titulos das colunas -->
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-2"></div>
-                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                             <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                         </div>
                                         <!-- Linha de data -->
                                         <div class="row d-flex justify-content-center">
+                                        <?php foreach($medidasdao->circunf($aluno->getIdAluno()) as $medidas) : ?>
                                             <ul class="col-sm-2 list-group">
                                                 <li class="list-group-item bg-secondary text-white">Data</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                    <option>Escolha</option>
-                                                    <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                                </select>
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getDataCadastro() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                    <option>Escolha</option>
-                                                    <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                                </select>
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getDataCadastro() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -297,10 +283,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Torax</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getTorax() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" ttype="text" readonly value="<?= $medidas->getTorax() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -308,10 +294,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Abdomen</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getAbdomen() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getAbdomen() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -319,10 +305,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Cintura</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getCintura() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" ttype="text" readonly value="<?= $medidas->getCintura() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -330,10 +316,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Quadril</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getQuadril() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getQuadril() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -341,10 +327,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Braço D</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getBracoDireito() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getBracoDireito() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -352,10 +338,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Braço E</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" ttype="text" readonly value="<?= $medidasAnt->getBracoEsquerdo() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getBracoEsquerdo() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -363,10 +349,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Anteb. D</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getAntebracoDireito() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getAntebracoDireito() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -374,10 +360,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Anteb. E</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getAntebracoEsquerdo() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getAntebracoEsquerdo() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -385,10 +371,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Coxa D</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getCoxaDireita() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getCoxaDireita() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -396,10 +382,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Coxa E</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getCoxaEsquerda() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getCoxaEsquerda() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -407,10 +393,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Pant. D</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getPanturrilhaDireita() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getPanturrilhaDireita() ?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -418,13 +404,15 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Pant. E</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getPanturrilhaEsquerda() ?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getPanturrilhaEsquerda() ?>">
                                             </div>
                                         </div>
+                                        <?php endforeach ?>
                                     </form>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </div>
@@ -447,6 +435,7 @@ $testevo2dao = new TesteVO2DAO();
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                    <?php foreach($medidasdao->dobrasAnt($aluno->getIdAluno()) as $medidasAnt) :?>
                                     <form action="" method="POST">
                                         <!-- Campo Nome -->
                                         <div class="row mb-3">
@@ -472,29 +461,20 @@ $testevo2dao = new TesteVO2DAO();
                                         <!-- Div titulos das colunas -->
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-2"></div>
-                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                             <div class="col-sm-3 my-4 bg-dark text-white text-center">ANTERIOR</div>
+                                            <div class="col-sm-3 my-4 bg-dark text-white text-center">ATUAL</div>
                                         </div>
+                                        <?php foreach($medidasdao->dobras($aluno->getIdAluno()) as $medidas) :?>
                                         <!-- Linha de data -->
                                         <div class="row d-flex justify-content-center">
                                             <ul class="col-sm-2 list-group">
                                                 <li class="list-group-item bg-secondary text-white">Data</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                    <option>Escolha</option>
-                                                    <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                                </select>
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getDataCadastro()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="dataCadastro" name="dataCadastro">
-                                                    <option>Escolha</option>
-                                                    <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
-                                                    <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
-                                                <?php endforeach ?>
-                                                </select>
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getDataCadastro()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -502,10 +482,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Peitoral</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getPeitoral()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getPeitoral()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -513,10 +493,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Ax. Media</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getAxilarMedia()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getAxilarMedia()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -524,10 +504,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Abdominal</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getAbdominal()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getAbdominal()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -535,10 +515,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">SupraIliaca</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getSupraIliaca()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getSupraIliaca()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -546,10 +526,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">SubEscap.</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getSubEscapular()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getSubEscapular()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -557,10 +537,10 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Tricipital</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getTricipital()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getTricipital()?>">
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -568,13 +548,15 @@ $testevo2dao = new TesteVO2DAO();
                                                 <li class="list-group-item bg-light text-dark">Coxa</li>
                                             </ul>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidasAnt->getCoxa()?>">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input class="form-control p-2" type="number" step="0.01" placeholder="">
+                                                <input class="form-control p-2" type="text" readonly value="<?= $medidas->getCoxa()?>">
                                             </div>
                                         </div>
+                                        <?php endforeach ?>
                                     </form>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </div>
@@ -584,8 +566,7 @@ $testevo2dao = new TesteVO2DAO();
         </div>
 
     <div class="col-sm-1 mt-4 mb-0">
-        <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block"
-                href="avaliacao.php">Voltar</a></button>
+        <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="avaliacao.php">Voltar</a></button>
     </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

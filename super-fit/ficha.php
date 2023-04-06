@@ -24,20 +24,24 @@ $alunodao = new AlunoDAO();
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">FICHA DE TREINO</h3></div>
                     <div class="card-header">
-                        <form class="card-body inline-block form-inline mb-3" action="controller/AlunoController.php" method="GET">
+                        <form class="card-body inline-block form-inline mb-3" action="" method="POST">
                             <label for="busca">Buscar por:</label>
-                            <select class="form-control custom-select w-50 ml-2" name="busca" id="busca">
+                            <select class="form-control custom-select w-50 ml-2" name="idAluno" id="idAluno">
                                 <option value="">Selecione o aluno</option>
                                 <?php foreach ($alunodao->read() as $aluno): ?>
                                     <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
                                 <?php endforeach ?>
                             </select>
-                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                            <!-- <button class="btn btn-primary" type="submit" name="busca"><i class="fas fa-search"></i></button> -->
+                            <a href="ficha.php" method="GET" name="idAluno" class="btn btn-primary"><i class="fas fa-search"></i></a>
+                            <?php $res = $d['idAluno'];
+                            echo $res;?>
                         </form>
                     </div>
                     <!-- Div do formulario principal -->
                     <div class="card-body">
                         <form action="controller/TreinoController.php" method="POST">
+                            
                             <div class="row mb-3">
                                 <div class="form-group col-md-1">
                                     <label for="inputData">ID</label>
@@ -2845,7 +2849,7 @@ $alunodao = new AlunoDAO();
                             <div class="mt-4 mb-0">
                                 <button type="submit" name="salvar" class="btn btn-success">Salvar</button>
                                 <button type="submit" name="editar" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-secondary"><a class="btn btn-secondary btn-block" href="treinos.php">Voltar</a></button>
+                                <a class="btn btn-secondary" href="treinos.php">Voltar</a>
                             </div>
                         </form>
                     </div>

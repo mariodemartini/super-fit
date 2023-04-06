@@ -10,7 +10,7 @@
 
     if(isset($_POST['salvar'])){
 
-        $testeVO2->setDataTeste(($d['dataCadastro']));
+        $testeVO2->setDataCadastro(($d['dataCadastro']));
         $testeVO2->setVelocidadeInicial(($d['velocidadeInicial']));
         $testeVO2->setVelocidadeFinal(($d['velocidadeFinal']));
         $testeVO2->setfcInicial(($d['fcInicial']));
@@ -26,7 +26,7 @@
 
     else if (isset($_POST['editar'])) {
 
-        $testeVO2->setDataTeste(($d['dataCadastro']));
+        $testeVO2->setDataCadastro(($d['dataCadastro']));
         $testeVO2->setVelocidadeInicial(($d['velocidadeInicial']));
         $testeVO2->setVelocidadeFinal(($d['velocidadeInicial']));
         $testeVO2->setfcInicial(($d['fcInicial']));

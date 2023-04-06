@@ -61,15 +61,8 @@
 
         header("Location: ../buscar-aluno.php");
 
-    } else if(isset($_GET['busca'])){
-
-        $aluno->setIdAluno($_GET['busca']);
-
-        $alunodao->buscaAluno($aluno);
-
-       // header("Location: ../ficha.php");
-    }
-
+    } 
+    
     else {
         //header("Location: ../buscar.php");
     }

@@ -171,6 +171,8 @@
             $medidas->setDataCadastro($row['dataCadastro']);
             $medidas->setPeso($row['peso']);
             $medidas->setAbdomen($row['abdomen']);
+            $medidas->setFreqCard($row['freqCard']);
+            $medidas->setPressaoArterial($row['pressaoArterial']);
 
             return $medidas;
         }
@@ -192,7 +194,7 @@
 
         public function exibeDados($id) {
             try {
-                $sql = "SELECT medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.abdomen, medidas.freqCard FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
+                $sql = "SELECT medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.abdomen, medidas.freqCard, medidas.pressaoArterial FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.idMedidas DESC LIMIT 1";
                 $result = Conexao::getConexao()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
                 $f_lista = array();
@@ -222,7 +224,6 @@
             } else{
                 print '❌';
             }
-    
         }
 
         public function imc($id){
@@ -241,7 +242,6 @@
             }else{
                 print '❌';
             }
-  
         }
 
         public function percentGord($id, $sexo, $idade){
@@ -271,8 +271,7 @@
                 return $perc;
             } else{
                 print '❌';
-            }
-               
+            }     
         } 
 
         public function gordura($peso, $id, $sexo, $idade){
@@ -695,6 +694,214 @@
                 }
             }
             print $classImc;
+        }
+
+        public function exibeAnt($id) {
+            try {
+                $sql = "SELECT medidas.idMedidas, medidas.dataCadastro, medidas.peso, medidas.altura, medidas.freqCard, medidas.pressaoArterial FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->lista($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar Todos." . $e;
+            }
+        }
+
+        public function rcqAnt($id){
+            $sql = "SELECT medidas.cintura, medidas.quadril FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $cintura = $linha1['cintura'];
+                $quadril = $linha1['quadril'];
+            }
+            if(isset($cintura) && isset($quadril)){
+                $rcq = $cintura / $quadril;
+                $rcqFormatado = number_format($rcq, 2);
+    
+                print $rcqFormatado;
+
+            } else{
+                print '❌';
+            }
+        }
+
+        public function imcAnt($id){
+            $sql = "SELECT medidas.peso, medidas.altura FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $peso = $linha1['peso'];
+                $altura = $linha1['altura'];
+            }
+            if(isset($peso) && isset($altura)){
+                $imc = $peso / ($altura**2);
+                $imcFormatado = number_format($imc, 2);
+    
+                print $imcFormatado; 
+            }else{
+                print '❌';
+            }
+        }
+
+        public function percentGordAnt($id, $sexo, $idade){
+            $sql = "SELECT medidas.tricipital, medidas.axilarMedia, medidas.peitoral, medidas.abdominal, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $tric = $linha1['tricipital'];
+                $ax = $linha1['axilarMedia'];
+                $peito = $linha1['peitoral'];
+                $abd = $linha1['abdominal'];
+                $supra = $linha1['supraIliaca'];
+                $sub = $linha1['subEscapular'];
+                $coxa = $linha1['coxa'];
+            }
+            if(isset($tric)){
+                $soma = $peito + $ax + $abd + $supra + $sub + $tric + $coxa;
+                if($sexo == 'M' || $sexo == 'm'){
+                    $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                } else if ($sexo == 'F' || $sexo == 'f'){
+                    $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                }
+                $perc = number_format($percentGord, 2);
+                echo $perc;
+                return $perc;
+            } else{
+                print '❌';
+            }      
+        } 
+
+        public function gorduraAnt($id, $sexo, $idade){
+            $sql = "SELECT medidas.peso, medidas.tricipital, medidas.axilarMedia, medidas.peitoral, medidas.abdominal, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $peso = $linha1['peso'];
+                $tric = $linha1['tricipital'];
+                $ax = $linha1['axilarMedia'];
+                $peito = $linha1['peitoral'];
+                $abd = $linha1['abdominal'];
+                $supra = $linha1['supraIliaca'];
+                $sub = $linha1['subEscapular'];
+                $coxa = $linha1['coxa'];
+            }
+            if(isset($tric)){
+                $soma = $peito + $ax + $abd + $supra + $sub + $tric + $coxa;
+                if($sexo == 'M' || $sexo == 'm'){
+                    $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                } else if ($sexo == 'F' || $sexo == 'f'){
+                    $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                }
+                $perc = number_format($percentGord, 2);
+                $massaGorda = ($peso * $perc) / 100;
+                $pesoG = number_format($massaGorda, 2);
+                print $pesoG; 
+            } else{
+                print '❌';
+            }   
+        }
+
+        public function magraAnt($id, $sexo, $idade){
+            $sql = "SELECT medidas.peso, medidas.tricipital, medidas.axilarMedia, medidas.peitoral, medidas.abdominal, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+            $result = Conexao::getConexao()->query($sql);
+            $result->execute();
+            while ($linha1 = $result->fetch(PDO::FETCH_ASSOC)){
+                $peso = $linha1['peso'];
+                $tric = $linha1['tricipital'];
+                $ax = $linha1['axilarMedia'];
+                $peito = $linha1['peitoral'];
+                $abd = $linha1['abdominal'];
+                $supra = $linha1['supraIliaca'];
+                $sub = $linha1['subEscapular'];
+                $coxa = $linha1['coxa'];
+            }
+            if(isset($tric)){
+                $soma = $peito + $ax + $abd + $supra + $sub + $tric + $coxa;
+                if($sexo == 'M' || $sexo == 'm'){
+                    $dc = 1.112 - 0.00043499*($soma) + 0.00000055*($soma**2) - 0.00028826*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                } else if ($sexo == 'F' || $sexo == 'f'){
+                    $dc = 1.0970 - 0.00046971*($soma) + 0.00000056*($soma**2) - 0.00012828*($idade);
+                    $percentGord = ((4.95 / $dc) - 4.5)*100;
+                }
+                $perc = number_format($percentGord, 2);
+
+                $massaGorda = ($peso * $perc) / 100;
+                $massaMagra = ($peso - $massaGorda); 
+                $pesoM = number_format($massaMagra, 2);
+                print $pesoM; 
+            } else{
+                print '❌';
+            }   
+        }
+
+        public function circAnt($id){
+            try{
+                $sql = "SELECT medidas.dataCadastro, medidas.torax, medidas.cintura, medidas.abdomen, medidas.quadril, medidas.bracoDireito, medidas.bracoEsquerdo, medidas.antebracoDireito, medidas.antebracoEsquerdo, medidas.coxaDireita, medidas.coxaEsquerda, medidas.panturrilhaDireita, medidas.panturrilhaEsquerda FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaMedidas($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar circunferencias." . $e;
+            }  
+        }
+
+        public function circunf($id){
+            try{
+                $sql = "SELECT medidas.dataCadastro, medidas.torax, medidas.cintura, medidas.abdomen, medidas.quadril, medidas.bracoDireito, medidas.bracoEsquerdo, medidas.antebracoDireito, medidas.antebracoEsquerdo, medidas.coxaDireita, medidas.coxaEsquerda, medidas.panturrilhaDireita, medidas.panturrilhaEsquerda FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaMedidas($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar circunferencias." . $e;
+            }  
+        }
+
+        public function dobrasAnt($id){
+            try{
+                $sql = "SELECT medidas.dataCadastro, medidas.peitoral, medidas.tricipital, medidas.abdominal, medidas.axilarMedia, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1 OFFSET 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaMedidas($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar circunferencias." . $e;
+            }  
+        }
+
+        public function dobras($id){
+            try{
+                $sql = "SELECT medidas.dataCadastro, medidas.peitoral, medidas.tricipital, medidas.abdominal, medidas.axilarMedia, medidas.supraIliaca, medidas.subEscapular, medidas.coxa FROM medidas, alunos WHERE medidas.idAluno = alunos.idAluno AND alunos.idAluno = '$id' ORDER BY medidas.dataCadastro DESC LIMIT 1";
+                $result = Conexao::getConexao()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+                $f_lista = array();
+                foreach ($lista as $l) {
+                    $f_lista[] = $this->listaMedidas($l);
+                } 
+                return $f_lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar Buscar circunferencias." . $e;
+            }  
         }
             
     }

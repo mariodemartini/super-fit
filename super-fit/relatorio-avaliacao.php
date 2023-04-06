@@ -2,6 +2,28 @@
 include_once('include/header.php');
 include_once('include/navbar.php');
 include_once('include/sidebar.php');
+include_once('./conexao/Conexao.php');
+include_once('./model/Aluno.php');
+include_once('./dao/AlunoDAO.php');
+include_once('./model/Anamnese.php');
+include_once('./dao/AnamneseDAO.php');
+include_once('./model/Medidas.php');
+include_once('./dao/MedidasDAO.php');
+include_once('./model/TesteForca.php');
+include_once('./dao/TesteForcaDAO.php');
+include_once('./model/TesteVO2.php');
+include_once('./dao/TesteVO2DAO.php');
+
+$aluno = new Aluno();
+$alunodao = new AlunoDAO();
+$anamnese = new Anamnese();
+$anamnesedao = new AnamneseDAO();
+$medidas = new Medidas();
+$medidasdao = new MedidasDAO();
+$testeforca = new TesteForca();
+$testeforcadao = new TesteForcaDAO();
+$testevo2 = new TesteVO2();
+$testevo2dao = new TesteVO2DAO();
 ?>
 <main>
     <div class="container">
@@ -9,19 +31,23 @@ include_once('include/sidebar.php');
             <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">COMPARATIVO</h3></div>
-                    <form class="card-header inline-block form-inline mb-3">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                        </div>
-                    </form>
+                        <form class="card-body inline-block form-inline mb-3" action="relatorio-avaliacao.php" method="GET">
+                            <label for="busca">Buscar por:</label>
+                            <select class="form-control custom-select w-50 ml-2" name="busca" id="busca">
+                                <option value="">Selecione o aluno</option>
+                                <?php foreach ($alunodao->read() as $aluno): ?>
+                                <option value="<?= $aluno->getIdAluno() ?>"><?= $aluno->getNome() ?></option>
+                                <?php endforeach ?>
+                            </select>
+                            <button class="btn btn-primary" type="submit" name="busca"><i class="fas fa-search"></i></button>
+                        </form>
                     <div class="card-body">
                         <form>
                             <!-- Div data e idade -->
                             <div class="row mb-3">
-                                <div class="form-group col-md-2">
-                                    <label for="inputData">DATA</label>
-                                    <input type="date" class="form-control" id="inputData">
+                                <div class="form-group col-md-1">
+                                    <label for="inputId">ID</label>
+                                    <input type="text" class="form-control" id="inputId">
                                 </div>
                                 <div class="form-group col-md-7">
                                     <label for="inputNome">NOME</label>
@@ -30,6 +56,10 @@ include_once('include/sidebar.php');
                                 <div class="form-group col-sm-1">
                                     <label for="inputData">IDADE</label>
                                     <input type="number" class="form-control" id="inputData">
+                                </div>
+                                <div class="form-group col-sm-1">
+                                    <label for="inputSexo">SEXO</label>
+                                    <input type="text" class="form-control" id="inputData">
                                 </div>
                             </div>
                             <!-- Div titulos das colunas -->
@@ -44,15 +74,22 @@ include_once('include/sidebar.php');
                                     <li class="list-group-item">Data</li>
                                 </ul>
                                 <div class="col-sm-2">
-                                    <select class="form-control" id="exercicioPeito">
+                                
+                                    <select class="form-control" id="dataCadastro" name="dataCadastro">
                                         <option>Escolha</option>
-                                        <option>#</option>
+                                        <?php foreach ($alunodao->read() as $aluno): ?>
+                                        <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
+                                        <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
+                                        <?php endforeach ?>
+                                        <?php endforeach?>
                                     </select>
                                 </div>
                                 <div class="col-sm-2">
-                                    <select class="form-control" id="exercicioPeito">
+                                    <select class="form-control" id="dataCadastro" name="dataCadastro">
                                         <option>Escolha</option>
-                                        <option>#</option>
+                                        <?php foreach ($medidasdao->exibeData($aluno->getIdAluno()) as $medidas): ?>
+                                        <option value="<?= $medidas->getDataCadastro() ?>"><?= $medidas->getDataCadastro() ?></option>
+                                        <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>

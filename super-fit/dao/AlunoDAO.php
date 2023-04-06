@@ -123,17 +123,6 @@
                 print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
             }
         }
-       
-        public function buscaAluno(Aluno $aluno){
-            try {
-                $sql = "SELECT idAluno, nome, sexo FROM alunos WHERE idAluno = :idAluno";
-                $result = Conexao::getConexao()->query($sql);
-                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
-                return $lista;
-            } catch (Exception $e) {
-                print "Erro ao buscar aluno." . $e;
-            }
-        }
 
     }
 ?>
