@@ -1,5 +1,5 @@
 # SUPER-FIT
-Projeto realizado para o trabalho de conclusão de curso da ETEC Prof Rodolpho José Del Guerra.  
+Projeto realizado para o trabalho de conclusão de curso da curso de Tecnico em Informática da ETEC Prof Rodolpho José Del Guerra.  
 O projeto é um sistema de avaliação física de academia, contendo parte de teste de VO2, teste de força e composição corporal.
 Esse projeto já conta com o layout da area de montagem de treinos para implementado futuramente.
 
@@ -12,19 +12,18 @@ O que você precisa instalar para rodar o projeto?
   
 * Se estiver usando Linux: [LampServer](https://ubuntu.com/server/docs/lamp-applications)
 
-### Como fazer a instalação da aplicação
+### Como fazer a instalação:
 Faça o clone do arquivo usando uma das opções abaixo:
 #### SSH
 ```
-git@github.com:mariodemartini/tcc-etec-2022.git
+git@github.com:mariodemartini/super-fit.git
 ```  
 #### HTTPS
 ```
-https://github.com/mariodemartini/tcc-etec-2022.git
+https://github.com/mariodemartini/super-fit.git
 ```  
 
 ### Boas práticas de versionamento de código
-* Utilização de GitFlow
 * Utilização de commit semantico
 
 ### Como usar a aplicação?
