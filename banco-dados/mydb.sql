@@ -376,7 +376,7 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Professor Teste', '1990-05-23', 'F', '111.111.111-11', '(19)999998888', '13720-000', '099999-G/SP', 'SP', 'São José do Rio Pardo', 'Av. Brasil, 100, Centro', 'profteste@gmail.com', '12345');
+(1, 'Professor Teste', '1990-05-23', 'F', '111.111.111-11', '(19)999998888', '13720-000', '099999-G/SP', 'SP', 'São José do Rio Pardo', 'Av. Brasil, 100, Centro', 'profteste@teste.com', '12345');
 
 -- --------------------------------------------------------
 
