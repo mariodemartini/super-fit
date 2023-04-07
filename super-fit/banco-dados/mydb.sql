@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `mydb`
+-- Banco de dados: `teste`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci;
-USE `mydb`;
+CREATE DATABASE IF NOT EXISTS `teste` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci;
+USE `teste`;
 
 -- --------------------------------------------------------
 
@@ -376,8 +376,7 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`idProfessor`, `nome`, `dataNascimento`, `sexo`, `cpf`, `celular`, `cep`, `cref`, `estado`, `cidade`, `endereco`, `email`, `senha`) VALUES
-(1, 'Mario H. Breda de Martini', '1988-01-25', 'M', '368.297.018-56', '(19)993060738', '13720-000', '086385-G/SP', 'SP', 'São José do Rio Pardo', 'Rua Cap. Luis de Melo, 736, Sta Tereza', 'mariodemartini@gmail.com', 'Etec22'),
-(2, 'Professor Teste', '1990-05-23', 'F', '111.111.111-11', '(19)999998888', '13720-000', '099999-G/SP', 'SP', 'São José do Rio Pardo', 'Av. Brasil, 100, Centro', 'profteste@gmail.com', '12345');
+(1, 'Professor Teste', '1990-05-23', 'F', '111.111.111-11', '(19)999998888', '13720-000', '099999-G/SP', 'SP', 'São José do Rio Pardo', 'Av. Brasil, 100, Centro', 'profteste@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
