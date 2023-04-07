@@ -5,8 +5,6 @@ Esse projeto já conta com o layout da area de montagem de treinos para implemen
 
 ### Pré-requisitos
 O que você precisa instalar para rodar o projeto?
-
-* [VSCode](https://code.visualstudio.com/)
   
 * Windows: [WampServer](https://www.wampserver.com/en/)
   
@@ -34,7 +32,7 @@ O acesso de login tem o usuário profteste@teste.com e senha 12345.
 * VSCode;
 * Lamp;
 * PhpMyAdmin;
-* PHP 7.0
+* PHP7.0
 * HTML5
 * CSS3
 * Bootstrap4
