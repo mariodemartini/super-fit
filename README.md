@@ -8,9 +8,9 @@ O que você precisa instalar para rodar o projeto?
 
 * [VSCode](https://code.visualstudio.com/)
   
-* Se estiver usando Windows: [WampServer](https://www.wampserver.com/en/)
+* Windows: [WampServer](https://www.wampserver.com/en/)
   
-* Se estiver usando Linux: [LampServer](https://ubuntu.com/server/docs/lamp-applications)
+* Linux: [LampServer](https://ubuntu.com/server/docs/lamp-applications)
 
 ### Como fazer a instalação:
 Faça o clone do arquivo usando uma das opções abaixo:
